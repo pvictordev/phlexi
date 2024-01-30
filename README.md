@@ -1,3 +1,3 @@
 # Software Academy Project
 
-## Freelance Services Marketplace
+## Freelance Services Platform
