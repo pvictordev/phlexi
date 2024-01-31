@@ -1,0 +1,39 @@
+@import "/css/globals/style.css";
+
+/* header component */
+.header {
+  width: 100%;
+}
+.header-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+}
+.top-left {
+  display: flex;
+  align-items: center;
+}
+.header-logo {
+  width: 2rem;
+  height: 2rem;
+}
+.header-menu {
+  display: flex;
+}
+.top-right {
+  display: flex;
+}
+.header-search {
+}
+.header-buttons {
+}
+.header-bottom {
+}
+.nav-container {
+}
+.nav-item {
+}
