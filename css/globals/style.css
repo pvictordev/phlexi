@@ -1,27 +1,6 @@
 /* import font */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
-/* variables */
-:root {
-  /* font weight */
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
-  --font-weight-black: 900;
-
-  /* status colors */
-  --success-color: #48bb78;
-  --error-color: #f56565;
-
-  /* themes */
-  --background-light: #f7fafc;
-  --text-light: #1a202c;
-  --background-dark: #1a202c;
-  --text-dark: #f7fafc;
-  --primary-logo: ;
-}
-
 /* css reset */
 *,
 *::before,
@@ -68,9 +47,72 @@ ol {
   padding: 0;
   margin: 0;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* variables */
+:root {
+  /* font weight */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* status colors */
+  --success-color: #48bb78;
+  --error-color: #f56565;
+
+  /* gradient */
+  --gradient: linear-gradient(
+    270deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 79, 223, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+
+  /* gray colors */
+  --gray-01: #5e5e6d;
+  --gray-02: #979aaa;
+  --gray-03: #bebecc;
+  --gray-04: #d5d5e0;
+  --gray-05: #e4e4eb;
+  --gray-06: #f2f2f7;
+  --gray-07: #f7f7fa;
+
+  /* themes */
+  --background-light: #f7fafc;
+  --text-light: #1a202c;
+  --background-dark: #1a202c;
+  --text-dark: #f7fafc;
+  --primary-color: #25d5f8;
+}
 
 body {
   font-family: "Roboto", sans-serif;
   background: var(--light-background);
   color: var(--light-text);
+}
+
+/* custom classes */
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--text-dark);
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.1s linear;
+  background: var(--primary-color);
+}
+.gradient-button:hover {
+  background: var(--gradient);
 }

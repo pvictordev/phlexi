@@ -15,9 +15,9 @@
       <div class="header-container">
         <nav class="header-top">
           <div class="top-left">
-            <div class="header-logo">
+            <div class="logo">
               <img src="images/favicon.svg" alt="" />
-              <h1>Phlexi</h1>
+              <h1 class="gradient-text">Phlexi</h1>
             </div>
             <div class="header-menu">
               <span>Find Worker</span>
@@ -27,11 +27,31 @@
           </div>
           <div class="top-right">
             <div class="header-search">
-              <input type="text" />
+              <i class="search-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  role="img"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    vector-effect="non-scaling-stroke"
+                    stroke="var(--gray-02)"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-miterlimit="10"
+                    stroke-width="1.5"
+                    d="M10.688 18.377a7.688 7.688 0 100-15.377 7.688 7.688 0 000 15.377zm5.428-2.261L21 21"
+                  ></path></svg
+              ></i>
+              <input type="text" placeholder="Search" />
             </div>
             <div class="header-buttons">
-              <button>Log in</button>
-              <button>Sign up</button>
+              <a>Log in</a>
+              <a class="gradient-button">Sign up</a>
             </div>
           </div>
         </nav>
@@ -40,6 +60,7 @@
           <ul class="nav-container">
             <li class="nav-item"><a href="about.html">About</a></li>
             <li class="nav-item"><a href="contact.html">Contact</a></li>
+            <li class="nav-item"><a href="contact.html">Marketplace</a></li>
           </ul>
         </nav>
       </div>
@@ -82,32 +103,44 @@
     <!-- reusable footer -->
     <footer class="footer">
       <div class="footer-container">
-        <div class="footer-logo">
-          <img src="" alt="Logo" />
+        <div class="footer-socials">
+          <div class="logo">
+            <img src="images/favicon.svg" alt="" />
+            <h1 class="gradient-text">Phlexi</h1>
+          </div>
+          <p>© 2024 Phlexi. All rights reserved</p>
+          <div>
+            <a href=""
+              ><img
+                src="images/instagram.svg"
+                style="width: 24px; height: 24px"
+            /></a>
+            <a href=""
+              ><img src="images/facebook.svg" style="width: 24px; height: 24px"
+            /></a>
+            <a href=""
+              ><img src="images/twitter.svg" style="width: 24px; height: 24px"
+            /></a>
+          </div>
         </div>
-
-        <ul class="footer-links">
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-
-        <div class="footer-social">
+        <div class="footer-links">
           <ul>
-            <li>
-              <a href="#"><i class="facbook"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="twitter"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="instagram"></i></a>
-            </li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Marketplace</a></li>
           </ul>
         </div>
-
-        <div class="footer-bottom">
-          <p>&copy; 2024 Your Website. All Rights Reserved.</p>
+        <div class="footer-newletter">
+          <form class="newsletter-form" action="">
+            <input type="email" placeholder="Enter your email" />
+            <button>
+              <img
+                src="images/message.svg"
+                alt=""
+                style="width: 24px; height: 24px"
+              />
+            </button>
+          </form>
         </div>
       </div>
     </footer>
