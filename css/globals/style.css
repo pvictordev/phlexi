@@ -96,6 +96,11 @@ body {
   color: var(--light-text);
 }
 
+iframe {
+  border: none;
+  width: 100%;
+}
+
 /* custom classes */
 .gradient-text {
   background: var(--gradient);
