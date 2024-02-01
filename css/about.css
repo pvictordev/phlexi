@@ -167,6 +167,12 @@
 }
 .home-link {
   padding: 2rem;
+
+  a {
+    color: var(--primary-color);
+    font-weight: var(--font-weight-bold);
+    font-size: 1.5rem;
+  }
 }
 .text-blk {
   margin-top: 0px;

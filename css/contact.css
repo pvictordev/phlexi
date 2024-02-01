@@ -151,6 +151,11 @@
 /* main content */
 .home-link {
   padding: 2rem;
+  a {
+    color: var(--primary-color);
+    font-weight: var(--font-weight-bold);
+    font-size: 1.5rem;
+  }
 }
 .main {
   height: 100vh;
@@ -159,10 +164,11 @@
   display: flex;
   justify-content: center;
   padding-bottom: 10rem;
+  width: 100%;
 }
 .ffbox {
   display: flex;
-  width: 100%;
+  width: 80%;
   max-width: 800px;
   background-color: #fff;
   border: 3px solid #e4e4e9;
@@ -174,19 +180,20 @@
 
 .ffbox1 {
   flex: 1;
-  padding: 2rem;
+  padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .ffbox1 label {
   display: block;
+  margin-bottom: 8px;
 }
 
 .ffbox1 input,
 .ffbox1 textarea {
   width: 100%;
   padding: 8px;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   box-sizing: border-box;
   border-radius: 15px;
   background-color: #dcdce1;
@@ -216,15 +223,17 @@ button {
   margin-bottom: 16px;
   box-sizing: border-box;
   border-radius: 15px;
-  background-color: rgb(105, 152, 111);
-  color: rgb(183, 213, 179);
+  background: var(--primary-color);
+
+  color: var(--gray-06);
   font-size: 17px;
   font-weight: 700;
   border: #a2c2ee;
+  transition: 0.1s all linear;
 }
 
 button:hover {
-  background-color: rgb(52, 98, 58);
+  background: var(--gradient);
 }
 
 .map-div iframe {
@@ -234,7 +243,7 @@ button:hover {
 
 .gfg {
   text-align: center;
-  color: green;
+  color: var(--primary-color);
 }
 
 .map-div {
