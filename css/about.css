@@ -148,13 +148,14 @@
   }
 }
 
+/* main content */
 .responsive-container-block {
   min-height: 75px;
   height: fit-content;
   width: 100%;
   padding-top: 10px;
   padding-right: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 10rem;
   padding-left: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -164,7 +165,9 @@
   margin-left: auto;
   justify-content: flex-start;
 }
-
+.home-link {
+  padding: 2rem;
+}
 .text-blk {
   margin-top: 0px;
   margin-right: 0px;
@@ -180,7 +183,7 @@
 .responsive-container-block.bigContainer {
   padding-top: 10px;
   padding-right: 30px;
-  padding-bottom: 10px;
+  padding-bottom: 10rem;
   padding-left: 30px;
   flex-direction: column;
   align-items: center;
