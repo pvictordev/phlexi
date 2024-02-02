@@ -441,7 +441,6 @@
 }
 
 /* home page media queries */
-
 @media screen and (max-width: 1024px) {
   .header-menu {
     display: none;
@@ -472,8 +471,10 @@
   .header-search {
     align-items: flex-end;
   }
-  .header-search i,
-  .header-search input {
+  .header-top {
+    padding: 1rem;
+  }
+  .header-search {
     display: none;
   }
   .footer-container {
@@ -493,4 +494,10 @@
   }
 }
 @media screen and (max-width: 640px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  .footer {
+    padding: 2rem;
+  }
 }
