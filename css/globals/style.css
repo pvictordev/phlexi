@@ -121,3 +121,9 @@ iframe {
 .gradient-button:hover {
   background: var(--gradient);
 }
+
+/*custom components */
+/* custom header */
+@import "/css/custom/header.css";
+/* custom footer */
+@import "/css/custom/footer.css";

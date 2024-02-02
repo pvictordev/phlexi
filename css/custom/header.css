@@ -1,0 +1,133 @@
+/* header component */
+.header {
+  width: 100%;
+}
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  border-bottom: 2px solid var(--gray-03);
+}
+.top-left {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  & > img {
+    display: none;
+  }
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  & > img {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+.header-menu {
+  display: flex;
+  gap: 1.5rem;
+  color: var(--gray-01);
+  font-weight: var(--font-weight-light);
+}
+.top-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+.header-search {
+  position: relative;
+  width: 15rem;
+
+  & i {
+    position: absolute;
+    top: 0.4rem;
+    left: 0.5rem;
+  }
+  & input {
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    text-indent: 0.5rem;
+    border: 2px solid var(--gray-03);
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 1rem;
+    font-weight: var(--font-weight-light);
+    color: var(--gray-01);
+  }
+}
+.window-search {
+  display: none;
+}
+.header-buttons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.header-bottom {
+  padding: 1.2rem;
+}
+.nav-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  gap: 2rem;
+  color: var(--gray-01);
+  font-weight: var(--font-weight-light);
+}
+.nav-item {
+}
+
+/* header media query */
+@media screen and (max-width: 1024px) {
+  .header-menu {
+    display: none;
+  }
+  .top-left {
+    gap: 1rem;
+    & > img {
+      display: block;
+    }
+  }
+  .hero-container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-img {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .window-search {
+    display: block;
+  }
+  .header-search {
+    align-items: flex-end;
+  }
+  .header-top {
+    padding: 1rem;
+  }
+  .header-search {
+    display: none;
+  }
+  .gradient-button {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+}
