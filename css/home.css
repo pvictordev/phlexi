@@ -1,9 +1,5 @@
 @import "/css/globals/style.css";
 
-/* custom components */
-@import "/css/custom/header.css";
-@import "/css/custom/footer.css";
-
 /* home page */
 .main {
   width: 100%;

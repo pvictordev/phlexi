@@ -1,6 +1,12 @@
 /* import font */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
+/*custom components */
+/* custom header */
+@import "/css/custom/header.css";
+/* custom footer */
+@import "/css/custom/footer.css";
+
 /* css reset */
 *,
 *::before,
@@ -121,9 +127,3 @@ iframe {
 .gradient-button:hover {
   background: var(--gradient);
 }
-
-/*custom components */
-/* custom header */
-@import "/css/custom/header.css";
-/* custom footer */
-@import "/css/custom/footer.css";

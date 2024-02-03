@@ -1,12 +1,6 @@
 /* global css import */
 @import "/css/globals/style.css";
 
-/* custom components */
-/* header */
-@import "/css/custom/header.css";
-/* footer */
-@import "/css/custom/footer.css";
-
 .home-link {
   padding: 2rem;
   a {
