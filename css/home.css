@@ -262,9 +262,6 @@
   text-align: left;
 }
 .innerdiv {
-  grid-gap: 1.5rem;
-  grid-template-rows: repeat(2, 22rem);
-  grid-template-columns: repeat(4, 17rem);
   width: 100%;
 }
 .eachdiv {
@@ -279,26 +276,22 @@
   }
 }
 .div1 {
-  background: #3f4ac8;
-  background-image: url(https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/bg-pattern-quotation.svg);
-  background-repeat: no-repeat;
-  background-position-x: 25rem;
+  background: var(--gradient);
 }
 .div2 {
-  background: #49556b;
+  background: yellowgreen;
+  color: var(--text-dark);
 }
 .div3 {
-  background: white;
+  background: rgb(255, 201, 201);
 
   color: black;
 }
 .div4 {
-  background: white;
-
-  color: black;
+  background: rgb(206, 172, 251);
 }
 .div5 {
-  background: #18202d;
+  background: #1b3a6c;
 }
 .userdetails {
   display: flex;
@@ -320,7 +313,7 @@
   margin: 0;
 }
 .detbox .name {
-  color: hsl(0, 0%, 81%);
+  color: var(--gray-05);
   font-size: 0.9rem;
   margin-bottom: 0.1rem;
   font-weight: 600;
@@ -329,7 +322,8 @@
   color: #49505a;
 }
 .detbox .designation {
-  color: hsl(0, 0%, 81%);
+  color: var(--gray-01);
+  font-weight: var(--font-weight-medium);
   opacity: 50%;
   font-size: 0.8rem;
 }
@@ -347,10 +341,9 @@
   color: #4b5258;
 }
 .review p {
+  color: var(--text-light);
   font-size: 0.95rem;
-  color: #f3deff;
   font-weight: 500;
-  opacity: 50%;
   line-height: 1.5;
 }
 .review.dark p {

@@ -92,8 +92,8 @@ a {
 
 body {
   font-family: "Roboto", sans-serif;
-  background: var(--light-background);
-  color: var(--light-text);
+  background: var(--gray-07);
+  color: var(--gray-01);
 }
 
 iframe {
