@@ -79,20 +79,6 @@
   margin-bottom: 50px;
 }
 
-.explore {
-  font-size: 20px;
-  line-height: 28px;
-  color: #fff;
-  background: var(--primary-color);
-  padding: 10px 50px;
-  border: outset 0;
-  cursor: pointer;
-}
-
-.explore:hover {
-  background: var(--gradient);
-}
-
 .responsive-container-block.Container {
   margin: 80px auto 50px auto;
   max-width: 1320px;
