@@ -12,10 +12,10 @@ class CustomHeader extends HTMLElement {
       <nav class="header-top">
         <div class="top-left">
           <img src="images/burger.svg" alt="" />
-          <div class="logo">
+          <a href="index.html" class="logo">
             <img src="images/favicon.svg" alt="" />
             <h1 class="gradient-text">Phlexi</h1>
-          </div>
+          </a>
           <div class="header-menu">
             <span>Find Worker</span>
             <span>Find Work</span>
