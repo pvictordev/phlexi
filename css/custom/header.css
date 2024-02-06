@@ -21,7 +21,27 @@
   & > img {
     display: none;
   }
+
+  & input {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    z-index: 0;
+    opacity: 0;
+
+    display: none;
+  }
+  & label {
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 1.5rem;
+
+    display: none;
+  }
+
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -88,6 +108,11 @@
 
 
 
+/* mobile menu */
+.mobile-menu {
+  display: none;
+}
+
 /* header media query */
 @media screen and (max-width: 1024px) {
   .header-menu {
@@ -95,7 +120,12 @@
   }
   .top-left {
     gap: 1rem;
-    & > img {
+
+    & label {
+      display: block;
+    }
+
+    & input {
       display: block;
     }
   }
