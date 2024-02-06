@@ -20,16 +20,12 @@
   gap: 1rem;
 }
 
-.gradient-text {
-}
 .footer-links {
   & ul {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
-}
-.footer-newletter {
 }
 .newsletter-form {
   display: flex;
