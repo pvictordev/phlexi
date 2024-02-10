@@ -63,8 +63,7 @@
   flex-direction: column;
   gap: 2rem;
 }
-.feature-text {
-}
+
 .feature-cards {
   display: flex;
   gap: 2rem;
