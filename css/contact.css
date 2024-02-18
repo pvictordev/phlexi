@@ -11,11 +11,15 @@
   }
 }
 
-.main-container {
+.contact {
+  padding: 8rem 0 0 0;
+}
+
+.contact-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10rem;
+  margin: 0 2rem 10rem 2rem;
 }
 .ffbox {
   display: flex;
@@ -24,14 +28,13 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   border-radius: 10px;
-  flex-wrap: wrap;
-  width: 45%;
+  width: 62rem;
 }
 
 .ffbox1 {
-  flex: 1;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
 }
 
 .ffbox1 label {
@@ -67,37 +70,14 @@
   background-color: #eee;
 }
 
-button {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  box-sizing: border-box;
-  border-radius: 1rem;
-  background: var(--primary-color);
-
-  color: var(--gray-06);
-  font-size: 17px;
-  font-weight: 700;
-  border: #a2c2ee;
-  transition: 0.1s all linear;
-}
-
-button:hover {
-  background: var(--gradient);
-}
-
 .map-div iframe {
   border: 0;
-  padding: 0.5rem;
+  height: 100%;
 }
 
 .gfg {
   text-align: center;
   color: var(--primary-color);
-}
-
-.map-div {
-  background-color: rgb(152, 178, 234);
 }
 
 .window-search {
@@ -114,54 +94,16 @@ button:hover {
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .header-menu {
-    display: none;
-  }
-  .top-left {
-    gap: 1rem;
-    & > img {
-      display: block;
-    }
-  }
-  .hero-container {
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-  }
-  .hero-img {
-    justify-content: center;
-  }
-}
 @media screen and (max-width: 768px) {
   .ffbox {
     flex-direction: column;
+    height: 62rem;
   }
-  .window-search {
-    display: block;
+  .ffbox1 {
+    width: 100%;;
   }
-  .header-search {
-    align-items: flex-end;
+  .map-div {
+    height: 20rem;
   }
-  .header-top {
-    padding: 1rem;
-  }
-  .header-search {
-    display: none;
-  }
-  .footer-container {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
-  .footer-socials {
-    align-items: center;
-  }
-  .gradient-button {
-    display: none;
-  }
-  .feature-cards {
-    flex-direction: column;
-  }
+  
 }

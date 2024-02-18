@@ -53,7 +53,7 @@
   align-items: flex-start;
 }
 
-/* featured section */
+/* feature section */
 .section-feature {
   width: 100%;
   padding: 0rem 0 10rem 0;
@@ -209,6 +209,14 @@
   text-decoration: none;
 }
 
+/* Benefits section  */
+.section-benefits {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 0 10rem 0;
+}
+
 /* FAQ section */
 .accordion {
   display: flex;
@@ -282,15 +290,7 @@
 
 /* home page media queries */
 @media screen and (max-width: 1024px) {
-  .header-menu {
-    display: none;
-  }
-  .top-left {
-    gap: 1rem;
-    & > img {
-      display: block;
-    }
-  }
+
   .hero-container {
     flex-direction: column-reverse;
     justify-content: center;
@@ -311,21 +311,7 @@
   .header-search {
     align-items: flex-end;
   }
-  .header-top {
-    padding: 1rem;
-  }
-  .header-search {
-    display: none;
-  }
-  .footer-container {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
-  .footer-socials {
-    align-items: center;
-  }
+  
   .gradient-button {
     display: none;
   }
@@ -337,7 +323,5 @@
   .hero-text h1 {
     font-size: 2.5rem;
   }
-  .footer {
-    padding: 2rem;
-  }
+  
 }
