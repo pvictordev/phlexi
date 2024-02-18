@@ -20,7 +20,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
-  padding: 0rem 0 10rem 0;
+  padding: 8rem 0 10rem 0;
 }
 .hero-container {
   display: flex;
