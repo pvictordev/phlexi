@@ -6,3 +6,6 @@ This project represents a Freelance Services Platform built during the training 
 
 ### Stage #1 (HTML & CSS)
 Using plain HTML and CSS, we create the initial interface. This stage forms the basis for further development, shaping the platform's overall look and feel.
+
+
+

@@ -33,7 +33,6 @@
 
 .ffbox1 {
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 50%;
 }
 
@@ -77,7 +76,7 @@
 
 .gfg {
   text-align: center;
-  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 .window-search {
