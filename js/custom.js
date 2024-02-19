@@ -18,13 +18,13 @@ export class CustomHeader extends HTMLElement {
             </a>
             <!-- desktop menu -->
             <div class="header-menu">
-              <span>Find Worker</span>
-              <span>Find Work</span>
-              <span>Why Phlexi</span>
+              <a href="workers.html">Find Worker</a>
+              <a>Find Work</a>
+              <a>Why Phlexi</a>
             </div>
             <!-- Mobile menu HTML added here -->
             <nav class="mobile-menu">
-              <a href="" class="mobile-menu-item">Find Worker</a>
+              <a href="workers.html" class="mobile-menu-item">Find Worker</a>
               <a href="" class="mobile-menu-item">Find Work</a>
               <a href="" class="mobile-menu-item">Why Phlexi</a>
             </nav>

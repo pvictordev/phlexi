@@ -24,10 +24,14 @@ export function changeContent(option) {
     const options = document.querySelectorAll('.option');
     options.forEach(option => {
         option.classList.remove('active-option');
+        option.classList.remove('gradient-text');
+
     });
 
     // Apply active-option
     const clickedOption = document.querySelector(`.option[data-option="${option}"]`);
     clickedOption.classList.add('active-option');
+    clickedOption.classList.add('gradient-text');
+
 
 };

@@ -247,7 +247,6 @@
 .active-option {
   font-weight: var(--font-weight-black);
   text-decoration: underline;
-  color: var(--gradient-text);
 }
 .benefits-card {
   display: flex;
