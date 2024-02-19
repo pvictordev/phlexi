@@ -18,5 +18,16 @@ export function changeContent(option) {
             break;
         default:
             break;
-    }
+    }    
+
+    // Remove active-option
+    const options = document.querySelectorAll('.option');
+    options.forEach(option => {
+        option.classList.remove('active-option');
+    });
+
+    // Apply active-option
+    const clickedOption = document.querySelector(`.option[data-option="${option}"]`);
+    clickedOption.classList.add('active-option');
+
 };

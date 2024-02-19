@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // slideshow functionality
 document.addEventListener('DOMContentLoaded', function() {
     const options = document.querySelectorAll('.option');
+
     options.forEach(option => {
         option.addEventListener('click', function() {
             const optionType = this.dataset.option;
