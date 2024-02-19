@@ -42,12 +42,11 @@ if(form) {
 }
 
 //fetch workers data
-
 fetchWorkers();
 
 async function fetchWorkers() {
 
-    const url = 'https://jsonplaceholder.typicode.com/users';
+    const url = 'https://randomuser.me/api/?results=10';
     try {
         const response = await fetch(url);
         
@@ -55,7 +54,7 @@ async function fetchWorkers() {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log(data);
+        console.log(data.results);
     }
     catch (error) {
         console.error('Error fetching workers', error);
