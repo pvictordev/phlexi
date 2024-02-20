@@ -253,6 +253,7 @@
   position: relative;
   background: var(--gradient);
   height: 20rem;
+  width: 50rem;
   border-radius: 1rem;
 
   & p {
@@ -266,6 +267,127 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+  }
+}
+
+/* history section */
+.section-history {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 0 10rem 0;
+}
+
+.history-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.history-content {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+.history-options {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  & li {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  & li:hover {
+    text-decoration: underline;
+  }
+}
+.active-option {
+  font-weight: var(--font-weight-black);
+  text-decoration: underline;
+}
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.button-slider {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 20px 5px;
+  color: black;
+  font-size: 2rem;
+}
+
+button span {
+  position: relative;
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+.previous:hover span {
+  transform: translateX(-10px) scale(1.2);
+}
+
+.next:hover span {
+  transform: translateX(10px) scale(1.2);
+}
+
+.slider-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.slider-nav li {
+  display: flex;
+  flex: 2;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  display: none;
+  box-shadow: 10px 10px 20px 0 rgba(94,47,59,0.2);
+}
+
+img.active {
+  display: block;
+  animation: fadeImg 0.8s;
+}
+
+.slider-nav .arrow {
+  flex: 0 0 15%;
+}
+
+.slider-nav a {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slider-nav span {
+  display: block;
+  width: 100%;
+}
+
+@keyframes fadeImg {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
@@ -379,8 +501,5 @@
   }
 }
 @media screen and (max-width: 640px) {
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
   
 }

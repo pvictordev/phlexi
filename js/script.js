@@ -2,8 +2,10 @@
 import { CustomHeader, CustomFooter } from "./custom.js";
 // import validation function
 import { validateForm } from './validation.js';
+// import options functionality
+import { changeContent } from './options.js';
 // import slideshow functionality
-import { changeContent } from './slideshow.js';
+import { showNextItem, showPreviousItem, keyPress } from './slider.js';
 
 //header and footer
 document.addEventListener("DOMContentLoaded", function() {
@@ -17,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     body.appendChild(footer);
 });
 
-// slideshow functionality
+// options functionality
 document.addEventListener('DOMContentLoaded', function() {
     const options = document.querySelectorAll('.option');
 
@@ -28,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+//slideshow functionality
 
 //validate form
 const form = document.getElementById('contact-form');
