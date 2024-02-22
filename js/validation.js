@@ -29,3 +29,5 @@ export function validateForm(form) {
     alert('Form submitted successfully!');
     return true;
 }
+
+//counter for number of submissions

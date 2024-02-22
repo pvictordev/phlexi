@@ -320,16 +320,23 @@
 
 .slider-nav {
   margin-top: 1.5rem;
+
+  & li {
+    border: 2px solid var(--gray-03);
+    padding: 1rem;
+    border-radius: 1rem;
+  }
 }
+
 .arrow button {
   border: none;
   background-color: transparent;
   padding: 0;
   margin: 0;
-}
-
-.arrow {
-
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--gray-03);
+  font-weight: var(--font-weight-black);
 }
 
 .slider {
