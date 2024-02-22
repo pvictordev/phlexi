@@ -33,5 +33,15 @@ export function changeContent(option) {
     clickedOption.classList.add('active-option');
     clickedOption.classList.add('gradient-text');
 
-
 };
+
+document.addEventListener('DOMContentLoaded', function() {
+    const options = document.querySelectorAll('.option');
+
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            const optionType = this.dataset.option;
+            changeContent(optionType);
+        });
+    });
+});

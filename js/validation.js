@@ -1,5 +1,8 @@
+//import custom
+import "./custom.js";
+
 // formValidation.js
-export function validateForm(form) {
+function validateForm(form) {
     const fullName = form.querySelector('#fullName').value.trim();
     const email = form.querySelector('#email').value.trim();
     const mobile = form.querySelector('#mobile').value.trim();
@@ -31,3 +34,14 @@ export function validateForm(form) {
 }
 
 //counter for number of submissions
+const form = document.getElementById('contact-form');
+
+if(form) {
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        if (validateForm(form)) {
+            form.submit();
+        }
+    });
+}

@@ -132,3 +132,13 @@ export class CustomHeader extends HTMLElement {
   }
   customElements.define("custom-footer", CustomFooter);
   
+  document.addEventListener("DOMContentLoaded", function() {
+    const header = new CustomHeader();
+    const footer = new CustomFooter();
+
+    const body = document.querySelector("body");
+
+    body.insertBefore(header, body.firstChild);
+
+    body.appendChild(footer);
+});
