@@ -477,6 +477,11 @@ img.active {
   .feature-cards {
     flex-direction: column;
   }
+  .benefits-card {
+    width: 100%;
+  }
+
+
 }
 @media screen and (max-width: 640px) {
   

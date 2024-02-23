@@ -1,10 +1,13 @@
 // slider.js
-const items = document.querySelectorAll('img');
+const items = document.querySelectorAll('.img');
 const itemCount = items.length;
 const nextItem = document.querySelector('.next');
 const previousItem = document.querySelector('.previous');
 
 let count = 0;
+
+// initial active item
+items[count].classList.add('active')
 
 export function showNextItem() {
   items[count].classList.remove('active');

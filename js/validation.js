@@ -58,6 +58,10 @@ if(form) {
         e.preventDefault();
 
         if (validateForm(form)) {
+            fullName.value = '';
+            email.value = '';
+            mobile.value = '';
+            msg.value = '';
             count++;
             cnt.innerHTML = count;
             // update local storage
