@@ -1,5 +1,5 @@
 //import custom.js
-import "./custom.js"
+import "./features/custom.js";
 
 //fetch workers data
 async function fetchWorkers() {
@@ -49,6 +49,3 @@ export function populateWorkersUI(workers) {
         workersContent.appendChild(card);
     });
 }
-
-
-

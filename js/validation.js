@@ -1,7 +1,7 @@
 //import custom
-import "./custom.js";
+import "./features/custom.js"
 
-// formValidation.js
+// validation
 function validateForm(form) {
     const fullName = form.querySelector('#fullName').value.trim();
     const email = form.querySelector('#email').value.trim();
@@ -29,19 +29,40 @@ function validateForm(form) {
         return false;
     }
 
+    // Create a JSON object
+    const formData = {
+        fullName: fullName,
+        email: email,
+        mobile: mobile,
+        message: message
+    };
+
+    //console.log(formData);
+    localStorage.setItem('formData', JSON.stringify(formData));
+
     alert('Form submitted successfully!');
     return true;
 }
 
-//counter for number of submissions
+// counter for form submissions
+let count = localStorage.getItem('count') ? parseInt(localStorage.getItem('count')) : 0;
+
+const cnt = document.getElementById('counter');
 const form = document.getElementById('contact-form');
 
+// initialize counter
+cnt.innerHTML = count;
+
 if(form) {
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
 
         if (validateForm(form)) {
-            form.submit();
+            count++;
+            cnt.innerHTML = count;
+            // update local storage
+            localStorage.setItem('count', count.toString());
         }
-    });
+    });   
 }
+
