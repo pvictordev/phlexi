@@ -61,17 +61,17 @@
     }
 }
 
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1280px) {
     .workers-content {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .workers-content {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 @media screen and (max-width: 640px) {
     .workers-content {
         grid-template-columns: 1fr;

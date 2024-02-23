@@ -19,13 +19,12 @@ export function changeContent(option) {
         default:
             break;
     }    
-
+    
     // Remove active-option
     const options = document.querySelectorAll('.option');
     options.forEach(option => {
         option.classList.remove('active-option');
         option.classList.remove('gradient-text');
-
     });
 
     // Apply active-option

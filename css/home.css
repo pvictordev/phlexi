@@ -253,7 +253,8 @@
   position: relative;
   background: var(--gradient);
   height: 20rem;
-  width: 50rem;
+  /* width: 50rem; */
+  width: 80%;
   border-radius: 1rem;
 
   & p {
@@ -328,15 +329,21 @@
   }
 }
 
-.arrow button {
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  margin: 0;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--gray-03);
-  font-weight: var(--font-weight-black);
+.arrow {
+  transition: all 0.2s ease-in-out;
+  button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gray-03);
+    font-weight: var(--font-weight-black);
+  }
+}
+.arrow:hover {
+  scale: 0.90;
 }
 
 .slider {
@@ -455,6 +462,9 @@ img.active {
   .benefits-content {
     flex-direction: column;
   }
+  .benefits-card {
+    width: 100%;
+  }
   .benefits-options {
     width: 100%;
   }
@@ -477,12 +487,13 @@ img.active {
   .feature-cards {
     flex-direction: column;
   }
-  .benefits-card {
-    width: 100%;
-  }
-
 
 }
 @media screen and (max-width: 640px) {
-  
+    .benefits-options {
+      gap: 1rem;
+    }
+    .benefits-options li {
+      font-size: 1.5rem;
+    } 
 }
