@@ -58,7 +58,7 @@ export class CustomHeader extends HTMLElement {
             <div class="header-buttons">
               <img class="window-search" src="images/search.svg" alt="" />
               <a>Log in</a>
-              <a class="gradient-button">Sign up</a>
+              <a class="sign-in gradient-button">Sign up</a>
             </div>
           </div>
         </nav>
