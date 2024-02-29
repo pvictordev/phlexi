@@ -1,4 +1,4 @@
-export function changeContent(option) {
+function changeContent(option) {
     const benefitsCard = document.getElementById('benefits-card');
     const paragraph = benefitsCard.querySelector('p');
     const icon = benefitsCard.querySelector('.benefits-icon');

@@ -9,7 +9,7 @@ let count = 0;
 // initial active item
 items[count].classList.add('active')
 
-export function showNextItem() {
+ function showNextItem() {
   items[count].classList.remove('active');
 
   if(count < itemCount - 1) {
@@ -22,7 +22,7 @@ export function showNextItem() {
   console.log(count);
 }
 
-export function showPreviousItem() {
+ function showPreviousItem() {
   items[count].classList.remove('active');
 
   if(count > 0) {
@@ -35,7 +35,7 @@ export function showPreviousItem() {
   console.log(count);
 }
 
-export function keyPress(e) {
+ function keyPress(e) {
   e = e || window.event;
   
   if (e.keyCode == '37') {

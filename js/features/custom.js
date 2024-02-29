@@ -1,5 +1,5 @@
 //header
-export class CustomHeader extends HTMLElement {
+class CustomHeader extends HTMLElement {
     constructor() {
       super();
     }
@@ -78,7 +78,7 @@ export class CustomHeader extends HTMLElement {
   customElements.define("custom-header", CustomHeader);
   
   //footer
-  export class CustomFooter extends HTMLElement {
+class CustomFooter extends HTMLElement {
     constructor() {
       super();
     }
