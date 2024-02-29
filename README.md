@@ -7,5 +7,8 @@ This project represents a Freelance Services Platform built during the training 
 ### Stage #1 (HTML & CSS)
 Using plain HTML and CSS, we create the initial interface. This stage forms the basis for further development, shaping the platform's overall look and feel.
 
+### Stage #2 (JavaScript)
+Introducing JavaScript functionality to enhance interactivity, we have added functionalities like a slideshow, implemented form validation, created a new page where we fetched data from a public API, added form validation together with saving data as JSON in local storage and included a counter to count each submission.
+
 
 
