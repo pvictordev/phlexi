@@ -18,13 +18,13 @@ class CustomHeader extends HTMLElement {
             </a>
             <!-- desktop menu -->
             <div class="header-menu">
-              <a href="workers.html">Top Workers</a>
+              <a href="market.html">Marketplace</a>
               <a>Find Work</a>
               <a>Why Phlexi</a>
             </div>
             <!-- Mobile menu HTML added here -->
             <nav class="mobile-menu">
-              <a href="workers.html" class="mobile-menu-item">Top Workers</a>
+              <a href="market.html" class="mobile-menu-item">Marketplace</a>
               <a href="" class="mobile-menu-item">Find Work</a>
               <a href="" class="mobile-menu-item">Why Phlexi</a>
             </nav>
@@ -67,7 +67,7 @@ class CustomHeader extends HTMLElement {
           <ul class="nav-container">
             <li class="nav-item"><a href="about.html">About</a></li>
             <li class="nav-item"><a href="contact.html">Contact</a></li>
-            <li class="nav-item"><a href="market.html">Marketplace</a></li>
+            <li class="nav-item"><a href="workers.html">Workers</a></li>
           </ul>
         </nav>
       </div>
@@ -132,13 +132,13 @@ class CustomFooter extends HTMLElement {
   }
   customElements.define("custom-footer", CustomFooter);
   
-  document.addEventListener("DOMContentLoaded", function() {
-    const header = new CustomHeader();
-    const footer = new CustomFooter();
+//   document.addEventListener("DOMContentLoaded", function() {
+//     const header = new CustomHeader();
+//     const footer = new CustomFooter();
 
-    const body = document.querySelector("body");
+//     const body = document.querySelector("body");
 
-    body.insertBefore(header, body.firstChild);
+//     body.insertBefore(header, body.firstChild);
 
-    body.appendChild(footer);
-});
+//     body.appendChild(footer);
+// });
