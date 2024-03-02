@@ -6,12 +6,15 @@
   display: flex;
   justify-content: center;
 }
-.main-container {
+
+
+/* dead code because now we use bootstrap container */
+/* .main-container {
   width: 80rem;
   display: flex;
   flex-direction: column;
   padding: 2rem;
-}
+} */
 
 /* hero section */
 .section-hero {
