@@ -8,10 +8,10 @@ class CustomHeader extends HTMLElement {
       this.innerHTML = `
       <nav class="navbar navbar-expand-lg bg-light fixed-top">
       <div class="container">
-        <div class="navbar-brand logo" href="">
+        <a class="navbar-brand logo" href="index.html">
           <img alt="Free Frontend Logo" class="img-fluid" height="" src="assets/favicon.svg">
           <h1 class="gradient-text">Phlexi</h1>
-        </div> 
+        </a> 
         <button aria-controls="navbarSupportedContent9" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbarSupportedContent9" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-collapse collapse" id="navbarSupportedContent9" style="">
