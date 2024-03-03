@@ -10,7 +10,7 @@ class CustomHeader extends HTMLElement {
       <div class="container">
         <a class="navbar-brand logo" href="index.html">
           <img alt="Free Frontend Logo" class="img-fluid" height="" src="assets/favicon.svg">
-          <h1 class="gradient-text">Phlexi</h1>
+          <span class="gradient-text fw-bold fs-2">Phlexi</span>
         </a> 
         <button aria-controls="navbarSupportedContent9" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbarSupportedContent9" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span>
         </button>
@@ -26,7 +26,7 @@ class CustomHeader extends HTMLElement {
           </form>
           <ul class="navbar-nav ms-auto my-2 my-lg-0">
             <li class="nav-item me-4">
-              <a class="nav-link" href="about.html">About</a>
+              <a class="nav-link" href="blog.html">Blog</a>
             </li>
             <li class="nav-item me-4">
               <a class="nav-link" href="contact.html">Contact</a>
@@ -42,6 +42,30 @@ class CustomHeader extends HTMLElement {
                 <a class="dropdown-item" href="#">Why Phlexi</a>
               </div>
             </li>
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle btn" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <svg width="24px" height="24px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                  <title>dark-mode</title>
+                  <g id="Layer_2" data-name="Layer 2">
+                    <g id="Icons">
+                      <g>
+                        <rect width="48" height="48" fill="none"/>
+                        <g>
+                          <path d="M14,24A10,10,0,0,0,24,34V14A10,10,0,0,0,14,24Z"/>
+                          <path d="M24,2A22,22,0,1,0,46,24,21.9,21.9,0,0,0,24,2ZM6,24A18.1,18.1,0,0,1,24,6v8a10,10,0,0,1,0,20v8A18.1,18.1,0,0,1,6,24Z"/>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdown03">
+                <button class="dropdown-item" id="light-theme" >Light</button>
+                <button class="dropdown-item" id="dark-theme" >Dark</button>
+                <button class="dropdown-item">Auto</button>
+              </div>
+            </li>  
           </ul>
         </div>
       </div>
@@ -58,7 +82,7 @@ class CustomFooter extends HTMLElement {
     }
     connectedCallback() {
       this.innerHTML = `
-      <footer class="footer-section pt-5">
+      <footer class="footer-section pt-7">
       <div class="footer">
         <div class="row justify-content-between pt-4 pb-3 pb-lg-5">
           <div class="col-12 col-lg-7">
@@ -95,10 +119,10 @@ class CustomFooter extends HTMLElement {
         <div class="border-top d-lg-none"></div>
         <div class="d-lg-flex justify-content-between py-3">
           <div class="large">
-            <span class="d-block d-lg-inline text-muted mb-2 mb-lg-0 me-lg-5">© 2023 FreeFrontend.dev. All rights reserved.</span> <a class="d-block d-lg-inline text-muted mb-2 mb-lg-0 me-lg-5" href="">Privacy Policy</a> <a class="d-block d-lg-inline text-muted mb-2 mb-lg-0 me-lg-5" href="">Terms of Service</a>
+            <span class="d-block d-lg-inline text-muted mb-2 mb-lg-0 me-lg-5">© 2024 pvictordev. All rights reserved.</span> <a class="d-block d-lg-inline text-muted mb-2 mb-lg-0 me-lg-5" href="">Privacy Policy</a> <a class="d-block d-lg-inline text-muted mb-2 mb-lg-0 me-lg-5" href="">Terms of Service</a>
           </div>
           <div class="large">
-            <span class="text-muted"><a class="text-muted" href="">Proudly built with Bootstrap</a></span>
+            <span class="text-muted"><a class="text-muted" href=""> Built with Bootstrap</a></span>
           </div>
         </div>
       </div>
@@ -108,9 +132,10 @@ class CustomFooter extends HTMLElement {
   }
   customElements.define("custom-footer", CustomFooter);
 
+  // navbar actions
   document.addEventListener("DOMContentLoaded", function() {
 
-    
+    // create and insert header and footer
     const header = new CustomHeader();
     const footer = new CustomFooter();
 
@@ -120,18 +145,48 @@ class CustomFooter extends HTMLElement {
 
     body.appendChild(footer);
 
-    // navbar dropdown
-    var dropdownToggle = document.querySelector('.dropdown-toggle');
+    // dropdown
+    var dropdownToggle = document.querySelectorAll('.dropdown-toggle');
   
-    dropdownToggle.addEventListener('click', function() {
-      var dropdownMenu = this.nextElementSibling; 
+    for(let i = 0; i < dropdownToggle.length; i++) {
+      dropdownToggle[i].addEventListener('click', function() {
+        let dropdownMenu = this.nextElementSibling;
+        
+        if (dropdownMenu.classList.contains('show')) {
+          dropdownMenu.classList.remove('show');
+          
+        } else {
+          dropdownMenu.classList.add('show');
+           
+        }
+      });
+    }
 
-      if (dropdownMenu.classList.contains('show')) {
-          dropdownMenu.classList.remove('show'); 
-      } else {
-          dropdownMenu.classList.add('show'); 
+    // theme toggle
+    //dark theme
+    let dark = document.getElementById('dark-theme');
+    let light = document.getElementById('light-theme');
+
+    light.addEventListener('click', function() {
+
+      if(document.body.classList.contains('dark-theme')) {
+        document.body.classList.remove('dark-theme');
+      }
+     
+    });
+    
+    dark.addEventListener('click', function() {
+
+      if(document.body.classList.contains('dark-theme')) {
+        document.body.classList.remove('dark-theme');
+      }
+      else {
+        document.body.classList.add('dark-theme');
       }
     });
+    
 
-});
+  });
+
+  
 

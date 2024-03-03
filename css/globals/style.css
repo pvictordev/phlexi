@@ -1,14 +1,14 @@
 /* import font */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"); */
 
 /*custom components */
 /* custom header */
-@import "/css/custom/header.css";
+/*@import "/css/custom/header.css"; */
 /* custom footer */
-@import "/css/custom/footer.css";
+/* @import "/css/custom/footer.css";  */
 
 /* css reset */
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -55,7 +55,7 @@ ol {
 a {
   text-decoration: none;
   color: inherit;
-}
+} */
 
 /* variables */
 :root {
@@ -96,9 +96,9 @@ a {
 }
 
 body {
+  transition: all 0.1s ease-in-out;
   font-family: "Roboto", sans-serif;
-  background: var(--gray-07);
-  color: var(--gray-01);
+  color: var(--text-light);
 }
 
 iframe {
@@ -106,7 +106,68 @@ iframe {
   width: 100%;
 }
 
-/* custom classes */
+/* theme */
+/* @media (prefers-color-scheme: dark) {
+  body {
+      background-color: #333;
+      color: #fff;
+  }
+} */
+
+
+/* dark mode */
+.dark-theme {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.dark-theme {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+
+
+/* spacing extension */
+.p-7 {
+  padding: 7rem;
+}
+.py-7 {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+.px-7 {
+  padding-left: 7rem;
+  padding-right: 7rem;
+}
+.pt-7 {
+  padding-top: 7rem;
+}
+.pb-7 {
+  padding-bottom: 7rem;
+}
+
+.pt-10 {
+  padding-top: 10rem;
+}
+
+/* custom components */
+.footer {
+  width: 100%;
+  background: var(--gray-06);
+  padding: 3.2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  & > img {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
 .gradient-text {
   background: var(--gradient);
   -webkit-background-clip: text;

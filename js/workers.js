@@ -3,7 +3,7 @@ import "./features/custom.js";
 
 //fetch workers data
 async function fetchWorkers() {
-    const url = 'https://randomuser.me/api/?results=10';
+    const url = 'https://randomuser.me/api/?results=20';
     try {
         const response = await fetch(url);
         
