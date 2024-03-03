@@ -1,8 +1,8 @@
 //import custom.js
 import "./features/custom.js";
 
-//fetch workers data
-async function fetchWorkers() {
+//fetch team data
+async function fetchteam() {
     const url = 'https://randomuser.me/api/?results=20';
     try {
         const response = await fetch(url);
@@ -13,38 +13,37 @@ async function fetchWorkers() {
         const data = await response.json();
         return data.results;
     } catch (error) {
-        console.error('Error fetching workers', error);
+        console.error('Error fetching team', error);
         return []; 
     }
 }
 
-fetchWorkers()
-    .then(workers => {
-        console.log(workers);
-        populateWorkersUI(workers);
+fetchteam()
+    .then(team => {
+        console.log(team);
+        populateteamUI(team);
     })
     .catch(error => {
         console.error('Error:', error);
     });
-    console.log(workers)
 
-export function populateWorkersUI(workers) {
-    const workersContent = document.querySelector('.workers-content');
+export function populateteamUI(team) {
+    const teamContent = document.querySelector('.team-content');
 
-    workers.forEach(worker => {
+    team.forEach(member => {
         const card = document.createElement('div');
-        card.classList.add('workers-card');
+        card.classList.add('team-card');
 
         card.innerHTML = `
-            <div class="card workers-card text-center mb-3">
+            <div class="card team-card text-center mb-3">
                     <div class="card-img mb-4">
-                        <img class="card-img img-fluid" src="${worker.picture.large}" alt="${worker.name.first} ${worker.name.last}">
+                        <img class="card-img img-fluid" src="${member.picture.large}" alt="${member.name.first} ${member.name.last}">
                     </div>
 
                     <div class="card-text">
-                        <h3 class="fw-bold">${worker.name.first} ${worker.name.last}</h3>
+                        <h3 class="fw-bold">${member.name.first} ${member.name.last}</h3>
                         <p class="text-muted">
-                            ${worker.email}
+                            ${member.email}
                         </p>
                         <div class="d-flex justify-content-center mt-4">
                             <a class="btn btn-sm me-2" href=""><svg class="bi bi-facebook" fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -56,6 +55,6 @@ export function populateWorkersUI(workers) {
                     
                 </div>
         `;
-        workersContent.appendChild(card);
+        teamContent.appendChild(card);
     });
 }

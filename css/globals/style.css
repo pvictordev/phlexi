@@ -1,61 +1,9 @@
-/* import font */
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"); */
-
 /*custom components */
 /* custom header */
-/*@import "/css/custom/header.css"; */
+@import "/css/custom/header.css";
 /* custom footer */
-/* @import "/css/custom/footer.css";  */
+@import "/css/custom/footer.css"; 
 
-/* css reset */
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-ul,
-ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-} */
 
 /* variables */
 :root {
@@ -106,45 +54,23 @@ iframe {
   width: 100%;
 }
 
-/* theme */
-/* @media (prefers-color-scheme: dark) {
-  body {
-      background-color: #333;
-      color: #fff;
-  }
-} */
-
-
-/* dark mode */
-.dark-theme {
-  background-color: var(--background-dark);
-  color: var(--text-dark);
-}
-
-.dark-theme {
-  background-color: var(--background-dark);
-  color: var(--text-dark);
-}
-
-
-
 /* spacing extension */
 .p-7 {
-  padding: 7rem;
+  padding: 5rem;
 }
 .py-7 {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 .px-7 {
-  padding-left: 7rem;
-  padding-right: 7rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 .pt-7 {
-  padding-top: 7rem;
+  padding-top: 5rem;
 }
 .pb-7 {
-  padding-bottom: 7rem;
+  padding-bottom: 5rem;
 }
 
 .pt-10 {
@@ -152,6 +78,10 @@ iframe {
 }
 
 /* custom components */
+.navbar {
+  background: var(--gray-06);
+}
+
 .footer {
   width: 100%;
   background: var(--gray-06);
@@ -187,4 +117,29 @@ iframe {
 }
 .gradient-button:hover {
   background: var(--gradient);
+}
+
+/* theme */
+/* @media (prefers-color-scheme: dark) {
+  body {
+      background-color: #333;
+      color: #fff;
+  }
+} */
+
+
+/* dark mode */
+.dark-theme {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.dark-theme {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.dark-theme {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
 }

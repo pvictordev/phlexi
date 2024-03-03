@@ -6,7 +6,7 @@ class CustomHeader extends HTMLElement {
     }
     connectedCallback() {
       this.innerHTML = `
-      <nav class="navbar navbar-expand-lg bg-light fixed-top">
+      <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a class="navbar-brand logo" href="index.html">
           <img alt="Free Frontend Logo" class="img-fluid" height="" src="assets/favicon.svg">
@@ -32,7 +32,7 @@ class CustomHeader extends HTMLElement {
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
             <li class="nav-item me-4">
-              <a class="nav-link" href="workers.html">Workers</a>
+              <a class="nav-link" href="team.html">Team</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle btn" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
