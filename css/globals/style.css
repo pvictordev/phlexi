@@ -54,6 +54,11 @@ iframe {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* spacing extension */
 .p-7 {
   padding: 5rem;

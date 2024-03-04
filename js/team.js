@@ -1,9 +1,10 @@
-//import custom.js
-import "./features/custom.js";
-//import themeToggle.js
-import "./features/themeToggle.js";
-//import dropdown.js
-import "./features/dropdown.js";
+// //import custom.js
+// import "./features/custom.js";
+// //import themeToggle.js
+// import "./features/themeToggle.js";
+// //import dropdown.js
+// import "./features/dropdown.js";
+import "./script.js";
 
 //fetch team data
 async function fetchteam() {
