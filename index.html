@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- globals css !-->
-    <link rel="stylesheet" href="css/globals/style.css" /> 
+    <link rel="stylesheet" href="css/home.css" /> 
     
     <!-- favicon.svg -->
     <link rel="icon" href="assets/favicon.svg" />
@@ -16,36 +16,12 @@
     <title>Home</title>
   </head>
   <body>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle btn" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <svg  width="24px" height="24px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-          <title>dark-mode</title>
-          <g id="Layer_2" data-name="Layer 2">
-            <g id="Icons">
-              <g>
-                <rect width="48" height="48" fill="none"/>
-                <g>
-                  <path d="M14,24A10,10,0,0,0,24,34V14A10,10,0,0,0,14,24Z"/>
-                  <path d="M24,2A22,22,0,1,0,46,24,21.9,21.9,0,0,0,24,2ZM6,24A18.1,18.1,0,0,1,24,6v8a10,10,0,0,1,0,20v8A18.1,18.1,0,0,1,6,24Z"/>
-                </g>
-              </g>
-            </g>
-          </g>
-        </svg>
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdown03">
-        <a class="dropdown-item theme-toggle" id="toggleTheme dropdown-item" href="market.html">Light</a>
-        <a class="dropdown-item" href="#">Dark</a>
-        <a class="dropdown-item" href="#">Auto</a>
-    </div>
-    </li>
-
     <!-- main content -->
     <main class="main">
       <div class="container">
 
         <!-- hero section -->
-        <section class="pb-5 pt-7" id="home">
+        <section class="pb-5 pt-8" id="home">
             <div class="row align-items-center">
               <div class="col-lg-6 mb-4 mb-lg-0">
                 <h1 class="display-3 fw-bold">You Opportunities Start With <span class="gradient-text">Phlexi</span></h1>
@@ -92,11 +68,11 @@
         </section>
        
         <!-- feature section -->
-        <section class="py-5" id="feature">
+        <section class="py-5" id="features">
           <div class="">
             <div class="row justify-content-center text-center mb-3">
               <div class="col-lg-8 col-xl-7">
-                <span class="text-muted">Features</span>
+                <span class="text-secondary">Features</span>
                 <h2 class="display-5 fw-bold">Our Features</h2>
                 <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit Consequatur quidem eius cum voluptatum quasi delectus.</p>
               </div>
@@ -107,8 +83,8 @@
                 <div class="row gy-4">
                   <div class="col-md-6">
                     <div class="d-flex">
-                      <div class="text-muted">
-                        <svg class="bi bi-aspect-ratio" fill="currentColor" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
+                      <div class="text-secondary">
+                        <svg class="bi bi-aspect-ratio" fill="#5e5e6d" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
                         <path d="M2 4.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H3v2.5a.5.5 0 0 1-1 0v-3zm12 7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H13V8.5a.5.5 0 0 1 1 0v3z"></path></svg>
                       </div>
@@ -120,8 +96,8 @@
                   </div>
                   <div class="col-md-6">
                     <div class="d-flex">
-                      <div class="text-muted">
-                        <svg class="bi bi-emoji-wink" fill="currentColor" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
+                      <div class="text-secondary">
+                        <svg class="bi bi-emoji-wink" fill="#5e5e6d" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
                         <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm1.757-.437a.5.5 0 0 1 .68.194.934.934 0 0 0 .813.493c.339 0 .645-.19.813-.493a.5.5 0 1 1 .874.486A1.934 1.934 0 0 1 10.25 7.75c-.73 0-1.356-.412-1.687-1.007a.5.5 0 0 1 .194-.68z"></path></svg>
                       </div>
@@ -133,8 +109,8 @@
                   </div>
                   <div class="col-md-6">
                     <div class="d-flex">
-                      <div class="text-muted">
-                        <svg class="bi bi-layout-text-window-reverse" fill="currentColor" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
+                      <div class="text-secondary">
+                        <svg class="bi bi-layout-text-window-reverse" fill="#5e5e6d" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13 6.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm0 3a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z"></path>
                         <path d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12zM2 1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zM1 4v10a1 1 0 0 0 1 1h2V4H1zm4 0v11h9a1 1 0 0 0 1-1V4H5z"></path></svg>
                       </div>
@@ -146,8 +122,8 @@
                   </div>
                   <div class="col-md-6">
                     <div class="d-flex">
-                      <div class="text-muted">
-                        <svg class="bi bi-clipboard-check" fill="currentColor" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
+                      <div class="text-secondary">
+                        <svg class="bi bi-clipboard-check" fill="#5e5e6d" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" fill-rule="evenodd"></path>
                         <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path>
                         <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path></svg>
@@ -160,8 +136,8 @@
                   </div>
                   <div class="col-md-6">
                     <div class="d-flex">
-                      <div class="text-muted">
-                        <svg class="bi bi-speedometer2" fill="currentColor" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
+                      <div class="text-secondary">
+                        <svg class="bi bi-speedometer2" fill="#5e5e6d" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"></path>
                         <path d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z" fill-rule="evenodd"></path></svg>
                       </div>
@@ -173,8 +149,8 @@
                   </div>
                   <div class="col-md-6">
                     <div class="d-flex">
-                      <div class="text-muted">
-                        <svg class="bi bi-pencil-square" fill="currentColor" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
+                      <div class="text-secondary">
+                        <svg class="bi bi-pencil-square" fill="#5e5e6d" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
                         <path d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" fill-rule="evenodd"></path></svg>
                       </div>
@@ -190,12 +166,12 @@
           </div>
         </section>
 
-        <!-- benefits section/how it works -->
+        <!-- instruction section-->
         <section class="py-5">
           <div class="">
             <div class="row justify-content-center text-center mb-4">
               <div class="col-lg-8 col-xxl-7">
-                <span class="text-muted">Steps</span>
+                <span class="text-secondary">Steps</span>
                 <h2 class="display-5 fw-bold">How it Works</h2>
                 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta harum ipsum venenatis metus sem veniam eveniet aperiam suscipit.</p>
               </div>
@@ -207,14 +183,14 @@
                     <div class="d-flex rounded-circle align-items-center justify-content-center bg-primary text-white fs-3 fw-bold border border-white border-4 me-1" style="width: 4rem; height:4rem;">
                       1
                     </div>
-                    <div class="text-muted fw-light mt-1">
+                    <div class="text-secondary fw-light mt-1">
                       Step
                     </div>
                   </div>
                   <div class="col">
-                    <div class="card rounded-0 bg-light py-4 px-5 mb-5">
+                    <div class="card-instruction  rounded-0 py-4 px-5 mb-5">
                       <h5>Sign In</h5>
-                      <p class="text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      <p class="text-secondary mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                   </div>
                 </div>
@@ -223,14 +199,14 @@
                     <div class="d-flex rounded-circle align-items-center justify-content-center bg-primary text-white fs-3 fw-bold border border-white border-4 me-1" style="width: 4rem; height:4rem;">
                       2
                     </div>
-                    <div class="text-muted fw-light mt-1">
+                    <div class="text-secondary fw-light mt-1">
                       Step
                     </div>
                   </div>
                   <div class="col">
-                    <div class="card rounded-0 bg-light py-4 px-5 mb-5">
+                    <div class="card-instruction  rounded-0 py-4 px-5 mb-5">
                       <h5>Log In</h5>
-                      <p class="text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      <p class="text-secondary mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                   </div>
                 </div>
@@ -239,14 +215,14 @@
                     <div class="d-flex rounded-circle align-items-center justify-content-center bg-primary text-white fs-3 fw-bold border border-white border-4 me-1" style="width: 4rem; height:4rem;">
                       3
                     </div>
-                    <div class="text-muted fw-light mt-1">
+                    <div class="text-secondary fw-light mt-1">
                       Step
                     </div>
                   </div>
                   <div class="col">
-                    <div class="card rounded-0 bg-light py-4 px-5 mb-5">
-                      <h5>Find Workers or Clients</h5>
-                      <p class="text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="card-instruction  rounded-0 py-4 px-5 mb-5">
+                      <h5>Find your partner</h5>
+                      <p class="text-secondary mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                   </div>
                 </div>
@@ -260,7 +236,7 @@
           <div class="">
             <div class="row justify-content-center text-center mb-3 mb-md-5">
               <div class="col-lg-8 col-xxl-7">
-                <span class="text-muted">History</span>
+                <span class="text-secondary">History</span>
                 <h2 class="display-5 fw-bold mb-3">Our History</h2>
                 <p class="lead">In a few short slides you will be able to see how we started.</p>
               </div>
@@ -293,14 +269,14 @@
           <div class="">
             <div class="row justify-content-center text-center mb-2 mb-lg-4">
               <div class="col-12 col-lg-8 col-xxl-7 text-center mx-auto">
-                <span class="text-muted">Raving Fans</span>
+                <span class="text-secondary">Raving Fans</span>
                 <h2 class="display-5 fw-bold">Our Testimonials</h2>
                 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta harum ipsum venenatis metus sem veniam eveniet aperiam suscipit.</p>
               </div>
             </div>
             <div class="row py-5">
               <div class="col-md-4 py-2 py-md-2">
-                <div class="bg-light mb-5 mb-md-0 p-2 p-lg-5 text-center position-relative">
+                <div class="card-testimonials mb-5 mb-md-0 p-2 p-lg-5 text-center position-relative">
                   <img alt="" class="rounded-circle position-absolute translate-middle top-0" height="96" src="assets/default-img.png" width="96">
                   <div class="text-primary mb-md-4 mb-2 mt-5 mt-lg-4">
                     <svg class="bi bi-quote" fill="currentColor" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
@@ -308,13 +284,13 @@
                   </div>
                   <p class="mb-4">Lorem ipsum dolor sit consectetur adipisicing sit amet consectetur adipisicing elit sit</p>
                   <h6 class="mt-4 fw-bold">John Doe</h6>
-                  <div class="text-muted">
+                  <div class="text-secondary">
                     HR Manager
                   </div>
                 </div>
               </div>
               <div class="col-md-4 py-2 py-md-2">
-                <div class="bg-light mb-5 mb-md-0 p-2 p-lg-5 text-center position-relative">
+                <div class="card-testimonials mb-5 mb-md-0 p-2 p-lg-5 text-center position-relative">
                   <img alt="" class="rounded-circle position-absolute translate-middle top-0" height="96" src="assets/default-img.png" width="96">
                   <div class="text-primary mb-md-4 mb-2 mt-5 mt-lg-4">
                     <svg class="bi bi-quote" fill="currentColor" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
@@ -322,13 +298,13 @@
                   </div>
                   <p class="mb-4">Lorem ipsum dolor sit consectetur adipisicing sit amet consectetur adipisicing elit sit</p>
                   <h6 class="mt-4 fw-bold">John Doe</h6>
-                  <div class="text-muted">
+                  <div class="text-secondary">
                     Graphic Designer
                   </div>
                 </div>
               </div>
               <div class="col-md-4 py-2 py-md-2">
-                <div class="bg-light mb-5 mb-md-0 p-2 p-lg-5 text-center position-relative">
+                <div class="card-testimonials mb-5 mb-md-0 p-2 p-lg-5 text-center position-relative">
                   <img alt="" class="rounded-circle position-absolute translate-middle top-0" height="96" src="assets/default-img.png" width="96">
                   <div class="text-primary mb-md-4 mb-2 mt-5 mt-lg-4">
                     <svg class="bi bi-quote" fill="currentColor" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
@@ -336,7 +312,7 @@
                   </div>
                   <p class="mb-4">Lorem ipsum dolor sit consectetur adipisicing sit amet consectetur adipisicing elit sit</p>
                   <h6 class="mt-4 fw-bold">Jow Reo</h6>
-                  <div class="text-muted">
+                  <div class="text-secondary">
                     Founder & CEO
                   </div>
                 </div>
@@ -350,22 +326,23 @@
           <div class="">
             <div class="row justify-content-center text-center mb-3">
               <div class="col-lg-8 col-xl-7">
-                <span class="text-muted">F.A.Q</span>
+                <span class="text-secondary">F.A.Q</span>
                 <h2 class="display-5 fw-bold">Frequently Asked Questions</h2>
                 <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit Consequatur quidem eius cum voluptatum quasi delectus.</p>
               </div>
             </div>
             <div class="row justify-content-center">
-              <div class="col-md-5 mb-2"">
-                <span class="text-muted">Lorem ipsum dolor</span>
+              <div class="col-md-5 mb-2">
+                <span class="text-secondary">Lorem ipsum dolor</span>
                 <h2 class="pb-4 fw-bold">Have Any Questions?</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur quidem eius cum voluptatum quasi delectus assumenda culpa.</p><button class=" gradient-button btn-lg mt-3" href="#">Contact us</button>
               </div>
               <div class="col-md-7">
                 <div class="accordion" id="Questions-accordion">
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="Questions-headingOne"><button aria-controls="Questions-collapseOne" aria-expanded="false" class="accordion-button collapsed bg-light" data-bs-target="#Questions-collapseOne" data-bs-toggle="collapse" type="button">
-                    <div class="text-muted me-3">
+                    <h2 class="accordion-header" id="Questions-headingOne">
+                    <button aria-controls="Questions-collapseOne" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#Questions-collapseOne" data-bs-toggle="collapse" type="button">
+                    <div class="text-secondary me-3">
                       <svg class="bi bi-question-circle-fill" fill="currentColor" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"></path></svg>
                     </div>Lorem ipsum dolor sit amet adipisicing ?</button></h2>
@@ -376,11 +353,14 @@
                     </div>
                   </div>
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="Questions-headingTwo"><button aria-controls="Questions-collapseTwo" aria-expanded="false" class="accordion-button collapsed bg-light" data-bs-target="#Questions-collapseTwo" data-bs-toggle="collapse" type="button">
-                    <div class="text-muted me-3">
-                      <svg class="bi bi-question-circle-fill" fill="currentColor" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"></path></svg>
-                    </div>Lorem ipsum dolor sit amet adipisicing ?</button></h2>
+                    <h2 class="accordion-header" id="Questions-headingTwo">
+                      <button aria-controls="Questions-collapseTwo" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#Questions-collapseTwo" data-bs-toggle="collapse" type="button">
+                      <div class="text-secondary me-3">
+                        <svg class="bi bi-question-circle-fill" fill="currentColor" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"></path></svg>
+                      </div>Lorem ipsum dolor sit amet adipisicing ?
+                      </button>
+                    </h2>
                     <div aria-labelledby="Questions-headingTwo" class="accordion-collapse collapse" data-bs-parent="#Questions-accordion" id="Questions-collapseTwo">
                       <div class="accordion-body">
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime quos voluptatum at, quibusdam blanditiis saepe soluta laborum, repellendus nemo id porro dolor eveniet perspiciatis veritatis doloremque aliquam nam! Libero, nostrum!
@@ -388,8 +368,8 @@
                     </div>
                   </div>
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="Questions-headingThree"><button aria-controls="Questions-collapseThree" aria-expanded="false" class="accordion-button collapsed bg-light" data-bs-target="#Questions-collapseThree" data-bs-toggle="collapse" type="button">
-                    <div class="text-muted me-3">
+                    <h2 class="accordion-header" id="Questions-headingThree"><button aria-controls="Questions-collapseThree" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#Questions-collapseThree" data-bs-toggle="collapse" type="button">
+                    <div class="text-secondary me-3">
                       <svg class="bi bi-question-circle-fill" fill="currentColor" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"></path></svg>
                     </div>Lorem ipsum dolor sit amet adipisicing ?</button></h2>
@@ -400,8 +380,8 @@
                     </div>
                   </div>
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="Questions-headingFour"><button aria-controls="Questions-collapseFour" aria-expanded="false" class="accordion-button collapsed bg-light" data-bs-target="#Questions-collapseFour" data-bs-toggle="collapse" type="button">
-                    <div class="text-muted me-3">
+                    <h2 class="accordion-header" id="Questions-headingFour"><button aria-controls="Questions-collapseFour" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#Questions-collapseFour" data-bs-toggle="collapse" type="button">
+                    <div class="text-secondary me-3">
                       <svg class="bi bi-question-circle-fill" fill="currentColor" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"></path></svg>
                     </div>Lorem ipsum dolor sit amet adipisicing ?</button></h2>

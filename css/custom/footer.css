@@ -1,75 +1,20 @@
-/* footer component */
 .footer {
   width: 100%;
   background: var(--gray-06);
   padding: 3.2rem;
 }
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.footer-socials {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
-}
-.social-media {
-  display: flex;
-  gap: 1rem;
-}
 
-.footer-links {
-  & ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
-.newsletter-form {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-
-  & input {
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
-    border: 2px solid var(--gray-03);
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    font-weight: var(--font-weight-light);
-    color: var(--gray-01);
-  }
-
-  & button {
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    color: var(--text-dark);
-    border: none;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.1s linear;
-    border: 2px solid var(--gray-04);
-    background: var(--gray-04);
-  }
-}
-
-/* footer media query */
-@media screen and (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
-  .footer-socials {
-    align-items: center;
-  }
-}
-@media screen and (max-width: 640px) {
+.dark-theme {
   .footer {
-    padding: 2rem;
+    background: var(--bg-darker);
+    color: var(--text-dark);
   }
 }
+
+/* footer theme styles */
+/* @media (prefers-color-scheme: dark) {
+  .footer {
+    background: var(--bg-darker);
+    color: var(--text-dark);
+  }
+} */

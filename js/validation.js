@@ -1,5 +1,9 @@
 //import custom
-import "./features/custom.js"
+import "./features/custom.js";
+//import themeToggle;
+import "./features/themeToggle.js";
+//import dropdown
+import "./features/dropdown.js";
 
 // validation
 function validateForm(form) {

@@ -4,7 +4,6 @@
 /* custom footer */
 @import "/css/custom/footer.css"; 
 
-
 /* variables */
 :root {
   /* font weight */
@@ -36,9 +35,10 @@
   --gray-07: #f7f7fa;
 
   /* themes */
-  --background-light: #f7fafc;
+  --bg-light: #f7fafc;
+  --bg-dark: #1a202c;
+  --bg-darker: #171923; 
   --text-light: #1a202c;
-  --background-dark: #1a202c;
   --text-dark: #f7fafc;
   --primary-color: #25d5f8;
 }
@@ -73,21 +73,15 @@ iframe {
   padding-bottom: 5rem;
 }
 
+.pt-8 {
+  padding-top: 7.5rem;
+}
+
 .pt-10 {
   padding-top: 10rem;
 }
 
-/* custom components */
-.navbar {
-  background: var(--gray-06);
-}
-
-.footer {
-  width: 100%;
-  background: var(--gray-06);
-  padding: 3.2rem;
-}
-
+/* custom classes */
 .logo {
   display: flex;
   align-items: center;
@@ -97,7 +91,9 @@ iframe {
     height: 2rem;
   }
 }
-
+.gradient {
+  background: var(--gradient);
+}
 .gradient-text {
   background: var(--gradient);
   -webkit-background-clip: text;
@@ -119,27 +115,30 @@ iframe {
   background: var(--gradient);
 }
 
-/* theme */
+
+/* dark theme */
+.dark-theme {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+/* default theme */
 /* @media (prefers-color-scheme: dark) {
   body {
-      background-color: #333;
-      color: #fff;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+  }
+
+  .card-instruction {
+    background: var(--bg-darker);
+  }
+
+  .card-testimonials {
+    background: var(--bg-darker);
+  }
+
+  .accordion-button {
+    background-color: var(--bg-darker);
+    color: var(--text-dark);
   }
 } */
 
-
-/* dark mode */
-.dark-theme {
-  background-color: var(--background-dark);
-  color: var(--text-dark);
-}
-
-.dark-theme {
-  background-color: var(--background-dark);
-  color: var(--text-dark);
-}
-
-.dark-theme {
-  background-color: var(--background-dark);
-  color: var(--text-dark);
-}

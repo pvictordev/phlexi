@@ -1,8 +1,6 @@
-// // import custom header and footer
+// import custom components
 import "./features/custom.js";
-// // import options functionality
-// import "./features/options.js";
-// // import slideshow functionality
-// import  "./features/slider.js";
-
-
+// import theme toggle
+import "./features/themeToggle.js"; 
+// import dropdown
+import "./features/dropdown.js";
