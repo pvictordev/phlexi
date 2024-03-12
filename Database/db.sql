@@ -1,10 +1,10 @@
 CREATE TABLE `projects_skills`(
-    `skill_id` BIGINT NOT NULL,
-    `project_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `skill_id` INT NOT NULL,
+    `project_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     PRIMARY KEY(`skill_id`)
 );
 CREATE TABLE `transactions`(
-    `transaction_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `transaction_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `user_id` INT NOT NULL,
     `project_id` BIGINT NOT NULL,
     `amount` DOUBLE(8, 2) NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE `clients`(
 ALTER TABLE
     `clients` ADD UNIQUE `clients_project_id_unique`(`project_id`);
 CREATE TABLE `users`(
-    `user_id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `user_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `user_name` VARCHAR(255) NOT NULL,
     `email` VARCHAR(255) NOT NULL,
     `phone` VARCHAR(255) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE `users`(
     `password` VARCHAR(255) NOT NULL
 );
 CREATE TABLE `projects`(
-    `project_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `project_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `category_id` INT NOT NULL,
     `price` INT NOT NULL,
     `status` VARCHAR(255) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE `projects`(
 ALTER TABLE
     `projects` ADD UNIQUE `projects_category_id_unique`(`category_id`);
 CREATE TABLE `reviews`(
-    `user_id` BIGINT NOT NULL,
+    `user_id` INT NOT NULL,
     `project_id` BIGINT NOT NULL,
     `rating` INT NOT NULL,
     `description` VARCHAR(255) NULL,
@@ -56,7 +56,7 @@ CREATE TABLE `reviews`(
 ALTER TABLE
     `reviews` ADD UNIQUE `reviews_project_id_unique`(`project_id`);
 CREATE TABLE `skills`(
-    `user_id` BIGINT NOT NULL,
+    `user_id` INT NOT NULL,
     `skill_id` BIGINT NOT NULL,
     `skill_name` VARCHAR(255) NOT NULL,
     PRIMARY KEY(`user_id`)
@@ -64,7 +64,7 @@ CREATE TABLE `skills`(
 ALTER TABLE
     `skills` ADD UNIQUE `skills_skill_id_unique`(`skill_id`);
 CREATE TABLE `categories`(
-    `category_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `category_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `category_name` VARCHAR(255) NOT NULL
 );
 ALTER TABLE
