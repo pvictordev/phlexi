@@ -11,3 +11,7 @@ Using plain HTML and CSS, we create the initial interface. This stage forms the 
 ### Stage #2 (JavaScript)
 
 Introducing JavaScript functionality to enhance interactivity, we have added functionalities like a slideshow, implemented form validation, created a new page where we fetched data from a public API, added form validation together with saving data as JSON in local storage and included a counter to count each submission.
+
+### Stage #3 (Bootstrap)
+
+We implemented the Bootstrap framework by replacing all CSS classes with corresponding Bootstrap classes. We maintained the design and JavaScript functionality of the website, integrating new Bootstrap classes and interactivity. Additionally, we introduced a dark mode functionality and spinner loader to enhance the user experience.
