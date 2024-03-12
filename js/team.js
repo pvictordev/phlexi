@@ -4,12 +4,19 @@ import "./script.js";
 async function fetchteam() {
   const url = "https://randomuser.me/api/?results=20";
   try {
+    const loader = document.getElementById("loader-container");
+    loader.style.display = "flex";
+
     const response = await fetch(url);
 
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
     const data = await response.json();
+
+    // Hide spinner loader
+    loader.style.display = "none";
+
     return data.results;
   } catch (error) {
     console.error("Error fetching team", error);
@@ -26,7 +33,7 @@ fetchteam()
     console.error("Error:", error);
   });
 
-export function populateteamUI(team) {
+function populateteamUI(team) {
   const teamContent = document.querySelector(".team-content");
 
   team.forEach((member) => {
