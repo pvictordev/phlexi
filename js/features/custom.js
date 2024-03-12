@@ -1,11 +1,10 @@
-
 //header
 class CustomHeader extends HTMLElement {
-    constructor() {
-      super();
-    }
-    connectedCallback() {
-      this.innerHTML = `
+  constructor() {
+    super();
+  }
+  connectedCallback() {
+    this.innerHTML = `
       <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a class="navbar-brand logo" href="index.html">
@@ -77,17 +76,17 @@ class CustomHeader extends HTMLElement {
       </div>
     </nav>
           `;
-    }
   }
-  customElements.define("custom-header", CustomHeader);
-  
+}
+customElements.define("custom-header", CustomHeader);
+
 //footer
 class CustomFooter extends HTMLElement {
-    constructor() {
-      super();
-    }
-    connectedCallback() {
-      this.innerHTML = `
+  constructor() {
+    super();
+  }
+  connectedCallback() {
+    this.innerHTML = `
       <footer class="footer-section pt-7">
       <div class="footer">
         <div class="row justify-content-between pt-4 pb-3 pb-lg-5">
@@ -142,24 +141,19 @@ class CustomFooter extends HTMLElement {
       </div>
     </footer>
               `;
-    }
   }
-  customElements.define("custom-footer", CustomFooter);
+}
+customElements.define("custom-footer", CustomFooter);
 
-  // navbar actions
-  document.addEventListener("DOMContentLoaded", function() {
+// navbar actions
+document.addEventListener("DOMContentLoaded", function () {
+  // create and insert header and footer
+  const header = new CustomHeader();
+  const footer = new CustomFooter();
 
-    // create and insert header and footer
-    const header = new CustomHeader();
-    const footer = new CustomFooter();
+  const body = document.querySelector("body");
 
-    const body = document.querySelector("body");
+  body.insertBefore(header, body.firstChild);
 
-    body.insertBefore(header, body.firstChild);
-
-    body.appendChild(footer);
-
-  });
-
-  
-
+  body.appendChild(footer);
+});

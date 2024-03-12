@@ -1,45 +1,39 @@
-// //import custom.js
-// import "./features/custom.js";
-// //import themeToggle.js
-// import "./features/themeToggle.js";
-// //import dropdown.js
-// import "./features/dropdown.js";
 import "./script.js";
 
 //fetch team data
 async function fetchteam() {
-    const url = 'https://randomuser.me/api/?results=20';
-    try {
-        const response = await fetch(url);
-        
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        return data.results;
-    } catch (error) {
-        console.error('Error fetching team', error);
-        return []; 
+  const url = "https://randomuser.me/api/?results=20";
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
     }
+    const data = await response.json();
+    return data.results;
+  } catch (error) {
+    console.error("Error fetching team", error);
+    return [];
+  }
 }
 
 fetchteam()
-    .then(team => {
-        console.log(team);
-        populateteamUI(team);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+  .then((team) => {
+    console.log(team);
+    populateteamUI(team);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
 
 export function populateteamUI(team) {
-    const teamContent = document.querySelector('.team-content');
+  const teamContent = document.querySelector(".team-content");
 
-    team.forEach(member => {
-        const card = document.createElement('div');
-        card.classList.add('card-team');
+  team.forEach((member) => {
+    const card = document.createElement("div");
+    card.classList.add("card-team");
 
-        card.innerHTML = `
+    card.innerHTML = `
             <div class="card gradient rounded text-center mb-3">
                 <div class="card-img mb-4">
                     <img class="card-img img-fluid" src="${member.picture.large}" alt="${member.name.first} ${member.name.last}">
@@ -60,6 +54,6 @@ export function populateteamUI(team) {
                 
             </div>
         `;
-        teamContent.appendChild(card);
-    });
+    teamContent.appendChild(card);
+  });
 }
