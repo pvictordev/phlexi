@@ -1,7 +1,7 @@
 CREATE TABLE `projects_skills`(
     `skill_id` INT NOT NULL,
     `project_id` INT NOT NULL,
-    PRIMARY KEY(`skill_id`)
+    PRIMARY KEY(`skill_id`, `project_id`)
 );
 CREATE TABLE `transactions`(
     `transaction_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -42,9 +42,14 @@ CREATE TABLE `projects`(
 );
 ALTER TABLE
     `projects` ADD UNIQUE `projects_category_id_unique`(`category_id`);
+CREATE TABLE `freelancers_skills`(
+    `user_id` INT NOT NULL,
+    `skill_id` INT NOT NULL,
+    PRIMARY KEY(`user_id`, `skill_id`)
+);
 CREATE TABLE `reviews`(
     `user_id` INT NOT NULL,
-    `project_id` BIGINT NOT NULL,
+    `project_id` INT NOT NULL,
     `rating` INT NOT NULL,
     `description` VARCHAR(255) NULL,
     PRIMARY KEY(`user_id`)
@@ -52,10 +57,8 @@ CREATE TABLE `reviews`(
 ALTER TABLE
     `reviews` ADD UNIQUE `reviews_project_id_unique`(`project_id`);
 CREATE TABLE `skills`(
-    `user_id` INT NOT NULL,
-    `skill_id` BIGINT NOT NULL AUTO_INCREMENT,
-    `skill_name` VARCHAR(255) NOT NULL,
-    PRIMARY KEY(`user_id`)
+    `skill_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `skill_name` VARCHAR(255) NOT NULL
 );
 CREATE TABLE `categories`(
     `category_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -70,9 +73,11 @@ ALTER TABLE
 ALTER TABLE
     `clients` ADD CONSTRAINT `clients_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `users`(`user_id`);
 ALTER TABLE
-    `transactions` ADD CONSTRAINT `transactions_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `users`(`user_id`);
+    `freelancers_skills` ADD CONSTRAINT `freelancers_skills_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `freelancers`(`user_id`);
 ALTER TABLE
-    `skills` ADD CONSTRAINT `skills_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `freelancers`(`user_id`);
+    `freelancers_skills` ADD CONSTRAINT `freelancers_skills_skill_id_foreign` FOREIGN KEY(`skill_id`) REFERENCES `skills`(`skill_id`);
+ALTER TABLE
+    `transactions` ADD CONSTRAINT `transactions_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `users`(`user_id`);
 ALTER TABLE
     `clients` ADD CONSTRAINT `clients_project_id_foreign` FOREIGN KEY(`project_id`) REFERENCES `projects`(`project_id`);
 ALTER TABLE
@@ -82,4 +87,4 @@ ALTER TABLE
 ALTER TABLE
     `transactions` ADD CONSTRAINT `transactions_project_id_foreign` FOREIGN KEY(`project_id`) REFERENCES `projects`(`project_id`);
 ALTER TABLE
-    `skills` ADD CONSTRAINT `skills_skill_id_foreign` FOREIGN KEY(`skill_id`) REFERENCES `projects_skills`(`skill_id`);
+    `projects_skills` ADD CONSTRAINT `projects_skills_skill_id_foreign` FOREIGN KEY(`skill_id`) REFERENCES `skills`(`skill_id`);

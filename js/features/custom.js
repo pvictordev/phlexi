@@ -147,7 +147,7 @@ customElements.define("custom-footer", CustomFooter);
 
 // navbar actions
 document.addEventListener("DOMContentLoaded", function () {
-  // create and insert header and footer
+  // create and insert hetader and footer
   const header = new CustomHeader();
   const footer = new CustomFooter();
 
