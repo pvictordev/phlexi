@@ -1,9 +1,11 @@
+-- project skills table
 CREATE TABLE `projects_skills`(
     `skill_id` INT NOT NULL,
     `project_id` INT NOT NULL,
     PRIMARY KEY(`skill_id`, `project_id`)
 );
 
+-- transactions table
 CREATE TABLE `transactions`(
     `transaction_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `user_id` INT NOT NULL,
@@ -12,19 +14,27 @@ CREATE TABLE `transactions`(
     `date` DATETIME NOT NULL,
     `status` VARCHAR(255) NOT NULL
 );
+
+-- freelancers table
 CREATE TABLE `freelancers`(
     `user_id` INT NOT NULL,
     `hourly_rate` INT NOT NULL,
     `availability` TINYINT(1) NOT NULL,
     PRIMARY KEY(`user_id`)
 );
+
+-- clients table
 CREATE TABLE `clients`(
     `user_id` INT NOT NULL,
     `project_id` INT NULL,
     PRIMARY KEY(`user_id`)
 );
+
+-- every project that client creates, should be unique
 ALTER TABLE
     `clients` ADD UNIQUE `clients_project_id_unique`(`project_id`);
+
+-- users table
 CREATE TABLE `users`(
     `user_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `user_name` VARCHAR(255) NOT NULL,
@@ -33,6 +43,8 @@ CREATE TABLE `users`(
     `bio` TEXT NOT NULL,
     `password` VARCHAR(255) NOT NULL
 );
+
+-- projects table
 CREATE TABLE `projects`(
     `project_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `category_id` INT NOT NULL,
@@ -41,14 +53,15 @@ CREATE TABLE `projects`(
     `description` VARCHAR(255) NOT NULL,
     `date` DATETIME NOT NULL
 );
-ALTER TABLE
-    `projects` ADD UNIQUE `projects_category_id_unique`(`category_id`);
+
+-- freelancer skills table
 CREATE TABLE `freelancers_skills`(
     `user_id` INT NOT NULL,
     `skill_id` INT NOT NULL,
     PRIMARY KEY(`user_id`, `skill_id`)
 );
 
+-- reviews table
 CREATE TABLE `reviews`(
     `user_id` INT NOT NULL,
     `project_id` INT NOT NULL,
@@ -56,16 +69,23 @@ CREATE TABLE `reviews`(
     `description` VARCHAR(255) NULL,
     PRIMARY KEY(`user_id`)
 );
+
+-- every review is associated only with 1 one project, that is why every project in reviews should be unique
 ALTER TABLE
     `reviews` ADD UNIQUE `reviews_project_id_unique`(`project_id`);
+
+-- skills table
 CREATE TABLE `skills`(
     `skill_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `skill_name` VARCHAR(255) NOT NULL
 );
+
+-- categories table
 CREATE TABLE `categories`(
     `category_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `category_name` VARCHAR(255) NOT NULL
 );
+
 ALTER TABLE
     `reviews` ADD CONSTRAINT `reviews_project_id_foreign` FOREIGN KEY(`project_id`) REFERENCES `projects`(`project_id`);
 ALTER TABLE
