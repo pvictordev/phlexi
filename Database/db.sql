@@ -1,20 +1,16 @@
 CREATE TABLE `projects_skills`(
     `skill_id` INT NOT NULL,
-    `project_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `project_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY(`skill_id`)
 );
 CREATE TABLE `transactions`(
     `transaction_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `user_id` INT NOT NULL,
-    `project_id` BIGINT NOT NULL,
+    `project_id` INT NOT NULL,
     `amount` DOUBLE(8, 2) NOT NULL,
     `date` DATETIME NOT NULL,
     `status` VARCHAR(255) NOT NULL
 );
-ALTER TABLE
-    `transactions` ADD UNIQUE `transactions_user_id_unique`(`user_id`);
-ALTER TABLE
-    `transactions` ADD UNIQUE `transactions_project_id_unique`(`project_id`);
 CREATE TABLE `freelancers`(
     `user_id` INT NOT NULL,
     `hourly_rate` INT NOT NULL,
@@ -61,8 +57,6 @@ CREATE TABLE `skills`(
     `skill_name` VARCHAR(255) NOT NULL,
     PRIMARY KEY(`user_id`)
 );
-ALTER TABLE
-    `skills` ADD UNIQUE `skills_skill_id_unique`(`skill_id`);
 CREATE TABLE `categories`(
     `category_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `category_name` VARCHAR(255) NOT NULL
