@@ -1,10 +1,10 @@
 CREATE TABLE `projects_skills`(
     `skill_id` INT NOT NULL,
-    `project_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `project_id` INT NOT NULL,
     PRIMARY KEY(`skill_id`)
 );
 CREATE TABLE `transactions`(
-    `transaction_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `transaction_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `user_id` INT NOT NULL,
     `project_id` INT NOT NULL,
     `amount` DOUBLE(8, 2) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE `freelancers`(
 );
 CREATE TABLE `clients`(
     `user_id` INT NOT NULL,
-    `project_id` INT NOT NULL,
+    `project_id` INT NULL,
     PRIMARY KEY(`user_id`)
 );
 ALTER TABLE
@@ -33,7 +33,7 @@ CREATE TABLE `users`(
     `password` VARCHAR(255) NOT NULL
 );
 CREATE TABLE `projects`(
-    `project_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `project_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `category_id` INT NOT NULL,
     `price` INT NOT NULL,
     `status` VARCHAR(255) NOT NULL,
@@ -53,12 +53,12 @@ ALTER TABLE
     `reviews` ADD UNIQUE `reviews_project_id_unique`(`project_id`);
 CREATE TABLE `skills`(
     `user_id` INT NOT NULL,
-    `skill_id` BIGINT NOT NULL,
+    `skill_id` BIGINT NOT NULL AUTO_INCREMENT,
     `skill_name` VARCHAR(255) NOT NULL,
     PRIMARY KEY(`user_id`)
 );
 CREATE TABLE `categories`(
-    `category_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `category_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `category_name` VARCHAR(255) NOT NULL
 );
 ALTER TABLE

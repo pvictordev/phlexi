@@ -43,8 +43,8 @@ class CustomHeader extends HTMLElement {
               <a class="nav-link dropdown-toggle btn" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
               <div class="dropdown-menu" aria-labelledby="dropdown03">
                 <a class="dropdown-item" href="market.html">Marketplace</a>
-                <a class="dropdown-item" href="#">Find Work</a>
-                <a class="dropdown-item" href="#">Why Phlexi</a>
+                <a class="dropdown-item" href="#">Find Work</a>                
+                <a class="dropdown-item" href="#">Sign Up</a>
               </div>
             </li>
           
