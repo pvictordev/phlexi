@@ -3,6 +3,7 @@ CREATE TABLE `projects_skills`(
     `project_id` INT NOT NULL,
     PRIMARY KEY(`skill_id`, `project_id`)
 );
+
 CREATE TABLE `transactions`(
     `transaction_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `user_id` INT NOT NULL,
@@ -47,6 +48,7 @@ CREATE TABLE `freelancers_skills`(
     `skill_id` INT NOT NULL,
     PRIMARY KEY(`user_id`, `skill_id`)
 );
+
 CREATE TABLE `reviews`(
     `user_id` INT NOT NULL,
     `project_id` INT NOT NULL,
