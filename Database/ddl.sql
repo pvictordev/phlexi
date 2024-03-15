@@ -80,6 +80,10 @@ CREATE TABLE `skills`(
     `skill_name` VARCHAR(255) NOT NULL
 );
 
+-- every skill name should be unique
+ALTER TABLE
+    `skills` ADD UNIQUE `skills_skill_name_unique`(`skill_name`);
+
 -- categories table
 CREATE TABLE `categories`(
     `category_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
