@@ -1,63 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team</title>
+<?php require "../views/partials/head.php" ?>
+<?php require "../views/partials/header.php" ?>
 
-    <!-- bootstrap cdn -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+<main class="team pt-10">
+  <section class="team-container container">
+    <div class="team-text pb-5">
+      <h2 class="fw-bold">
+        Here you can see our huge
+        <span class="gradient-text">Phlexi</span> family!
+      </h2>
+      <p>
+        We are committed to providing the best experience for our users.
+        Here are out Top team who have been working hard to make sure that
+        our users are satisfied.
+      </p>
+    </div>
+    <div class="team-content row row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-1 d-flex justify-content-center align-items-center">
+      <div class="vh-100 justify-content-center" id="loader-container">
+        <div class="spinner-border text-primary" id="loader" role="status"></div>
+      </div>
+    </div>
+  </section>
+</main>
 
-    <!-- globals css -->
-    <link rel="stylesheet" href="./css/globals/style.css" />
-
-    <link rel="icon" href="assets/favicon.svg" />
-  </head>
-  <body>
-    <main class="team pt-10">
-      <section class="team-container container">
-        <div class="team-text pb-5">
-          <h2 class="fw-bold">
-            Here you can see our huge
-            <span class="gradient-text">Phlexi</span> family!
-          </h2>
-          <p>
-            We are committed to providing the best experience for our users.
-            Here are out Top team who have been working hard to make sure that
-            our users are satisfied.
-          </p>
-        </div>
-        <div
-          class="team-content row row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-1 d-flex justify-content-center align-items-center"
-        >
-          <div class="vh-100 justify-content-center" id="loader-container">
-            <div
-              class="spinner-border text-primary"
-              id="loader"
-              role="status"
-            ></div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <script type="module" src="js/team.js"></script>
-
-    <!-- bootstrap js -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+<?php require "../views/partials/foot.php" ?>
+<?php require "../views/partials/footer.php" ?>

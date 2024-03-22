@@ -15,3 +15,7 @@ Introducing JavaScript functionality to enhance interactivity, we have added fun
 ### Stage #3 (Bootstrap)
 
 We implemented the Bootstrap framework by replacing all CSS classes with corresponding Bootstrap classes. We maintained the design and JavaScript functionality of the website, integrating new Bootstrap classes and interactivity. Additionally, we introduced a dark mode functionality and spinner loader to enhance the user experience.
+
+### Stage #4 (PHP & MySQL)
+
+At that stage, we created the database for the app. Following that, we developed the database schema. Subsequently, we refactored the entire HTML code, replacing it with PHP, following to the MVC (Model-View-Controller) architecture.
