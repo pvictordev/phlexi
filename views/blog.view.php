@@ -1,15 +1,13 @@
-<?php require "views/partials/head.php" ?>
 <?php
 $current_page = '/blog';
-require "views/partials/header.php"
-?>
+require "views/partials/head.php" ?>
+<?php require "views/partials/header.php" ?>
 
 <main class="about">
   <section class="pt-10">
     <div class="container">
       <div class="row justify-content-center text-center mb-4 mb-md-5">
         <div class="col-xl-9 col-xxl-8">
-          <span class="text-muted">Read More</span>
           <h2 class="display-5 fw-bold">Our Blog</h2>
           <p class="lead">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -20,7 +18,7 @@ require "views/partials/header.php"
       <div class="row align-items-center gy-md-5">
         <div class="col-md-6">
           <div class="mt-4 mt-md-0">
-            <img alt="" class="img-fluid rounded my-md-0 my-4" src="assets/default-wide.jpg" />
+            <img alt="" class="img-fluid rounded my-md-0 my-4" src="../public/assets/default-wide.jpg" />
           </div>
         </div>
         <div class="col-md-6">
@@ -38,7 +36,7 @@ require "views/partials/header.php"
         </div>
         <div class="col-md-6">
           <div class="mt-4 mt-md-0">
-            <img alt="" class="img-fluid rounded my-md-0 my-4" src="assets/default-wide.jpg" />
+            <img alt="" class="img-fluid rounded my-md-0 my-4" src="../public/assets/default-wide.jpg" />
           </div>
         </div>
         <div class="col-md-6">
@@ -56,7 +54,7 @@ require "views/partials/header.php"
         </div>
         <div class="col-md-6">
           <div class="mt-4 mt-md-0">
-            <img alt="" class="img-fluid rounded my-md-0 my-4" src="assets/default-wide.jpg" />
+            <img alt="" class="img-fluid rounded my-md-0 my-4" src="../public/assets/default-wide.jpg" />
           </div>
         </div>
         <div class="col-md-6">

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <a class="navbar-brand logo" href="/">
-            <img alt="Free Frontend Logo" class="img-fluid" height="" src="../../public/assets/favicon.svg">
+            <img alt="Phlexi Logo" class="img-fluid" height="" src="../../public/assets/favicon.svg">
             <span class="gradient-text fw-bold fs-2">Phlexi</span>
         </a>
         <button aria-controls="navbarSupportedContent9" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbarSupportedContent9" data-bs-toggle="collapse" type="button">
@@ -38,7 +38,7 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown03">
                         <a class="dropdown-item" href="/market">Marketplace</a>
                         <a class="dropdown-item" href="#">Find Work</a>
-                        <a class="dropdown-item" href="#">Sign Up</a>
+                        <a class="dropdown-item" href="/signup">Sign Up / Sign In</a>
                     </div>
                 </li>
 

@@ -12,7 +12,6 @@ require "views/partials/head.php"
     <div class="row g-0 align-items-center">
       <div class="col-lg-6">
         <div class="col-lg-8 mx-auto">
-          <span class="text-muted">Let's Talk</span>
           <h2 class="display-5 fw-bold">Contact Us</h2>
           <p class="lead">
             Lorem ipsum dolor, sit amet elit Quamnitm veniam dicta, quos
