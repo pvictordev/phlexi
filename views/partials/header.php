@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-        <a class="navbar-brand logo" href="index.html">
+        <a class="navbar-brand logo" href="/">
             <img alt="Free Frontend Logo" class="img-fluid" height="" src="assets/favicon.svg">
             <span class="gradient-text fw-bold fs-2">Phlexi</span>
         </a>
@@ -25,18 +25,18 @@
             </form>
             <ul class="navbar-nav ms-auto my-2 my-lg-0">
                 <li class="nav-item me-4">
-                    <a class="nav-link" href="blog.html">Blog</a>
+                    <a class="nav-link" href="/blog">Blog</a>
                 </li>
                 <li class="nav-item me-4">
-                    <a class="nav-link" href="team.html">Team</a>
+                    <a class="nav-link" href="/team">Team</a>
                 </li>
                 <li class="nav-item me-4">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle btn" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown03">
-                        <a class="dropdown-item" href="market.html">Marketplace</a>
+                        <a class="dropdown-item" href="/market">Marketplace</a>
                         <a class="dropdown-item" href="#">Find Work</a>
                         <a class="dropdown-item" href="#">Sign Up</a>
                     </div>
