@@ -1,3 +1,5 @@
 /* global css import */
-@import "/css/globals/style.css";
+@import "./globals/style.css";
+
+
 

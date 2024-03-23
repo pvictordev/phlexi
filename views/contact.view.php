@@ -1,7 +1,10 @@
-<?php require "views/partials/head.php" ?>
+<?php
+$current_page = '/contact';
+require "views/partials/head.php"
+?>
 <?php require "views/partials/header.php" ?>
 
-<main class="pt-10">
+<main class="pt-10 pb-5">
   <section class="container p-lg-0">
     <div class="submissions fw-bold fs-4 text-center pb-5">
       Happy clients: <span id="counter" class="gradient-text">0</span>

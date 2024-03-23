@@ -1,5 +1,8 @@
 <?php require "views/partials/head.php" ?>
-<?php require "views/partials/header.php" ?>
+<?php
+$current_page = '/blog';
+require "views/partials/header.php"
+?>
 
 <main class="about">
   <section class="pt-10">

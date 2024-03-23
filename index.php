@@ -1,21 +1,22 @@
 <?php
 
+// functions
 require "functions.php";
 
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+// connect to the db
+// data source name
+$dsn = 'mysql:host=localhost;port=3306;dbname=sa-project;user=root;charset=utf8mb4';
 
-$routes = [
-    '/' => 'controllers/index.php',
-    '/contact' => 'controllers/contact.php',
-    '/blog' => 'controllers/blog.php',
-    '/market' => 'controllers/market.php',
-    '/team' => 'controllers/team.php',
-];
+$pdo = new PDO($dsn);
 
-if (array_key_exists($uri, $routes)) {
-    require $routes[$uri];
-} else {
-    http_response_code(404);
-    require 'views/partials/404.php';
-    die();
-}
+$statement = $pdo->prepare("select * from users");
+
+$statement->execute();
+
+$users = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
+dd($users); // got the users 
+
+// router
+require "router.php";

@@ -1,4 +1,7 @@
-<?php require "views/partials/head.php" ?>
+<?php
+$current_page = '/team';
+require "views/partials/head.php"
+?>
 <?php require "views/partials/header.php" ?>
 
 <main class="team pt-10">

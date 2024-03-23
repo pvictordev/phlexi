@@ -3,7 +3,7 @@
         <div class="row justify-content-between pt-4 pb-3 pb-lg-5">
             <div class="col-12 col-lg-7">
                 <div class="logo">
-                    <img alt="Free Frontend Logo" class="img-fluid" src="./assets/favicon.svg">
+                    <img alt="Free Frontend Logo" class="img-fluid" src="../public/assets/favicon.svg">
                     <span class="gradient-text fw-bold fs-2">Phlexi</span>
                 </div>
                 <p class="mb-3"> Here you can find additional info about us, our team and our opportunities </p>

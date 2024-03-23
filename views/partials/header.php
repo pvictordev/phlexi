@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <a class="navbar-brand logo" href="/">
-            <img alt="Free Frontend Logo" class="img-fluid" height="" src="assets/favicon.svg">
+            <img alt="Free Frontend Logo" class="img-fluid" height="" src="../../public/assets/favicon.svg">
             <span class="gradient-text fw-bold fs-2">Phlexi</span>
         </a>
         <button aria-controls="navbarSupportedContent9" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbarSupportedContent9" data-bs-toggle="collapse" type="button">
@@ -12,7 +12,7 @@
             </svg>
             </span>
         </button>
-        <div class="navbar-collapse collapse" id="navbarSupportedContent9" style="">
+        <div class="navbar-collapse collapse" id="navbarSupportedContent9">
             <form class="d-flex align-items-center position-relative ms-lg-3">
                 <div class="input-group align-items-center mt-3 mt-lg-0">
                     <input aria-describedby="button-addon2" aria-label="Search" class="form-control" placeholder="Search" type="text">

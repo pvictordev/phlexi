@@ -1,4 +1,7 @@
-<?php require "views/partials/head.php" ?>
+<?php
+$current_page = '/';
+require "views/partials/head.php"
+?>
 <?php require "views/partials/header.php" ?>
 
 <!-- main content -->
@@ -19,7 +22,7 @@
           <button class="gradient-button" href="">Get Started</button>
         </div>
         <div class="col-lg-6">
-          <img alt="" class="img-fluid" src="assets/hero-img.png" />
+          <img alt="" class="img-fluid" src="../public/assets/hero-img.png" />
         </div>
       </div>
       <div class="row mt-5">
@@ -263,32 +266,32 @@
             <div class="carousel-item active">
               <div class="row gy-4">
                 <div class="col-md-3">
-                  <img alt="" class="img-fluid rounded-1" src="assets/default-img.png" />
+                  <img alt="" class="img-fluid rounded-1" src="../public/assets/default-img.png" />
                 </div>
                 <div class="col-md-3">
-                  <img alt="" class="img-fluid rounded-1" src="assets/default-img.png" />
+                  <img alt="" class="img-fluid rounded-1" src="../public/assets/default-img.png" />
                 </div>
                 <div class="col-md-3">
-                  <img alt="" class="img-fluid rounded-1" src="assets/default-img.png" />
+                  <img alt="" class="img-fluid rounded-1" src="../public/assets/default-img.png" />
                 </div>
                 <div class="col-md-3">
-                  <img alt="" class="img-fluid rounded-1" src="assets/default-img.png" />
+                  <img alt="" class="img-fluid rounded-1" src="../public/assets/default-img.png" />
                 </div>
               </div>
             </div>
             <div class="carousel-item">
               <div class="row gy-4">
                 <div class="col-md-3">
-                  <img alt="" class="img-fluid rounded-1" src="assets/default-img.png" />
+                  <img alt="" class="img-fluid rounded-1" src="../public/assets/default-img.png" />
                 </div>
                 <div class="col-md-3">
-                  <img alt="" class="img-fluid rounded-1" src="assets/default-img.png" />
+                  <img alt="" class="img-fluid rounded-1" src="../public/assets/default-img.png" />
                 </div>
                 <div class="col-md-3">
-                  <img alt="" class="img-fluid rounded-1" src="assets/default-img.png" />
+                  <img alt="" class="img-fluid rounded-1" src="../public/assets/default-img.png" />
                 </div>
                 <div class="col-md-3">
-                  <img alt="" class="img-fluid rounded-1" src="assets/default-img.png" />
+                  <img alt="" class="img-fluid rounded-1" src="../public/assets/default-img.png" />
                 </div>
               </div>
             </div>
@@ -322,7 +325,7 @@
         <div class="row py-5">
           <div class="col-md-4 py-2 py-md-2">
             <div class="card-testimonials mb-5 mb-md-0 p-2 p-lg-5 text-center position-relative">
-              <img alt="" class="rounded-circle position-absolute translate-middle top-0" height="96" src="assets/default-img.png" width="96" />
+              <img alt="" class="rounded-circle position-absolute translate-middle top-0" height="96" src="../public/assets/default-img.png" width="96" />
               <div class="text-primary mb-md-4 mb-2 mt-5 mt-lg-4">
                 <svg class="bi bi-quote" fill="currentColor" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"></path>
@@ -338,7 +341,7 @@
           </div>
           <div class="col-md-4 py-2 py-md-2">
             <div class="card-testimonials mb-5 mb-md-0 p-2 p-lg-5 text-center position-relative">
-              <img alt="" class="rounded-circle position-absolute translate-middle top-0" height="96" src="assets/default-img.png" width="96" />
+              <img alt="" class="rounded-circle position-absolute translate-middle top-0" height="96" src="../public/assets/default-img.png" width="96" />
               <div class="text-primary mb-md-4 mb-2 mt-5 mt-lg-4">
                 <svg class="bi bi-quote" fill="currentColor" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"></path>
@@ -354,7 +357,7 @@
           </div>
           <div class="col-md-4 py-2 py-md-2">
             <div class="card-testimonials mb-5 mb-md-0 p-2 p-lg-5 text-center position-relative">
-              <img alt="" class="rounded-circle position-absolute translate-middle top-0" height="96" src="assets/default-img.png" width="96" />
+              <img alt="" class="rounded-circle position-absolute translate-middle top-0" height="96" src="../public/assets/default-img.png" width="96" />
               <div class="text-primary mb-md-4 mb-2 mt-5 mt-lg-4">
                 <svg class="bi bi-quote" fill="currentColor" height="48" viewbox="0 0 16 16" width="48" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"></path>

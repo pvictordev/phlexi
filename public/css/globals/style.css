@@ -1,8 +1,8 @@
 /*custom components */
 /* custom header */
-@import "/css/custom/header.css";
+@import "../custom/header.css";
 /* custom footer */
-@import "/css/custom/footer.css"; 
+@import "../custom/footer.css";
 
 /* variables */
 :root {
