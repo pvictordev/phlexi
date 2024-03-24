@@ -5,16 +5,11 @@ require "functions.php";
 
 // router
 require "router.php";
+require "Database.php";
 
-// connect to the db
-// data source name
-$dsn = 'mysql:host=localhost;port=3306;dbname=sa-project;user=root;charset=utf8mb4';
+// new instance of the Databse
+$db = new Database();
 
-$pdo = new PDO($dsn);
+$users = $db->query("select * from users ")->fetch(PDO::FETCH_ASSOC);
 
-$statement = $pdo->prepare("select * from users");
-
-$statement->execute();
-
-// fetch users
-$users = $statement->fetchAll(PDO::FETCH_ASSOC);
+dd($users);
