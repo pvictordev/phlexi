@@ -10,7 +10,7 @@ require "views/partials/head.php"
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
-                    <div class="card bg-transparent border border-light-subtle rounded-4">
+                    <div class="card bg-transparent border-3 border-light-subtle rounded-4">
                         <div class="card-body p-3 p-md-4 p-xl-5">
                             <div class="row">
                                 <div class="col-12">
@@ -65,7 +65,7 @@ require "views/partials/head.php"
                             <div class="row">
                                 <div class="col-12">
                                     <hr class="mt-5 mb-4 border-secondary-subtle">
-                                    <p class="m-0 text-secondary text-center">Already have an account? <a href="#!" class="link-primary text-decoration-none">Sign in</a></p>
+                                    <p class="m-0 text-secondary text-center">Already have an account ? <a href="/signin" class="link-primary text-decoration-none">Sign in</a></p>
                                 </div>
                             </div>
                             <div class="row">

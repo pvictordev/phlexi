@@ -16,11 +16,12 @@ class Database
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ]);
     }
-    public function query($query)
+    public function query($query, $params)
     {
         $statement = $this->connection->prepare($query);
 
-        $statement->execute();
+        // bind the params in a form of array in order to avoid sql injection
+        $statement->execute($params);
 
         // fetch users
         return $statement;
