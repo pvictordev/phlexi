@@ -6,12 +6,15 @@ class Database
     public $connection;
 
     // every time when instance is initialized i want to run __construct
-    public function __construct()
+    public function __construct($config, $username = 'root', $password = '')
     {
-        // initialize the PDO instance
-        $dsn = 'mysql:host=localhost;port=3306;dbname=sa-project;user=root;charset=utf8mb4';
+        //data source name
+        $dsn = 'mysql:' . http_build_query($config, '', ';'); // mysql:host=localhost;port=3306;dbname=sa-project;charset=utf8mb4
 
-        $this->connection = new PDO($dsn);
+        // initialize the PDO instance
+        $this->connection = new PDO($dsn, $username, $password, [
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        ]);
     }
     public function query($query)
     {

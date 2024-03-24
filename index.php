@@ -5,11 +5,16 @@ require "functions.php";
 
 // router
 require "router.php";
+
+// database class
 require "Database.php";
 
-// new instance of the Databse
-$db = new Database();
+//db config for local environment
+$config = require("config.php");
 
-$users = $db->query("select * from users ")->fetch(PDO::FETCH_ASSOC);
+// new instance of the Database
+$db = new Database($config['database']);
+
+$users = $db->query("select * from users")->fetch(PDO::FETCH_ASSOC);
 
 dd($users);
