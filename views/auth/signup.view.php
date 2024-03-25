@@ -15,14 +15,14 @@ require "views/partials/head.php"
                             <div class="row">
                                 <div class="col-12">
                                     <div class="mb-5">
-
                                         <h2 class="h4 text-secondary text-center">Sign Up</h2>
                                         <h3 class="fs-6 fw-normal text-secondary text-center m-0">Enter your details to sign up</h3>
                                     </div>
                                 </div>
                             </div>
-                            <form action="#!">
+                            <form method="POST" action="/signup">
                                 <div class="row gy-3 overflow-hidden">
+                                    <input type="hidden" name="action" value="signup">
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name" required>

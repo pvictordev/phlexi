@@ -2,11 +2,11 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve input data from the form
-    $username = $_POST['email'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Perform authentication (replace this with your actual authentication logic)
-    if ($email === 'victor@mail' && $password === '123') {
+    // Perform authentication
+    if ($email === 'victor@mail.com' && $password === '123') {
         echo 'success';
         exit();
     } else {

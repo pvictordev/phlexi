@@ -21,8 +21,9 @@ require "views/partials/head.php"
                                     </div>
                                 </div>
                             </div>
-                            <form method="POST" action="">
+                            <form method="POST" action="/signin">
                                 <div class="row gy-3 overflow-hidden">
+                                    <input type="hidden" name="action" value="signin">
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
                                             <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
@@ -35,7 +36,6 @@ require "views/partials/head.php"
                                             <label for="password" class="form-label">Password</label>
                                         </div>
                                     </div>
-
                                     <div class="col-12">
                                         <div class="d-grid">
                                             <button class="btn bsb-btn-xl btn-primary" type="submit">Sign in</button>

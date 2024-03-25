@@ -1,8 +1,12 @@
 <?php
-require_once("UserModel.php");
+require("./models/UserModel.php");
 
 class UserController
 {
+    public function __construct()
+    {
+    }
+
     public function signin()
     {
         // Handle sign in logic
@@ -14,6 +18,7 @@ class UserController
     }
 }
 
+
 // Instantiate controller and execute action
 $action = isset($_POST["action"]) ? $_POST["action"] : "";
 $userController = new UserController();
@@ -24,5 +29,5 @@ if ($action == "signin") {
     $userController->signup();
 } else {
     // sign in form
-    require_once("signin.view.php");
+    echo "invalid credentials";
 }
