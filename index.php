@@ -3,9 +3,6 @@
 // functions
 require "core/functions.php";
 
-// router
-require "router.php";
-
 // database class
 require "Database.php";
 
@@ -15,11 +12,11 @@ $config = require("config.php");
 // new instance of the Database
 $db = new Database($config['database']);
 
-// Get the id in the separate var
-$id = $_GET['user_id'];
+// router
+require "router.php";
+
 // query as a separate var
-$query = "select * from users where user_id = :id";
+$query = "select * from skills";
 // protecting from sql injection, never accept user input and inline it as a part of the database query
-$users = $db->query($query, [':id' => $id])->fetch();
-// show the users
-// dd($users);
+$skills = $db->query($query, [])->fetchAll();
+// show the skills

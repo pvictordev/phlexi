@@ -1,7 +1,7 @@
 <?php
 $current_page = '/signin';
 
-require "views/partials/head.php"
+require "views/partials/head.php";
 ?>
 <?php require "views/partials/header.php" ?>
 
