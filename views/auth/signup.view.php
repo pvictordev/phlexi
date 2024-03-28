@@ -23,19 +23,17 @@ require "views/partials/head.php"
                             <form method="POST" action="/signup">
                                 <div class="row gy-3 overflow-hidden">
                                     <input type="hidden" name="action" value="signup">
+
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name" required>
-                                            <label for="firstName" class="form-label">First Name</label>
+                                            <input type="text" class="form-control" name="user_name" id="user_name" placeholder="First Name" required>
+                                            <label for="user_name" class="form-label">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="First Name" required>
-                                            <label for="lastName" class="form-label">Last Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
+                                        <?php if (isset($errors['email'])) : ?>
+                                            <div style="color: red;"><?php echo $errors['email']; ?></div>
+                                        <?php endif; ?>
                                         <div class="form-floating mb-3">
                                             <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
                                             <label for="email" class="form-label">Email</label>
@@ -59,6 +57,7 @@ require "views/partials/head.php"
                                         <div class="d-grid">
                                             <button class="btn bsb-btn-xl btn-primary" type="submit">Sign up</button>
                                         </div>
+
                                     </div>
                                 </div>
                             </form>

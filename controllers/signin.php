@@ -35,12 +35,3 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 } else {
     require "./views/auth/signin.view.php";
 }
-
-// ! end the session
-if (isset($_GET['logout'])) {
-    // Unset all session variables
-    session_unset();
-    // Destroy the session
-    session_destroy();
-    echo "Logged out successfully.";
-}

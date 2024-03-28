@@ -26,6 +26,14 @@ $skills = $skillsStatement->fetchAll();
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item"><a href="#">User</a></li>
                             <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+
+                            <!-- sign out -->
+                            <!-- Sign-out form -->
+                            <form method="POST" action="/profile">
+                                <input type="hidden" name="action" value="sign_out">
+                                <button type="submit" class="btn btn-danger">Sign Out</button>
+                            </form>
+
                         </ol>
                     </nav>
                 </div>
