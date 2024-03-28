@@ -25,7 +25,7 @@ class UserController
                 $_SESSION["user"] = $user;
 
                 // Redirect to home page
-                header("Location: index.php");
+                header("Location: /");
                 exit();
             } else {
                 // Sign in failed, display error message

@@ -16,6 +16,8 @@
         echo '<link rel="stylesheet" type="text/css" href="../public/css/contact.css" />';
     } else if ($current_page === '/signup') {
         echo '<link rel="stylesheet" type="text/css" href="../public/css/globals/style.css" />';
+    } else if ($current_page === '/profile') {
+        echo '<link rel="stylesheet" type="text/css" href="../public/css/globals/style.css" />';
     } else if ($current_page === '/signin') {
         echo '<link rel="stylesheet" type="text/css" href="../public/css/globals/style.css" />';
     } else if ($current_page === '/blog') {

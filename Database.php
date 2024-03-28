@@ -27,4 +27,18 @@ class Database
         // fetch users
         return $statement;
     }
+
+    // Method to execute INSERT queries
+    public function insert($table, $data)
+    {
+        $keys = implode(', ', array_keys($data));
+        $values = implode(', ', array_fill(0, count($data), '?'));
+
+        $query = "INSERT INTO $table ($keys) VALUES ($values)";
+
+        $statement = $this->connection->prepare($query);
+        $statement->execute(array_values($data));
+
+        return $statement->rowCount(); // Return number of affected rows
+    }
 }

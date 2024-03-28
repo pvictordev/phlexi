@@ -38,7 +38,7 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown03">
                         <a class="dropdown-item" href="/market">Marketplace</a>
                         <a class="dropdown-item" href="#">Find Work</a>
-                        <a class="dropdown-item" href="/signup">Sign In / Sign Up</a>
+                        <a class="dropdown-item" href="/signup">Sign In / Sign Up </a>
                     </div>
                 </li>
 

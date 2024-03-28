@@ -1,4 +1,5 @@
 <?php
+
 // path
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
@@ -7,6 +8,7 @@ $routes = [
     '/' => 'controllers/index.php',
     '/signup' => 'controllers/signup.php',
     '/signin' => 'controllers/signin.php',
+    '/profile' => 'controllers/profile.php',
     '/contact' => 'controllers/contact.php',
     '/blog' => 'controllers/blog.php',
     '/market' => 'controllers/market.php',
@@ -14,7 +16,7 @@ $routes = [
 ];
 
 // routing the current uri to the coressponding controller  
-function routeToController($uri, $routes)
+function routeToController($uri, $routes, $db)
 {
     if (array_key_exists($uri, $routes)) {
         require $routes[$uri];
@@ -31,4 +33,4 @@ function abort($code = 404)
     die();
 }
 
-routeToController($uri, $routes);
+routeToController($uri, $routes, $db);
