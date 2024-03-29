@@ -1,6 +1,4 @@
 <?php
-// ! start the session
-session_start();
 
 // get all users
 $query = "select * from users";
@@ -18,16 +16,19 @@ function authenticateUser($users, $email, $password)
     return false;
 }
 
+$auth = null;
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $postEmail = $_POST['email'];
     $postPassword = $_POST['password'];
 
     // Check if email and password match with any user
     if (authenticateUser($users, $postEmail, $postPassword)) {
+        $auth = true;
         $_SESSION['authenticated'] = true;
         header('Location: /profile');
         exit();
     } else {
+        $auth = false;
         $_SESSION['authenticated'] = false;
         header('Location: /signin');
         exit();

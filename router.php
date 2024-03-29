@@ -1,4 +1,6 @@
 <?php
+// ! start the session
+session_start();
 
 // path
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
@@ -8,6 +10,7 @@ $routes = [
     '/' => 'controllers/index.php',
     '/signup' => 'controllers/signup.php',
     '/signin' => 'controllers/signin.php',
+    '/logout' => 'controllers/logout.php',
     '/profile' => 'controllers/profile.php',
     '/contact' => 'controllers/contact.php',
     '/blog' => 'controllers/blog.php',

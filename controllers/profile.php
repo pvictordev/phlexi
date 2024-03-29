@@ -1,12 +1,9 @@
 <?php
 
-// ! end the session
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['action'] == 'sign_out') {
-    session_destroy();
-    session_unset();
-    header("Location: /");
-    exit();
-}
+// Fetch skill names from the skills database
+$query = "SELECT * FROM skills";
+$skillsStatement = $db->query($query, []);
+$skills = $skillsStatement->fetchAll();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['skill_name'])) {
 
@@ -44,6 +41,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+// check by email
+$email = $_SESSION['email'];
+// fetch particular users
+$query_users = "SELECT * FROM users WHERE email = :email";
+$userStatement = $db->query($query_users, [
+    'email' => $email,
+]);
+$user = $userStatement->fetch();
 
-
+// render the view
 require "views/profile.view.php";

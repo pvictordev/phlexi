@@ -28,16 +28,16 @@ require "views/partials/header.php" ?>
                                 <div class="row gy-3 overflow-hidden">
                                     <input type="hidden" name="action" value="signin">
                                     <div class="col-12">
-                                        <?php echo $_SESSION['authenticated'] ? '' : '<span class="text-danger ">Incorrect email or password</span>'; ?>
+                                        <?php echo $auth ? '' : '<span class="text-danger ">Incorrect email or password</span>'; ?>
                                         <div class="form-floating mb-3">
                                             <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
-                                            <label for="email" class="form-label <?php echo $_SESSION['authenticated'] ? '' : 'text-danger'; ?>">Email</label>
+                                            <label for="email" class="form-label <?php echo $auth ? '' : 'text-danger'; ?>">Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
                                             <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
-                                            <label for="password" class="form-label <?php echo $_SESSION['authenticated'] ? '' : 'text-danger'; ?>">Password</label>
+                                            <label for="password" class="form-label <?php echo $auth ? '' : 'text-danger'; ?>">Password</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
