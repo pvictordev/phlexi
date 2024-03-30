@@ -16,23 +16,36 @@ function authenticateUser($users, $email, $password)
     return false;
 }
 
-$auth = null;
-if (isset($_POST['email']) && isset($_POST['password'])) {
-    $postEmail = $_POST['email'];
-    $postPassword = $_POST['password'];
+// error handling array
+$errors = array();
 
-    // Check if email and password match with any user
-    if (authenticateUser($users, $postEmail, $postPassword)) {
-        $auth = true;
-        $_SESSION['authenticated'] = true;
-        header('Location: /profile');
-        exit();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Validate email
+    if (!isset($_POST['email']) || empty($_POST['email'])) {
+        $errors['email'] = "Email is required";
     } else {
-        $auth = false;
-        $_SESSION['authenticated'] = false;
-        header('Location: /signin');
-        exit();
+        $postEmail = $_POST['email'];
     }
-} else {
-    require "./views/auth/signin.view.php";
+
+    // Validate password
+    if (!isset($_POST['password']) || empty($_POST['password'])) {
+        $errors['password'] = "Password is required";
+    } else {
+        $postPassword = $_POST['password'];
+    }
+
+    // Proceed only if there are no validation errors
+    if (empty($errors)) {
+        // Check if email and password match with any user
+        if (authenticateUser($users, $postEmail, $postPassword)) {
+            // redirect the user only if he is authenticated
+            $_SESSION['authenticated'] = true;
+            header('Location: /profile');
+            exit();
+        } else {
+            $errors['general'] = "Incorrect email or password";
+        }
+    }
 }
+
+require "./views/auth/signin.view.php";

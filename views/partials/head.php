@@ -34,7 +34,29 @@
     <!-- favicon.svg -->
     <link rel="icon" type="image/svg+xml" href="../public/assets/favicon.svg" />
 
-    <title>Home</title>
+    <title>
+        <?php
+        if ($current_page === '/') {
+            echo 'Home';
+        } else if ($current_page === '/contact') {
+            echo 'Contact';
+        } else if ($current_page === '/signup') {
+            echo 'Sign Up';
+        } else if ($current_page === '/profile') {
+            echo 'Profile';
+        } else if ($current_page === '/signin') {
+            echo 'Sign In';
+        } else if ($current_page === '/blog') {
+            echo 'Blog';
+        } else if ($current_page === '/market') {
+            echo 'Market';
+        } else if ($current_page === '/team') {
+            echo 'Team';
+        } else {
+            echo 'Home';
+        }
+        ?>
+    </title>
 </head>
 
 <body>

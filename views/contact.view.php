@@ -6,9 +6,6 @@ require "views/partials/head.php"
 
 <main class="pt-10 pb-5">
   <section class="container p-lg-0">
-    <div class="submissions fw-bold fs-4 text-center pb-5">
-      Happy clients: <span id="counter" class="gradient-text">0</span>
-    </div>
     <div class="row g-0 align-items-center">
       <div class="col-lg-6">
         <div class="col-lg-8 mx-auto">

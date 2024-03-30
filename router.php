@@ -2,7 +2,7 @@
 // ! start the session
 session_start();
 
-// path
+// uri to be accessed
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 // routes
@@ -18,17 +18,32 @@ $routes = [
     '/team' => 'controllers/team.php',
 ];
 
-// routing the current uri to the coressponding controller  
+function isAuth()
+{
+    // Check if the user is authenticated
+    if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+
+        header('Location: /signin');
+        exit();
+    }
+}
+
+
+// routing the current uri to the coressponding controller 
 function routeToController($uri, $routes, $db)
 {
     if (array_key_exists($uri, $routes)) {
+        // if user is unauth he will not be able to access these routes
+        if (in_array($uri, ['/profile', '/market'])) {
+            isAuth();
+        }
         require $routes[$uri];
     } else {
         abort();
     }
 }
 
-// if page not exist, abort
+// if page does not exist, abort
 function abort($code = 404)
 {
     http_response_code($code);

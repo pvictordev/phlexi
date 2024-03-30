@@ -1,7 +1,11 @@
 <?php
+
 // Destroy the session
 session_destroy();
 
-// Redirect the user to the login page
-header("Location: /signin");
+// unset the values 
+session_unset();
+
+// Redirect the user to the signin page
+header("Location: /");
 exit;

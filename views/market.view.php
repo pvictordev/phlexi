@@ -30,7 +30,7 @@ require "views/partials/head.php" ?>
                     <div class="row">
                         <div class="col-md-8">
                             <div class="d-inline-flex flex-wrap">
-                                <button>badge</button>
+                                <button class="btn btn-primary">Join</button>
 
                             </div>
                         </div>

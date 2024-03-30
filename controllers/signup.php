@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_name'])) {
     // error handling array
     $errors = array();
 
-    // database insertion
+    // table where to insert the data 
     $table = "users";
 
     $data = [

@@ -19,7 +19,7 @@ require "views/partials/head.php"
     </div>
     <div class="team-content row row-cols-xxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-md-1 d-flex justify-content-center align-items-center">
       <div class="vh-100 justify-content-center" id="loader-container">
-        <div class="spinner-border text-primary" id="loader" role="status"></div>
+
       </div>
     </div>
   </section>
