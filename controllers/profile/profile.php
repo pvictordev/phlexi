@@ -43,12 +43,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // check by email
 $email = $_SESSION['email'];
-// fetch particular users
+// fetch particular users based on  $_SESSION['email']
 $query_users = "SELECT * FROM users WHERE email = :email";
 $userStatement = $db->query($query_users, [
     'email' => $email,
 ]);
 $user = $userStatement->fetch();
+
+// check by user_id
+$user_id = $_SESSION['user_id'];
+// fetch freelancer skills 
+$query = "SELECT * FROM freelancers_skills";
+$statement = $db->query($query, []);
+$freelancersSkills = $statement->fetch();
 
 // render the view
 require "views/profile.view.php";

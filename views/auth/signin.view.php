@@ -30,14 +30,15 @@ require "views/partials/header.php" ?>
                                     <div class="col-12">
                                         <?php echo isset($errors['general']) ? '<span class="text-danger ">Incorrect email or password</span>' : ''; ?>
                                         <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" value="<?= htmlspecialchars($email); ?>" required>
                                             <label for="email" class="form-label <?php echo isset($errors['general']) ? 'text-danger' : ''; ?>">Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
-                                            <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
-                                            <label for="email" class="form-label <?php echo isset($errors['general']) ? 'text-danger' : ''; ?>">Email</label>
+                                            <input type="password" class="form-control" name="password" id="password" placeholder="Password" value="<?= htmlspecialchars($password); ?>" required>
+                                            <label for="password" class="form-label <?php echo isset($errors['general']) ? 'text-danger' : ''; ?>">Password</label>
+                                            <button type="button" id="togglePassword" class="mt-2 btn btn-outline-secondary toggle-password-btn">Show</button>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -50,7 +51,7 @@ require "views/partials/header.php" ?>
                             <div class="row">
                                 <div class="col-12">
                                     <hr class="mt-5 mb-4 border-secondary-subtle">
-                                    <p class="m-0 text-secondary text-center">Do not have an account ? <a href="/signup" class="link-primary text-decoration-none">Sign in</a></p>
+                                    <p class="m-0 text-secondary text-center">Do not have an account ? <a href="/signup" class="link-primary text-decoration-none">Sign up</a></p>
                                 </div>
                             </div>
 

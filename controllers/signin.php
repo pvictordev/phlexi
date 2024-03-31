@@ -1,16 +1,19 @@
 <?php
 
 // get all users
-$query = "select * from users";
+$query = "SELECT * FROM users";
 $users = $db->query($query, [])->fetchAll();
 
 // Function to check if email and password match with any user
 function authenticateUser($users, $email, $password)
 {
     foreach ($users as $user) {
-        if ($user['email'] === $email && $user['password'] === $password) {
-            $_SESSION['email'] = $email;
-            return true;
+        // compare the emails and hashed passwords
+        if ($user['email'] === $email) {
+            if (password_verify($password, $user['password'])) {
+                $_SESSION['email'] = $email;
+                return true; // Authentication successful
+            }
         }
     }
     return false;
@@ -19,7 +22,15 @@ function authenticateUser($users, $email, $password)
 // error handling array
 $errors = array();
 
+// preserve form data
+$email = '';
+$password = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // preserve form data
+    $email = $_POST['email'];
+    $password = $_POST["password"];
+
     // Validate email
     if (!isset($_POST['email']) || empty($_POST['email'])) {
         $errors['email'] = "Email is required";
@@ -31,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!isset($_POST['password']) || empty($_POST['password'])) {
         $errors['password'] = "Password is required";
     } else {
-        $postPassword = $_POST['password'];
+        $postPassword = $_POST["password"];
     }
 
     // Proceed only if there are no validation errors

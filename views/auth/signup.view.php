@@ -41,8 +41,9 @@ require "views/partials/head.php"
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
-                                            <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
-                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password" class="form-control" name="password" id="password" placeholder="Password" value="<?= htmlspecialchars($password); ?>" required>
+                                            <label for="password" class="form-label <?php echo isset($errors['general']) ? 'text-danger' : ''; ?>">Password</label>
+                                            <button type="button" id="togglePassword" class="mt-2 btn btn-outline-secondary toggle-password-btn">Show</button>
                                         </div>
                                     </div>
                                     <div class="col-12">

@@ -16,26 +16,31 @@ require "views/partials/head.php"
             ipsum dolor, sit amet elit Quamnitm.
           </p>
 
-          <form method="GET" id="contact-form">
+          <form method="POST" action="/contact" id="contact-form">
             <div class="row">
               <div class="col-md-12">
                 <div class="mb-3">
-                  <input id="fullName" name="fullName" class="form-control bg-light" placeholder="Your name" type="text" required />
+                  <input id="fullName" name="fullName" class="form-control bg-light" placeholder="Your name" required />
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="mb-3">
-                  <input type="email" id="email" name="email" class="form-control bg-light" placeholder="Your email" type="text" required />
+                  <input type="email" id="email" name="email" class="form-control bg-light" placeholder="Your email" required />
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="mb-3">
-                  <input type="tel" id="mobile" name="mobile" class="form-control bg-light" placeholder="Your phone" type="text" required />
+                  <input type="number" id="phone" name="phone" class="form-control bg-light" placeholder="Your phone" required />
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="mb-3">
-                  <textarea id="msg" name="msg" class="form-control bg-light" placeholder="Your message" rows="4" required></textarea>
+                  <input type="text" id="subject" name="subject" class="form-control bg-light" placeholder="Your subject" required />
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="mb-3">
+                  <textarea id="message" name="message" class="form-control bg-light" placeholder="Your message" rows="4" required></textarea>
                 </div>
               </div>
               <div class="col-md-5">

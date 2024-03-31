@@ -11,7 +11,7 @@ $routes = [
     '/signup' => 'controllers/signup.php',
     '/signin' => 'controllers/signin.php',
     '/logout' => 'controllers/logout.php',
-    '/profile' => 'controllers/profile.php',
+    '/profile' => 'controllers/profile/profile.php',
     '/contact' => 'controllers/contact.php',
     '/blog' => 'controllers/blog.php',
     '/market' => 'controllers/market.php',
@@ -22,12 +22,10 @@ function isAuth()
 {
     // Check if the user is authenticated
     if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
-
         header('Location: /signin');
         exit();
     }
 }
-
 
 // routing the current uri to the coressponding controller 
 function routeToController($uri, $routes, $db)
