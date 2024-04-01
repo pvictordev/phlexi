@@ -2,13 +2,16 @@
 
 // defined password variable to access it in view
 $password = '';
+$email = '';
+$user_name = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_name'])) {
 
     // Retrieve form data
     $user_name = $_POST["user_name"];
     $email = $_POST["email"];
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $password = $_POST['password'];
+    $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
     // error handling array
     $errors = array();
@@ -19,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_name'])) {
     $data = [
         'user_name' => $user_name,
         'email' => $email,
-        'password' => $password
+        'password' => $password_hash
     ];
 
     try {

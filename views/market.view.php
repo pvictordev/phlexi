@@ -1,6 +1,8 @@
 <?php
 $current_page = '/market';
-require "views/partials/head.php" ?>
+require "views/partials/head.php";
+?>
+
 <?php require "views/partials/header.php" ?>
 
 <main class="pt-10 pb-5">
@@ -16,35 +18,45 @@ require "views/partials/head.php" ?>
                 </div>
 
                 <!-- Card Section -->
-                <div class="my-3">
-                    <small class="text-muted"><strong data-test="job-type">Fixed-price</strong> - <span data-test="contractor-tier">Entry level</span> - <span>Est. Budget:</span> <span data-test="budget">$14</span></small>
-                </div>
-                <div class="my-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-text" data-test="job-description-text">We need experienced React developer who can help us with new features to our existing project. This project can take a few days but it can be a long-term cooperation in the future. If you have good experience with Node, it would be great. Need to be familiar with webpack and redux.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="my-4">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="d-inline-flex flex-wrap">
-                                <button class="btn btn-primary">Join</button>
+                <div class="card-container d-flex flex-column gap-5">
+                    <?php foreach ($projects as $project) : ?>
+                        <div class="project_card border border-secondary border-3 p-3 rounded-3">
+                            <span class="<?= $project['status'] === 'Active' ? "active" : "closed" ?> position-absolute left-0"></span>
+                            <div class="my-3">
+                                <small class="d-flex gap-2">
+                                    <span data-test="budget">
+                                        Est. Budget: $<?= $project['price'] ?>
+                                    </span>
+                                    <span class="badge bg-secondary "><?= $project['category_name'] ?></span>
+                                </small>
+                            </div>
+                            <div class="my-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p class="card-text" data-test="job-description-text"><?= $project['description'] ?>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="my-4">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="d-inline-flex flex-wrap">
+                                            <button class="btn btn-primary">Join</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="my-4">
+                                <small class="d-inline-flex pr-3"><span class="text-body-sm">Date: </span> <strong data-test="proposals" class="text-base-sm"><?= $project['date'] ?></strong></small>
 
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="my-4">
-                    <small class="text-muted d-inline-flex pr-3"><span class="text-body-sm">Proposals:</span> <strong data-test="proposals" class="text-base-sm">20 to 50</strong></small>
-                    <!-- Add more content here -->
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
     </div>
 </main>
-
 
 <?php require "views/partials/foot.php" ?>
 <?php require "views/partials/footer.php" ?>

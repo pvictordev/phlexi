@@ -120,6 +120,18 @@ a {
   background: var(--gradient);
 }
 
+.closed {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+}
+.active {
+  width: 10px;
+  height: 10px;
+  background-color: greenyellow;
+  border-radius: 50%;
+}
 
 /* dark theme */
 .dark-theme {

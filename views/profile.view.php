@@ -1,16 +1,9 @@
 <?php
 $current_page = '/profile';
-
 require "views/partials/head.php";
 ?>
 
-<?php
-
-require "views/partials/header.php"; ?>
-
-<?php
-
-?>
+<?php require "views/partials/header.php"; ?>
 
 <main class="pt-5 pb-5">
     <section>
@@ -20,7 +13,7 @@ require "views/partials/header.php"; ?>
                     <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
                         <ol class="breadcrumb mb-0">
                             <li class="breadcrumb-item"><a href="#">User Profile</a></li>
-                            <li class="breadcrumb-item active" aria-current="page"><?= $user['email'] ?></li>
+                            <li class="breadcrumb-item" aria-current="page"><?= $user['email'] ?></li>
                         </ol>
                     </nav>
                 </div>
@@ -96,18 +89,24 @@ require "views/partials/header.php"; ?>
                                     </p>
                                     <form method="POST" action="/profile">
                                         <div class="mb-3">
-                                            <label for="skill_name" class="form-label">Choose your skill</label>
-                                            <input type="text" class="form-control" name="skill_name" id="skill_name" required>
+                                            <!-- <label for="skill_name" class="form-label">Type in your skill</label>
+                                            <input type="text" class="form-control" name="skill_name" id="skill_name" required> -->
+                                            <label class="form-label" for="skill_name">Choose your skill</label>
+                                            <select class="form-control" name="skill_id" id="skill_id">
+                                                <?php foreach ($skills as $skill) : ?>
+                                                    <option value="<?= $skill['skill_id'] ?>"><?= $skill['skill_name'] ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Paste</button>
                                     </form>
                                 </div>
                                 <div class="card-footer">
                                     <div class="overflow-auto" style="max-height: 200px;">
-                                        <?php foreach ($freelancersSkills as $freelancerSkill) : ?>
-                                            <span class="badge bg-secondary my-2"><?= $freelancerSkill['skill_id']; ?></span>
+                                        <?php foreach ($userSkills as $userSkill) : ?>
+                                            <span class="badge bg-secondary my-2"><?= $userSkill['skill_name']; ?></span>
                                             <form method="POST" action="/profile">
-                                                <input type="hidden" name="skill_id" value="<?= $freelancerSkill['skill_id']; ?>">
+                                                <input type="hidden" name="skill_id" value="<?= $userSkill['user_id']; ?>">
                                                 <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                             </form>
                                         <?php endforeach; ?>

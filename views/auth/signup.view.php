@@ -26,8 +26,8 @@ require "views/partials/head.php"
 
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" name="user_name" id="user_name" placeholder="First Name" required>
-                                            <label for="user_name" class="form-label">Your Name</label>
+                                            <input type="text" class="form-control" name="user_name" id="user_name" placeholder="First Name" value="<?= htmlspecialchars($user_name); ?>" required>
+                                            <label for=" user_name" class="form-label">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -35,8 +35,8 @@ require "views/partials/head.php"
                                             <div style="color: red;"><?php echo $errors['email']; ?></div>
                                         <?php endif; ?>
                                         <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
-                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" value="<?= htmlspecialchars($email); ?>" required>
+                                            <label for=" email" class="form-label">Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">

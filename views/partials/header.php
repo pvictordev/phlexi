@@ -28,20 +28,18 @@
                     <a class="nav-link" href="/blog">Blog</a>
                 </li>
                 <li class="nav-item me-4">
-                    <a class="nav-link" href="/team">Team</a>
+                    <a class="nav-link" href="/market">Marketplace</a>
                 </li>
                 <li class="nav-item me-4">
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link text-start dropdown-toggle btn" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <a class="nav-link text-start dropdown-toggle btn" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown03">
-                        <a class="dropdown-item" href="/market">Marketplace</a>
-                        <a class="dropdown-item" href="#">Find Work</a>
+                        <a class="dropdown-item" href="/profile"><?= isset($_SESSION['email']) ? $_SESSION['email'] : 'Guest' ?></a>
                         <a class="dropdown-item" href="<?= isset($_SESSION['email']) ? '/logout' : '/signup' ?>">
                             <?= isset($_SESSION['email']) ? 'Sign Out' : 'Sign In / Sign Up' ?>
                         </a>
-
                     </div>
                 </li>
 
