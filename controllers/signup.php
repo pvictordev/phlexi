@@ -5,6 +5,12 @@ $password = '';
 $email = '';
 $user_name = '';
 
+// do not permit the user who is authenticated to access the sign up page
+if ($_SESSION['authenticated'] ?? false) {
+    header('Location: /');
+    exit();
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_name'])) {
 
     // Retrieve form data

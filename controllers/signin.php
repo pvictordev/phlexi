@@ -22,6 +22,12 @@ function authenticateUser($users, $email, $password)
     return false;
 }
 
+// do not permit the user who is authenticated to access the sign in page
+if ($_SESSION['authenticated'] ?? false) {
+    header('Location: /');
+    exit();
+}
+
 // error handling array
 $errors = array();
 
