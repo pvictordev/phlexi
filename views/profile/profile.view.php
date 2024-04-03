@@ -131,13 +131,32 @@ require "views/partials/head.php";
                                         <div class="mb-3">
                                             <label for="category" class="form-label">Category</label>
                                             <select type="text" class="form-control" name="category" id="category">
-                                                <option value="">Programming</option>
+                                                <!-- <option value="">Programming</option>
                                                 <option value="">Graphic Design</option>
-                                                <option value="">Digital Marketing</option>
+                                                <option value="">Digital Marketing</option> -->
+                                                <?php foreach ($categories as $category) : ?>
+                                                    <option value="<?= $category['category_name'] ?>"><?= $category['category_name'] ?></option>
+                                                <?php endforeach; ?>
+
                                             </select>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Create</button>
                                     </form>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="overflow-auto d-flex flex-column gap-4" style="max-height: 300px;">
+                                        <div>
+                                            <span class="badge bg-warning my-2">Programming</span>
+                                            <span class="badge bg-success my-2">200$</span>
+                                            <div class="text-light bg-secondary p-2 rounded-2">Build a SaaS platform</div>
+                                            <span class="badge bg-success my-2">Active</span>
+                                            <span class="badge bg-primary my-2">2024-04-04</span>
+                                            <form method="POST" action="/profile">
+                                                <input type="hidden" name="skill_id" value="delete_project">
+                                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
