@@ -53,6 +53,10 @@ require "views/partials/head.php";
                         </div>
                     <?php endforeach; ?>
                 </div>
+                <div class="d-flex justify-content-center align-items-center mt-5 ">
+                    <button class="btn btn-secondary">View more</button>
+
+                </div>
             </div>
         </div>
     </div>

@@ -1,7 +1,11 @@
 <?php
-// Fetch skills and the id of a particular / freelancer
-$user_id = $_SESSION['user_id'];
 
+// get all the skills 
+$querySkill = "SELECT * FROM skills";
+$statement = $db->query($querySkill, []);
+$skills = $statement->fetchAll();
+
+// get all the skills assoicated with the logged user
 $query = "SELECT skills.*, freelancers_skills.user_id 
 FROM skills 
 INNER JOIN (
@@ -14,7 +18,7 @@ ON skills.skill_id = freelancers_skills.skill_id";
 $skillsStatement = $db->query($query, ['user_id' => $user_id]);
 $userSkills = $skillsStatement->fetchAll();
 
-// insert the skill in the freelancers_skills table
+// add skills for the logged user
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['skill_id'])) {
 
     // transform skill_id in int
@@ -42,4 +46,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['skill_id'])) {
     }
 }
 
-// remove the skill in the freelancers_skills table
+// remove the skills for the logged user

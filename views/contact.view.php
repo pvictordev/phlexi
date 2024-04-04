@@ -12,8 +12,7 @@ require "views/partials/head.php"
           <h2 class="display-5 fw-bold">Contact Us</h2>
           <p class="lead">
             Lorem ipsum dolor, sit amet elit Quamnitm veniam dicta, quos
-            nemo minima nulla ducimus officii nulla ducimus officiis! Lorem
-            ipsum dolor, sit amet elit Quamnitm.
+            nemo minima nulla ducimus officii nulla ducimus officiis!
           </p>
 
           <form method="POST" action="/contact" id="contact-form">

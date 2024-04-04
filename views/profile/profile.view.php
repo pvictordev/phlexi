@@ -25,8 +25,8 @@ require "views/partials/head.php";
                         <div class="card-body text-center">
                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                             <h5 class="my-3"><?= $user['user_name']; ?></h5>
-                            <p class="text-muted mb-1">Full Stack Developer</p>
-                            <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                            <!-- <p class="text-muted mb-1">Full Stack Developer</p>
+                            <p class="text-muted mb-4">Bay Area, San Francisco, CA</p> -->
                         </div>
                     </div>
                     <div class="card mb-4 mb-lg-0">
@@ -131,9 +131,6 @@ require "views/partials/head.php";
                                         <div class="mb-3">
                                             <label for="category" class="form-label">Category</label>
                                             <select type="text" class="form-control" name="category" id="category">
-                                                <!-- <option value="">Programming</option>
-                                                <option value="">Graphic Design</option>
-                                                <option value="">Digital Marketing</option> -->
                                                 <?php foreach ($categories as $category) : ?>
                                                     <option value="<?= $category['category_name'] ?>"><?= $category['category_name'] ?></option>
                                                 <?php endforeach; ?>
@@ -144,18 +141,22 @@ require "views/partials/head.php";
                                     </form>
                                 </div>
                                 <div class="card-footer">
-                                    <div class="overflow-auto d-flex flex-column gap-4" style="max-height: 300px;">
-                                        <div>
-                                            <span class="badge bg-warning my-2">Programming</span>
-                                            <span class="badge bg-success my-2">200$</span>
-                                            <div class="text-light bg-secondary p-2 rounded-2">Build a SaaS platform</div>
-                                            <span class="badge bg-success my-2">Active</span>
-                                            <span class="badge bg-primary my-2">2024-04-04</span>
-                                            <form method="POST" action="/profile">
-                                                <input type="hidden" name="skill_id" value="delete_project">
-                                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                                            </form>
-                                        </div>
+                                    <div class="overflow-auto d-flex flex-column gap-4" style="max-height: 350px;">
+
+                                        <?php foreach ($projects as $project) : ?>
+                                            <div>
+                                                <span class="badge bg-warning my-2"><?= $project['category_name'] ?></span>
+                                                <span class="badge bg-success my-2">$<?= $project['price'] ?></span>
+                                                <div class="text-light bg-secondary p-2 rounded-2"><?= $project['description'] ?></div>
+                                                <span class="badge <?= $project['status'] == 'Active' ? "bg-success" : "bg-secondary"  ?> my-2"><?= $project['status'] ?></span>
+                                                <span class="badge bg-primary my-2"><?= $project['date'] ?></span>
+                                                <form method="POST" action="/profile">
+                                                    <input type="hidden" name="skill_id" value="delete_project">
+                                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                                </form>
+                                            </div>
+                                        <?php endforeach; ?>
+
                                     </div>
                                 </div>
                             </div>
