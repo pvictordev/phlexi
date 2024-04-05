@@ -12,6 +12,7 @@ $routes = [
     '/signin' => 'controllers/signin.php',
     '/logout' => 'controllers/logout.php',
     '/profile' => 'controllers/profile/profile.php',
+    '/profile/edit' => 'controllers/profile/edit.php',
     '/contact' => 'controllers/contact.php',
     '/blog' => 'controllers/blog.php',
     '/market' => 'controllers/market.php',

@@ -17,8 +17,8 @@ require "views/partials/head.php";
                         </ol>
                         <!-- delete account and edit profile info -->
                         <div class="d-flex gap-3">
-                            <form action="">
-                                <input type="hidden" name="" id="">
+                            <form action="/profile/edit" method="GET">
+                                <input type="hidden" name="user_id" value="<?= $user_id ?>">
                                 <button type="submit" class="btn btn-primary">Edit profile</button>
                             </form>
                             <form action="/profile" method="POST">

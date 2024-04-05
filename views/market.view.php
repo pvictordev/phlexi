@@ -21,7 +21,7 @@ require "views/partials/head.php";
                 <div class="card-container d-flex flex-column gap-5">
                     <?php foreach ($projects as $project) : ?>
                         <div class="project_card border border-secondary border-3 p-3 rounded-3">
-                            <span class="<?= $project['status'] === 'Active' ? "active" : "closed" ?> position-absolute left-0"></span>
+                            <span class="<?= $project['status'] === 'Active' ? "Active" : "closed" ?> position-absolute left-0"></span>
                             <div class="my-3">
                                 <small class="d-flex gap-2">
                                     <span data-test="budget">

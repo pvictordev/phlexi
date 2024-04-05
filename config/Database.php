@@ -17,6 +17,8 @@ class Database
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ]);
     }
+
+    // method to execute query
     public function query($query, $params)
     {
         $statement = $this->connection->prepare($query);
@@ -28,7 +30,7 @@ class Database
         return $statement;
     }
 
-    // Method to execute INSERT queries
+    // Method to create records in the database 
     public function insert($table, $data)
     {
         $keys = implode(', ', array_keys($data));
@@ -42,13 +44,40 @@ class Database
         return $statement->rowCount(); // Return number of affected rows
     }
 
-    // method to delete the record
+    // method to delete the record from the database
     public function delete($table, $condition, $params)
     {
         $query = "DELETE FROM $table WHERE $condition";
 
         $statement = $this->connection->prepare($query);
         $statement->execute($params);
+
+        return $statement->rowCount(); // Return number of affected rows
+    }
+
+    public function update($table, $data, $condition, $params)
+    {
+        $setValues = '';
+        foreach ($data as $key => $value) {
+            $setValues .= "$key = :$key, ";
+        }
+        $setValues = rtrim($setValues, ', ');
+
+        $query = "UPDATE $table SET $setValues WHERE $condition";
+
+        $statement = $this->connection->prepare($query);
+
+        // Bind values for SET clause
+        foreach ($data as $key => $value) {
+            $statement->bindValue(":$key", $value);
+        }
+
+        // Bind values for WHERE clause
+        foreach ($params as $key => $value) {
+            $statement->bindValue(":$key", $value);
+        }
+
+        $statement->execute();
 
         return $statement->rowCount(); // Return number of affected rows
     }

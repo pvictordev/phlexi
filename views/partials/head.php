@@ -44,6 +44,8 @@
             echo 'Sign Up';
         } else if ($current_page === '/profile') {
             echo 'Profile';
+        } else if ($current_page === '/profile/edit') {
+            echo 'Edit';
         } else if ($current_page === '/signin') {
             echo 'Sign In';
         } else if ($current_page === '/blog') {
