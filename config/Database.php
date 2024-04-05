@@ -41,4 +41,15 @@ class Database
 
         return $statement->rowCount(); // Return number of affected rows
     }
+
+    // method to delete the record
+    public function delete($table, $condition, $params)
+    {
+        $query = "DELETE FROM $table WHERE $condition";
+
+        $statement = $this->connection->prepare($query);
+        $statement->execute($params);
+
+        return $statement->rowCount(); // Return number of affected rows
+    }
 }

@@ -17,6 +17,8 @@ $projectsStatement = $db->query($queryProjects, [
 ]);
 $projects = $projectsStatement->fetchAll();
 
-// add projects
+// add projects in the projects table 
+if (isset($_POST)) {
+}
 
-// remove projects
+// remove projects from the projects table 

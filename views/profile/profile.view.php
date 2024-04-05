@@ -10,11 +10,22 @@ require "views/partials/head.php";
         <div class="container py-5">
             <div class="row">
                 <div class="col">
-                    <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                    <nav aria-label="breadcrumb" class="d-flex align-items-center justify-content-between bg-light rounded-3 p-3 mb-4">
                         <ol class="breadcrumb mb-0">
                             <li class="breadcrumb-item"><a href="#">User Profile</a></li>
                             <li class="breadcrumb-item" aria-current="page"><?= $user['email'] ?></li>
                         </ol>
+                        <!-- delete account and edit profile info -->
+                        <div class="d-flex gap-3">
+                            <form action="">
+                                <input type="hidden" name="" id="">
+                                <button type="submit" class="btn btn-primary">Edit profile</button>
+                            </form>
+                            <form action="/profile" method="POST">
+                                <input type="hidden" name="user_id" value="<?= $user_id ?>">
+                                <button type=" submit" class="btn btn-danger">Delete account</button>
+                            </form>
+                        </div>
                     </nav>
                 </div>
             </div>
@@ -30,7 +41,7 @@ require "views/partials/head.php";
                         </div>
                     </div>
                     <div class="card mb-4 mb-lg-0">
-                        <!-- update the bio -->
+                        <!-- update the bio
                         <form action="">
                             <input type="hidden" name="" id="">
                             <button type="submit" class="position-absolute top-0 btn">
@@ -39,10 +50,12 @@ require "views/partials/head.php";
                                     <path d="M11 4H6C4.93913 4 3.92178 4.42142 3.17163 5.17157C2.42149 5.92172 2 6.93913 2 8V18C2 19.0609 2.42149 20.0783 3.17163 20.8284C3.92178 21.5786 4.93913 22 6 22H17C19.21 22 20 20.2 20 18V13" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </button>
-                        </form>
+                        </form> -->
                         <div class="card-body p-3">
                             <h3 class="text-center">Bio</h3>
-                            <p><?= $user['bio']; ?></p>
+                            <p class="<?= !empty($user['bio']) ?  'text-muted' : 'text-danger' ?> mb-0 mt-3 text-center">
+                                <?= !empty($user['bio']) ? $user['bio']  : "Tell about yourself !"  ?>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -67,18 +80,15 @@ require "views/partials/head.php";
                                 </div>
                             </div>
                             <hr>
-
-                            <hr>
                             <div class="row">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Mobile</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <p class="text-muted mb-0"><?= $user['phone']; ?></p>
+                                    <p class="<?= !empty($user['phone']) ?  'text-muted' : 'text-danger' ?> mb-0"><?= !empty($user['phone']) ? $user['phone']  : 'Add your phone number'  ?></p>
                                 </div>
                             </div>
                             <hr>
-
                         </div>
                     </div>
                     <div class="row">
@@ -102,7 +112,7 @@ require "views/partials/head.php";
                                     </form>
                                 </div>
                                 <div class="card-footer">
-                                    <div class="overflow-auto" style="max-height: 200px;">
+                                    <div class="overflow-auto" style="max-height: 140px;">
                                         <?php foreach ($userSkills as $userSkill) : ?>
                                             <span class="badge bg-secondary my-2"><?= $userSkill['skill_name']; ?></span>
                                             <form method="POST" action="/profile">
@@ -117,7 +127,8 @@ require "views/partials/head.php";
                         <div class="col-md-6">
                             <div class="card mb-4 mb-md-0">
                                 <div class="card-body">
-                                    <p class="mb-4"><span class="text-primary font-italic me-1">Create a project</span>
+                                    <p class="mb-4">
+                                        <span class="text-primary font-italic me-1">Create a project</span>
                                     </p>
                                     <form method="POST" action="/profile">
                                         <div class="mb-3">
@@ -134,14 +145,13 @@ require "views/partials/head.php";
                                                 <?php foreach ($categories as $category) : ?>
                                                     <option value="<?= $category['category_name'] ?>"><?= $category['category_name'] ?></option>
                                                 <?php endforeach; ?>
-
                                             </select>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Create</button>
                                     </form>
                                 </div>
                                 <div class="card-footer">
-                                    <div class="overflow-auto d-flex flex-column gap-4" style="max-height: 350px;">
+                                    <div class="overflow-auto d-flex flex-column gap-4" style="max-height: 150px;">
 
                                         <?php foreach ($projects as $project) : ?>
                                             <div>
@@ -156,7 +166,6 @@ require "views/partials/head.php";
                                                 </form>
                                             </div>
                                         <?php endforeach; ?>
-
                                     </div>
                                 </div>
                             </div>
