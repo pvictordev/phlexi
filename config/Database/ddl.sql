@@ -60,7 +60,7 @@ CREATE TABLE `projects`(
 CREATE TABLE `freelancers_skills`(
     `user_id` INT NOT NULL,
     `skill_id` INT NOT NULL,
-    PRIMARY KEY(`user_id`, `skill_id`)
+    -- PRIMARY KEY(`user_id`, `skill_id`)
 );
 
 -- reviews table
@@ -98,10 +98,10 @@ ALTER TABLE
     `reviews` ADD CONSTRAINT `reviews_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `freelancers`(`user_id`);
 ALTER TABLE
     `projects_skills` ADD CONSTRAINT `projects_skills_project_id_foreign` FOREIGN KEY(`project_id`) REFERENCES `projects`(`project_id`);
-ALTER TABLE
+ALTER TABLE 
     `clients` ADD CONSTRAINT `clients_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `users`(`user_id`);
 ALTER TABLE
-    `freelancers_skills` ADD CONSTRAINT `freelancers_skills_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `freelancers`(`user_id`);
+    `freelancers_skills` ADD CONSTRAINT `freelancers_skills_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `freelancers`(`user_id`) ON DELETE CASCADE;
 ALTER TABLE
     `freelancers_skills` ADD CONSTRAINT `freelancers_skills_skill_id_foreign` FOREIGN KEY(`skill_id`) REFERENCES `skills`(`skill_id`);
 ALTER TABLE
@@ -109,10 +109,20 @@ ALTER TABLE
 ALTER TABLE
     `clients` ADD CONSTRAINT `clients_project_id_foreign` FOREIGN KEY(`project_id`) REFERENCES `projects`(`project_id`);
 ALTER TABLE
-    `freelancers` ADD CONSTRAINT `freelancers_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `users`(`user_id`);
+    `freelancers` ADD CONSTRAINT `freelancers_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `users`(`user_id`) ON DELETE CASCADE;
 ALTER TABLE
     `projects` ADD CONSTRAINT `projects_category_id_foreign` FOREIGN KEY(`category_id`) REFERENCES `categories`(`category_id`);
 ALTER TABLE
     `transactions` ADD CONSTRAINT `transactions_project_id_foreign` FOREIGN KEY(`project_id`) REFERENCES `projects`(`project_id`);
 ALTER TABLE
     `projects_skills` ADD CONSTRAINT `projects_skills_skill_id_foreign` FOREIGN KEY(`skill_id`) REFERENCES `skills`(`skill_id`);
+
+-- triggers
+-- add a new record for user_id from freelancers table, after each insert of user_id in users column 
+CREATE TRIGGER after_user_insert
+AFTER INSERT ON users
+FOR EACH ROW
+BEGIN
+    INSERT INTO freelancers (user_id) VALUES (NEW.user_id);
+END;
+

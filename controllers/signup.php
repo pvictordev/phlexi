@@ -49,6 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_name'])) {
             $errors['email'] = "Email already exists. Please choose a different email.";
         } else {
             $errors['general'] = "Database error: " . $e->getMessage();
+            // show the error
+            dd($errors);
         }
     }
 }

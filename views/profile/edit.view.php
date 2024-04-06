@@ -27,7 +27,7 @@ require "views/partials/head.php";
                             <label class="mb-2" for="bio">Bio</label>
                             <textarea name="bio" placeholder="Change your bio" class="form-control" id="bio" rows="4"><?= $user['bio'] ?></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </form>
                 </div>
             </div>
