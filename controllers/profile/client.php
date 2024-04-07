@@ -9,56 +9,68 @@ $categories = $categoriesStatement->fetchAll();
 $user_id = $_SESSION['user_id'];
 $queryProjects = "SELECT projects.*, categories.*
 FROM projects
-JOIN clients ON projects.project_id = clients.project_id
 JOIN categories ON projects.category_id = categories.category_id
-WHERE clients.user_id = :user_id";
+WHERE projects.user_id = :user_id";
 $projectsStatement = $db->query($queryProjects, [
     'user_id' => $user_id
 ]);
 $projects = $projectsStatement->fetchAll();
 
+// add / remove projects from the projects
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user_id = $_SESSION['user_id'];
+    $category_id = intval($_POST['category']);
+    $price = $_POST['price'];
+    $status = $_POST['status'];
+    $description = $_POST['description'];
 
-// add projects in the projects table 
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     if (isset($_POST['skill_id'])) {
-//         // Add skills for the logged user
-//         $skill_id = intval($_POST['skill_id']);
-//         $user_id = $_SESSION['user_id'];
+    if (isset($user_id) && isset($category_id) && isset($price) && isset($status) && isset($description)) {
 
-//         $table = "freelancers_skills";
-//         $data = [
-//             'user_id' => $user_id,
-//             'skill_id' => $skill_id,
-//         ];
-//         $rowsInserted = $db->insert($table, $data);
+        //Add project data for the logged user
+        $user_id = $_SESSION['user_id'];
+        $category_id = intval($_POST['category']);
+        $price = $_POST['price'];
+        $status = $_POST['status'];
+        $description = $_POST['description'];
 
-//         if ($rowsInserted < 0) {
-//             // Insertion error
-//             dd($rowsInserted);
-//         }
-//     } elseif (isset($_POST['remove_skill'])) {
-//         // Remove the skill for the logged user
-//         $skill_id = intval($_POST['remove_skill']);
-//         $user_id = $_SESSION['user_id'];
+        $table = "projects";
+        $data = [
+            'user_id' => $user_id,
+            'category_id' => $category_id,
+            'price' => $price,
+            'status' => $status,
+            'description' => $description,
+        ];
+        $rowsInserted = $db->insert($table, $data);
 
-//         // Perform deletion from freelancers_skills table
-//         $table = "freelancers_skills";
-//         $condition = "user_id = :user_id AND skill_id = :skill_id";
-//         $params = ['user_id' => $user_id, 'skill_id' => $skill_id];
-//         $rowsDeleted = $db->delete($table, $condition, $params);
+        if ($rowsInserted < 0) {
+            // Insertion error
+            dd($rowsInserted);
+        }
+    }
+    //Remove the project for the logged user
+    elseif (isset($_POST['remove_project'])) {
 
-//         if ($rowsDeleted === false) {
-//             // Deletion error
-//             dd("Error deleting skill.");
-//         }
-//     }
+        $project_id = intval($_POST['remove_project']);
+        $user_id = $_SESSION['user_id'];
 
-//     // Redirect to profile after processing the request
-//     header("Location: /profile");
-//     exit();
-// }
+        // Perform deletion from freelancers_skills table
+        $table = "projects";
+        $condition = "user_id = :user_id AND project_id = :project_id";
+        $params = ['user_id' => $user_id, 'project_id' => $project_id];
 
-// remove projects from the projects table
+        $rowsDeleted = $db->delete($table, $condition, $params);
+
+        if ($rowsDeleted === false) {
+            // Deletion error
+            dd("Error deleting skill.");
+        }
+    }
+
+    // Redirect to profile after processing the request
+    header("Location: /profile");
+    exit();
+}
 
 // render the view
 require "./views/profile/client.view.php";

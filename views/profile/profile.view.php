@@ -84,7 +84,7 @@ require "views/partials/head.php";
                     <div class="row">
                         <div class="col-md-6">
                             <a class="text-primary" href="/profile/freelancer">Add Skill / Freelancer Settings</a>
-                            <div class="card-footer bg-light p-3 pt-2 rounded-3">
+                            <div class="card-footer bg-light border border-3 border-secondary p-3 pt-2 rounded-3">
                                 <div class="overflow-auto" style="max-height: 140px;">
                                     <?php foreach ($userSkills as $userSkill) : ?>
                                         <span class="badge bg-secondary my-2"><?= $userSkill['skill_name']; ?></span>
@@ -94,17 +94,17 @@ require "views/partials/head.php";
                         </div>
                         <div class="col-md-6">
                             <a class="text-primary" href="/profile/client">Add Project / Client Settings</a>
-                            <div class="card-footer">
-                                <div class="overflow-auto d-flex flex-column gap-4" style="max-height: 170px;">
-                                    <div class="bg-light p-3 pt-2 rounded-3">
-                                        <?php foreach ($projects as $project) : ?>
+                            <div class="card-footer bg-light border border-3 border-secondary rounded-3">
+                                <div class="overflow-auto d-flex flex-column gap-2" style="max-height: 130px;">
+                                    <?php foreach ($projects as $project) : ?>
+                                        <div class="project-card p-3 pt-2 pb-2">
                                             <span class="badge bg-warning my-2"><?= $project['category_name'] ?></span>
                                             <span class="badge bg-success my-2">$<?= $project['price'] ?></span>
                                             <div class="text-light bg-secondary p-2 rounded-2"><?= $project['description'] ?></div>
                                             <span class="badge <?= $project['status'] == 'Active' ? "bg-success" : "bg-secondary"  ?> my-2"><?= $project['status'] ?></span>
                                             <span class="badge bg-primary my-2"><?= $project['date'] ?></span>
-                                        <?php endforeach; ?>
-                                    </div>
+                                        </div>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                         </div>

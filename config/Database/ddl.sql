@@ -11,7 +11,7 @@ CREATE TABLE `transactions`(
     `user_id` INT NOT NULL,
     `project_id` INT NOT NULL,
     `amount` DOUBLE(8, 2) NOT NULL,
-    `date` DATETIME NOT NULL,
+    `date` DATETIME NOT NULL DEFAULT NOW(),
     `status` VARCHAR(255) NOT NULL
 );
 
@@ -26,7 +26,6 @@ CREATE TABLE `freelancers`(
 -- clients table
 CREATE TABLE `clients`(
     `user_id` INT NOT NULL,
-    `project_id` INT NULL,
     PRIMARY KEY(`user_id`)
 );
 
@@ -53,14 +52,13 @@ CREATE TABLE `projects`(
     `price` INT NOT NULL,
     `status` VARCHAR(255) NOT NULL,
     `description` VARCHAR(255) NOT NULL,
-    `date` DATETIME NOT NULL
+    `date` DATETIME NOT NULL DEFAULT NOW(),
 );
 
 -- freelancer skills table
 CREATE TABLE `freelancers_skills`(
     `user_id` INT NOT NULL,
     `skill_id` INT NOT NULL,
-    -- PRIMARY KEY(`user_id`, `skill_id`)
 );
 
 -- reviews table
@@ -107,11 +105,11 @@ ALTER TABLE
 ALTER TABLE
     `transactions` ADD CONSTRAINT `transactions_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `users`(`user_id`);
 ALTER TABLE
-    `clients` ADD CONSTRAINT `clients_project_id_foreign` FOREIGN KEY(`project_id`) REFERENCES `projects`(`project_id`);
-ALTER TABLE
     `freelancers` ADD CONSTRAINT `freelancers_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `users`(`user_id`) ON DELETE CASCADE;
 ALTER TABLE
     `projects` ADD CONSTRAINT `projects_category_id_foreign` FOREIGN KEY(`category_id`) REFERENCES `categories`(`category_id`);
+ALTER TABLE 
+    `projects` ADD CONSTRAINT `projects_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES clients(`user_id`);
 ALTER TABLE
     `transactions` ADD CONSTRAINT `transactions_project_id_foreign` FOREIGN KEY(`project_id`) REFERENCES `projects`(`project_id`);
 ALTER TABLE
@@ -119,10 +117,17 @@ ALTER TABLE
 
 -- triggers
 -- add a new record for user_id from freelancers table, after each insert of user_id in users column 
-CREATE TRIGGER after_user_insert
+CREATE TRIGGER after_user_insert_freelancer
 AFTER INSERT ON users
 FOR EACH ROW
 BEGIN
     INSERT INTO freelancers (user_id) VALUES (NEW.user_id);
 END;
 
+-- add a new record for user_id from clients table, after each insert of user_id in users column 
+CREATE TRIGGER after_user_insert_client
+AFTER INSERT ON users
+FOR EACH ROW
+BEGIN
+    INSERT INTO clients (user_id) VALUES (NEW.user_id);
+END;

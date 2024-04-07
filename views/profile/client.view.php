@@ -25,33 +25,48 @@ require "views/partials/head.php";
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
-                    <input type="text" class="form-control" name="price" id="price">
+                    <input type="number" class="form-control" name="price" id="price">
                 </div>
                 <div class="mb-3">
                     <label for="category" class="form-label">Category</label>
                     <select type="text" class="form-control" name="category" id="category">
                         <?php foreach ($categories as $category) : ?>
-                            <option value="<?= $category['category_name'] ?>"><?= $category['category_name'] ?></option>
+                            <option value="<?= $category['category_id'] ?>"><?= $category['category_name'] ?></option>
                         <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="status" class="form-label">Status</label>
+                    <select type="text" class="form-control" name="status" id="status">
+                        <option value="Active">Active</option>
+                        <option value="Closed">Closed</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
         </div>
         <div class="card-footer">
-            <div class="overflow-auto d-flex flex-column gap-4" style="max-height: 170px;">
-                <div class="bg-light p-3 pt-2 rounded-3">
+            <div class="overflow-auto" style="max-height: 170px;">
+                <div class="bg-light border-dark d-flex flex-column gap-4 p-3 pt-2 rounded-3">
                     <?php foreach ($projects as $project) : ?>
-                        <span class="badge bg-warning my-2"><?= $project['category_name'] ?></span>
-                        <span class="badge bg-success my-2">$<?= $project['price'] ?></span>
-                        <div class="text-light bg-secondary p-2 rounded-2"><?= $project['description'] ?></div>
-                        <span class="badge <?= $project['status'] == 'Active' ? "bg-success" : "bg-secondary"  ?> my-2"><?= $project['status'] ?></span>
-                        <span class="badge bg-primary my-2"><?= $project['date'] ?></span>
-                        <form method="POST" action="/profile/client">
-                            <input type="hidden" name="skill_id" value="delete_project">
-                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                        </form>
-                    <?php endforeach; ?>
+                        <div>
+                            <span class="badge bg-warning my-2"><?= $project['category_name'] ?></span>
+                            <span class="badge bg-success my-2">$<?= $project['price'] ?></span>
+                            <div class="text-light bg-secondary p-2 rounded-2"><?= $project['description'] ?></div>
+                            <span class="badge <?= $project['status'] == 'Active' ? "bg-success" : "bg-secondary"  ?> my-2"><?= $project['status'] ?></span>
+                            <span class="badge bg-primary my-2"><?= $project['date'] ?></span>
+                            <div class="form-actions d-flex gap-2">
+                                <form method="POST" action="/profile/client">
+                                    <input type="hidden" name="remove_project" value="<?= $project['project_id'] ?>">
+                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                </form>
+                                <form method="GET" action="/profile/client">
+                                    <input type="hidden" name="skill_id" value="edit_project">
+                                    <button type="submit" class="btn btn-sm btn-primary">Edit</button>
+                                </form>
+                            </div>
+                        </div>
+                    <?php endforeach;  ?>
                 </div>
             </div>
         </div>

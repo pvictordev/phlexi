@@ -18,8 +18,9 @@ ON skills.skill_id = freelancers_skills.skill_id";
 $skillsStatement = $db->query($query, ['user_id' => $_SESSION['user_id']]);
 $userSkills = $skillsStatement->fetchAll();
 
-// add skills for the logged user
+// add / remove skills in the freelancer_skills
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // add skills for the logged user
     if (isset($_POST['skill_id'])) {
         // Add skills for the logged user
         $skill_id = intval($_POST['skill_id']);
@@ -36,8 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Insertion error
             dd($rowsInserted);
         }
-    } elseif (isset($_POST['remove_skill'])) {
-        // Remove the skill for the logged user
+    }
+    // Remove the skill for the logged user 
+    elseif (isset($_POST['remove_skill'])) {
+
         $skill_id = intval($_POST['remove_skill']);
         $user_id = $_SESSION['user_id'];
 
@@ -57,7 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: /profile");
     exit();
 }
-
 
 // render the view
 require "./views/profile/freelancer.view.php";
