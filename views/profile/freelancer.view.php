@@ -30,7 +30,17 @@ require "views/partials/head.php";
                 <button type="submit" class="btn btn-primary">Paste</button>
             </form>
         </div>
-
+        <div class="card-footer bg-light p-3 pt-2 rounded-3">
+            <div class="overflow-auto" style="max-height: 140px;">
+                <?php foreach ($userSkills as $userSkill) : ?>
+                    <span class="badge bg-secondary my-2"><?= $userSkill['skill_name']; ?></span>
+                    <form method="POST" action="/profile/freelancer">
+                        <input type="hidden" name="remove_skill" value="<?= $userSkill['skill_id']; ?>">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                <?php endforeach; ?>
+            </div>
+        </div>
     </div>
 </section>
 

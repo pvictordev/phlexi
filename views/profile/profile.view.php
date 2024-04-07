@@ -88,10 +88,6 @@ require "views/partials/head.php";
                                 <div class="overflow-auto" style="max-height: 140px;">
                                     <?php foreach ($userSkills as $userSkill) : ?>
                                         <span class="badge bg-secondary my-2"><?= $userSkill['skill_name']; ?></span>
-                                        <form method="POST" action="/profile">
-                                            <input type="hidden" name="skill_id" value="<?= $userSkill['user_id']; ?>">
-                                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                                        </form>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
@@ -107,10 +103,6 @@ require "views/partials/head.php";
                                             <div class="text-light bg-secondary p-2 rounded-2"><?= $project['description'] ?></div>
                                             <span class="badge <?= $project['status'] == 'Active' ? "bg-success" : "bg-secondary"  ?> my-2"><?= $project['status'] ?></span>
                                             <span class="badge bg-primary my-2"><?= $project['date'] ?></span>
-                                            <form method="POST" action="/profile">
-                                                <input type="hidden" name="skill_id" value="delete_project">
-                                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                                            </form>
                                         <?php endforeach; ?>
                                     </div>
                                 </div>

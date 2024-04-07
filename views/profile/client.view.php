@@ -18,7 +18,7 @@ require "views/partials/head.php";
             <p class="mb-4">
                 <span class="text-primary font-italic me-1">Create a project</span>
             </p>
-            <form method="POST" action="/profile">
+            <form method="POST" action="/profile/client">
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
                     <input type="text" class="form-control" name="description" id="description">
@@ -37,6 +37,23 @@ require "views/partials/head.php";
                 </div>
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
+        </div>
+        <div class="card-footer">
+            <div class="overflow-auto d-flex flex-column gap-4" style="max-height: 170px;">
+                <div class="bg-light p-3 pt-2 rounded-3">
+                    <?php foreach ($projects as $project) : ?>
+                        <span class="badge bg-warning my-2"><?= $project['category_name'] ?></span>
+                        <span class="badge bg-success my-2">$<?= $project['price'] ?></span>
+                        <div class="text-light bg-secondary p-2 rounded-2"><?= $project['description'] ?></div>
+                        <span class="badge <?= $project['status'] == 'Active' ? "bg-success" : "bg-secondary"  ?> my-2"><?= $project['status'] ?></span>
+                        <span class="badge bg-primary my-2"><?= $project['date'] ?></span>
+                        <form method="POST" action="/profile/client">
+                            <input type="hidden" name="skill_id" value="delete_project">
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    <?php endforeach; ?>
+                </div>
+            </div>
         </div>
     </div>
 </section>

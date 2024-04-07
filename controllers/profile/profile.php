@@ -31,7 +31,5 @@ $projectsStatement = $db->query($queryProjects, [
 ]);
 $projects = $projectsStatement->fetchAll();
 
-
-
 // render the view
 require "views/profile/profile.view.php";
