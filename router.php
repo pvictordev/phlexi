@@ -7,18 +7,19 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 // routes
 $routes = [
-    '/' => 'controllers/index.php',
-    '/signup' => 'controllers/signup.php',
-    '/signin' => 'controllers/signin.php',
-    '/logout' => 'controllers/logout.php',
-    '/profile' => 'controllers/profile/profile.php',
-    '/profile/edit' => 'controllers/profile/edit.php',
-    '/profile/freelancer' => 'controllers/profile/freelancer.php',
-    '/profile/client' => 'controllers/profile/client.php',
-    '/contact' => 'controllers/contact.php',
-    '/blog' => 'controllers/blog.php',
-    '/market' => 'controllers/market.php',
-    '/team' => 'controllers/team.php',
+    '/' => 'app/controllers/index.php',
+    '/signup' => 'app/controllers/auth/signup.php',
+    '/signin' => 'app/controllers/auth/signin.php',
+    '/logout' => 'app/controllers/auth/logout.php',
+    '/profile' => 'app/controllers/profile/profile.php',
+    '/profile/edit' => 'app/controllers/profile/user/edit.php',
+    '/profile/destroy' => 'app/controllers/profile/user/destroy.php',
+    '/profile/freelancer' => 'app/controllers/profile/freelancer/freelancer.php',
+    '/profile/client' => 'app/controllers/profile/client/client.php',
+    '/contact' => 'app/controllers/contact.php',
+    '/blog' => 'app/controllers/blog.php',
+    '/market' => 'app/controllers/market.php',
+    '/team' => 'app/controllers/team.php',
 ];
 
 function isAuth()
@@ -38,7 +39,7 @@ function routeToController($uri, $routes, $db)
         if (in_array($uri, ['/profile', '/market'])) {
             isAuth();
         }
-        require $routes[$uri];
+        require base_path($routes[$uri]);
     } else {
         abort();
     }

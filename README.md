@@ -18,4 +18,4 @@ We implemented the Bootstrap framework by replacing all CSS classes with corresp
 
 ### Stage #4 (PHP & MySQL)
 
-At that stage, we created the database for the app. Following that, we developed the database schema. Subsequently, we refactored the entire HTML code, replacing it with PHP, following to the MVC (Model-View-Controller) architecture.
+At that stage, we created the database for the app. Following that, we developed the database schema. Subsequently, we refactored the entire HTML code, replacing it with PHP, following to the MVC (Model-View-Controller) architecture. We've implemented new functionalities such as user sign-up and sign-in, user profile management including editing and updating user information, adding skills for specific users, and project management capabilities including CRUD operations (Create, Read, Update, Delete). All changes adhere to industry best practices, such as naming conventions for files and folders and adopting the MVC (Model-View-Controller) software design pattern. Security measures include password hashing during user registration and middleware to redirect users based on their role (logged in or logged out).

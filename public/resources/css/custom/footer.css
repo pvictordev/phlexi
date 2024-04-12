@@ -1,0 +1,20 @@
+.footer {
+  width: 100%;
+  background: var(--gray-06);
+  padding: 3.2rem;
+}
+
+.dark-theme {
+  .footer {
+    background: var(--bg-darker);
+    color: var(--text-dark);
+  }
+}
+
+/* footer theme styles */
+/* @media (prefers-color-scheme: dark) {
+  .footer {
+    background: var(--bg-darker);
+    color: var(--text-dark);
+  }
+} */

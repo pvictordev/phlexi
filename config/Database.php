@@ -31,7 +31,7 @@ class Database
     }
 
     // Method to create records in the database 
-    public function insert($table, $data)
+    public function store($table, $data)
     {
         $keys = implode(', ', array_keys($data));
         $values = implode(', ', array_fill(0, count($data), '?'));
@@ -45,7 +45,7 @@ class Database
     }
 
     // method to delete the record from the database
-    public function delete($table, $condition, $params)
+    public function destroy($table, $condition, $params)
     {
         $query = "DELETE FROM $table WHERE $condition";
 
@@ -55,7 +55,7 @@ class Database
         return $statement->rowCount(); // Return number of affected rows
     }
 
-    public function update($table, $data, $condition, $params)
+    public function edit($table, $data, $condition, $params)
     {
         $setValues = '';
         foreach ($data as $key => $value) {

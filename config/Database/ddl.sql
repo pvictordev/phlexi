@@ -42,8 +42,8 @@ CREATE TABLE `users`(
     `bio` TEXT NOT NULL,
     `password` VARCHAR(255) NOT NULL
 );
-ALTER TABLE users
-ADD CONSTRAINT unique_email UNIQUE (email);
+ALTER TABLE 
+    `users` ADD CONSTRAINT unique_email UNIQUE (`email`);
 
 -- projects table
 CREATE TABLE `projects`(
@@ -97,11 +97,13 @@ ALTER TABLE
 ALTER TABLE
     `projects_skills` ADD CONSTRAINT `projects_skills_project_id_foreign` FOREIGN KEY(`project_id`) REFERENCES `projects`(`project_id`);
 ALTER TABLE 
-    `clients` ADD CONSTRAINT `clients_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `users`(`user_id`);
+    `clients` ADD CONSTRAINT `clients_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `users`(`user_id`) ON DELETE CASCADE;
 ALTER TABLE
     `freelancers_skills` ADD CONSTRAINT `freelancers_skills_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `freelancers`(`user_id`) ON DELETE CASCADE;
 ALTER TABLE
     `freelancers_skills` ADD CONSTRAINT `freelancers_skills_skill_id_foreign` FOREIGN KEY(`skill_id`) REFERENCES `skills`(`skill_id`);
+ALTER TABLE 
+    `freelancer_skills` ADD CONSTRAINT `unique_user_skill` UNIQUE (`user_id`, `skill_id`);
 ALTER TABLE
     `transactions` ADD CONSTRAINT `transactions_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `users`(`user_id`);
 ALTER TABLE
@@ -109,7 +111,7 @@ ALTER TABLE
 ALTER TABLE
     `projects` ADD CONSTRAINT `projects_category_id_foreign` FOREIGN KEY(`category_id`) REFERENCES `categories`(`category_id`);
 ALTER TABLE 
-    `projects` ADD CONSTRAINT `projects_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES clients(`user_id`);
+    `projects` ADD CONSTRAINT `projects_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES clients(`user_id`) ON DELETE CASCADE;
 ALTER TABLE
     `transactions` ADD CONSTRAINT `transactions_project_id_foreign` FOREIGN KEY(`project_id`) REFERENCES `projects`(`project_id`);
 ALTER TABLE
