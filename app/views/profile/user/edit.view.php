@@ -15,8 +15,8 @@ require base_path("app/views/partials/head.php");
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">
+            <div class="border border-3 border-secondary p-3 rounded-3">
+                <div class="card-header fs-4 mb-2">
                     Edit your profile data
                 </div>
                 <div class="card-body">
@@ -39,6 +39,9 @@ require base_path("app/views/partials/head.php");
                         </div>
 
                         <div class="form-group">
+                            <?php if (!empty($errors['match'])) : ?>
+                                <span class="text-danger"><?php echo $errors['match']; ?></span><br>
+                            <?php endif; ?>
                             <label class="mb-2" for="old_password">Old password</label>
                             <input type="text" value="" name="old_password" class="form-control" id="old_password" placeholder="Type your old password">
                         </div>
@@ -47,6 +50,7 @@ require base_path("app/views/partials/head.php");
                             <label class="mb-2" for="new_password">New password</label>
                             <input type="text" value="" name="new_password" class="form-control" id="new_password" placeholder="Type your new password">
                         </div>
+
                         <button type="submit" class="btn btn-primary">Update</button>
                     </form>
                 </div>

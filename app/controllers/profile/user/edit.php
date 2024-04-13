@@ -13,23 +13,41 @@ $user = $userStatement->fetch();
 // update the user data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // preserve form data
-    $user_name = $_POST['user_name'];
-    $email = $_POST['email'];
-    $bio = $_POST['bio'];
-    $phone = $_POST['phone'];
+    $old_password = $_POST['old_password'];
+    $new_password = $_POST['new_password'];
 
-    $table = 'users';
-    $data = array('user_name' => $user_name, 'email' => $email, 'bio' => $bio, 'phone' => $phone);
-    $condition = 'user_id = :user_id'; // Example condition
-    $params = [
-        'user_id' => $user_id,
-    ];
+    // Check if old password matches the current password
+    if (!password_verify($old_password, $user['password'])) {
+        $errors['match'] = 'Your current password does not match with the provided password';
+    }
 
-    $affectedRows = $db->edit($table, $data, $condition, $params);
+    if (empty($errors)) {
+        // Hash the new password
+        $password = password_hash($new_password, PASSWORD_DEFAULT);
 
-    header('Location: /profile');
+        $user_name = $_POST['user_name'];
+        $email = $_POST['email'];
+        $bio = $_POST['bio'];
+        $phone = $_POST['phone'];
+
+        $table = 'users';
+        $data = array(
+            'user_name' => $user_name,
+            'email' => $email,
+            'bio' => $bio,
+            'phone' => $phone,
+            'password' => $password
+        );
+        $condition = 'user_id = :user_id'; // Example condition
+        $params = array('user_id' => $user['user_id']);
+
+        $affectedRows = $db->edit($table, $data, $condition, $params);
+
+        header('Location: /profile');
+        exit;
+    }
 }
+
 
 // render the view
 require base_path("app/views/profile/user/edit.view.php");
