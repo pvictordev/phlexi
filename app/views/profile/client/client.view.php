@@ -14,8 +14,8 @@ require base_path("app/views/partials/head.php");
 
 <!-- add a new project for client -->
 <section class="container pt-5 pb-5">
-    <div class="card mb-4 mb-md-0">
-        <div class="card-body">
+    <div class="border border-3 border-secondary p-3 rounded-3 mb-4 mb-md-0">
+        <div class="card-body mb-3">
             <p class="mb-4">
                 <span class="text-primary font-italic me-1">Create a project</span>
             </p>
@@ -46,9 +46,9 @@ require base_path("app/views/partials/head.php");
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
         </div>
-        <div class="card-footer">
+        <div class="card-footer px-3 py-1 rounded-3 border border-secondary border-3">
             <div class="overflow-auto" style="height: 170px;">
-                <div class="bg-light border-dark d-flex flex-column gap-4 p-3 pt-2 rounded-3">
+                <div class="d-flex flex-column gap-4 pt-2 rounded-3">
                     <?php foreach ($projects as $project) : ?>
                         <div>
                             <span class="badge bg-warning my-2"><?= $project['category_name'] ?></span>
@@ -62,7 +62,7 @@ require base_path("app/views/partials/head.php");
                                     <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                 </form>
                                 <form method="GET" action="/profile/client">
-                                    <input type="hidden" name="skill_id" value="edit_project">
+                                    <input type="hidden" name="edit_project" value="<?= $project['project_id'] ?>">
                                     <button type="submit" class="btn btn-sm btn-primary">Edit</button>
                                 </form>
                             </div>

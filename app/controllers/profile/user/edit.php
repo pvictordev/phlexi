@@ -17,13 +17,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $new_password = $_POST['new_password'];
 
     // Check if old password matches the current password
-    if (!password_verify($old_password, $user['password'])) {
+    if (!empty($old_password) && !password_verify($old_password, $user['password'])) {
         $errors['match'] = 'Your current password does not match with the provided password';
     }
 
     if (empty($errors)) {
-        // Hash the new password
-        $password = password_hash($new_password, PASSWORD_DEFAULT);
+        // Hash the new password if it's not empty
+        if (!empty($new_password)) {
+            $password = password_hash($new_password, PASSWORD_DEFAULT);
+        }
 
         $user_name = $_POST['user_name'];
         $email = $_POST['email'];
@@ -35,10 +37,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'user_name' => $user_name,
             'email' => $email,
             'bio' => $bio,
-            'phone' => $phone,
-            'password' => $password
+            'phone' => $phone
         );
-        $condition = 'user_id = :user_id'; // Example condition
+
+        // Include the password field in the data array only if the new password is not empty
+        if (!empty($new_password)) {
+            $data['password'] = $password;
+        }
+
+        $condition = 'user_id = :user_id';
         $params = array('user_id' => $user['user_id']);
 
         $affectedRows = $db->edit($table, $data, $condition, $params);
@@ -47,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 }
-
 
 // render the view
 require base_path("app/views/profile/user/edit.view.php");

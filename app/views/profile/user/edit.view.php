@@ -43,12 +43,12 @@ require base_path("app/views/partials/head.php");
                                 <span class="text-danger"><?php echo $errors['match']; ?></span><br>
                             <?php endif; ?>
                             <label class="mb-2" for="old_password">Old password</label>
-                            <input type="text" value="" name="old_password" class="form-control" id="old_password" placeholder="Type your old password">
+                            <input type="password" value="" name="old_password" class="form-control" id="old_password" placeholder="Type your old password">
                         </div>
 
                         <div class="form-group">
                             <label class="mb-2" for="new_password">New password</label>
-                            <input type="text" value="" name="new_password" class="form-control" id="new_password" placeholder="Type your new password">
+                            <input type="password" value="" name="new_password" class="form-control" id="new_password" placeholder="Type your new password">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Update</button>

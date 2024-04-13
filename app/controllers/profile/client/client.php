@@ -47,7 +47,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Insertion error
             dd($rowsInserted);
         }
+    } elseif (isset($_POST['edit_project'])) {
+        // Handle editing
+        $project_id = intval($_POST['project_id']);
+        $user_id = $_SESSION['user_id'];
+        $category_id = intval($_POST['category']);
+        $price = $_POST['price'];
+        $status = $_POST['status'];
+        $description = $_POST['description'];
+
+        // Update project data for the logged user
+        $table = "projects";
+        $data = [
+            'category_id' => $category_id,
+            'price' => $price,
+            'status' => $status,
+            'description' => $description,
+        ];
+        $condition = "user_id = :user_id AND project_id = :project_id";
+        $params = [
+            'user_id' => $user_id,
+            'project_id' => $project_id,
+        ];
+
+        $rowsUpdated = $db->edit($table, $data, $condition, $params);
+
+        if ($rowsUpdated === false) {
+            // Update error
+            dd("Error updating project.");
+        }
     }
+
+
     //Remove the project for the logged user
     elseif (isset($_POST['remove_project'])) {
 
