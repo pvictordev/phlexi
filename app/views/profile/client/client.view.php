@@ -20,6 +20,7 @@ require base_path("app/views/partials/head.php");
                 <span class="text-primary font-italic me-1">Create a project</span>
             </p>
             <form method="POST" action="/profile/client">
+                <input type="hidden" name="add_project">
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
                     <input type="text" class="form-control" name="description" id="description">
@@ -48,7 +49,7 @@ require base_path("app/views/partials/head.php");
         </div>
         <div class="card-footer px-3 py-1 rounded-3 border border-secondary border-3">
             <div class="overflow-auto" style="height: 170px;">
-                <div class="d-flex flex-column gap-4 pt-2 rounded-3">
+                <div class="d-flex flex-column gap-4 py-2 rounded-3">
                     <?php foreach ($projects as $project) : ?>
                         <div>
                             <span class="badge bg-warning my-2"><?= $project['category_name'] ?></span>
