@@ -16,6 +16,15 @@ class ProjectModel
         return $categoriesStatement->fetchAll();
     }
 
+    public function getProjects()
+    {
+        $query = "SELECT projects.*, categories.* 
+        FROM projects 
+        INNER JOIN categories ON projects.category_id = categories.category_id";
+        $projectsStatement = $this->db->query($query, []);
+        return $projectsStatement->fetchAll();
+    }
+
     public function getUserProjects($user_id)
     {
         $query = "SELECT projects.*, categories.*

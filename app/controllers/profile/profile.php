@@ -1,34 +1,21 @@
 <?php
+require base_path('app/models/SkillModel.php');
+require base_path('app/models/ProjectModel.php');
+
+$skillModel = new SkillModel($db);
+$projectModel = new ProjectModel($db);
+
 // get the logged user
 $user_id = $_SESSION['user_id'];
 
-// user actions
+// user data
 require "user/show.php";
 
-// freelancer
-// get all the skills assoicated with the logged user
-$query = "SELECT skills.*, freelancers_skills.user_id 
-FROM skills 
-INNER JOIN (
-    SELECT skill_id, user_id 
-    FROM freelancers_skills
-    WHERE user_id = :user_id
-) AS freelancers_skills 
-ON skills.skill_id = freelancers_skills.skill_id";
+// user / freelancer skills
+$userSkills = $skillModel->getUserSkills($user_id);
 
-$skillsStatement = $db->query($query, ['user_id' => $user_id]);
-$userSkills = $skillsStatement->fetchAll();
-
-// client
-// get all the projects associated with the logged user
-$queryProjects = "SELECT projects.*, categories.*
-FROM projects
-JOIN categories ON projects.category_id = categories.category_id
-WHERE projects.user_id = :user_id";
-$projectsStatement = $db->query($queryProjects, [
-    'user_id' => $user_id
-]);
-$projects = $projectsStatement->fetchAll();
+// user / client projects
+$userProjects = $projectModel->getUserProjects($user_id);
 
 // render the view
-require BASE_PATH . "app/views/profile/profile.view.php";
+require base_path("app/views/profile/profile.view.php");

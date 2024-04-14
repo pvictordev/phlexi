@@ -1,10 +1,9 @@
 <?php
+require base_path('app/models/UserModel.php');
 
-// get particular user  by email in order to display the info on the profile page
-$email = $_SESSION['email'];
-// fetch particular users based on $_SESSION['email']
-$query_users = "SELECT * FROM users WHERE email = :email";
-$userStatement = $db->query($query_users, [
-    'email' => $email,
-]);
-$user = $userStatement->fetch();
+$userModel = new UserModel($db);
+
+$user_id = $_SESSION['user_id'];
+
+// get the data of a particular user
+$user = $userModel->getUser($user_id);

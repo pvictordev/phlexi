@@ -1,14 +1,13 @@
 <?php
+require base_path('app/models/UserModel.php');
 
-// select the logged user
+// create the instance of the model
+$userModel = new UserModel($db);
+
 $user_id = $_SESSION['user_id'];
 
-// fetch particular users based on $_SESSION['email']
-$query_users = "SELECT * FROM users WHERE user_id = :user_id";
-$userStatement = $db->query($query_users, [
-    'user_id' => $user_id,
-]);
-$user = $userStatement->fetch();
+// get the data of a particular user
+$user = $userModel->getUser($user_id);
 
 // update the user data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -94,13 +94,13 @@ require base_path("app/views/partials/head.php");
                             <a class="text-primary" href="/profile/client">Add Project</a>
                             <div class="card-footer border border-3 border-secondary rounded-3">
                                 <div class="overflow-auto d-flex flex-column gap-2" style="height: 130px;">
-                                    <?php foreach ($projects as $project) : ?>
+                                    <?php foreach ($userProjects as $userProject) : ?>
                                         <div class="project-card p-3 pt-2 pb-2">
-                                            <span class="badge bg-warning my-2"><?= $project['category_name'] ?></span>
-                                            <span class="badge bg-success my-2">$<?= $project['price'] ?></span>
-                                            <div class="text-light bg-secondary p-2 rounded-2"><?= $project['description'] ?></div>
-                                            <span class="badge <?= $project['status'] == 'Active' ? "bg-success" : "bg-secondary"  ?> my-2"><?= $project['status'] ?></span>
-                                            <span class="badge bg-primary my-2"><?= $project['date'] ?></span>
+                                            <span class="badge bg-warning my-2"><?= $userProject['category_name'] ?></span>
+                                            <span class="badge bg-success my-2">$<?= $userProject['price'] ?></span>
+                                            <div class="text-light bg-secondary p-2 rounded-2"><?= $userProject['description'] ?></div>
+                                            <span class="badge <?= $userProject['status'] == 'Active' ? "bg-success" : "bg-secondary"  ?> my-2"><?= $userProject['status'] ?></span>
+                                            <span class="badge bg-primary my-2"><?= $userProject['date'] ?></span>
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
