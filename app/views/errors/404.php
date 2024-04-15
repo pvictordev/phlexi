@@ -1,6 +1,7 @@
 <?php
 $current_page = '';
-require "views/partials/head.php" ?>
+require base_path("app/views/partials/head.php");
+?>
 
 <section class="py-3 py-md-5 min-vh-100 d-flex justify-content-center align-items-center">
     <div class="container">
@@ -21,4 +22,4 @@ require "views/partials/head.php" ?>
     </div>
 </section>
 
-<?php require "views/partials/foot.php" ?>
+<?php require base_path("app/views/partials/foot.php"); ?>

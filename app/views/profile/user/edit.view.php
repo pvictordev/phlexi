@@ -23,19 +23,19 @@ require base_path("app/views/partials/head.php");
                     <form method="POST" action="/profile/edit" class="d-flex flex-column gap-3">
                         <div class="form-group">
                             <label class="mb-2" for="name">Name</label>
-                            <input type="text" value="<?= $user['user_name'] ?>" name="user_name" class="form-control" id="name" placeholder="Change your name">
+                            <input type="text" value="<?= htmlentities($user['user_name']) ?>" name="user_name" class="form-control" id="name" placeholder="Change your name">
                         </div>
                         <div class="form-group">
                             <label class="mb-2" for="email">Email</label>
-                            <input type="email" value="<?= $user['email'] ?>" name="email" class="form-control" id="email" placeholder="Change your email">
+                            <input type="email" value="<?= htmlentities($user['email']) ?>" name="email" class="form-control" id="email" placeholder="Change your email">
                         </div>
                         <div class="form-group">
                             <label class="mb-2" for="phone">Phone</label>
-                            <input type="number" value="<?= $user['phone'] ?>" name="phone" class="form-control" id="phone" placeholder="Change your phone">
+                            <input type="number" value="<?= htmlentities($user['phone']) ?>" name="phone" class="form-control" id="phone" placeholder="Change your phone">
                         </div>
                         <div class="form-group">
                             <label class="mb-2" for="bio">Bio</label>
-                            <textarea name="bio" placeholder="Change your bio" class="form-control" id="bio" rows="4"><?= $user['bio'] ?></textarea>
+                            <textarea name="bio" placeholder="Change your bio" class="form-control" id="bio" rows="4"><?= htmlentities($user['bio']) ?></textarea>
                         </div>
 
                         <div class="form-group">
@@ -43,12 +43,12 @@ require base_path("app/views/partials/head.php");
                                 <span class="text-danger"><?php echo $errors['match']; ?></span><br>
                             <?php endif; ?>
                             <label class="mb-2" for="old_password">Old password</label>
-                            <input type="password" value="" name="old_password" class="form-control" id="old_password" placeholder="Type your old password">
+                            <input type="password" value="<?= htmlentities('') ?>" name="old_password" class="form-control" id="old_password" placeholder="Type your old password">
                         </div>
 
                         <div class="form-group">
                             <label class="mb-2" for="new_password">New password</label>
-                            <input type="password" value="" name="new_password" class="form-control" id="new_password" placeholder="Type your new password">
+                            <input type="password" value="<?= htmlentities('') ?>" name="new_password" class="form-control" id="new_password" placeholder="Type your new password">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Update</button>

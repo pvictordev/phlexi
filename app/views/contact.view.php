@@ -19,27 +19,27 @@ require "partials/head.php"
             <div class="row">
               <div class="col-md-12">
                 <div class="mb-3">
-                  <input id="fullName" name="fullName" class="form-control bg-light" placeholder="Your name" required />
+                  <input value="<?= htmlentities('') ?>" id="fullName" name="fullName" class="form-control bg-light" placeholder="Your name" required />
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="mb-3">
-                  <input type="email" id="email" name="email" class="form-control bg-light" placeholder="Your email" required />
+                  <input value="<?= htmlentities('') ?>" type="email" id="email" name="email" class="form-control bg-light" placeholder="Your email" required />
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="mb-3">
-                  <input type="number" id="phone" name="phone" class="form-control bg-light" placeholder="Your phone" required />
+                  <input value="<?= htmlentities('') ?>" type="number" id="phone" name="phone" class="form-control bg-light" placeholder="Your phone" required />
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="mb-3">
-                  <input type="text" id="subject" name="subject" class="form-control bg-light" placeholder="Your subject" required />
+                  <input value="<?= htmlentities('') ?>" type="text" id="subject" name="subject" class="form-control bg-light" placeholder="Your subject" required />
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="mb-3">
-                  <textarea id="message" name="message" class="form-control bg-light" placeholder="Your message" rows="4" required></textarea>
+                  <textarea value="<?= htmlentities('') ?>" id="message" name="message" class="form-control bg-light" placeholder="Your message" rows="4" required></textarea>
                 </div>
               </div>
               <div class="col-md-5">

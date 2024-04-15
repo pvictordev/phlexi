@@ -1,6 +1,4 @@
 <?php
-// ! start the session
-session_start();
 
 // uri to be accessed
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
@@ -16,6 +14,7 @@ $routes = [
     '/profile/destroy' => 'app/controllers/profile/user/destroy.php',
     '/profile/freelancer' => 'app/controllers/profile/freelancer/freelancer.php',
     '/profile/client' => 'app/controllers/profile/client/client.php',
+    '/profile/client/edit' => 'app/controllers/profile/client/project.php',
     '/contact' => 'app/controllers/contact.php',
     '/blog' => 'app/controllers/blog.php',
     '/market' => 'app/controllers/market.php',
@@ -49,7 +48,7 @@ function routeToController($uri, $routes, $db)
 function abort($code = 404)
 {
     http_response_code($code);
-    require "views/errors/{$code}.php";
+    require base_path("app/views/errors/{$code}.php");
     die();
 }
 

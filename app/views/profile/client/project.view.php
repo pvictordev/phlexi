@@ -23,11 +23,11 @@ require base_path("app/views/partials/head.php");
                 <input type="hidden" name="add_project">
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <input type="text" class="form-control" name="description" id="description" value="<?= htmlentities('') ?>">
+                    <input type="text" class="form-control" name="description" id="description">
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
-                    <input type="number" class="form-control" name="price" id="price" value="<?= htmlentities('') ?>">
+                    <input type="number" class="form-control" name="price" id="price">
                 </div>
                 <div class="mb-3">
                     <label for="category" class="form-label">Category</label>
@@ -46,31 +46,6 @@ require base_path("app/views/partials/head.php");
                 </div>
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
-        </div>
-        <div class="card-footer px-3 py-1 rounded-3 border border-secondary border-3">
-            <div class="overflow-auto" style="height: 170px;">
-                <div class="d-flex flex-column gap-4 py-2 rounded-3">
-                    <?php foreach ($projects as $project) : ?>
-                        <div>
-                            <span class="badge bg-warning my-2"><?= $project['category_name'] ?></span>
-                            <span class="badge bg-success my-2">$<?= $project['price'] ?></span>
-                            <div class="text-light bg-secondary p-2 rounded-2"><?= $project['description'] ?></div>
-                            <span class="badge <?= $project['status'] == 'Active' ? "bg-success" : "bg-secondary"  ?> my-2"><?= $project['status'] ?></span>
-                            <span class="badge bg-primary my-2"><?= $project['date'] ?></span>
-                            <div class="form-actions d-flex gap-2">
-                                <form method="POST" action="/profile/client">
-                                    <input type="hidden" name="remove_project" value="<?= htmlentities($project['project_id']) ?>">
-                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                                </form>
-                                <form method="GET" action="/profile/client">
-                                    <input type="hidden" name="edit_project" value="<?= htmlentities($project['project_id']) ?>">
-                                    <button type="submit" class="btn btn-sm btn-primary">Edit</button>
-                                </form>
-                            </div>
-                        </div>
-                    <?php endforeach;  ?>
-                </div>
-            </div>
         </div>
     </div>
 </section>

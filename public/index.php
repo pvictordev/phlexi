@@ -1,4 +1,6 @@
 <?php
+// ! start the session
+session_start();
 
 // BASE_PATH
 const BASE_PATH = __DIR__ . '/../';

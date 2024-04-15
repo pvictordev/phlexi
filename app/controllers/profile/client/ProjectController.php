@@ -52,8 +52,8 @@ class ProjectController
         }
 
         // Fetch Categories and Projects
-        $categories = $this->projectModel->getCategories();
         $user_id = $_SESSION['user_id'];
+        $categories = $this->projectModel->getCategories();
         $projects = $this->projectModel->getUserProjects($user_id);
 
         // Render the view

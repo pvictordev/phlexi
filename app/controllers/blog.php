@@ -1,3 +1,3 @@
 <?php
 
-require BASE_PATH . "app/views/blog.view.php";
+require base_path("app/views/blog.view.php");
