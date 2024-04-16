@@ -27,13 +27,16 @@ class ProjectController
             elseif (isset($_POST['edit_project'])) {
 
                 $user_id = $_SESSION['user_id'];
-                $project_id = intval($_POST['project_id']);
+                $project_id = intval($_POST['edit_project']);
                 $category_id = intval($_POST['category']);
-                $price = $_POST['price'];
+                $price = intval($_POST['price']);
                 $status = $_POST['status'];
                 $description = $_POST['description'];
 
                 $this->projectModel->updateProject($user_id, $project_id, $category_id, $price, $status, $description);
+
+                header('Location: /profile');
+                exit();
             }
             // Remove project 
             elseif (isset($_POST['remove_project'])) {
@@ -50,13 +53,5 @@ class ProjectController
             header("Location: /profile");
             exit();
         }
-
-        // Fetch Categories and Projects
-        $user_id = $_SESSION['user_id'];
-        $categories = $this->projectModel->getCategories();
-        $projects = $this->projectModel->getUserProjects($user_id);
-
-        // Render the view
-        require base_path("app/views/profile/client/client.view.php");
     }
 }

@@ -12,22 +12,22 @@ require base_path("app/views/partials/head.php");
     </a>
 </div>
 
-<!-- add a new project for client -->
+<!-- update the selected project -->
 <section class="container pt-5 pb-5">
     <div class="border border-3 border-secondary p-3 rounded-3 mb-4 mb-md-0">
         <div class="card-body mb-3">
             <p class="mb-4">
-                <span class="text-primary font-italic me-1">Create a project</span>
+                <span class="text-primary font-italic me-1">Edit a project</span>
             </p>
-            <form method="POST" action="/profile/client">
-                <input type="hidden" name="add_project">
+            <form method="POST" action="/profile/client/edit">
+                <input type="hidden" name="edit_project" value="<?= htmlentities($project['project_id']) ?>" />
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <input type="text" class="form-control" name="description" id="description">
+                    <input type="text" class="form-control" name="description" id="description" value="<?= htmlentities($project['description']) ?>">
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
-                    <input type="number" class="form-control" name="price" id="price">
+                    <input type="number" class="form-control" name="price" id="price" value="<?= htmlentities($project['price']) ?>">
                 </div>
                 <div class="mb-3">
                     <label for="category" class="form-label">Category</label>
@@ -44,7 +44,7 @@ require base_path("app/views/partials/head.php");
                         <option value="Closed">Closed</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Edit</button>
             </form>
         </div>
     </div>

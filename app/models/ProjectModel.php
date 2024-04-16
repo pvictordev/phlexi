@@ -35,6 +35,16 @@ class ProjectModel
         return $projectsStatement->fetchAll();
     }
 
+    public function getUserProject($project_id)
+    {
+        $query = "SELECT projects.*, categories.* 
+        FROM projects 
+        INNER JOIN categories ON projects.category_id = categories.category_id
+        WHERE projects.project_id = ?";
+        $projectStatement = $this->db->query($query, [$project_id]);
+        return $projectStatement->fetch(); // Assuming only one project is expected
+    }
+
     public function addProject($user_id, $category_id, $price, $status, $description)
     {
         $table = "projects";
@@ -57,8 +67,11 @@ class ProjectModel
             'status' => $status,
             'description' => $description,
         ];
-        $condition = "user_id = ? AND project_id = ?";
-        $params = [$user_id, $project_id];
+        $condition = "user_id = :user_id AND project_id = :project_id";
+        $params = [
+            'user_id' => $user_id,
+            'project_id' => $project_id
+        ];
         return $this->db->edit($table, $data, $condition, $params);
     }
 

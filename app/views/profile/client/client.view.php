@@ -62,10 +62,11 @@ require base_path("app/views/partials/head.php");
                                     <input type="hidden" name="remove_project" value="<?= htmlentities($project['project_id']) ?>">
                                     <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                 </form>
-                                <form method="GET" action="/profile/client">
+                                <form method="GET" action="/profile/client/edit">
                                     <input type="hidden" name="edit_project" value="<?= htmlentities($project['project_id']) ?>">
                                     <button type="submit" class="btn btn-sm btn-primary">Edit</button>
                                 </form>
+                                <!-- <a class="btn btn-sm btn-primary" href="/profile/client/edit">Edit</a> -->
                             </div>
                         </div>
                     <?php endforeach;  ?>
