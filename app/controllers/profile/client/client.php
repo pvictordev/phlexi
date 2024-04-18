@@ -7,10 +7,10 @@ require_once base_path('app/models/ProjectModel.php');
 $controller = new ProjectController($db);
 $controller->index();
 
-// Fetch Categories and Projects
 $projectModel = new ProjectModel($db);
 $user_id = $_SESSION['user_id'];
 
+// Fetch Categories and Projects
 $categories = $projectModel->getCategories();
 $projects = $projectModel->getUserProjects($user_id);
 

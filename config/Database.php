@@ -3,7 +3,7 @@
 // connect to the db
 class Database
 {
-    // created a propery to make the PDO accessible from other scope
+    // created a property to make the PDO accessible from other scope
     public $connection;
 
     // every time when instance is initialized i want to run __construct

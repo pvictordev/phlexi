@@ -1,7 +1,6 @@
 <?php
 $current_page = '/profile';
 require base_path("app/views/partials/head.php");
-
 ?>
 
 <div class="container">
@@ -12,6 +11,7 @@ require base_path("app/views/partials/head.php");
                 <div class="card-body">
                     <p>Are you sure that you want to delete your account?</p>
                     <form action="/profile/destroy" method="POST">
+                        <input type="hidden" name="remove_user">
                         <button type="submit" class="btn btn-danger mr-2">Delete</button>
                         <a href="/profile" class="btn btn-secondary">No</a>
                     </form>

@@ -22,4 +22,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // error: mail(): Failed to connect to mailserver at "localhost" port 25, verify your "SMTP" and "smtp_port" setting in php.ini or use ini_set()
 }
 
-require BASE_PATH . "app/views/contact.view.php";
+view('contact.view.php');

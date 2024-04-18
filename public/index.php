@@ -25,4 +25,4 @@ $config = require(base_path("config/config.php"));
 $db = new Database($config['database']);
 
 // router
-require base_path("router.php");
+require base_path("routes/router.php");

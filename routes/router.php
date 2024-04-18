@@ -1,14 +1,13 @@
 <?php
-
 // uri to be accessed
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 // routes
 $routes = [
     '/' => 'app/controllers/index.php',
-    '/signup' => 'app/controllers/auth/signup.php',
-    '/signin' => 'app/controllers/auth/signin.php',
-    '/logout' => 'app/controllers/auth/logout.php',
+    '/signup' => 'app/controllers/authentication/signup.php',
+    '/signin' => 'app/controllers/authentication/signin.php',
+    '/logout' => 'app/core/session.php',
     '/profile' => 'app/controllers/profile/profile.php',
     '/profile/edit' => 'app/controllers/profile/user/edit.php',
     '/profile/destroy' => 'app/controllers/profile/user/destroy.php',
@@ -20,15 +19,6 @@ $routes = [
     '/market' => 'app/controllers/market.php',
     '/team' => 'app/controllers/team.php',
 ];
-
-function isAuth()
-{
-    // Check if the user is authenticated
-    if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
-        header('Location: /signin');
-        exit();
-    }
-}
 
 // routing the current uri to the coressponding controller 
 function routeToController($uri, $routes, $db)
@@ -42,14 +32,6 @@ function routeToController($uri, $routes, $db)
     } else {
         abort();
     }
-}
-
-// if page does not exist, abort
-function abort($code = 404)
-{
-    http_response_code($code);
-    require base_path("app/views/errors/{$code}.php");
-    die();
 }
 
 routeToController($uri, $routes, $db);

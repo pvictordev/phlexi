@@ -37,9 +37,10 @@ class SkillController
             exit();
         }
 
-        // Fetch all skills and particular skills for pasrticular user
+        // Fetch all skills for select 
         $skills = $this->skillModel->getSkills();
         $user_id = $_SESSION['user_id'];
+        // fetch skills of particular user
         $userSkills = $this->skillModel->getUserSkills($user_id);
 
         // Render the view

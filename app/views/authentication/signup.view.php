@@ -23,27 +23,26 @@ require base_path("app/views/partials/head.php");
                             </div>
                             <form method="POST" action="/signup">
                                 <div class="row gy-3 overflow-hidden">
-                                    <input type="hidden" name="action" value="signup">
-
+                                    <input type="hidden" name="add_user">
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" name="user_name" id="user_name" placeholder="First Name" value="<?= htmlspecialchars($user_name); ?>" required>
+                                            <input type="text" class="form-control" name="user_name" id="user_name" placeholder="First Name" value="<?= htmlspecialchars($credentials['user_name']); ?>" required>
                                             <label for=" user_name" class="form-label">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <?php if (isset($errors['email'])) : ?>
-                                            <div style="color: red;"><?php echo $errors['email']; ?></div>
+                                        <?php if (isset($credentials['errors']['email'])) : ?>
+                                            <div style="color: red;"><?php echo $credentials['errors']['email']; ?></div>
                                         <?php endif; ?>
                                         <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" value="<?= htmlspecialchars($email); ?>" required>
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" value="<?= htmlspecialchars($credentials['email']); ?>" required>
                                             <label for=" email" class="form-label">Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
-                                            <input type="password" class="form-control" name="password" id="password" placeholder="Password" value="<?= htmlspecialchars($password); ?>" required>
-                                            <label for="password" class="form-label <?php echo isset($errors['general']) ? 'text-danger' : ''; ?>">Password</label>
+                                            <input type="password" class="form-control" name="password" id="password" placeholder="Password" value="<?= htmlspecialchars($credentials['password']); ?>" required>
+                                            <label for="password" class="form-label <?php echo isset($credentials['errors']['general']) ? 'text-danger' : ''; ?>">Password</label>
                                             <button type="button" id="togglePassword" class="mt-2 btn btn-outline-secondary toggle-password-btn">Show</button>
                                         </div>
                                     </div>

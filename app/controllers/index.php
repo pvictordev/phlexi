@@ -1,3 +1,3 @@
 <?php
 
-require base_path("app/views/index.view.php");
+view('index.view.php');

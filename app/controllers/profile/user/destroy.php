@@ -1,21 +1,13 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+require_once base_path('app/controllers/profile/user/UserController.php');
 
-    $user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['user_id'];
 
-    $table = 'users';
-    $condition = 'user_id = :user_id';
-    $params =  [
-        'user_id' => $user_id
-    ];
+$controller = new UserController($db);
 
-    $result = $db->destroy($table, $condition, $params);
-
-    // after deleting the user, redirect to home page and destroy the session
-    session_destroy();
-    header("Location: /");
-    exit();
+if (isset($_GET['user_id'])) {
+    require base_path("app/views/profile/user/destroy.view.php");
 }
 
-require base_path("app/views/profile/user/destroy.view.php");
+$controller->removeUser($user_id);
