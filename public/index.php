@@ -1,4 +1,6 @@
 <?php
+
+use Core\Session;
 // ! start the session
 session_start();
 
@@ -6,7 +8,7 @@ session_start();
 const BASE_PATH = __DIR__ . '/../';
 
 // functions
-require BASE_PATH . "app/core/functions.php";
+require BASE_PATH . "app/Core/functions.php";
 
 // base path function
 spl_autoload_register(function ($class) {

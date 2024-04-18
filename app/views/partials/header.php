@@ -36,7 +36,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link text-start dropdown-toggle btn" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown03">
-                        <a class="dropdown-item" href="/profile"><?= isset($_SESSION['email']) ? $_SESSION['email'] : 'Guest' ?></a>
+                        <a class="dropdown-item" href="/profile">
+                            <?= isset($_SESSION['email']) ? $_SESSION['email'] : 'Guest' ?>
+                        </a>
                         <a class="dropdown-item" href="<?= isset($_SESSION['email']) ? '/logout' : '/signup' ?>">
                             <?= isset($_SESSION['email']) ? 'Sign Out' : 'Sign In / Sign Up' ?>
                         </a>

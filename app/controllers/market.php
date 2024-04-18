@@ -7,4 +7,4 @@ $projectModel = new ProjectModel($db);
 $projects = $projectModel->getProjects();
 
 // render the view
-view('market.view.php');
+require base_path('app/views/market.view.php');

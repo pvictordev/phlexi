@@ -1,5 +1,9 @@
 <?php
+
+use Core\Session;
+
 require_once base_path('app/models/UserModel.php');
+// require_once base_path('app/Core/Session.php');
 
 class UserController
 {
@@ -161,8 +165,7 @@ class UserController
             $this->userModel->editUser($user, $old_password, $new_password, $_POST);
 
             // Redirect to profile page
-            header('Location: /profile');
-            exit;
+            redirect('/profile');
         }
     }
 
@@ -174,9 +177,8 @@ class UserController
 
             if ($result) {
                 // after deleting the user, redirect to home page and destroy the session
-                session_destroy();
                 session_unset();
-
+                session_destroy();
                 redirect("/");
             } else {
                 dd('error');
