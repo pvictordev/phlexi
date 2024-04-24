@@ -1,9 +1,6 @@
 <?php
 
-use Core\Session;
-
 require_once base_path('app/models/UserModel.php');
-// require_once base_path('app/Core/Session.php');
 
 class UserController
 {
@@ -19,23 +16,6 @@ class UserController
     public function __construct($db)
     {
         $this->userModel = new UserModel($db);
-    }
-
-    public function index()
-    {
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-            //  Edit User
-            if (isset($_POST[''])) {
-            }
-
-            // handle exception 
-            else {
-                dd('error');
-            }
-            // if success, redirect
-            redirect('/profile');
-        }
     }
 
     public function signin()
@@ -78,14 +58,14 @@ class UserController
             if (!isset($_POST['email']) || empty($_POST['email'])) {
                 $errors['email'] = "Email is required";
             } else {
-                $postEmail = $_POST['email'];
+                $postEmail = $email;
             }
 
             // Validate password
             if (!isset($_POST['password']) || empty($_POST['password'])) {
                 $errors['password'] = "Password is required";
             } else {
-                $postPassword = $_POST["password"];
+                $postPassword = $password;
             }
 
             // Proceed only if there are no validation errors
