@@ -67,7 +67,6 @@ class UserController
             } else {
                 $postPassword = $password;
             }
-
             // Proceed only if there are no validation errors
             if (empty($errors)) {
                 // Check if email and password match with any user
@@ -151,7 +150,7 @@ class UserController
 
     public function removeUser($user_id)
     {
-        if (isset($_POST['remove_user'])) {
+        if (isset($_POST['_method'])) {
 
             $result =  $this->userModel->destroyUser($user_id);
 

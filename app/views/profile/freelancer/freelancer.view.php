@@ -18,7 +18,7 @@ require base_path("app/views/partials/head.php");
         <div class="card-body">
             <p class="mb-4"><span class="text-secondary font-italic me-1">Skills</span>
             </p>
-            <form method="POST" action="/profile/freelancer">
+            <form method="POST" action="/profile/freelancer/addSkill">
                 <div class="mb-3">
                     <label class="form-label" for="skill_name">Choose your skill</label>
                     <select class="form-control" name="skill_id" id="skill_id">

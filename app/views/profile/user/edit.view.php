@@ -21,6 +21,7 @@ require base_path("app/views/partials/head.php");
                 </div>
                 <div class="card-body">
                     <form method="POST" action="/profile/edit" class="d-flex flex-column gap-3">
+                        <input type="hidden" name="_method" value="PUT">
                         <div class="form-group">
                             <label class="mb-2" for="name">Name</label>
                             <input type="text" value="<?= htmlentities($user['user_name']) ?>" name="user_name" class="form-control" id="name" placeholder="Change your name">

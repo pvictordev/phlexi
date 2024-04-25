@@ -46,18 +46,6 @@ class Router
     }
     public function route($uri, $method, $db)
     {
-        // function routeToController($uri, $routes, $db)
-        // {
-        //     if (array_key_exists($uri, $routes)) {
-        //         // if user is unauth he will not be able to access these routes
-        //         if (in_array($uri, ['/profile', '/market'])) {
-        //             isAuth();
-        //         }
-        //         require base_path($routes[$uri]);
-        //     } else {
-        //         abort();
-        //     }
-        // }
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
                 if (in_array($uri, ['/profile', '/market'])) {
