@@ -19,3 +19,7 @@ We implemented the Bootstrap framework by replacing all CSS classes with corresp
 ### Stage #4 (PHP & MySQL)
 
 At this stage, we created the database for the application. Subsequently, we developed the database schema and constructed the database itself using MySQL, adhering to common normalization forms. Following this, we refactored the entire HTML codebase, transitioning it to PHP and adopting the MVC (Model-View-Controller) architecture. We introduced several new functionalities, including user sign-up and sign-in processes, user profile management (enabling users to edit and update their information), adding skills for individual users, and project management capabilities that encompass CRUD operations (Create, Read, Update, Delete). All modifications were made in accordance with industry best practices, including adhering to naming conventions for files and directories, and adopting the MVC software design pattern together with OOP. Additionally, security measures were implemented, such as password hashing after user registration, protection from SQL injection, XSS protection measures by sanitizing the inputs and middleware to manage user redirection based on their authentication status (logged in or logged out).
+
+### Stage #5 (Laravel)
+
+At this point, we've transferred the business idea and presentation details from our core PHP project into a new Laravel project.
