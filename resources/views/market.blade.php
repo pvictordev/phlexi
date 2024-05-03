@@ -138,7 +138,6 @@
                     <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                         <!-- Filters -->
 
-
                         <!-- Product grid -->
                         <div class="flex flex-col gap-8 lg:col-span-3">
                             <!-- Your content -->
@@ -148,8 +147,8 @@
                                 <div class="mb-3 mt-3">
                                     <small class="text-slate-500 font-bold flex items-center gap-2">
                                         <span data-test="budget">
-                                            Est. Budget: 20$
-                                        </span> - <span>Posted 2 days ago</span>
+                                            Est. Budget: 20$ -
+                                        </span> <span>Posted 2 days ago</span>
                                     </small>
                                 </div>
                                 <div class="my-4">
