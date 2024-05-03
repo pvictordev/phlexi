@@ -7,7 +7,10 @@
         <div class="container">
             <div x-data="{ open: true }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-0">
                 <div class="flex flex-row items-center justify-between p-4">
-                    <a href="/" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">Phlexi</a>
+                    <a href="/" class="flex items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
+                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"></x-application-logo>
+                        <span>Phlexi</span>
+                    </a>
                     <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                         <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                             <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
@@ -81,17 +84,22 @@
                                             <p class="text-sm">Go to your profile !</p>
                                         </div>
                                     </a>
-                                    <a class="flex row items-start rounded-lg bg-transparent p-2 dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ url('/dashboard') }}">
+                                    <form method="POST" action="{{ route('logout') }}" class="flex cursor-pointer row items-start rounded-lg bg-transparent p-2 dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                                        @csrf
                                         <div class="bg-blue-500 text-white rounded-lg p-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path>
                                             </svg>
                                         </div>
                                         <div class="ml-3">
-                                            <p class="font-semibold">Log out</p>
+                                            @csrf
+                                            <a class="font-semibold" href="route('logout')" onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                                Log out
+                                            </a>
                                             <p class="text-sm">Your exit door</p>
                                         </div>
-                                    </a>
+                                    </form>
                                     @else
                                     <a class="flex row items-start rounded-lg bg-transparent p-2 dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ route('login') }}">
                                         <div class="bg-teal-500 text-white rounded-lg p-3">

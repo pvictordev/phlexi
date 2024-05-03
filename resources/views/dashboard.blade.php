@@ -1,6 +1,6 @@
 <x-app-layout>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="py-24">
+        <div class="max-w-7xl mx-auto sm:p-6 lg:p-8">
             <div class="mx-auto px-4 py-8">
                 <div class="mx-auto rounded-lg shadow-lg overflow-hidden dark:bg-slate-800 dark:text-slate-200 bg-white text-slate-800">
                     <div class="sm:flex sm:items-center px-6 py-4 relative">
@@ -10,7 +10,7 @@
                             <p class="text-sm font-medium">Web Developer</p>
                             <p class="text-sm font-medium">Sibiu, Romania - 9:40pm</p>
                             <div class="mt-4 absolute top-0 right-0">
-                                <a href="#" class="text-xs font-semibold bg-gray-200 dark:bg-slate-200 dark:text-slate-800 rounded-full px-4 py-2 leading-none inline-block text-gray-700 mr-2">Edit Profile</a>
+                                <a href="/profile" class="text-xs font-semibold bg-gray-200 dark:bg-slate-200 dark:text-slate-800 rounded-full px-4 py-2 leading-none inline-block text-gray-700 mr-2">Edit Profile</a>
                             </div>
                         </div>
                     </div>
@@ -68,9 +68,9 @@
                     <div class="border-t border-gray-200 dark:border-gray-600 px-6 py-4">
                         <div class="flex justify-between mb-4">
                             <h2 class="text-lg font-semibold mb-2">Projects</h2>
-                            <span class="p-2 text-slate-200 dark:text-slate-200 bg-blue-600 rounded-full cursor-pointer">
+                            <a href="{{ route('edit') }}" class="p-2 text-slate-200 dark:text-slate-200 bg-blue-600 rounded-full cursor-pointer">
                                 Add a project
-                            </span>
+                            </a>
                         </div>
                         <div class="overflow-y-auto max-h-80">
                             <div class="border relative border-gray-300 dark:border-gray-600 rounded-lg p-4 my-2 mr-4">
