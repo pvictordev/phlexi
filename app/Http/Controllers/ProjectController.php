@@ -26,7 +26,7 @@ class ProjectController extends Controller
     public function show()
     {
         // get the categories
-        dd('show projects');
+
     }
     // view method
     public function create()
@@ -38,14 +38,20 @@ class ProjectController extends Controller
     public function store(Request $request, Project $project, User $user)
     {
 
-        $client_id = Auth::id();
+        $client = Auth::user();
 
-        $project->client_id = $client_id;
-        $project->category_id = intval($request->category_id);
+        $project = new Project();
+
+        // Associate the client with the project
+        $project->client()->associate($client);
+
+        $project->category_id = $request->category_id;
+
         $project->description = $request->description;
         $project->price = $request->price;
         $project->status = $request->status;
 
+        // Save the project
         $project->save();
 
         return redirect('/dashboard');
