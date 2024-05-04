@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="py-24">
         <div class="max-w-7xl mx-auto sm:p-6 lg:p-8">
-            <div class="mx-auto px-4 py-8">
+            <div class="mx-auto p-4">
                 <div class="mx-auto rounded-lg shadow-lg overflow-hidden dark:bg-slate-800 dark:text-slate-200 bg-white text-slate-800">
                     <div class="sm:flex sm:items-center px-6 py-4 relative">
                         <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-24 w-24 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0 sm:float-left">
@@ -68,42 +68,11 @@
                     <div class="border-t border-gray-200 dark:border-gray-600 px-6 py-4">
                         <div class="flex justify-between mb-4">
                             <h2 class="text-lg font-semibold mb-2">Projects</h2>
-                            <a href="{{ route('edit') }}" class="p-2 text-slate-200 dark:text-slate-200 bg-blue-600 rounded-full cursor-pointer">
+                            <a href="/project" class="p-2 text-slate-200 dark:text-slate-200 bg-blue-600 rounded-full cursor-pointer">
                                 Add a project
                             </a>
                         </div>
                         <div class="overflow-y-auto max-h-80">
-                            <div class="border relative border-gray-300 dark:border-gray-600 rounded-lg p-4 my-2 mr-4">
-                                <span class="absolute bottom-1 right-1 p-2 bg-blue-600 rounded-full cursor-pointer">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="#ffff">
-                                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path>
-                                        <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path>
-                                    </svg>
-                                </span>
-                                <span class="absolute right-1 top-1 p-2 bg-green-500 rounded-full"></span>
-                                <h3 class="text-lg font-semibold mb-2">Project 1</h3>
-                                <p class="text-gray-700 dark:text-gray-300">Description of Project 1</p>
-                                <div class="flex justify-between mt-2">
-                                    <p class="text-slate-500">Price: $500</p>
-                                </div>
-                                <p class="text-slate-500 mt-1">Created 2 days ago</p>
-                            </div>
-                            <div class="border relative border-gray-300 dark:border-gray-600 rounded-lg p-4 my-2 mr-4">
-                                <span class="absolute bottom-1 right-1 p-2 bg-blue-600 rounded-full cursor-pointer">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="#ffff">
-                                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path>
-                                        <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path>
-                                    </svg>
-                                </span>
-                                <span class="absolute right-1 top-1 p-2 bg-green-500 rounded-full"></span>
-                                <h3 class="text-lg font-semibold mb-2">Project 1</h3>
-                                <p class="text-gray-700 dark:text-gray-300">Description of Project 1</p>
-                                <div class="flex justify-between mt-2">
-                                    <p class="text-slate-500">Price: $500</p>
-                                </div>
-                                <p class="text-slate-500 mt-1">Created 2 days ago</p>
-                            </div>
-
                             <div class="border relative border-gray-300 dark:border-gray-600 rounded-lg p-4 my-2 mr-4">
                                 <span class="absolute bottom-1 right-1 p-2 bg-blue-600 rounded-full cursor-pointer">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="#ffff">

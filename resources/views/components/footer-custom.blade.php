@@ -37,8 +37,9 @@
         <hr class="my-6 border-gray-200 md:my-8 dark:border-gray-700">
 
         <div class="flex items-center justify-between">
-            <a href="#">
-                <img class="w-auto h-7" src="https://merakiui.com/images/full-logo.svg" alt="">
+            <a href="/" class="flex items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">
+                <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"></x-application-logo>
+                <span>Phlexi</span>
             </a>
 
             <div class="flex -mx-2">

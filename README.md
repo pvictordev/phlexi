@@ -23,4 +23,4 @@ At this stage, we created the database for the application. Subsequently, we dev
 
 ### Stage #5 (Laravel)
 
-At this point, we've transferred the business idea and presentation details from our core PHP project into a new Laravel project.
+At this point, we've transferred the business idea from our core PHP project into a new Laravel project. Here, we've redesigned the previous layout using Tailwind CSS to create a more modern design.
