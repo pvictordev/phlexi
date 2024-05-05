@@ -15,6 +15,12 @@ use App\Models\Category;
 
 class ProjectController extends Controller
 {
+    public function show()
+    {
+        // show all the projects
+        $projects = Project::all();
+        return view('market', ['projects' => $projects]);
+    }
     // view method
     public function edit()
     {
@@ -22,11 +28,6 @@ class ProjectController extends Controller
     }
     public function update()
     {
-    }
-    public function show()
-    {
-        // get the categories
-
     }
     // view method
     public function create()

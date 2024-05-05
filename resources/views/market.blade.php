@@ -141,56 +141,31 @@
                         <!-- Product grid -->
                         <div class="flex flex-col gap-8 lg:col-span-3">
                             <!-- Your content -->
+                            @foreach ($projects as $project)
                             <div class="relative bg-white dark:bg-slate-700 border shadow-2xl ease-in duration-150 hover:scale-105 rounded-lg p-5">
                                 <span class="absolute right-1 top-1 p-2 bg-green-500 rounded-full"></span>
                                 <h1 class="font-bold text-slate-800 dark:text-slate-200 text-xl">Blockchain Developers, crypto evangelists and web3 innovators</h1>
                                 <div class="mb-3 mt-3">
                                     <small class="text-slate-500 font-bold flex items-center gap-2">
                                         <span data-test="budget">
-                                            Est. Budget: 20$ -
-                                        </span> <span>Posted 2 days ago</span>
+                                            Est. Budget: {{ $project->price }}$ -
+                                        </span> <span>{{ $project->created_at->diffForHumans() }}</span>
                                     </small>
                                 </div>
                                 <div class="my-4">
                                     <div>
-                                        <p class="text-gray-800 dark:text-gray-200" data-test="job-description-text">We are currently seeking a talented development team to build our next gen freelance platform on ETH blockchain, if you are possionate about web3 and have the skills, join us !</p>
+                                        <p class="text-gray-800 dark:text-gray-200" data-test="job-description-text">{{ $project->description }}</p>
                                     </div>
                                 </div>
                                 <div class="my-4">
                                     <!-- <button class="btn btn-primary">Join</button> -->
-                                    <small class="bg-slate-500 text-white px-2 py-1 rounded-md">Programming</small>
-                                    <small class="bg-slate-500 text-white px-2 py-1 rounded-md">Digital Marketing</small>
-
+                                    <small class="bg-slate-500 text-white px-2 py-1 rounded-md">{{ $project->category->category_name }}</small>
                                 </div>
                                 <div class="my-4 ">
                                     <button class="middle none center mr-4 rounded-lg bg-green-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">Offer</button>
                                 </div>
                             </div>
-                            <div class="relative bg-white dark:bg-slate-700 border shadow-2xl ease-in duration-150 hover:scale-105 rounded-lg p-5">
-                                <span class="absolute right-1 top-1 p-2 bg-green-500 rounded-full"></span>
-                                <h1 class="font-bold text-slate-800 dark:text-slate-200 text-xl">Blockchain Developers, crypto evangelists and web3 innovators</h1>
-                                <div class="mb-3 mt-3">
-                                    <small class="text-slate-500 font-bold flex items-center gap-2">
-                                        <span data-test="budget">
-                                            Est. Budget: 20$
-                                        </span> - <span>Posted 2 days ago</span>
-                                    </small>
-                                </div>
-                                <div class="my-4">
-                                    <div>
-                                        <p class="text-gray-800 dark:text-gray-200" data-test="job-description-text">We are currently seeking a talented development team to build our next gen freelance platform on ETH blockchain, if you are possionate about web3 and have the skills, join us !</p>
-                                    </div>
-                                </div>
-                                <div class="my-4">
-                                    <!-- <button class="btn btn-primary">Join</button> -->
-                                    <small class="bg-slate-500 text-white px-2 py-1 rounded-md">Programming</small>
-                                    <small class="bg-slate-500 text-white px-2 py-1 rounded-md">Digital Marketing</small>
-
-                                </div>
-                                <div class="my-4 ">
-                                    <button class="middle none center mr-4 rounded-lg bg-green-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">Offer</button>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </section>

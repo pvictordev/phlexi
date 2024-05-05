@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome', ['name' => 'Victor']);
+    return view('welcome');
 });
 
 Route::get('/contact', function () {
@@ -27,19 +28,14 @@ Route::get('/blog', function () {
     return view('blog');
 });
 
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/market', function () {
-        return view('market');
-    });
+    Route::get('/market', [ProjectController::class, 'show']);
 
     Route::get('/project', [ProjectController::class, 'create'])->name('project.create');
     Route::post('/project', [ProjectController::class, 'store'])->name('project.store');
