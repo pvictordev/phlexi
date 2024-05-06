@@ -18,7 +18,7 @@
                         <div class="p-4 max-w-lg mx-auto  flex justify-between items-center">
                             <div class="text-center">
                                 <p class="text-lg font-semibold">Price</p>
-                                <p class="text-sm font-medium text-slate-500">${{$freelancerData['hourly_rate']}} / hour</p>
+                                <p class="text-sm font-medium text-slate-500">${{$freelancerData['hourly_rate'] ?? " -"}} / hour</p>
                             </div>
                             <div class="text-center">
                                 <p class="text-lg font-semibold">Rating</p>
@@ -37,39 +37,50 @@
                     </div>
                     <div class="p-6">
                         <h2 class="text-lg font-semibold mb-4">Bio</h2>
-                        <p class="leading-relaxed text-slate-500">{{$userData['bio']}}</p>
+                        <p class="leading-relaxed text-slate-500">
+                            @if(isset($userData['bio']))
+                            {{$userData['bio']}}
+                            @else
+                        <p class="text-red-500">No bio found.</p>
+                        @endIf
+                        </p>
                     </div>
                     <div class="border-t border-gray-200 px-6 py-4">
                         <p class="text-lg font-semibold mb-2">Phone</p>
-                        <p class="text-slate-500">{{$userData['phone']}}</p>
+                        <p class="text-slate-500">
+                            @if(isset($userData['phone']))
+                            {{$userData['phone']}}
+                            @else
+                        <p class="text-red-500">No phone found.</p>
+
+                        @endif
+                        </p>
                     </div>
 
                     <!-- skills -->
                     <div class="border-t border-gray-200 px-6 py-4 relative">
                         <h2 class="text-lg font-semibold mb-2">Skills</h2>
                         <div class="flex flex-wrap">
+                            @if($freelancerSkills->isEmpty())
+                            <p class="text-red-500">No skills found.</p>
+                            @else
+
                             @foreach ($freelancerSkills as $freelancerSkill)
                             <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">
-                                {{ $freelancerSkill }}</span>
+                                {{ $freelancerSkill->skill->skill_name }}</span>
                             @endforeach
-                            <!-- <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">HTML</span>
-                            <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">CSS</span>
-                            <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">JavaScript</span>
-                            <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">React</span>
-                            <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">Tailwind CSS</span>
-                            <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">Node.js</span>
-                            <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">Express.js</span> -->
+                            @endif
                         </div>
-                        <span class="absolute top-1 right-1 p-2 bg-blue-600 rounded-full cursor-pointer">
+                        <a href="/skill" class="absolute top-1 right-1 p-2 bg-blue-600 rounded-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="#ffff">
                                 <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path>
                                 <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path>
                             </svg>
-                        </span>
+                        </a>
                     </div>
 
                     <!-- projects -->
-                    <div class="border-t border-gray-200 dark:border-gray-600 px-6 py-4">
+                    <div class="border-t border-gray-200 px-6 py-4">
                         <div class="flex justify-between mb-4">
                             <h2 class="text-lg font-semibold mb-2">Projects</h2>
                             <a href="/project" class="p-2 text-slate-200 dark:text-slate-200 bg-blue-600 rounded-full cursor-pointer">
@@ -77,6 +88,9 @@
                             </a>
                         </div>
                         <div class="overflow-y-auto max-h-80">
+                            @if($projectsData->isEmpty())
+                            <p class="text-red-500">No projects found.</p>
+                            @else
                             @foreach($projectsData as $projectData)
                             <div class="border relative border-gray-300 dark:border-gray-600 rounded-lg p-4 my-2 mr-4">
                                 <span class="absolute bottom-1 right-1 p-2 bg-blue-600 rounded-full cursor-pointer">
@@ -94,7 +108,9 @@
                                 <p class="text-slate-500 mt-1">Created {{ $projectData->created_at->diffForHumans() }}</p>
                             </div>
                             @endforeach
+                            @endif
                         </div>
+
                     </div>
 
                 </div>

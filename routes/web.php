@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\FreelancerSkillController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +40,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/project', [ProjectController::class, 'create'])->name('project.create');
     Route::post('/project', [ProjectController::class, 'store'])->name('project.store');
+
+    Route::get('/skill', [FreelancerSkillController::class, 'create'])->name('skill.create');
+    Route::post('/skill', [FreelancerSkillController::class, 'store'])->name('skill.create');
 });
+
+
 
 require __DIR__ . '/auth.php';

@@ -10,7 +10,7 @@ use App\Models\Client;
 use App\Models\Freelancer;
 use App\Models\Project;
 use App\Models\Skill;
-use App\Models\FreelancersSkill;
+use App\Models\FreelancerSkill;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -33,8 +33,7 @@ class DashboardController extends Controller
         ];
 
         $projectsData = Project::where('client_id', $userId)->get();
-
-        $freelancerSkills = FreelancersSkill::with('skill')->where('freelancer_id', $userId)->get();
+        $freelancerSkills = FreelancerSkill::with('skill')->where('freelancer_id', $userId)->get();
 
         return view('dashboard', [
             'userData' => $userData,
