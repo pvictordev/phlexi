@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Freelancer extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'hourly_rate',
+        'availability',
+    ];
+    public $timestamps = false;
+    protected $primaryKey = 'freelancer_id';
 
     public function skills()
     {

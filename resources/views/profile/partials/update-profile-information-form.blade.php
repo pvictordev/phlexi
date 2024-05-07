@@ -26,14 +26,14 @@
         <!-- bio -->
         <div>
             <x-input-label for="bio" :value="__('Bio')" />
-            <x-text-input id="bio" name="bio" bio="bio" type="text" class="mt-1 block w-full" :value="old('bio', $user->bio)" required autofocus autocomplete="bio" />
+            <x-text-input id="bio" name="bio" bio="bio" type="text" class="mt-1 block w-full" :value="old('bio', $user->bio)" autofocus autocomplete="bio" />
             <x-input-error class="mt-2" :messages="$errors->get('bio')" />
         </div>
 
         <!-- phone -->
         <div>
             <x-input-label for="phone" :value="__('Phone')" />
-            <x-text-input id="phone" name="phone" phone="phone" type="number" class="mt-1 block w-full" :value="old('phone', $user->phone)" required autofocus autocomplete="phone" />
+            <x-text-input id="phone" name="phone" phone="phone" type="number" class="mt-1 block w-full" :value="old('phone', $user->phone)" autofocus autocomplete="phone" />
             <x-input-error class="mt-2" :messages="$errors->get('phone')" />
         </div>
 

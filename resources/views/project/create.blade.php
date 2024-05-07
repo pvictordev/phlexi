@@ -17,7 +17,7 @@
         </svg>
     </a>
 
-    <div class="mx-auto container bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
+    <div class="mx-auto max-w-2xl container bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
         <div class="p-6">
             <h2 class="text-lg font-semibold text-gray-800 dark:text-slate-200 mb-4">Create Project</h2>
             <form method="POST" action="{{ route('project.store') }}" accept-charset="UTF-8">
@@ -27,6 +27,7 @@
                     <label for="title" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Title</label>
                     <input type="text" id="title" name="title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:bg-slate-900 dark:border-gray-600 dark:text-slate-200 rounded-md">
                 </div> -->
+
                 <div class="mb-4">
                     <label for="description" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Description</label>
                     <textarea id="description" name="description" rows="3" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:bg-slate-900 dark:border-gray-600 dark:text-slate-200 rounded-md"></textarea>

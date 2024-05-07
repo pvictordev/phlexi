@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class FreelancerSkill extends Model
 {
     use HasFactory;
+    protected $table = 'freelancers_skills';
+
     protected $fillable = [
         'freelancer_id',
         'skill_id',
     ];
-
-    protected $table = 'freelancers_skills';
+    public $timestamps = false;
 
     public function freelancer()
     {

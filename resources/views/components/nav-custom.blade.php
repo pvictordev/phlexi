@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
 
 
-<header class="fixed z-10 top-0 w-full">
+<header class="fixed z-20 top-0 w-full">
     <div class="w-full flex items-center justify-center text-gray-800 bg-gray-200 dark:text-gray-200 dark:bg-gray-900">
         <div class="container">
             <div x-data="{ open: true }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-0">

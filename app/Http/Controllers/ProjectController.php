@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 // import the models
 use App\Models\Project;
-use App\Models\User;
 use App\Models\Category;
 
 class ProjectController extends Controller
@@ -21,14 +20,7 @@ class ProjectController extends Controller
         $projects = Project::all();
         return view('market', ['projects' => $projects]);
     }
-    // view method
-    public function edit()
-    {
-        return view('project.edit');
-    }
-    public function update()
-    {
-    }
+
     // view method
     public function create()
     {
@@ -36,7 +28,7 @@ class ProjectController extends Controller
         $categories = Category::all();
         return view('project.create', ['categories' => $categories]);
     }
-    public function store(Request $request, Project $project, User $user)
+    public function store(Request $request, Project $project)
     {
 
         $client = Auth::user();
@@ -55,6 +47,41 @@ class ProjectController extends Controller
         // Save the project
         $project->save();
 
+        return redirect('/dashboard');
+    }
+
+    // view method
+    public function edit($id, Category $categories)
+    {
+        $project = Project::findOrFail($id);
+        $categories = Category::all();
+        return view('project.edit', compact('project', 'categories'));
+    }
+    public function update(Request $request, $id)
+    {
+        $client = Auth::id();
+        // Validate the request data
+        $request->validate([
+            // 'title' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'price' => 'required|string|max:255',
+        ]);
+
+        $project = Project::findOrFail($id);
+
+        $project->category_id = intval($request->category_id);
+        $project->client_id = $client;
+        $project->price = $request->price;
+        $project->status = $request->status;
+        $project->description = $request->description;
+
+        $project->save();
+
+        return redirect('/dashboard');
+    }
+    public function destroy($id)
+    {
+        Project::where('id', $id)->delete();
         return redirect('/dashboard');
     }
 }

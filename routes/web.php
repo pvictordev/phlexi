@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\FreelancerSkillController;
+use App\Http\Controllers\FreelancerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,15 +37,21 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/market', [ProjectController::class, 'show']);
-
     Route::get('/project', [ProjectController::class, 'create'])->name('project.create');
     Route::post('/project', [ProjectController::class, 'store'])->name('project.store');
+    Route::get('/project/{id}/edit', [ProjectController::class, 'edit'])->name('project.edit');
+    Route::put('/project/{id}/edit', [ProjectController::class, 'update'])->name('project.edit');
+    Route::delete('/project/{id}/remove', [ProjectController::class, 'destroy'])->name('project.destroy');
 
     Route::get('/skill', [FreelancerSkillController::class, 'create'])->name('skill.create');
     Route::post('/skill', [FreelancerSkillController::class, 'store'])->name('skill.create');
+    Route::get('/skill/{id}/remove', [FreelancerSkillController::class, 'remove'])->name('skill.destroy');
+    Route::delete('/skill/{id}/remove', [FreelancerSkillController::class, 'destroy'])->name('skill.destroy');
+
+    Route::get('/freelancer/{id}/edit', [FreelancerController::class, 'edit'])->name('freelancer.edit');
+    Route::put('/freelancer/{id}/edit', [FreelancerController::class, 'update'])->name('freelancer.update');
+
+    Route::get('/market', [ProjectController::class, 'show']);
 });
-
-
 
 require __DIR__ . '/auth.php';

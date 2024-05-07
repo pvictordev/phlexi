@@ -20,41 +20,27 @@ class FreelancerSkillController extends Controller
         return view('skill.create', ['skills' => $skills]);
     }
 
-    public function store(Request $request, FreelancerSkill $freelancerSkill)
+    public function store(Request $request)
     {
         // store the skills to database 
         $freelancerId = Auth::id();
 
-        // $freelancerSkill = new FreelancerSkill();
-
-        // $freelancerSkill->freelancer_id = $freelancerId;
-
-        // $freelancerSkill->freelancer_id = intval($requset->skill_id);
-        // $freelancerSkill->save();
         FreelancerSkill::create([
             'freelancer_id' => $freelancerId,
             'skill_id' => $request->skill_id,
         ]);
+        return redirect('/dashboard');
     }
-    // public function store(Request $request, Project $project, User $user)
-    // {
+    public function remove($id)
+    {
+        $skill = Skill::findOrFail($id);
+        return view('skill.destroy', compact('skill'));
+    }
+    public function destroy($id)
+    {
+        $freelancerId = Auth::id();
 
-    //     $client = Auth::user();
-
-    //     $project = new Project();
-
-    //     // Associate the client with the project
-    //     $project->client()->associate($client);
-
-    //     $project->category_id = $request->category_id;
-
-    //     $project->description = $request->description;
-    //     $project->price = $request->price;
-    //     $project->status = $request->status;
-
-    //     // Save the project
-    //     $project->save();
-
-    //     return redirect('/dashboard');
-    // }
+        FreelancerSkill::where('freelancer_id', $freelancerId)->where('skill_id', intval($id))->delete();
+        return redirect('/dashboard');
+    }
 }
