@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<x-app-layout>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Home</title>
-
-    @vite('resources/css/app.css')
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-</head>
-
-<body class="antialiased">
-
-    <!-- component -->
     <x-nav-custom></x-nav-custom>
 
-    <main class="bg-white dark:bg-slate-800">
+    <main>
         <div class="flex flex-col items-center justify-center">
             <section class="container h-screen flex items-center justify-center">
                 <div class="">
@@ -167,7 +147,7 @@
                     </ul>
                 </div>
             </section>
-
+            <!-- 
             <section class="container max-w-6xl py-24 sm:py-32 px-5">
 
                 <div id="default-carousel" class="relative" data-carousel="static">
@@ -187,13 +167,13 @@
                             <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
                         </div>
                     </div>
-                    <!-- Slider indicators -->
+
                     <div class="flex absolute bottom-5 left-1/2 z-20 space-x-3 -translate-x-1/2">
                         <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
                         <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
                         <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
                     </div>
-                    <!-- Slider controls -->
+
                     <button type="button" class="flex absolute top-0 left-0 z-20 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
                         <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
                             <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -212,7 +192,7 @@
                     </button>
                 </div>
 
-            </section>
+            </section> -->
 
             <section class="container bg-white dark:bg-slate-800  py-24 sm:py-32">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -393,9 +373,6 @@
         </div>
     </main>
 
-    <!-- component -->
     <x-footer-custom></x-footer-custom>
-
+</x-app-layout>
 </body>
-
-</html>

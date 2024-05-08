@@ -19,11 +19,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $title = 'Home';
+    return view('welcome', ['title' => $title]);
 });
 
 Route::get('/contact', function () {
-    return view('contact');
+    $title = 'Contact';
+    return view('contact', ['title' => $title]);
 });
 
 Route::get('/blog', function () {

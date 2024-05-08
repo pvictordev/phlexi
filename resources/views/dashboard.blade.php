@@ -1,8 +1,10 @@
 <x-app-layout>
-    <div class="py-24">
+    <x-nav-custom></x-nav-custom>
+
+    <main class="py-24">
         <div class="max-w-7xl mx-auto sm:p-6 lg:p-8">
             <div class="mx-auto p-4">
-                <div class="border-2 border-gray-200 mx-auto rounded-lg shadow-lg overflow-hidden dark:bg-slate-800 dark:text-slate-200 bg-white text-slate-800">
+                <div class="border-2 border-gray-200 mx-auto rounded-lg shadow-lg overflow-hidden  dark:text-slate-200 bg-slate-200 dark:bg-slate-700">
                     <div class="sm:flex sm:items-center px-6 py-4 relative">
                         <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-24 w-24 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0 sm:float-left">
                         <div class="text-center sm:text-left">
@@ -136,5 +138,7 @@
 
             </div>
         </div>
-    </div>
+    </main>
+
+    <x-footer-custom></x-footer-custom>
 </x-app-layout>
