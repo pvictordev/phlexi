@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\FreelancerSkillController;
 use App\Http\Controllers\FreelancerController;
+use App\Http\Controllers\LocalizationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// localization route
+Route::get('/locale/{lang}', [LocalizationController::class, 'setLang']);
 
 Route::get('/', function () {
     $title = 'Home';

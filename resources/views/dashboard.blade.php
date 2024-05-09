@@ -16,7 +16,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="border-t relative w-full border-b border-gray-200">
+                    <div class="border-t relative w-full border-b border-gray-400">
                         <a href="{{ route('freelancer.edit', $freelancerData['freelancer_id']) }}" class="absolute top-1 right-1 p-2 bg-blue-600 rounded-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="#ffff">
                                 <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path>
@@ -53,7 +53,7 @@
                         @endIf
                         </p>
                     </div>
-                    <div class="border-t border-gray-200 px-6 py-4">
+                    <div class="border-t border-gray-400 px-6 py-4">
                         <p class="text-lg font-semibold mb-2">Phone</p>
                         <p class="text-slate-500">
                             @if(isset($userData['phone']))
@@ -66,7 +66,7 @@
                     </div>
 
                     <!-- skills -->
-                    <div class="border-t border-gray-200 px-6 py-4 relative">
+                    <div class="border-t border-gray-400 px-6 py-4 relative">
                         <h2 class="text-lg font-semibold mb-2">Skills</h2>
                         <div class="flex flex-wrap">
                             @if($freelancerSkills->isEmpty())
@@ -89,7 +89,7 @@
                     </div>
 
                     <!-- projects -->
-                    <div class="border-t border-gray-200 px-6 py-4">
+                    <div class="border-t border-gray-400 px-6 py-4">
                         <div class="flex justify-between mb-4">
                             <h2 class="text-lg font-semibold mb-2">Projects</h2>
                             <a href="/project" class="p-2 text-slate-200 dark:text-slate-200 bg-blue-600 rounded-lg cursor-pointer">
