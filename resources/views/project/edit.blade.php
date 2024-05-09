@@ -1,4 +1,7 @@
 <x-app-layout>
+    <x-slot name="title">
+        Edit
+    </x-slot>
     <div class="h-screen relative flex justify-center items-center bg-white dark:bg-slate-900">
 
         <a href="/dashboard" class="absolute top-2 left-2">

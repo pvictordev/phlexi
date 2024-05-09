@@ -1,4 +1,7 @@
 <x-app-layout>
+    <x-slot name="title">
+        Delete
+    </x-slot>
     <div class="h-screen relative flex justify-center items-center bg-white dark:bg-slate-900">
         <a href="/dashboard" class="absolute top-2 left-2">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="40px" height="40px" viewBox="0 0 32 32" version="1.1">

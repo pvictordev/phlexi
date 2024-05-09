@@ -1,4 +1,9 @@
 <x-app-layout>
+
+    <x-slot name="title">
+        Profile
+    </x-slot>
+
     <x-nav-custom></x-nav-custom>
 
     <main class="py-24">
@@ -12,7 +17,7 @@
                             <p class="text-sm font-medium">{{$userData['email']}}</p>
                             <p class="text-sm font-medium">Middle of, Nowhere - 04:20am</p>
                             <div class="mt-4 absolute top-0 right-0">
-                                <a href="/profile" class="text-xs font-semibold bg-gray-200 dark:bg-slate-200 dark:text-slate-800 rounded-full px-4 py-2 leading-none inline-block text-gray-700 mr-2">Edit Profile</a>
+                                <a href="/profile" class="text-xs font-semibold bg-gray-300 dark:bg-slate-200 dark:text-slate-800 rounded-full px-4 py-2 leading-none inline-block text-gray-700 mr-2">Edit Profile</a>
                             </div>
                         </div>
                     </div>
@@ -102,7 +107,7 @@
                             @else
                             @foreach($projectsData as $projectData)
                             <div class="border relative border-gray-300 dark:border-gray-600 rounded-lg p-4 my-2 mr-4">
-                                <span class="absolute top-1 left-1 bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">
+                                <span class="absolute top-1 left-1 bg-gray-300 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">
                                     {{$projectData->category->category_name}}
                                 </span>
                                 <a href="{{ route('project.edit', $projectData->id) }}" class="absolute bottom-1 right-1 p-2 bg-blue-600 rounded-full cursor-pointer">

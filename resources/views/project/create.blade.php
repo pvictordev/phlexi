@@ -1,5 +1,8 @@
 <x-app-layout>
-    <div class="h-screen relative flex justify-center items-center bg-white dark:bg-slate-900">
+    <x-slot name="title">
+        Create
+    </x-slot>
+    <div class="h-screen relative flex justify-center items-center">
         <a href="/dashboard" class="absolute top-2 left-2">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="40px" height="40px" viewBox="0 0 32 32" version="1.1">
                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
@@ -12,7 +15,7 @@
             </svg>
         </a>
 
-        <div class="mx-auto max-w-2xl container bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
+        <div class="mx-auto max-w-2xl container bg-slate-200 dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden">
             <div class="p-6">
                 <h2 class="text-lg font-semibold text-gray-800 dark:text-slate-200 mb-4">Create Project</h2>
                 <form method="POST" action="{{ route('project.store') }}" accept-charset="UTF-8">

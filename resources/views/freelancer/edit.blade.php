@@ -1,4 +1,7 @@
 <x-app-layout>
+    <x-slot name="title">
+        Edit
+    </x-slot>
     <div class="h-screen relative flex justify-center items-center ">
 
         <span onclick="history.back()" class="absolute top-2 left-2 cursor-pointer">
@@ -13,7 +16,7 @@
             </svg>
         </span>
 
-        <div class="mx-auto container max-w-5xl bg-white dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden">
+        <div class="mx-auto container max-w-5xl bg-slate-200 dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden">
             <div class="p-6">
                 <h2 class="text-lg font-semibold text-gray-800 dark:text-slate-200 mb-4">Edit Freelancer</h2>
                 <form action="{{ route('freelancer.update', ['id' => $freelancer->freelancer_id]) }}" method="POST">
