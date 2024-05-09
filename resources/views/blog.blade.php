@@ -1,4 +1,7 @@
 <x-app-layout>
+    <x-slot name="title">
+        Blog
+    </x-slot>
     <x-nav-custom></x-nav-custom>
     <main class="bg-white dark:bg-slate-800">
         <section class="text-gray-600 body-font">

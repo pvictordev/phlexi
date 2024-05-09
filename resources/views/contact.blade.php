@@ -1,4 +1,8 @@
 <x-app-layout>
+    <x-slot name="title">
+        Contact
+    </x-slot>
+
     <x-nav-custom></x-nav-custom>
 
     <main>

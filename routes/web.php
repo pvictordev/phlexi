@@ -28,7 +28,7 @@ Route::get('/', function () {
 
 Route::get('/contact', function () {
     $title = 'Contact';
-    return view('contact', ['title' => $title]);
+    return view('contact');
 });
 
 Route::get('/blog', function () {
