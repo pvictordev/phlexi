@@ -23,8 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/locale/{lang}', [LocalizationController::class, 'setLang']);
 
 Route::get('/', function () {
-    $title = 'Home';
-    return view('welcome', ['title' => $title]);
+    return view('welcome');
 });
 
 Route::get('/contact', function () {

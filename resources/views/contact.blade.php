@@ -4,7 +4,7 @@
     <main>
         <!-- component -->
         <section class="h-screen text-gray-700 body-font relative">
-            <div class="absolute inset-0 top-14 bg-gray-300">
+            <div class="absolute inset-0 top-16 bg-gray-300">
                 <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2782.6488742896145!2d24.137801599999996!3d45.7782267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474c678604b4ad13%3A0xe744074070b2b902!2sGSD%20Software%20%26%20Technology!5e0!3m2!1sen!2sro!4v1706821622878!5m2!1sen!2sro" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style=""></iframe>
             </div>
             <div class="container px-5 py-40 mx-auto flex">
