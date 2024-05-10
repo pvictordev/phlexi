@@ -57,7 +57,9 @@ Route::middleware('auth')->group(function () {
     Route::put('/freelancer/{id}/edit', [FreelancerController::class, 'update'])->name('freelancer.update');
 
     Route::get('/market', [ProjectController::class, 'show']);
-    Route::get('/freelancers', [FreelancerController::class, 'show']);
+
+    Route::get('/freelancers', [FreelancerController::class, 'index']);
+    Route::get('/freelancers/{id}', [FreelancerController::class, 'show'])->name('freelancer.show');
 });
 
 require __DIR__ . '/auth.php';

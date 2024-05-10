@@ -3,6 +3,7 @@
         Freelancers
     </x-slot>
     <x-nav-custom></x-nav-custom>
+
     <main x-data="{ mobileFiltersOpen: false, menuOpen: false, sortMenuOpen:false }">
 
         <div class="bg-white dark:bg-slate-800">
@@ -103,13 +104,13 @@
                             <div class="flex flex-col gap-8 lg:col-span-3">
                                 <!-- Your content -->
                                 @foreach($freelancers as $freelancer)
-                                <div class="freelancer relative bg-slate-200 dark:bg-slate-700 border shadow-2xl ease-in duration-150 hover:scale-105 rounded-lg p-5">
+                                <a href="{{ route('freelancer.show', [$freelancer->freelancer_id]) }}" class="freelancer relative bg-slate-200 dark:bg-slate-700 border shadow-2xl ease-in duration-150 hover:scale-105 rounded-lg p-5">
                                     <span class="absolute right-1 top-1 p-2 bg-green-500 rounded-full"></span>
 
                                     <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-12 w-12 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0 sm:float-left">
 
                                     <div class="flex items-baseline gap-1">
-                                        <h2 class="text-xl text-slate-800 dark:text-slate-200">Joey T.</h2>
+                                        <h2 class="text-xl text-slate-800 dark:text-slate-200">{{ $freelancer->freelancer_id }} Joey T.</h2>
                                         <span class="text-sm text-slate-800 dark:text-slate-200 ">Romania</span>
                                     </div>
                                     <p class="text-slate-400 text-sm mb-2">Web Developer</p>
@@ -126,7 +127,7 @@
                                         <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold">Digital Marketing</span>
 
                                     </div>
-                                </div>
+                                </a>
                                 @endforeach
                             </div>
                         </div>
@@ -136,6 +137,7 @@
         </div>
 
     </main>
+
     <x-footer-custom></x-footer-custom>
 
 </x-app-layout>

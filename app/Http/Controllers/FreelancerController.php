@@ -13,11 +13,19 @@ use App\Models\User;
 
 class FreelancerController extends Controller
 {
-    public function show()
+    public function index()
     {
         $freelancers = Freelancer::all();
         return view('freelancer', ['freelancers' => $freelancers]);
     }
+
+    public function show($id)
+    {
+        $freelancer = Freelancer::where('freelancer_id', $id)->firstOrFail();
+
+        return view('freelancer.show', $freelancer);
+    }
+
     public function edit($id)
     {
         $freelancer = Freelancer::where('freelancer_id', $id)->firstOrFail();
