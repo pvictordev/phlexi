@@ -2,7 +2,11 @@
 
 return [
     'blog' => 'Blog',
+    'explore' => 'Explorează',
     'market' => 'Piață',
+    'marketDescription' => 'Cele mai bune proiecte de pe piață',
+    'freelancers' => 'Freelanceri',
+    'freelancersDescription' => 'Căutați freelancerii noștri de top',
     'contact' => 'Contact',
     'appearance' => 'Aspect',
     'profile' => 'Profil',

@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="title">
-        Market
+        Freelancers
     </x-slot>
     <x-nav-custom></x-nav-custom>
     <main x-data="{ mobileFiltersOpen: false, menuOpen: false, sortMenuOpen:false }">
@@ -102,35 +102,29 @@
                             <!-- Product grid -->
                             <div class="flex flex-col gap-8 lg:col-span-3">
                                 <!-- Your content -->
-                                @foreach ($projects as $project)
-                                <div class="relative bg-slate-200 dark:bg-slate-700 border shadow-2xl ease-in duration-150 hover:scale-105 rounded-lg p-5">
+                                @foreach($freelancers as $freelancer)
+                                <div class="freelancer relative bg-slate-200 dark:bg-slate-700 border shadow-2xl ease-in duration-150 hover:scale-105 rounded-lg p-5">
                                     <span class="absolute right-1 top-1 p-2 bg-green-500 rounded-full"></span>
-                                    <h1 class="font-bold text-slate-800 dark:text-slate-200 text-xl">Blockchain Developers, crypto evangelists and web3 innovators</h1>
-                                    <div class="mb-3 mt-3">
-                                        <small class="text-slate-500 font-bold flex items-center gap-2">
-                                            <span data-test="budget">
-                                                Est. Budget: {{ $project->price }}$ -
-                                            </span>
-                                            <span>{{ $project->created_at->diffForHumans() }}
-                                            </span>
-                                            <small class="bg-slate-500 text-white px-2 py-1 rounded-md">{{ $project->category->category_name }}</small>
-                                        </small>
+
+                                    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-12 w-12 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0 sm:float-left">
+
+                                    <div class="flex items-baseline gap-1">
+                                        <h2 class="text-xl text-slate-800 dark:text-slate-200">Joey T.</h2>
+                                        <span class="text-sm text-slate-800 dark:text-slate-200 ">Romania</span>
                                     </div>
-                                    <div class="my-4">
-                                        <div>
-                                            <p class="text-gray-800 dark:text-gray-200" data-test="job-description-text">{{ $project->description }}</p>
-                                        </div>
+                                    <p class="text-slate-400 text-sm mb-2">Web Developer</p>
+                                    <div class="flex gap-3 mb-2">
+                                        <p class="text-slate-400">${{ $freelancer->hourly_rate }}/hour</p>
+                                        <p class="text-slate-400 flex items-center">4.5 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 dark:text-yellow-400 text-yellow-600" viewBox="0 0 20 20" fill="currentColor">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg></p>
+                                        <p class="text-slate-400">100% Job Success</p>
+                                        <p class="text-slate-400">Available</p>
                                     </div>
-                                    <div class="my-4 flex flex-wrap gap-2">
-                                        <small class="bg-slate-500 text-white px-2 py-1 rounded-md">
-                                            Web Development
-                                        </small>
-                                        <small class="bg-slate-500 text-white px-2 py-1 rounded-md">
-                                            Digital Marketing
-                                        </small>
-                                    </div>
-                                    <div class="my-4 ">
-                                        <button class="middle none center mr-4 rounded-lg bg-green-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">Offer</button>
+                                    <div class="flex gap-2 flex-wrap">
+                                        <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold">Web Development</span>
+                                        <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold">Digital Marketing</span>
+
                                     </div>
                                 </div>
                                 @endforeach

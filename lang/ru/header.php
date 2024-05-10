@@ -2,7 +2,11 @@
 
 return [
     'blog' => 'Блог',
+    'explore' => 'Изучите',
     'market' => 'Рынок',
+    'marketDescription' => 'Лучшие проекты на рынке',
+    'freelancers' => 'Фриллансеры',
+    'freelancersDescription' => 'Ищите наших лучших фриллансеров',
     'contact' => 'Контакт',
     'appearance' => 'Вид',
     'profile' => 'Профиль',

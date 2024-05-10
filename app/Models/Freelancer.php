@@ -15,6 +15,10 @@ class Freelancer extends Model
     public $timestamps = false;
     protected $primaryKey = 'freelancer_id';
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     public function skills()
     {
         return $this->belongsToMany(Skill::class, 'freelancers_skills');

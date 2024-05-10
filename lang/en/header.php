@@ -2,7 +2,11 @@
 
 return [
     'blog' => 'Blog',
+    'explore' => 'Explore',
     'market' => 'Market',
+    'marketDescription' => 'Best projects on the market',
+    'freelancers' => 'Freelancers',
+    'freelancersDescription' => 'Look for our top freelancers',
     'contact' => 'Contact',
     'appearance' => 'Appearance',
     'profile' => 'Profile',

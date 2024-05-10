@@ -9,9 +9,15 @@ use Illuminate\Http\Request;
 // get the authenticated freelancer
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\User;
+
 class FreelancerController extends Controller
 {
-    //
+    public function show()
+    {
+        $freelancers = Freelancer::all();
+        return view('freelancer', ['freelancers' => $freelancers]);
+    }
     public function edit($id)
     {
         $freelancer = Freelancer::where('freelancer_id', $id)->firstOrFail();

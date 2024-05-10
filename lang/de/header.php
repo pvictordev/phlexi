@@ -2,7 +2,11 @@
 
 return [
     'blog' => 'Blog',
+    'explore' => 'Erkunden',
     'market' => 'Markt',
+    'marketDescription' => 'Die besten Projekte auf dem Markt',
+    'freelancers' => 'Freiberufler',
+    'freelancersDescription' => 'Suchen Sie nach unseren Top-Freelancern',
     'contact' => 'Kontakt',
     'appearance' => 'Erscheinungsbild',
     'profile' => 'Profil',
