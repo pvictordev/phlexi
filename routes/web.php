@@ -6,6 +6,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\FreelancerSkillController;
 use App\Http\Controllers\FreelancerController;
 use App\Http\Controllers\LocalizationController;
+use App\Http\Controllers\OfferController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,6 +61,17 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/freelancers', [FreelancerController::class, 'index']);
     Route::get('/freelancers/{id}', [FreelancerController::class, 'show'])->name('freelancer.show');
+
+    Route::get('/offer/{id}', [OfferController::class, 'index'])->name('offer.request');
+    Route::post('/offer/{id}', [OfferController::class, 'store'])->name('offer.request');
+
+    Route::get('/offers/client', [OfferController::class, 'show'])->name('offer.show');
+    Route::get('/offers/client/{id}', [OfferController::class, 'edit'])->name('offer.edit');
+    Route::patch('/offers/client/{id}', [OfferController::class, 'update'])->name('offer.edit');
+
+    Route::get('/offers/freelancer', [OfferController::class, ''])->name('');
+    Route::get('/offers/freelancer/{id}', [OfferController::class, ''])->name('');
+    Route::get('/offers/freelancer/{id}', [OfferController::class, ''])->name('');
 });
 
 require __DIR__ . '/auth.php';

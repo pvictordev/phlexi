@@ -139,6 +139,14 @@
 
                     </div>
 
+                    <!-- offers -->
+                    <div class="border-t border-gray-400 px-6 py-4">
+                        <div class="flex gap-2">
+                            <a class="border" href="/offers/client">client offers</a>
+                            <a class="border" href="/offers/freelancer">freelancer offers</a>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>

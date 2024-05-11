@@ -53,7 +53,7 @@
 
                 <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
-                        <h1 class="text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-200">Freelancers</h1>
+                        <h1 class="text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-200">Market</h1>
 
                         <div class="flex items-center">
                             <div class="relative inline-block text-left">
@@ -94,7 +94,7 @@
                     </div>
 
                     <section aria-labelledby="products-heading" class="pb-24 pt-6">
-                        <h2 id="products-heading" class="sr-only">Freelancers</h2>
+                        <h2 id="products-heading" class="sr-only">Market</h2>
 
                         <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                             <!-- Filters -->
@@ -130,7 +130,7 @@
                                         </small>
                                     </div>
                                     <div class="my-4 ">
-                                        <button class="middle none center mr-4 rounded-lg bg-green-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">Offer</button>
+                                        <a href="{{route('offer.request', [$project->id] )}}" class="middle none center mr-4 rounded-lg bg-green-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">Offer</a>
                                     </div>
                                 </div>
                                 @endforeach
