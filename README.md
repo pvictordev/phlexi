@@ -23,4 +23,4 @@ At this stage, we created the database for the application. Subsequently, we dev
 
 ### Stage #5 (Laravel)
 
-At this point, we've transferred the business idea from our core PHP project into a new Laravel project. Here, we've redesigned the previous layout using Tailwind CSS to create a more modern design. In addition, we implemented new features such as localization and sending password reset via email in order to met the final project requirments.
+At this point, we've transferred the business idea from our core PHP project into a new Laravel project. Here, we've redesigned the previous layout using Tailwind CSS to create a more modern design. In addition, we implemented new features such as localization and sending password reset via email in order to met the final project requirments. We have also developed a feature that allows freelancers to join the posted projects by clients and submit results for those projects.
