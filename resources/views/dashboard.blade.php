@@ -141,9 +141,12 @@
 
                     <!-- offers -->
                     <div class="border-t border-gray-400 px-6 py-4">
+                        <h2 class="text-lg font-semibold mb-2">Offers & Results</h2>
                         <div class="flex gap-2">
-                            <a class="border" href="/offers/client">client offers</a>
-                            <a class="border" href="/offers/freelancer">freelancer offers</a>
+                            <a class="border p-1 rounded-lg" href="/offers/client">Received offers</a>
+                            <a class="border p-1 rounded-lg" href="/offers/freelancer">Sent offers</a>
+                            <a class="border p-1 rounded-lg" href="/results/client">Received results</a>
+                            <a class="border p-1 rounded-lg" href="/results/freelancer">Sent results</a>
                         </div>
                     </div>
 

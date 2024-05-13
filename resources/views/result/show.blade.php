@@ -2,7 +2,7 @@
     <x-slot name="title">
         Create
     </x-slot>
-    <div class="h-screen relative flex flex-col justify-center items-center ">
+    <div class="h-screen relative flex justify-center items-center ">
         <a href="/dashboard" class="absolute top-2 left-2">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="40px" height="40px" viewBox="0 0 32 32" version="1.1">
                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
@@ -14,12 +14,12 @@
             </svg>
         </a>
         <div class="mx-auto relative max-w-2xl container flex flex-col gap-2">
-            @foreach ($offers as $offer)
+            @foreach ($results as $result)
             <div class="min-h-16 flex items-center  bg-slate-200 dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden">
-                <a href="{{ route('offer.edit', [$offer->id]) }}" class="absolute top-2 right-2 p-2 bg-green-500 rounded-lg">
-                    Accept
+                <a href="{{ route('result.edit', $result->id )}}" class="absolute top-2 right-2 p-2 bg-green-500 rounded-lg">
+                    accept the result
                 </a>
-                <p class="text-slate-400 p-2 mb-10 dark:slate-800">{{ $offer->description }}</p>
+                <p class="text-slate-400 p-2 mb-10 dark:slate-800">{{ $result->description }}</p>
             </div>
             @endforeach
         </div>

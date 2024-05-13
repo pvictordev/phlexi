@@ -7,6 +7,7 @@ use App\Http\Controllers\FreelancerSkillController;
 use App\Http\Controllers\FreelancerController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\OfferController;
+use App\Http\Controllers\ResultController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,16 +63,32 @@ Route::middleware('auth')->group(function () {
     Route::get('/freelancers', [FreelancerController::class, 'index']);
     Route::get('/freelancers/{id}', [FreelancerController::class, 'show'])->name('freelancer.show');
 
-    Route::get('/offer/{id}', [OfferController::class, 'index'])->name('offer.request');
-    Route::post('/offer/{id}', [OfferController::class, 'store'])->name('offer.request');
+    // create an offer as a freelancer 
+    Route::get('/offer/{id}', [OfferController::class, 'index'])->name('offer.create');
+    Route::post('/offer/{id}', [OfferController::class, 'store'])->name('offer.create');
 
+    // see the offers received from the freelancer and accept/reject them
+    // see all the offers
     Route::get('/offers/client', [OfferController::class, 'show'])->name('offer.show');
+    // accept/reject particular offer
     Route::get('/offers/client/{id}', [OfferController::class, 'edit'])->name('offer.edit');
     Route::patch('/offers/client/{id}', [OfferController::class, 'update'])->name('offer.edit');
 
-    Route::get('/offers/freelancer', [OfferController::class, ''])->name('');
-    Route::get('/offers/freelancer/{id}', [OfferController::class, ''])->name('');
-    Route::get('/offers/freelancer/{id}', [OfferController::class, ''])->name('');
+    // see the offers that you submitted as a freelancer that have response of true (1)
+    Route::get('/offers/freelancer', [ResultController::class, 'index'])->name('result.index');
+
+    // submit a result as freelancer
+    Route::get('/offers/freelancer/{id}', [ResultController::class, 'create'])->name('result.create');
+    Route::post('/offers/freelancer/{id}', [ResultController::class, 'store'])->name('result.create');
+
+    // see all the results
+    Route::get('/results/client', [ResultController::class, 'show'])->name('result.show');
+    // accept/reject result as a client
+    Route::get('/results/client/{id}', [ResultController::class, 'edit'])->name('result.edit');
+    Route::patch('/results/client/{id}', [ResultController::class, 'update'])->name('result.edit');
+
+    // see the results that have the status of true (accepted)
+    Route::get('/results/freelancer', [ResultController::class, 'success'])->name('result.success');
 });
 
 require __DIR__ . '/auth.php';

@@ -21,4 +21,8 @@ class Offer extends Model
     {
         return $this->belongsTo(Client::class);
     }
+    public function results()
+    {
+        return $this->hasMany(Result::class);
+    }
 }

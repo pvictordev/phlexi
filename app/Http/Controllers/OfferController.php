@@ -11,10 +11,7 @@ use App\Models\Project;
 
 class OfferController extends Controller
 {
-    public function index($id)
-    {
-        return view('offer.request', ['id' => $id]);
-    }
+
     public function show()
     {
         $client = Auth::id();
@@ -22,6 +19,12 @@ class OfferController extends Controller
 
         return view('offer.show', ['offers' => $offers]);
     }
+
+    public function create($id)
+    {
+        return view('offer.create');
+    }
+
     public function store(Request $request, $id)
     {
         $freelancer = Auth::id();
@@ -51,7 +54,7 @@ class OfferController extends Controller
         $offer->response = intval($request->choice);
         $offer->save();
 
-        redirect('/dashboard');
+        return redirect('/dashboard');
     }
     public function destroy()
     {

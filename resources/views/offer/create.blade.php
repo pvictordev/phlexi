@@ -2,7 +2,7 @@
     <x-slot name="title">
         Create
     </x-slot>
-    <div class="h-screen relative flex flex-col justify-center items-center ">
+    <div class="h-screen relative flex justify-center items-center ">
         <a href="/dashboard" class="absolute top-2 left-2">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="40px" height="40px" viewBox="0 0 32 32" version="1.1">
                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
@@ -13,15 +13,23 @@
                 </g>
             </svg>
         </a>
-        <div class="mx-auto relative max-w-2xl container flex flex-col gap-2">
-            @foreach ($offers as $offer)
-            <div class="min-h-16 flex items-center  bg-slate-200 dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden">
-                <a href="{{ route('offer.edit', [$offer->id]) }}" class="absolute top-2 right-2 p-2 bg-green-500 rounded-lg">
-                    Accept
-                </a>
-                <p class="text-slate-400 p-2 mb-10 dark:slate-800">{{ $offer->description }}</p>
+        <div class="mx-auto max-w-2xl container bg-slate-200 dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden">
+            <div class="p-6">
+                <h2 class="text-lg font-semibold text-gray-800 dark:text-slate-200 mb-4">Why you are better than others ?</h2>
+                <form method="POST">
+                    @csrf
+                    @method('post')
+                    <div class="mb-4">
+                        <label for="description" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Offer your prove</label>
+                        <textarea id="description" name="description" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white dark:bg-slate-900 dark:border-gray-600 dark:text-slate-200 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="submit" class="inline-flex items-center px-4 py-2 bg-green-600 border border-transparent rounded-md font-semibold text-xs text-white tracking-widest hover:bg-green-700 active:bg-green-700 focus:outline-none focus:border-green-700 focus:ring ring-green-300 disabled:opacity-25 transition ease-in-out duration-150">
+                            Send
+                        </button>
+                    </div>
+                </form>
             </div>
-            @endforeach
         </div>
     </div>
 </x-app-layout>
