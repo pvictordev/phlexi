@@ -89,4 +89,21 @@ Route::middleware('auth')->group(function () {
     Route::get('/results/accepted', [ResultController::class, 'show'])->name('result.show');
 });
 
+// Route::middleware('hasOffer')->group(function () {
+
+//     // submit a result as freelancer
+//     Route::get('/result/submit/{id}', [ResultController::class, 'create'])->name('result.create');
+//     Route::post('/result/submit/{id}', [ResultController::class, 'store'])->name('result.create');
+
+//     //see all the results
+//     Route::get('/results', [ResultController::class, 'index'])->name('result.index');
+
+//     // accept/reject result as a client
+//     Route::get('/result/{id}', [ResultController::class, 'edit'])->name('result.edit');
+//     Route::patch('/result/{id}', [ResultController::class, 'update'])->name('result.edit');
+
+//     // see the results that have been accepted as a freelancer
+//     Route::get('/results/accepted', [ResultController::class, 'show'])->name('result.show');
+// });
+
 require __DIR__ . '/auth.php';
