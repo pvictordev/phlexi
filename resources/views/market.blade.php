@@ -105,7 +105,7 @@
                                 @foreach ($projects as $project)
                                 <div class="relative bg-slate-200 dark:bg-slate-700 border shadow-2xl ease-in duration-150 hover:scale-105 rounded-lg p-5">
                                     <span class="absolute right-1 top-1 p-2 bg-green-500 rounded-full"></span>
-                                    <h1 class="font-bold text-slate-800 dark:text-slate-200 text-xl">Blockchain Developers, crypto evangelists and web3 innovators</h1>
+                                    <h1 class="font-bold text-slate-800 dark:text-slate-200 text-xl">{{$project->title}}</h1>
                                     <div class="mb-3 mt-3">
                                         <small class="text-slate-500 font-bold flex items-center gap-2">
                                             <span data-test="budget">

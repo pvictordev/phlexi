@@ -27,6 +27,18 @@
                         <input type="number" id="rate" name="rate" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:bg-slate-900 dark:border-gray-600 dark:text-slate-200 rounded-md">
                     </div>
 
+                    <div class="mb-4">
+                        <label for="niche" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Your niche</label>
+                        <input type="text" id="niche" name="niche" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:bg-slate-900 dark:border-gray-600 dark:text-slate-200 rounded-md">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="bio" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Bio</label>
+                        <textarea type="text" id="bio" name="bio" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:bg-slate-900 dark:border-gray-600 dark:text-slate-200 rounded-md">
+
+                        </textarea>
+                    </div>
+
                     <div class="mb-4 flex flex-col">
                         <span class="text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">Availability</span>
                         <div class="flex items-center">
@@ -41,6 +53,8 @@
                         </div>
 
                     </div>
+
+
 
                     <div class="flex justify-end">
                         <button type="submit" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring ring-blue-300 disabled:opacity-25 transition ease-in-out duration-150">

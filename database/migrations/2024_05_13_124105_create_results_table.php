@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->unsignedBigInteger('offer_id');
             $table->unsignedBigInteger('freelancer_id');
-            $table->unsignedInteger('client_id');
+            $table->unsignedBigInteger('client_id');
             $table->string('description');
             $table->boolean('status')->nullable();
 

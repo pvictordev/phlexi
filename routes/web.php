@@ -29,7 +29,6 @@ Route::get('/', function () {
 });
 
 Route::get('/contact', function () {
-    $title = 'Contact';
     return view('contact');
 });
 
@@ -64,7 +63,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/freelancers/{id}', [FreelancerController::class, 'show'])->name('freelancer.show');
 
     // create an offer as a freelancer 
-    Route::get('/offer/{id}', [OfferController::class, 'index'])->name('offer.create');
+    Route::get('/offer/{id}', [OfferController::class, 'create'])->name('offer.create');
     Route::post('/offer/{id}', [OfferController::class, 'store'])->name('offer.create');
 
     // see the offers received from the freelancer and accept/reject them

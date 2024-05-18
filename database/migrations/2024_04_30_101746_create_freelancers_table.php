@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('freelancers', function (Blueprint $table) {
             $table->bigIncrements('freelancer_id')->unsigned();
+            $table->string('niche')->nullable();
+            $table->text('bio')->nullable();
             $table->integer('hourly_rate')->nullable();
             $table->tinyInteger('availability')->nullable();
 

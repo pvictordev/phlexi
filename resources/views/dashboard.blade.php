@@ -121,7 +121,7 @@
                                 @else
                                 <span class="absolute right-1 top-1 p-2 bg-red-500 rounded-full"></span>
                                 @endif
-                                <h3 class="text-lg font-semibold mt-6 mb-2">Project {{$projectData->id}}</h3>
+                                <h3 class="text-lg font-semibold mt-6 mb-2">{{$projectData->title}}</h3>
                                 <p class="text-gray-700 dark:text-gray-300">{{$projectData->description}}</p>
                                 <div class="flex justify-between mt-2">
                                     <p class="text-slate-500">Price: ${{$projectData->price}}</p>

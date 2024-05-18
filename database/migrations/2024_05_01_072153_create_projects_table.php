@@ -27,6 +27,8 @@ return new class extends Migration
 
             $table->string('status');
 
+            $table->string('title');
+
             $table->string('description');
 
             $table->datetime('date')->default(now());

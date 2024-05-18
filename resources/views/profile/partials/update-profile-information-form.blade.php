@@ -23,13 +23,6 @@
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
-        <!-- bio -->
-        <div>
-            <x-input-label for="bio" :value="__('Bio')" />
-            <x-text-input id="bio" name="bio" bio="bio" type="text" class="mt-1 block w-full" :value="old('bio', $user->bio)" autofocus autocomplete="bio" />
-            <x-input-error class="mt-2" :messages="$errors->get('bio')" />
-        </div>
-
         <!-- phone -->
         <div>
             <x-input-label for="phone" :value="__('Phone')" />

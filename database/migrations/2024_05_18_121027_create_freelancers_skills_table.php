@@ -11,19 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('projects_skills', function (Blueprint $table) {
-            $table->bigInteger('project_id')->unsigned()->nullable();
+        Schema::create('freelancers_skills', function (Blueprint $table) {
 
-            // Add foreign key constraint for freelancer_id referencing freelancers table
-            $table->foreign('project_id')->references('id')->on('projects')
-                ->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('freelancer_id')->unsigned()->nullable();
 
-            // Add skill_id column as unsigned big integer
             $table->bigInteger('skill_id')->unsigned()->nullable();
 
-            // Add foreign key constraint for skill_id referencing skills table
+            $table->unique(['freelancer_id', 'skill_id'], 'unique_user_skill');
+
+            $table->foreign('freelancer_id')->references('freelancer_id')->on('freelancers')
+                ->onDelete('cascade')->onUpdate('cascade');
+
             $table->foreign('skill_id')->references('id')->on('skills')
                 ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->timestamps();
         });
     }
 
@@ -32,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('projects_skills');
+        Schema::dropIfExists('freelancers_skills');
     }
 };

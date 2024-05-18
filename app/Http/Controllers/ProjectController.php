@@ -40,6 +40,7 @@ class ProjectController extends Controller
 
         $project->category_id = $request->category_id;
 
+        $project->title = $request->title;
         $project->description = $request->description;
         $project->price = $request->price;
         $project->status = $request->status;
