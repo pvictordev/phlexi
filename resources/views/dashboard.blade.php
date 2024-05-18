@@ -141,12 +141,11 @@
 
                     <!-- offers -->
                     <div class="border-t border-gray-400 px-6 py-4">
-                        <h2 class="text-lg font-semibold mb-2">Offers & Results</h2>
+                        <h2 class="text-lg font-semibold mb-2">Offers, Responses & Results</h2>
                         <div class="flex gap-2">
-                            <a class="border p-1 rounded-lg" href="/offers/client">Received offers</a>
-                            <a class="border p-1 rounded-lg" href="/offers/freelancer">Sent offers</a>
-                            <a class="border p-1 rounded-lg" href="/results/client">Received results</a>
-                            <a class="border p-1 rounded-lg" href="/results/freelancer">Sent results</a>
+                            <a class="border p-1 rounded-lg" href="/offers/received">Received offers</a>
+                            <a class="border p-1 rounded-lg" href="/offers/accepted">Accepted offers</a>
+                            <a class="border p-1 rounded-lg" href="/results">Received results</a>
                         </div>
                     </div>
 

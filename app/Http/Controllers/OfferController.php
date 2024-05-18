@@ -11,7 +11,7 @@ use App\Models\Project;
 
 class OfferController extends Controller
 {
-
+    // show the offers from the freelancers that are not accepted to the client
     public function show()
     {
         $client = Auth::id();
@@ -20,11 +20,19 @@ class OfferController extends Controller
         return view('offer.show', ['offers' => $offers]);
     }
 
+    // show the offers from the freelancers that are accepted to the freelancer
+    public function accepted()
+    {
+        $freelancer = Auth::id();
+        $acceptedOffers = Offer::where('freelancer_id', $freelancer)->where('response', 1)->get();
+        return view('offer.accepted', ['acceptedOffers' => $acceptedOffers]);
+    }
+
+    // create an offer as a freelancer
     public function create($id)
     {
         return view('offer.create');
     }
-
     public function store(Request $request, $id)
     {
         $freelancer = Auth::id();
@@ -43,6 +51,8 @@ class OfferController extends Controller
 
         return redirect('/market');
     }
+
+    // accept the offer as a client
     public function edit($id)
     {
         return view('offer.edit', ['offer_id' => $id]);

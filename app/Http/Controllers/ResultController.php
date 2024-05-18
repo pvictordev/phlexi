@@ -11,20 +11,23 @@ use Illuminate\Support\Facades\Auth;
 
 class ResultController extends Controller
 {
-    // see all the offers and get the page to accept one of them
+    // see all the results and get the page to accept one of them as a client
     public function index()
-    {
-        $freelancer = Auth::id();
-        $results = Offer::where('freelancer_id', $freelancer)->where('response', 1)->get();
-        return view('result.show', ['results' => $results]);
-    }
-    // see all the offers that have a result as a client
-    public function show()
     {
         $client = Auth::id();
         $results = Result::where('client_id', $client)->get();
-        return view('result.show', ['results' => $results]);
+        return view('result.index', ['results' => $results]);
     }
+
+    // see the accepted results as a freelancer
+    public function show()
+    {
+        $freelancer = Auth::id();
+        $results = Result::where('freelancer_id', $freelancer)->where('status', 1)->get();
+        return view('result.success', ['results' => $results]);
+    }
+
+    // create the result
     public function create($id)
     {
         return view('result.create');
@@ -56,11 +59,5 @@ class ResultController extends Controller
         $result->save();
 
         return redirect('/dashboard');
-    }
-    public function success()
-    {
-        $freelancer = Auth::id();
-        $results = Result::where('freelancer_id', $freelancer)->where('status', 1)->get();
-        return view('result.success', ['results' => $results]);
     }
 }
