@@ -1,38 +1,55 @@
 <?php
 
-// ! start the session
-session_start();
+use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Http\Request;
 
-// BASE_PATH
-const BASE_PATH = __DIR__ . '/../';
+define('LARAVEL_START', microtime(true));
 
-// functions
-require BASE_PATH . "app/Core/functions.php";
+/*
+|--------------------------------------------------------------------------
+| Check If The Application Is Under Maintenance
+|--------------------------------------------------------------------------
+|
+| If the application is in maintenance / demo mode via the "down" command
+| we will load this file so that any pre-rendered content can be shown
+| instead of starting the framework, which could cause an exception.
+|
+*/
 
-// base path function
-spl_autoload_register(function ($class) {
-    $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
+    require $maintenance;
+}
 
-    require base_path("{$class}.php");
-});
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader for
+| this application. We just need to utilize it! We'll simply require it
+| into the script here so we don't need to manually load our classes.
+|
+*/
 
-// database class
-require base_path("config/Database.php");
+require __DIR__.'/../vendor/autoload.php';
 
-//db config for local environment
-$config = require(base_path("config/config.php"));
+/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+|
+| Once we have the application, we can handle the incoming request using
+| the application's HTTP kernel. Then, we will send the response back
+| to this client's browser, allowing them to enjoy our application.
+|
+*/
 
-// new instance of the Database
-$db = new Database($config['database']);
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
-// Router
-require base_path("routes/Router.php");
-$router = new Router();
+$kernel = $app->make(Kernel::class);
 
-$routes = require base_path('routes/routes.php');
+$response = $kernel->handle(
+    $request = Request::capture()
+)->send();
 
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-
-$method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
-
-$router->route($uri, $method, $db);
+$kernel->terminate($request, $response);

@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'blog' => 'Blog',
+    'explore' => 'Explore',
+    'market' => 'Market',
+    'marketDescription' => 'Best projects on the market',
+    'freelancers' => 'Freelancers',
+    'freelancersDescription' => 'Look for our top freelancers',
+    'contact' => 'Contact',
+    'appearance' => 'Appearance',
+    'profile' => 'Profile',
+    'language' => 'Language',
+    'dark' => 'Dark',
+    'darkDescription' => "For night owls",
+    'light' => 'Light',
+    'lightDescription' => 'For early birds',
+    'you' => 'You',
+    'youDescription' => 'Go to your profile !',
+    'login' => 'Log in',
+    'loginDescription' => 'Get inside of your accout',
+    'logout' => 'Log out',
+    'logoutDescription' => 'Your exit door',
+    'register' => 'Register',
+    'registerDescription' => 'Start your journey !',
+];
