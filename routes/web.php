@@ -78,12 +78,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/results', [ResultController::class, 'index'])->name('result.index');
 });
 
+// only the users who created an offer for a certain project can submit a result on it
 Route::middleware(['auth', 'hasOffer'])->group(function () {
     // submit a result as freelancer
     Route::get('/result/submit/{id}', [ResultController::class, 'create'])->name('result.create');
     Route::post('/result/submit/{id}', [ResultController::class, 'store'])->name('result.create');
 });
 
+// only the users who own the project with the result on it can accept or reject these results
 Route::middleware(['auth', 'isOwner'])->group(function () {
     // accept/reject result as a client
     Route::get('/result/{id}', [ResultController::class, 'edit'])->name('result.edit');
