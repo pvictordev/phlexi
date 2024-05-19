@@ -15,7 +15,7 @@ class ResultController extends Controller
     public function index()
     {
         $client = Auth::id();
-        $results = Result::where('client_id', $client)->get();
+        $results = Result::where('client_id', $client)->where('status', null)->get();
         return view('result.index', ['results' => $results]);
     }
 

@@ -1,4 +1,4 @@
-<x-app-layout>
+<!-- <x-app-layout>
     <x-slot name="title">
         Create
     </x-slot>
@@ -16,4 +16,4 @@
             @endforeach
         </div>
     </div>
-</x-app-layout>
+</x-app-layout> -->

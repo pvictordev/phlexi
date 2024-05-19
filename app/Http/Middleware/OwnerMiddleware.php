@@ -6,10 +6,10 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-use App\Models\Offer;
+use App\Models\Result;
 use Illuminate\Support\Facades\Auth;
 
-class OfferMiddleware
+class OwnerMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,16 +18,15 @@ class OfferMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-
         // access the "submit result page" in case if the authenticated user has a offer associated with the project  
-        $freelancer = Auth::id();
-        $offer = intval($request->route('id'));
+        $client = Auth::id();
+        $result = intval($request->route('id'));
 
-        $hasOffer = Offer::where('freelancer_id', $freelancer)->where('id', $offer)->firstOrFail();
+        $hasOffer = Result::where('client_id', $client)->where('id', $result)->firstOrFail();
         if ($hasOffer) {
             return $next($request);
         } else {
-            return redirect('/market');
+            return redirect('/dashboard');
         }
     }
 }
