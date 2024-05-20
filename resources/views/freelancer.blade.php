@@ -125,7 +125,6 @@
                                     <div class="flex gap-2 flex-wrap">
                                         <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold">Web Development</span>
                                         <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold">Digital Marketing</span>
-
                                     </div>
                                 </a>
                                 @endforeach

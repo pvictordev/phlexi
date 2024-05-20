@@ -58,6 +58,6 @@ class ResultController extends Controller
         $result->status = intval($request->choice);
         $result->save();
 
-        return redirect('/dashboard');
+        return redirect("/review/{$id}");
     }
 }

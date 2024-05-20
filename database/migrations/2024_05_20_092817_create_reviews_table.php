@@ -14,20 +14,22 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
 
+            $table->bigInteger('freelancer_id')->unsigned();
             $table->bigInteger('client_id')->unsigned()->index();
+            $table->bigInteger('project_id')->unsigned()->unique()->index();
+            $table->integer('rating');
+            $table->text('description')->nullable();
+
+            $table->foreign('freelancer_id')->references('freelancer_id')->on('freelancers')
+                ->onDelete('cascade')->onUpdate('cascade');
 
             $table->foreign('client_id')->references('client_id')->on('clients')
                 ->onDelete('cascade')->onUpdate('cascade');
 
-            $table->bigInteger('project_id')->unsigned()->unique()->index();
-
             $table->foreign('project_id')->references('id')->on('projects')
                 ->onDelete('cascade')->onUpdate('cascade');
 
-            $table->integer('rating');
-
-            // Add description column as varchar
-            $table->string('description')->nullable();
+            $table->timestamps();
         });
     }
 

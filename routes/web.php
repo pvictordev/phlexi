@@ -8,6 +8,7 @@ use App\Http\Controllers\FreelancerController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\ResultController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -78,19 +79,20 @@ Route::middleware('auth')->group(function () {
     Route::get('/results', [ResultController::class, 'index'])->name('result.index');
 });
 
-// only the users who created an offer for a certain project can submit a result on it
+// only the users who created an offer for a certain project can submit a result on it (freelancer)
 Route::middleware(['auth', 'hasOffer'])->group(function () {
     // submit a result as freelancer
     Route::get('/result/submit/{id}', [ResultController::class, 'create'])->name('result.create');
     Route::post('/result/submit/{id}', [ResultController::class, 'store'])->name('result.create');
 });
 
-// only the users who own the project with the result on it can accept or reject these results
+// only the users who own the project with the result on it can accept or reject these results, leave reviews and make transactions (client)
 Route::middleware(['auth', 'isOwner'])->group(function () {
     // accept/reject result as a client
     Route::get('/result/{id}', [ResultController::class, 'edit'])->name('result.edit');
     Route::patch('/result/{id}', [ResultController::class, 'update'])->name('result.edit');
-});
 
+    Route::get('/review/{id}', [ReviewController::class, 'create'])->name('review.create');
+});
 
 require __DIR__ . '/auth.php';
