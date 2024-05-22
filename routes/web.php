@@ -93,6 +93,7 @@ Route::middleware(['auth', 'isOwner'])->group(function () {
     Route::patch('/result/{id}', [ResultController::class, 'update'])->name('result.edit');
 
     Route::get('/review/{id}', [ReviewController::class, 'create'])->name('review.create');
+    Route::post('/review/{id}', [ReviewController::class, 'store'])->name('review.create');
 });
 
 require __DIR__ . '/auth.php';

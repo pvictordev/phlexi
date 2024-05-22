@@ -54,6 +54,7 @@ class ResultController extends Controller
     public function update($id, Request $request)
     {
         $result = new Result();
+        // update a certain result, add the status of done
         $result = Result::find($id);
         $result->status = intval($request->choice);
         $result->save();

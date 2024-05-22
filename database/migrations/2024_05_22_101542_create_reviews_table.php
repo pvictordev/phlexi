@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
 
+            $table->bigInteger('result_id')->unsigned()->unique()->index();
             $table->bigInteger('freelancer_id')->unsigned();
-            $table->bigInteger('client_id')->unsigned()->index();
+            $table->bigInteger('client_id')->unsigned();
             $table->bigInteger('project_id')->unsigned()->unique()->index();
+
             $table->integer('rating');
             $table->text('description')->nullable();
 
@@ -27,6 +29,9 @@ return new class extends Migration
                 ->onDelete('cascade')->onUpdate('cascade');
 
             $table->foreign('project_id')->references('id')->on('projects')
+                ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->foreign('result_id')->references('id')->on('results')
                 ->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Freelancer;
 use App\Models\Project;
 use App\Models\FreelancerSkill;
+use App\Models\Review;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -35,11 +36,17 @@ class DashboardController extends Controller
 
         $freelancerSkills = FreelancerSkill::with('skill')->where('freelancer_id', $userId)->get();
 
+        $reviewsLeft = Review::where('freelancer_id', $userId)->get();
+        $reviewsReceived = Review::where('client_id', $userId)->get();
+        // dd($reviewsReceived);
+
         return view('dashboard', [
             'userData' => $userData,
             'freelancerData' => $freelancerData,
             'projectsData' => $projectsData,
-            'freelancerSkills' => $freelancerSkills
+            'freelancerSkills' => $freelancerSkills,
+            'reviewsReceived' => $reviewsReceived,
+            'reviewsLeft' => $reviewsLeft,
         ]);
     }
 }
