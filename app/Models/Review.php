@@ -11,17 +11,17 @@ class Review extends Model
 
     public function result()
     {
-        return $this->belongsTo(Result::class);
+        return $this->hasOne(Result::class);
     }
 
     public function freelancer()
     {
-        return $this->belongsTo(Freelancer::class);
+        return $this->hasMany(Freelancer::class);
     }
 
     public function client()
     {
-        return $this->belongsTo(Client::class);
+        return $this->hasMany(Client::class);
     }
 
     public function project()

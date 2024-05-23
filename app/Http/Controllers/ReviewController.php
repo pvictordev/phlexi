@@ -12,8 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
-    //
-    public function create($id)
+    public function create()
     {
         return view('review.create');
     }
@@ -30,7 +29,6 @@ class ReviewController extends Controller
 
         $review->description = $request->description;
         $review->rating = $request->rating;
-
         $review->result_id = $id;
         $review->freelancer_id = $offer->freelancer_id;
         $review->client_id = $offer->client_id;
@@ -38,6 +36,31 @@ class ReviewController extends Controller
 
         $review->save();
 
+        return redirect('/dashboard');
+    }
+
+    public function edit($id)
+    {
+        return view('review.edit', ['id' => $id]);
+    }
+
+    public function update($id, Request $request)
+    {
+        $review = new Review();
+
+        $review = Review::find($id);
+
+        $review->description = $request->description;
+        $review->rating = $request->rating;
+
+        $review->save();
+
+        return redirect('/dashboard');
+    }
+
+    public function destroy($id)
+    {
+        Review::where('id', $id)->delete();
         return redirect('/dashboard');
     }
 }

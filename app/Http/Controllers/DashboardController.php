@@ -36,9 +36,8 @@ class DashboardController extends Controller
 
         $freelancerSkills = FreelancerSkill::with('skill')->where('freelancer_id', $userId)->get();
 
-        $reviewsLeft = Review::where('freelancer_id', $userId)->get();
-        $reviewsReceived = Review::where('client_id', $userId)->get();
-        // dd($reviewsReceived);
+        $reviewsLeft = Review::where('client_id', $userId)->get();
+        $reviewsReceived = Review::where('freelancer_id', $userId)->get();
 
         return view('dashboard', [
             'userData' => $userData,

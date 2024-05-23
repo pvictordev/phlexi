@@ -92,8 +92,11 @@ Route::middleware(['auth', 'isOwner'])->group(function () {
     Route::get('/result/{id}', [ResultController::class, 'edit'])->name('result.edit');
     Route::patch('/result/{id}', [ResultController::class, 'update'])->name('result.edit');
 
-    Route::get('/review/{id}', [ReviewController::class, 'create'])->name('review.create');
-    Route::post('/review/{id}', [ReviewController::class, 'store'])->name('review.create');
+    Route::get('/review/{id}/create', [ReviewController::class, 'create'])->name('review.create');
+    Route::post('/review/{id}/create', [ReviewController::class, 'store'])->name('review.create');
+    Route::get('/review/{id}', [ReviewController::class, 'edit'])->name('review.edit');
+    Route::patch('/review/{id}', [ReviewController::class, 'update'])->name('review.update');
+    Route::delete('/review/{id}/remove', [ReviewController::class, 'destroy'])->name('review.destroy');
 });
 
 require __DIR__ . '/auth.php';

@@ -47,7 +47,7 @@ class ResultController extends Controller
 
         return redirect('/dashboard');
     }
-    public function edit($id, Request $request)
+    public function edit()
     {
         return view('result.edit');
     }
@@ -57,8 +57,11 @@ class ResultController extends Controller
         // update a certain result, add the status of done
         $result = Result::find($id);
         $result->status = intval($request->choice);
+
+        // close the project if the result is accepted
+
         $result->save();
 
-        return redirect("/review/{$id}");
+        return redirect("/review/{$id}/create");
     }
 }
