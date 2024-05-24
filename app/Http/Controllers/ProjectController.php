@@ -17,7 +17,7 @@ class ProjectController extends Controller
     public function show()
     {
         // show all the projects
-        $projects = Project::all();
+        $projects = Project::where('status', 'active')->get();
         return view('market', ['projects' => $projects]);
     }
 

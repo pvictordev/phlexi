@@ -15,12 +15,14 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('offer_id');
+            $table->unsignedBigInteger('project_id');
             $table->unsignedBigInteger('freelancer_id');
             $table->unsignedBigInteger('client_id');
             $table->string('description');
             $table->boolean('status')->nullable();
 
             $table->foreign('offer_id')->references('id')->on('offers');
+            $table->foreign('project_id')->references('id')->on('projects');
             $table->foreign('freelancer_id')->references('freelancer_id')->on('freelancers');
             $table->foreign('client_id')->references('client_id')->on('clients');
 

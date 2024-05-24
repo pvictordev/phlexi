@@ -74,13 +74,13 @@
                     <div class="border-t border-gray-400 px-6 py-4 relative">
                         <h2 class="text-lg font-semibold mb-2">Skills</h2>
                         <div class="flex flex-wrap">
-                            @if($freelancerSkills->isEmpty())
+                            @if($freelancerSkills->skill->isEmpty())
                             <p class="text-red-500">No skills found.</p>
                             @else
 
-                            @foreach ($freelancerSkills as $freelancerSkill)
-                            <a href="{{ route('skill.destroy', $freelancerSkill->skill->id) }}" class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">
-                                {{ $freelancerSkill->skill->skill_name }}
+                            @foreach ($freelancerSkills->skill as $skill)
+                            <a href="{{ route('skill.destroy', $skill->id) }}" class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">
+                                {{ $skill->skill_name }}
                             </a>
                             @endforeach
                             @endif
@@ -143,9 +143,9 @@
                     <div class="border-t border-gray-400 px-6 py-4">
                         <h2 class="text-lg font-semibold mb-2">Offers, Responses & Results</h2>
                         <div class="flex gap-2">
-                            <a class="border p-1 rounded-lg" href="/offers/received">Received offers</a>
-                            <a class="border p-1 rounded-lg" href="/offers/accepted">Accepted offers</a>
-                            <a class="border p-1 rounded-lg" href="/results">Received results</a>
+                            <a class="border p-1 border-slate-800 dark:border-slate-400 rounded-lg" href="/offers/received">Received offers</a>
+                            <a class="border p-1 border-slate-800 dark:border-slate-400 rounded-lg" href="/offers/accepted">Accepted offers</a>
+                            <a class="border p-1 border-slate-800 dark:border-slate-400 rounded-lg" href="/results">Received results</a>
                         </div>
                     </div>
 

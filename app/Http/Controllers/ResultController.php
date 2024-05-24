@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Offer;
+use App\Models\Project;
 use App\Models\Result;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,9 +38,12 @@ class ResultController extends Controller
         // offer id is the $id
         $client = Offer::where('id', $id)->firstOrfail();
         $freelancer = Auth::id();
+        $project = $client->project_id;
 
         $result = new Result();
+
         $result->offer_id = $id;
+        $result->project_id = $project;
         $result->freelancer_id = $freelancer;
         $result->client_id = $client->client_id;
         $result->description = $request->description;
@@ -54,11 +58,15 @@ class ResultController extends Controller
     public function update($id, Request $request)
     {
         $result = new Result();
-        // update a certain result, add the status of done
+        // accept a certain result, add the status of done 
         $result = Result::find($id);
         $result->status = intval($request->choice);
 
         // close the project if the result is accepted
+        $project = new Project();
+        $project = Project::find($result->project_id);
+        $project->status = 'closed';
+        $project->save();
 
         $result->save();
 

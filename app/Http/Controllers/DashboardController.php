@@ -34,7 +34,7 @@ class DashboardController extends Controller
 
         $projectsData = Project::where('client_id', $userId)->with('category')->get();
 
-        $freelancerSkills = FreelancerSkill::with('skill')->where('freelancer_id', $userId)->get();
+        $freelancerSkills = Freelancer::with('skill')->find($userId);
 
         $reviewsLeft = Review::where('client_id', $userId)->get();
         $reviewsReceived = Review::where('freelancer_id', $userId)->get();

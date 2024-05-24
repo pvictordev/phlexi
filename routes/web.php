@@ -73,6 +73,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/offers/received/{id}', [OfferController::class, 'update'])->name('offer.edit');
 
     // see the accepted offers
+    // i should only see this as a freelancer
     Route::get('/offers/accepted', [OfferController::class, 'accepted'])->name('offer.accepted');
 
     //see all the results

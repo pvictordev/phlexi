@@ -19,7 +19,7 @@ class FreelancerController extends Controller
     {
         $freelancers = Freelancer::with('user')->get();
         $freelancerSkill = Freelancer::with('skill')->get();
-        // dd($freelancersSkills);
+
         return view('freelancer', [
             'freelancers' => $freelancers,
             'freelancerSkill' => $freelancerSkill
@@ -30,9 +30,7 @@ class FreelancerController extends Controller
     public function show($id)
     {
         $freelancer = Freelancer::with('user')->where('freelancer_id', $id)->firstOrFail();
-
         $freelancerSkill = Freelancer::with('skill')->find($id);
-
         $reviews = Review::where('freelancer_id', $id)->get();
 
         return view('freelancer.show', [
