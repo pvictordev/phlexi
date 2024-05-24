@@ -11,6 +11,6 @@ class Skill extends Model
 
     public function freelancers()
     {
-        return $this->belongsToMany(Freelancer::class, 'freelancers_skills');
+        return $this->belongsToMany(Freelancer::class, 'freelancers_skills', 'freelancer_id', 'skill_id')->using(FreelancerSkill::class);
     }
 }

@@ -46,7 +46,7 @@ class User extends Authenticatable
 
     public function freelancer()
     {
-        return $this->hasOne(Freelancer::class);
+        return $this->hasOne(Freelancer::class, 'freelancer_id', 'id');
     }
     public function сlient()
     {

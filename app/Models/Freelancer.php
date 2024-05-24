@@ -17,11 +17,11 @@ class Freelancer extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'freelancer_id', 'id');
     }
-    public function skills()
+    public function skill()
     {
-        return $this->belongsToMany(Skill::class, 'freelancers_skills');
+        return $this->belongsToMany(Skill::class, 'freelancers_skills', 'freelancer_id', 'skill_id')->using(FreelancerSkill::class);
     }
 
     public function review()

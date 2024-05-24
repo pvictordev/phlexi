@@ -19,25 +19,26 @@
 
                                         <button class="flex rounded-lg bg-transparent p-2 dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
                                             <div class="bg-blue-500 text-white rounded-lg p-3">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="#ffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <rect x="3" y="5" width="18" height="14" rx="2" stroke="#ffff" stroke-width="2" stroke-linecap="round" />
                                                 </svg>
                                             </div>
                                             <div class="ml-3">
                                                 <p class="font-semibold text-left">Email</p>
-                                                <p class="text-sm">victor@mail.com</p>
+                                                <p class="text-sm">{{ $freelancer->user->email }}</p>
                                             </div>
                                         </button>
 
                                         <button class="flex row items-end rounded-lg bg-transparent p-2 dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" @click="toggleDarkMode">
                                             <div class="bg-teal-500 text-white rounded-lg p-3">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3545 22.2323C15.3344 21.7262 11.1989 20.2993 7.44976 16.5502C3.70065 12.8011 2.2738 8.66559 1.76767 6.6455C1.47681 5.48459 2.00058 4.36434 2.88869 3.72997L5.21694 2.06693C6.57922 1.09388 8.47432 1.42407 9.42724 2.80051L10.893 4.91776C11.5152 5.8165 11.3006 7.0483 10.4111 7.68365L9.24234 8.51849C9.41923 9.1951 9.96939 10.5846 11.6924 12.3076C13.4154 14.0306 14.8049 14.5807 15.4815 14.7576L16.3163 13.5888C16.9517 12.6994 18.1835 12.4847 19.0822 13.1069L21.1995 14.5727C22.5759 15.5257 22.9061 17.4207 21.933 18.783L20.27 21.1113C19.6356 21.9994 18.5154 22.5232 17.3545 22.2323ZM8.86397 15.136C12.2734 18.5454 16.0358 19.8401 17.8405 20.2923C18.1043 20.3583 18.4232 20.2558 18.6425 19.9488L20.3056 17.6205C20.6299 17.1665 20.5199 16.5348 20.061 16.2171L17.9438 14.7513L17.0479 16.0056C16.6818 16.5182 16.0047 16.9202 15.2163 16.7501C14.2323 16.5378 12.4133 15.8569 10.2782 13.7218C8.1431 11.5867 7.46219 9.7677 7.24987 8.7837C7.07977 7.9953 7.48181 7.31821 7.99439 6.95208L9.24864 6.05618L7.78285 3.93893C7.46521 3.48011 6.83351 3.37005 6.37942 3.6944L4.05117 5.35744C3.74413 5.57675 3.64162 5.89565 3.70771 6.15943C4.15989 7.96418 5.45459 11.7266 8.86397 15.136Z" fill="#ffff" />
                                                 </svg>
                                             </div>
                                             <div class="ml-3">
                                                 <p class="font-semibold text-left">Phone</p>
-                                                <p class="text-sm">123456789</p>
+                                                <p class="text-sm">{{ $freelancer->user->phone }}</p>
                                             </div>
                                         </button>
                                     </div>
@@ -48,8 +49,8 @@
                     <div class="flex flex-col items-center px-6 py-4">
                         <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-32 w-32 rounded-full mx-auto mb-3">
                         <div class="text-center">
-                            <p class="text-xl font-semibold">Victor</p>
-                            <p class="text-sm font-medium">Web Developer</p>
+                            <p class="text-xl font-semibold">{{ $freelancer->user->name }}</p>
+                            <p class="text-sm font-medium">{{ $freelancer->niche }}</p>
                             <p class="text-sm font-medium">Middle of, Nowhere - 04:20am</p>
                         </div>
                     </div>
@@ -57,7 +58,7 @@
                         <div class="p-4 max-w-lg mx-auto  flex justify-between items-center">
                             <div class="text-center">
                                 <p class="text-lg font-semibold">Price</p>
-                                <p class="text-sm font-medium text-slate-500">$20 / hour</p>
+                                <p class="text-sm font-medium text-slate-500">${{ $freelancer->hourly_rate }} / hour</p>
                             </div>
                             <div class="text-center">
                                 <p class="text-lg font-semibold">Rating</p>
@@ -70,7 +71,7 @@
                             </div>
                             <div class="text-center ">
                                 <p class="text-lg font-semibold">Availability</p>
-                                <p class="text-sm font-medium text-slate-500">Available</p>
+                                <p class="text-sm font-medium text-slate-500">{{ $freelancer->availability ? 'Availabe' : 'Unavailable' }}</p>
                             </div>
                         </div>
                     </div>
@@ -78,21 +79,21 @@
                     <div class="p-3 flex flex-col items-center justify-center">
                         <h2 class="text-lg font-semibold mb-1">Bio</h2>
                         <p class="leading-relaxed text-slate-500">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium iste voluptatum cumque! Omnis suscipit officiis harum reprehenderit veritatis sapiente illum. Iste a vitae quae rerum quibusdam provident, dolor suscipit culpa dolorum placeat nisi inventore excepturi vero laboriosam error dolore? Expedita veniam eos adipisci quasi error sunt! Tenetur maiores ratione nisi soluta eius unde dolores quis pariatur blanditiis officiis neque, voluptate explicabo repellat quisquam quasi
+                            {{ $freelancer->bio }}
                         </p>
                     </div>
-
-                    <!-- <div class="p-3 border-t flex flex-col items-center justify-center">
-
-                    </div> -->
 
                     <!-- skills -->
                     <div class="border-t border-gray-400 px-6 py-4 relative">
                         <h2 class="text-lg font-semibold mb-2">Skills</h2>
                         <div class="flex flex-wrap">
-                            <a href="" class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">
-                                begit
-                            </a>
+
+
+                            @foreach($freelancerSkill->skill as $skill)
+                            <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold">
+                                {{ $skill->skill_name }}
+                            </span>
+                            @endforeach
 
                         </div>
                     </div>
@@ -102,7 +103,7 @@
                         <h2 class="text-lg font-semibold mb-2">Jobs</h2>
 
                         <div class="overflow-y-auto max-h-80">
-
+                            @foreach($reviews as $review)
                             <div class="border relative border-gray-300 dark:border-gray-600 rounded-lg p-4 my-2 mr-4">
                                 <span class="absolute top-1 left-1 bg-gray-300 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">
                                     Programming
@@ -121,7 +122,7 @@
                                 </div>
 
                             </div>
-
+                            @endforeach
                         </div>
 
                     </div>

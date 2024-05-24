@@ -105,26 +105,34 @@
                                 <!-- Your content -->
                                 @foreach($freelancers as $freelancer)
                                 <a href="{{ route('freelancer.show', [$freelancer->freelancer_id]) }}" class="freelancer relative bg-slate-200 dark:bg-slate-700 border shadow-2xl ease-in duration-150 hover:scale-105 rounded-lg p-5">
+
+                                    @if($freelancer->availability)
                                     <span class="absolute right-1 top-1 p-2 bg-green-500 rounded-full"></span>
+                                    @else
+                                    <span class="absolute right-1 top-1 p-2 bg-red-500 rounded-full"></span>
+                                    @endif
 
                                     <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-12 w-12 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0 sm:float-left">
 
                                     <div class="flex items-baseline gap-1">
-                                        <h2 class="text-xl text-slate-800 dark:text-slate-200">{{ $freelancer->freelancer_id }} Joey T.</h2>
+                                        <h2 class="text-xl text-slate-800 dark:text-slate-200">{{ $freelancer->user->name }}</h2>
                                         <span class="text-sm text-slate-800 dark:text-slate-200 ">Romania</span>
                                     </div>
-                                    <p class="text-slate-400 text-sm mb-2">Web Developer</p>
+                                    <p class="text-slate-400 text-sm mb-2">{{ $freelancer->niche }}</p>
                                     <div class="flex gap-3 mb-2">
                                         <p class="text-slate-400">${{ $freelancer->hourly_rate }}/hour</p>
                                         <p class="text-slate-400 flex items-center">4.5 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 dark:text-yellow-400 text-yellow-600" viewBox="0 0 20 20" fill="currentColor">
                                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                                             </svg></p>
                                         <p class="text-slate-400">100% Job Success</p>
-                                        <p class="text-slate-400">Available</p>
+                                        <p class="text-slate-400">{{ $freelancer->availability ? 'Availabe' : 'Unavailable' }}</p>
                                     </div>
                                     <div class="flex gap-2 flex-wrap">
-                                        <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold">Web Development</span>
-                                        <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold">Digital Marketing</span>
+                                        @foreach($freelancer->skill as $skill)
+                                        <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold">
+                                            {{ $skill->skill_name }}
+                                        </span>
+                                        @endforeach
                                     </div>
                                 </a>
                                 @endforeach
