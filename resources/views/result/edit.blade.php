@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="title">
-        Create
+        Accept
     </x-slot>
     <div class="h-screen relative flex justify-center items-center ">
         <x-back-link></x-back-link>
@@ -16,13 +16,13 @@
                         <!-- Accept Radio Button -->
                         <label class="inline-flex items-center">
                             <input type="radio" class="form-radio text-blue-500" name="choice" value="1">
-                            <span class="ml-2">Accept</span>
+                            <span class="ml-2 text-slate-800 dark:text-slate-200">Accept</span>
                         </label>
 
                         <!-- Reject Radio Button -->
                         <label class="inline-flex items-center">
                             <input type="radio" class="form-radio text-red-500" name="choice" value="0">
-                            <span class="ml-2">Reject</span>
+                            <span class="ml-2 text-slate-800 dark:text-slate-200">Reject</span>
                         </label>
                     </div>
 

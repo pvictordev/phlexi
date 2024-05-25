@@ -6,12 +6,12 @@
         <x-back-link></x-back-link>
         <div class="mx-auto max-w-2xl container bg-slate-200 dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden">
             <div class="p-6">
-                <h2 class="text-lg font-semibold text-gray-800 dark:text-slate-200 mb-4">Why you are better than others ?</h2>
+                <h2 class="text-lg font-semibold text-gray-800 dark:text-slate-200 mb-4">Why are you better than others ?</h2>
                 <form method="POST">
                     @csrf
                     @method('post')
                     <div class="mb-4">
-                        <label for="description" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Offer your prove</label>
+                        <label for="description" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Offer your expertise </label>
                         <textarea id="description" name="description" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white dark:bg-slate-900 dark:border-gray-600 dark:text-slate-200 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
                     </div>
                     <div class="flex justify-end">
