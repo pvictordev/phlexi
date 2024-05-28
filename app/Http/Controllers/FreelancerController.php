@@ -20,7 +20,7 @@ class FreelancerController extends Controller
         $freelancers = Freelancer::with('user')->get();
         $freelancerSkill = Freelancer::with('skill')->get();
 
-        return view('freelancer', [
+        return view('freelancer.freelancers', [
             'freelancers' => $freelancers,
             'freelancerSkill' => $freelancerSkill
         ]);

@@ -41,7 +41,11 @@ class ReviewController extends Controller
 
     public function edit($id)
     {
-        return view('review.edit', ['id' => $id]);
+        $review = Review::where('id', $id)->first();
+        return view('review.edit', [
+            'review' => $review,
+            'id' => $id
+        ]);
     }
 
     public function update($id, Request $request)

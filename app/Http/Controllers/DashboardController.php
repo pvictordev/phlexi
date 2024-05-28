@@ -48,4 +48,39 @@ class DashboardController extends Controller
             'reviewsLeft' => $reviewsLeft,
         ]);
     }
+    public function freelancer()
+    {
+        $user = Auth::user();
+        $userId = Auth::id();
+        $userData = [
+            'name' => $user->name,
+            'email' => $user->email,
+            'phone' => $user->phone,
+            'bio' => $user->bio
+        ];
+
+        $freelancer = Freelancer::where('freelancer_id', $userId)->first();
+        $freelancerData = [
+            'freelancer_id' => $userId,
+            'hourly_rate' => $freelancer->hourly_rate,
+            'availability' => $freelancer->availability
+        ];
+
+        $freelancerSkills = Freelancer::with('skill')->find($userId);
+
+        $reviewsReceived = Review::where('freelancer_id', $userId)->get();
+    }
+    public function client()
+    {
+        $user = Auth::user();
+        $userId = Auth::id();
+        $userData = [
+            'name' => $user->name,
+            'email' => $user->email,
+            'phone' => $user->phone,
+            'bio' => $user->bio
+        ];
+
+        $projectsData = Project::where('client_id', $userId)->with('category')->get();
+    }
 }

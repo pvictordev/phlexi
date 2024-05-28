@@ -13,11 +13,12 @@
                     @method('patch')
                     <div class="mb-4">
                         <label for="description" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Update the review</label>
-                        <textarea id="description" name="description" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white dark:bg-slate-900 dark:border-gray-600 dark:text-slate-200 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required></textarea>
+                        <textarea id="description" name="description" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white dark:bg-slate-900 dark:border-gray-600 dark:text-slate-200 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>{{ $review->description }}</textarea>
                     </div>
                     <div class="mb-4">
                         <label for="description" class="block text-sm font-medium text-gray-700 dark:text-slate-300">How would you rate this project ?</label>
                         <select id="rating" name="rating" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white dark:bg-slate-900 dark:border-gray-600 dark:text-slate-200 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                            <option value="{{ $review->rating }}">{{ $review->rating }}</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>

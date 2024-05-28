@@ -38,6 +38,8 @@ Route::get('/blog', function () {
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard/freelancer', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard/client', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -62,7 +64,7 @@ Route::middleware('auth')->group(function () {
     // show a specific category of projects
     Route::get('/market/{id}', [ProjectController::class, 'category'])->name('market.category');
 
-    Route::get('/freelancers', [FreelancerController::class, 'index']);
+    Route::get('/freelancers', [FreelancerController::class, 'index'])->name('freelancer.freelancers');
     Route::get('/freelancers/{id}', [FreelancerController::class, 'show'])->name('freelancer.show');
 
     // create an offer as a freelancer 

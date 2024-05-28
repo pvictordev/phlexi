@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 use App\Models\Result;
+use App\Models\Review;
 use Illuminate\Support\Facades\Auth;
 
 class OwnerMiddleware
@@ -23,8 +24,9 @@ class OwnerMiddleware
         $result = intval($request->route('id'));
 
         $hasOffer = Result::where('client_id', $client)->where('id', $result)->first();
-        dd($hasOffer);
-        if ($hasOffer) {
+        $isOwner = Review::where('client_id', $client)->where('id', $result)->first();
+
+        if ($isOwner || $hasOffer) {
             return $next($request);
         } else {
             return redirect('/dashboard');
