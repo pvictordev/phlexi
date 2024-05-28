@@ -70,11 +70,7 @@
                                 <div x-show="sortMenuOpen" @click.away="sortMenuOpen = false" class="absolute z-10 right-0 mt-2 w-40 origin-top-right rounded-md bg-white dark:bg-slate-700 shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                                     <div class="py-1" role="none">
 
-                                        <a href="#" class="font-medium text-gray-800 dark:text-slate-200  block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Most Popular</a>
-                                        <a href="#" class="text-gray-800 dark:text-slate-200 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Best Rating</a>
-                                        <a href="#" class="text-gray-800 dark:text-slate-200 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Newest</a>
-                                        <a href="#" class="text-gray-800 dark:text-slate-200 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Price: Low to High</a>
-                                        <a href="#" class="text-gray-800 dark:text-slate-200 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-4">Price: High to Low</a>
+
                                     </div>
                                 </div>
                             </div>

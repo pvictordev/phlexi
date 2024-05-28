@@ -46,6 +46,7 @@ class ReviewController extends Controller
 
     public function update($id, Request $request)
     {
+
         $review = new Review();
 
         $review = Review::find($id);

@@ -14,11 +14,25 @@ use App\Models\Category;
 
 class ProjectController extends Controller
 {
-    public function show()
+    public function index()
     {
         // show all the projects
+        $categories = Category::all();
         $projects = Project::where('status', 'active')->get();
-        return view('market', ['projects' => $projects]);
+        return view('market', [
+            'projects' => $projects,
+            'categories' => $categories
+        ]);
+    }
+    // show projects of a prticular category 
+    public function category($id)
+    {
+        $categories = Category::all();
+        $projects = Project::where('category_id', $id)->where('status', 'active')->get();
+        return view('market', [
+            'projects' => $projects,
+            'categories' => $categories
+        ]);
     }
 
     // view method

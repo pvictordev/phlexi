@@ -22,7 +22,8 @@ class OwnerMiddleware
         $client = Auth::id();
         $result = intval($request->route('id'));
 
-        $hasOffer = Result::where('client_id', $client)->where('id', $result)->firstOrFail();
+        $hasOffer = Result::where('client_id', $client)->where('id', $result)->first();
+        dd($hasOffer);
         if ($hasOffer) {
             return $next($request);
         } else {

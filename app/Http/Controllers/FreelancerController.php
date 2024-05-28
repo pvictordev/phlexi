@@ -26,6 +26,7 @@ class FreelancerController extends Controller
         ]);
     }
 
+
     // optimize and symplify this method in order to get the related table User, from Freelancer, without having the need to fetch both tables directly
     public function show($id)
     {

@@ -58,7 +58,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/freelancer/{id}/edit', [FreelancerController::class, 'edit'])->name('freelancer.edit');
     Route::put('/freelancer/{id}/edit', [FreelancerController::class, 'update'])->name('freelancer.update');
 
-    Route::get('/market', [ProjectController::class, 'show']);
+    Route::get('/market/all', [ProjectController::class, 'index']);
+    // show a specific category of projects
+    Route::get('/market/{id}', [ProjectController::class, 'category'])->name('market.category');
 
     Route::get('/freelancers', [FreelancerController::class, 'index']);
     Route::get('/freelancers/{id}', [FreelancerController::class, 'show'])->name('freelancer.show');
