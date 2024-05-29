@@ -36,7 +36,7 @@ class ReviewController extends Controller
 
         $review->save();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/client');
     }
 
     public function edit($id)

@@ -11,6 +11,8 @@ class Freelancer extends Model
     protected $fillable = [
         'hourly_rate',
         'availability',
+        'bio',
+        'niche'
     ];
     public $timestamps = false;
     protected $primaryKey = 'freelancer_id';

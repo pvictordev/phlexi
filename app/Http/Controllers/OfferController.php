@@ -49,7 +49,7 @@ class OfferController extends Controller
 
         $offer->save();
 
-        return redirect('/market');
+        return redirect('/market/all');
     }
 
     // accept the offer as a client
@@ -64,7 +64,7 @@ class OfferController extends Controller
         $offer->response = intval($request->choice);
         $offer->save();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/client');
     }
     public function destroy()
     {

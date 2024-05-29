@@ -12,7 +12,7 @@
                     @csrf
                     @method('post')
                     <div class="mb-4">
-                        <label for="description" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Submit your description</label>
+                        <label for="description" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Submit your result</label>
                         <textarea id="description" name="description" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white dark:bg-slate-900 dark:border-gray-600 dark:text-slate-200 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
                     </div>
                     <div class="flex justify-end">

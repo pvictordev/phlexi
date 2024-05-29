@@ -55,20 +55,27 @@ class DashboardController extends Controller
         $userData = [
             'name' => $user->name,
             'email' => $user->email,
-            'phone' => $user->phone,
-            'bio' => $user->bio
         ];
 
         $freelancer = Freelancer::where('freelancer_id', $userId)->first();
         $freelancerData = [
             'freelancer_id' => $userId,
+            'niche' => $freelancer->niche,
+            'bio' => $freelancer->bio,
             'hourly_rate' => $freelancer->hourly_rate,
-            'availability' => $freelancer->availability
+            'availability' => $freelancer->availability,
+
         ];
 
         $freelancerSkills = Freelancer::with('skill')->find($userId);
 
         $reviewsReceived = Review::where('freelancer_id', $userId)->get();
+        return view('freelancer', [
+            'userData' => $userData,
+            'freelancerData' => $freelancerData,
+            'freelancerSkills' => $freelancerSkills,
+            'reviewsReceived' => $reviewsReceived,
+        ]);
     }
     public function client()
     {
@@ -77,10 +84,15 @@ class DashboardController extends Controller
         $userData = [
             'name' => $user->name,
             'email' => $user->email,
-            'phone' => $user->phone,
-            'bio' => $user->bio
         ];
 
         $projectsData = Project::where('client_id', $userId)->with('category')->get();
+
+        $reviewsLeft = Review::where('client_id', $userId)->get();
+        return view('client', [
+            'userData' => $userData,
+            'projectsData' => $projectsData,
+            'reviewsLeft' => $reviewsLeft,
+        ]);
     }
 }

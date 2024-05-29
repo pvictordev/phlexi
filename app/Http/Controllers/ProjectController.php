@@ -62,7 +62,7 @@ class ProjectController extends Controller
         // Save the project
         $project->save();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/client');
     }
 
     // view method
@@ -92,11 +92,11 @@ class ProjectController extends Controller
 
         $project->save();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/client');
     }
     public function destroy($id)
     {
         Project::where('id', $id)->delete();
-        return redirect('/dashboard');
+        return redirect('/dashboard/client');
     }
 }

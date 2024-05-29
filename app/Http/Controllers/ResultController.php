@@ -49,7 +49,7 @@ class ResultController extends Controller
         $result->description = $request->description;
         $result->save();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/freelancer');
     }
     public function edit()
     {

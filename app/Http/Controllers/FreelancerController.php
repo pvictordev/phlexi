@@ -54,11 +54,13 @@ class FreelancerController extends Controller
         // Update the attributes
         $freelancer->hourly_rate = intval($request->rate);
         $freelancer->availability = intval($request->availability);
+        $freelancer->niche = $request->niche;
+        $freelancer->bio = $request->bio;
 
         // Save the updated freelancer
         $freelancer->save();
 
         // Redirect to the dashboard or any other page
-        return redirect('/dashboard');
+        return redirect('/dashboard/freelancer');
     }
 }

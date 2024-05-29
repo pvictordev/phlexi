@@ -29,7 +29,7 @@ class FreelancerSkillController extends Controller
             'freelancer_id' => $freelancerId,
             'skill_id' => $request->skill_id,
         ]);
-        return redirect('/dashboard');
+        return redirect('/dashboard/freelancer');
     }
     public function remove($id)
     {
@@ -41,6 +41,6 @@ class FreelancerSkillController extends Controller
         $freelancerId = Auth::id();
 
         FreelancerSkill::where('freelancer_id', $freelancerId)->where('skill_id', intval($id))->delete();
-        return redirect('/dashboard');
+        return redirect('/dashboard/freelancer');
     }
 }

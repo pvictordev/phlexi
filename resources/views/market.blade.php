@@ -30,19 +30,7 @@
                                 <h3 class="sr-only">Categories</h3>
                                 <ul role="list" class="px-2 py-3 font-medium text-gray-900">
                                     <li>
-                                        <a href="#" class="block px-2 py-3 text-gray-800 dark:text-slate-200">Totes</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-2 py-3 text-gray-800 dark:text-slate-200">Backpacks</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-2 py-3 text-gray-800 dark:text-slate-200">Travel Bags</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-2 py-3 text-gray-800 dark:text-slate-200">Hip Bags</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-2 py-3 text-gray-800 dark:text-slate-200">Laptop Sleeves</a>
+                                        <a href="#" class="block px-2 py-3 text-gray-800 dark:text-slate-200">All</a>
                                     </li>
                                 </ul>
 
@@ -69,7 +57,7 @@
                                 <div x-show="sortMenuOpen" @click.away="sortMenuOpen = false" class="absolute z-10 right-0 mt-2 w-40 origin-top-right rounded-md bg-white dark:bg-slate-700 shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                                     <div class="py-1" role="none">
                                         <a href="/market/all" class="font-medium text-gray-800 dark:text-slate-200  block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">
-                                            All project
+                                            All projects
                                         </a>
                                         @foreach($categories as $category)
                                         <a href="{{ route('market.category', [$category->id]) }}" class="font-medium text-gray-800 dark:text-slate-200  block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">{{$category->category_name}}
@@ -123,12 +111,12 @@
                                         </div>
                                     </div>
                                     <div class="my-4 flex flex-wrap gap-2">
-                                        <small class="bg-slate-500 text-white px-2 py-1 rounded-md">
+                                        <!-- <small class="bg-slate-500 text-white px-2 py-1 rounded-md">
                                             Web Development
                                         </small>
                                         <small class="bg-slate-500 text-white px-2 py-1 rounded-md">
                                             Digital Marketing
-                                        </small>
+                                        </small> -->
                                     </div>
                                     <div class="my-4 ">
                                         <a href="{{route('offer.create', [$project->id] )}}" class="middle none center mr-4 rounded-lg bg-green-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">Offer</a>
