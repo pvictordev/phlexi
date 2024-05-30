@@ -66,6 +66,6 @@ class ReviewController extends Controller
     public function destroy($id)
     {
         Review::where('id', $id)->delete();
-        return redirect('/dashboard');
+        return redirect('/dashboard/client');
     }
 }

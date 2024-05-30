@@ -15,23 +15,23 @@
 
     <title>{{ $title ?? config('app.name', 'Your App Name') }}</title>
 
+    @livewireStyles
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js" defer></script>
 
 </head>
 
 <body class="font-sans antialiased bg-white dark:bg-slate-800">
     {{ $slot }}
+
+    @livewireScripts
 </body>
 
 </html>
