@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="mt-6 flex items-center justify-center gap-4">
-                        <a href="#" class="transform rounded-md bg-indigo-600/95 px-5 py-3 font-medium text-white transition-colors hover:bg-indigo-700">Get started for free</a>
+                        <a href="/login" class="transform rounded-md bg-indigo-600/95 px-5 py-3 font-medium text-white transition-colors hover:bg-indigo-700">Get started for free</a>
                         <a href="#" class="transform rounded-md border border-slate-900 px-5 py-3 font-medium text-slate-900 dark:border-slate-200 dark:text-slate-200 transition-colors"> Request a demo </a>
 
                     </div>

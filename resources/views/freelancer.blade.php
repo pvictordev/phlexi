@@ -93,7 +93,7 @@
                             @if(isset($freelancerData['hourly_rate']))
                             {{$freelancerData['hourly_rate']}}
                             @else
-                        <p class="text-red-500">No hourly_rate found.</p>
+                        <p class="text-red-500">No hourly rate found.</p>
 
                         @endif
                         </p>
@@ -144,7 +144,7 @@
                             @else
 
                             @foreach ($freelancerSkills->skill as $skill)
-                            <a href="{{ route('skill.destroy', $skill->id) }}" class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">
+                            <a href="{{ route('skill.destroy', $skill->id) }}" class="bg-slate-500 text-white dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">
                                 {{ $skill->skill_name }}
                             </a>
                             @endforeach

@@ -89,8 +89,11 @@
                             <!-- Filters -->
 
                             <!-- Product grid -->
-                            <div class="flex flex-col gap-8 lg:col-span-3">
+                            <div class="flex h-screen relative flex-col gap-8 lg:col-span-3">
                                 <!-- Your content -->
+                                @if($projects->isEmpty())
+                                <p class="text-red-500 text-xl ml-80 mt-72 text-center">No projects found under this category.</p>
+                                @else
                                 @foreach ($projects as $project)
                                 <div class="relative bg-slate-200 dark:bg-slate-700 border shadow-2xl ease-in duration-150 hover:scale-105 rounded-lg p-5">
                                     <span class="absolute right-1 top-1 p-2 bg-green-500 rounded-full"></span>
@@ -123,6 +126,8 @@
                                     </div>
                                 </div>
                                 @endforeach
+                                @endif
+
                             </div>
                         </div>
                     </section>

@@ -118,9 +118,6 @@
                                 </form> -->
                                 <button x-data x-on:click="$dispatch('open-modal')" class="p-2 mt-2 text-slate-200 dark:text-slate-200 bg-red-600 rounded-lg cursor-pointer">Delete</button>
                             </div>
-                            @endforeach
-                            @endif
-
                             <!-- modal -->
                             <div x-data="{ show: false }" x-show="show" x-transition x-on:open-modal.window="show = true" x-on:close-modal.window="show = false" x-on:keydown.escape.window="show = false" style="display:none;" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
 
@@ -158,6 +155,9 @@
                                     </div>
                                 </div>
                             </div>
+
+                            @endforeach
+                            @endif
 
                         </div>
 
@@ -208,6 +208,8 @@
                                 </form> -->
                                 <button x-data x-on:click="$dispatch('open-modal')" class="p-2 mt-2 text-slate-200 dark:text-slate-200 bg-red-600 rounded-lg cursor-pointer">Delete</button>
                             </div>
+
+                            <!-- modal -->
                             <div x-data="{ show: false }" x-show="show" x-transition x-on:open-modal.window="show = true" x-on:close-modal.window="show = false" x-on:keydown.escape.window="show = false" style="display:none;" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
 
                                 <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
@@ -245,7 +247,6 @@
                                 </div>
                             </div>
                             @endforeach
-                            <!-- modal -->
 
                         </div>
 

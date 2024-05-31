@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+
             $table->bigInteger('category_id')->unsigned();
 
             $table->foreign('category_id')->references('id')->on('categories')
@@ -21,7 +22,7 @@ return new class extends Migration
             $table->bigInteger('client_id')->unsigned()->nullable();
 
             $table->foreign('client_id')->references('client_id')->on('clients')
-                ->onDelete('cascade')->onUpdate('cascade');
+                ->onDelete('set null')->onUpdate('cascade');
 
             $table->bigInteger('price');
 

@@ -15,8 +15,6 @@
 
     <title>{{ $title ?? config('app.name', 'Your App Name') }}</title>
 
-    @livewireStyles
-
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -30,8 +28,6 @@
 
 <body class="font-sans antialiased bg-white dark:bg-slate-800">
     {{ $slot }}
-
-    @livewireScripts
 </body>
 
 </html>
