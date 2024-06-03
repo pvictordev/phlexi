@@ -9,6 +9,10 @@ export default defineConfig({
                 'resources/js/app.js',
             ],
             refresh: true,
-        }),
+        }),  
     ],
+    server: {
+        https: false,
+        host: 'yoursite.loc',
+    },
 });
