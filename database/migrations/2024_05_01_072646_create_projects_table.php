@@ -22,7 +22,7 @@ return new class extends Migration
             $table->bigInteger('client_id')->unsigned()->nullable();
 
             $table->foreign('client_id')->references('client_id')->on('clients')
-                ->onDelete('set null')->onUpdate('cascade');
+                ->onDelete('cascade')->onUpdate('cascade');
 
             $table->bigInteger('price');
 
