@@ -21,9 +21,9 @@ return new class extends Migration
             $table->boolean('request')->default(true);
             $table->boolean('response')->default(false);
 
-            $table->foreign('project_id')->references('id')->on('projects');
-            $table->foreign('freelancer_id')->references('freelancer_id')->on('freelancers');
-            $table->foreign('client_id')->references('client_id')->on('clients');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->foreign('freelancer_id')->references('freelancer_id')->on('freelancers')->onDelete('cascade');
+            $table->foreign('client_id')->references('client_id')->on('clients')->onDelete('cascade');
 
             $table->timestamps();
         });
