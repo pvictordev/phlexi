@@ -11,8 +11,4 @@ export default defineConfig({
             refresh: true,
         }),  
     ],
-    server: {
-        https: false,
-        host: 'yoursite.loc',
-    },
 });
