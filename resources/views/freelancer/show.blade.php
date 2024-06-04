@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-nav-custom></x-nav-custom>
 
-    <main class="py-24">
+    <main class="py-28">
         <span class="absolute top-20 left-2 cursor-pointer" onclick="history.back()">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" width="40px" height="40px" viewBox="0 0 32 32" version="1.1">
                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
@@ -21,14 +21,13 @@
                         <div @click.away="open = false" class="relative" x-data="{ open: false }">
                             <button @click="open = !open" class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
                                 <span class="">Contact</span>
-                                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 transition-transform duration-200 transform md:-mt-1">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                                 </svg>
                             </button>
-                            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute z-10 right-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right">
+                            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute z-10 right-0 md:w-60 mt-2 origin-top-right">
                                 <div class="px-2 pt-2 pb-4 bg-white rounded-md shadow-lg dark:bg-gray-700">
                                     <div class="z-10 flex flex-col">
-
                                         <button class="flex rounded-lg bg-transparent p-2 dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
                                             <div class="bg-blue-500 text-white rounded-lg p-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none">
@@ -38,7 +37,7 @@
                                             </div>
                                             <div class="ml-3">
                                                 <p class="font-semibold text-left">Email</p>
-                                                <p class="text-sm">{{ $freelancer->user->email }}</p>
+                                                <p class="text-sm">{{ $freelancer->user->email ?? "No email" }}</p>
                                             </div>
                                         </button>
 
@@ -50,7 +49,7 @@
                                             </div>
                                             <div class="ml-3">
                                                 <p class="font-semibold text-left">Phone</p>
-                                                <p class="text-sm">{{ $freelancer->user->phone }}</p>
+                                                <p class="text-sm">{{ $freelancer->user->phone ?? "No phone" }}</p>
                                             </div>
                                         </button>
                                     </div>
@@ -58,6 +57,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="flex flex-col items-center px-6 py-4">
                         <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-32 w-32 rounded-full mx-auto mb-3">
                         <div class="text-center">
@@ -66,13 +66,14 @@
                             <!-- <p class="text-sm font-medium">Romania - 04:20am</p> -->
                         </div>
                     </div>
-                    <div class="border-t relative w-full border-b border-gray-400">
-                        <div class="p-4 max-w-lg mx-auto  flex justify-between items-center">
+
+                    <div class="border-t w-full border-b border-gray-400">
+                        <div class="p-4 mx-auto flex flex-col gap-3 justify-between items-center">
                             <div class="text-center">
                                 <p class="text-lg font-semibold">Price</p>
                                 <p class="text-sm font-medium text-slate-500">${{ $freelancer->hourly_rate }} / hour</p>
                             </div>
-                            <div class="text-center">
+                            <!-- <div class="text-center">
                                 <p class="text-lg font-semibold">Rating</p>
                                 <div class="flex items-center justify-center">
                                     <p class="text-sm font-medium text-slate-500">4.5</p>
@@ -80,7 +81,7 @@
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                                     </svg>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="text-center ">
                                 <p class="text-lg font-semibold">Availability</p>
                                 <p class="text-sm font-medium text-slate-500">{{ $freelancer->availability ? 'Availabe' : 'Unavailable' }}</p>
@@ -110,7 +111,7 @@
                         </div>
                     </div>
 
-                    <!-- Jobs -->
+                    <!-- Reviews -->
                     <div class="border-t border-gray-400 px-6 py-4">
                         <h2 class="text-lg font-semibold mb-2">Reviews</h2>
 

@@ -6,7 +6,7 @@
 
     <x-nav-custom></x-nav-custom>
     <div class="py-32">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+        <div class="max-w-7xl mx-auto p-4 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-slate-200 dark:bg-gray-900 shadow sm:rounded-lg">
                 <div class="max-w-xl">
                     @include('profile.partials.update-profile-information-form')

@@ -6,7 +6,7 @@
     <main>
         <div class="flex flex-col items-center justify-center">
             <section class="container h-screen flex items-center justify-center">
-                <div class="">
+                <div class="px-3">
                     <div class="text-center">
                         <p class="text-lg font-medium leading-8 text-indigo-600/95">Ultimate Freelancing Platform</p>
                         <h1 class="mt-3 text-5xl font-bold leading-[4rem] tracking-tight text-gray-900 dark:text-white">You Opportunities Start With Phlexi
@@ -23,7 +23,7 @@
             </section>
 
             <section class="container bg-white dark:bg-slate-800 py-24 sm:py-32">
-                <div class="">
+                <div class="px-3">
                     <div class="mx-auto max-w-2xl lg:text-center">
                         <h2 class="font-semibold leading-7 text-indigo-600">Deploy faster</h2>
                         <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 dark:text-slate-200 sm:text-4xl">Everything you need to deploy your app</p>
@@ -218,7 +218,7 @@
                         Frequenty asked questions
                     </p>
                 </div>
-                <div class="grid divide-y divide-slate-800 dark:divide-slate-200 max-w-xl mx-auto mt-8">
+                <div class="grid divide-y divide-slate-800 dark:divide-slate-200 max-w-xl mx-auto mt-8 px-3">
                     <div class="py-5">
                         <details class="group">
                             <summary class="flex justify-between items-center font-medium cursor-pointer list-none">

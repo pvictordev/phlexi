@@ -3,7 +3,7 @@
         Market
     </x-slot>
     <x-nav-custom></x-nav-custom>
-    <main x-data="{ mobileFiltersOpen: false, menuOpen: false, sortMenuOpen:false }">
+    <main class="" x-data="{ mobileFiltersOpen: false, menuOpen: false, sortMenuOpen:false }">
 
         <div class="bg-white dark:bg-slate-800">
             <div>
@@ -67,12 +67,13 @@
                                 </div>
                             </div>
 
-                            <button type="button" class="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7">
+                            <!-- <button type="button" class="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7">
                                 <span class="sr-only">View grid</span>
                                 <svg class="h-5 w-5" aria-hidden="true" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M4.25 2A2.25 2.25 0 002 4.25v2.5A2.25 2.25 0 004.25 9h2.5A2.25 2.25 0 009 6.75v-2.5A2.25 2.25 0 006.75 2h-2.5zm0 9A2.25 2.25 0 002 13.25v2.5A2.25 2.25 0 004.25 18h2.5A2.25 2.25 0 009 15.75v-2.5A2.25 2.25 0 006.75 11h-2.5zm9-9A2.25 2.25 0 0011 4.25v2.5A2.25 2.25 0 0013.25 9h2.5A2.25 2.25 0 0018 6.75v-2.5A2.25 2.25 0 0015.75 2h-2.5zm0 9A2.25 2.25 0 0011 13.25v2.5A2.25 2.25 0 0013.25 18h2.5A2.25 2.25 0 0018 15.75v-2.5A2.25 2.25 0 0015.75 11h-2.5z" clip-rule="evenodd" />
                                 </svg>
-                            </button>
+                            </button> -->
+
                             <button type="button" @click="mobileFiltersOpen = !mobileFiltersOpen" class="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden">
                                 <span class="sr-only">Filters</span>
                                 <svg class="h-5 w-5" aria-hidden="true" viewBox="0 0 20 20" fill="currentColor">
@@ -85,17 +86,17 @@
                     <section aria-labelledby="products-heading" class="pb-24 pt-6">
                         <h2 id="products-heading" class="sr-only">Market</h2>
 
-                        <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
+                        <div class="grid grid-cols-1 h-screen py-5 px-7 overflow-y-scroll gap-x-8 gap-y-10 lg:grid-cols-4">
                             <!-- Filters -->
 
                             <!-- Product grid -->
-                            <div class="flex h-screen relative flex-col gap-8 lg:col-span-3">
+                            <div class="flex relative flex-col gap-8 lg:col-span-3">
                                 <!-- Your content -->
                                 @if($projects->isEmpty())
-                                <p class="text-red-500 text-xl ml-80 mt-72 text-center">No projects found under this category.</p>
+                                <p class="text-red-500 text-xl">No projects found under this category.</p>
                                 @else
                                 @foreach ($projects as $project)
-                                <div class="relative bg-slate-200 dark:bg-slate-700 border shadow-2xl ease-in duration-150 hover:scale-105 rounded-lg p-5">
+                                <div class="relative bg-slate-200 dark:bg-slate-700 border shadow-xl ease-in duration-150 hover:scale-105 rounded-lg p-5">
                                     <span class="absolute right-1 top-1 p-2 bg-green-500 rounded-full"></span>
                                     <h1 class="font-bold text-slate-800 dark:text-slate-200 text-xl">{{$project->title}}</h1>
                                     <div class="mb-3 mt-3">
@@ -127,7 +128,6 @@
                                 </div>
                                 @endforeach
                                 @endif
-
                             </div>
                         </div>
                     </section>

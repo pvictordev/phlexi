@@ -41,7 +41,6 @@
                 {{ __('Forgot your password?') }}
             </a>
 
-
             @endif
 
             <x-primary-button class="ms-3">
