@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use Illuminate\Http\Request;
 
 use App\Models\Freelancer;
 use App\Models\Project;
-use App\Models\FreelancerSkill;
 use App\Models\Offer;
 use App\Models\Review;
 use App\Models\Result;

@@ -99,11 +99,9 @@
                     <!-- skills -->
                     <div class="border-t border-gray-400 px-6 py-4 relative">
                         <h2 class="text-lg font-semibold mb-2">Skills</h2>
-                        <div class="flex flex-wrap">
-
-
+                        <div class="flex flex-wrap gap-1">
                             @foreach($freelancerSkill->skill as $skill)
-                            <span class="bg-gray-200 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold">
+                            <span class="bg-gray-300 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold">
                                 {{ $skill->skill_name }}
                             </span>
                             @endforeach
@@ -112,7 +110,7 @@
                     </div>
 
                     <!-- Reviews -->
-                    <div class="border-t border-gray-400 px-6 py-4">
+                    <div class=" border-t border-gray-400 px-6 py-4">
                         <h2 class="text-lg font-semibold mb-2">Reviews</h2>
 
                         <div class="overflow-y-auto max-h-80">

@@ -5,6 +5,9 @@ namespace App\Exceptions;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
+use Illuminate\Database\QueryException;
+use PDOException;
+
 class Handler extends ExceptionHandler
 {
     /**
