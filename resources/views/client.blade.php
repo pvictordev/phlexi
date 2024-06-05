@@ -167,8 +167,14 @@
                     <div class="border-t border-gray-400 px-6 py-4">
                         <h2 class="text-lg font-semibold mb-2">Received Offers & Results</h2>
                         <div class="flex gap-2">
-                            <a class="border p-1 border-slate-800 dark:border-slate-400 rounded-lg" href="/offers/received">Received offers</a>
-                            <a class="border p-1 border-slate-800 dark:border-slate-400 rounded-lg" href="/results">Received results</a>
+                            <div class="flex items-center justify-center relative">
+                                <span class="absolute bottom-6 right-0 text-sm rounded-full z-10 px-1 bg-blue-500 text-white">{{ $offersCount ?? "0" }}</span>
+                                <a class="border p-1 border-slate-800 dark:border-slate-400 rounded-lg" href="/offers/received">Received offers</a>
+                            </div>
+                            <div class="flex items-center justify-center relative">
+                                <span class="absolute bottom-6 right-0 text-sm rounded-full z-10 px-1 bg-blue-500 text-white">{{ $resultsCount ?? "0" }}</span>
+                                <a class="border p-1 border-slate-800 dark:border-slate-400 rounded-lg" href="/results">Received results</a>
+                            </div>
                         </div>
                     </div>
 

@@ -162,7 +162,10 @@
                     <div class="border-t border-gray-400 px-6 py-4">
                         <h2 class="text-lg font-semibold mb-2">Accepted Offers</h2>
                         <div class="flex gap-2">
-                            <a class="border p-1 border-slate-800 dark:border-slate-400 rounded-lg" href="/offers/accepted">Accepted offers</a>
+                            <div class="flex relative items-center justify-center">
+                                <span class="absolute bottom-6 right-0 text-sm rounded-full z-10 px-1 bg-blue-500 text-white">{{ $acceptedOffersCount ?? "0" }}</span>
+                                <a class="border p-1 border-slate-800 dark:border-slate-400 rounded-lg" href="/offers/accepted">Accepted offers</a>
+                            </div>
                         </div>
                     </div>
 
