@@ -74,7 +74,6 @@ Route::middleware('auth')->group(function () {
 
     // see all the offers received from the freelancers as a client and accept/reject them
     Route::get('/offers/received', [OfferController::class, 'show'])->name('offer.show');
-    Route::get('/offers/received/{id}', [OfferController::class, 'edit'])->name('offer.edit');
     Route::patch('/offers/received/{id}', [OfferController::class, 'update'])->name('offer.edit');
 
     // see the accepted offers

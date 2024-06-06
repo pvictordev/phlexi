@@ -4,8 +4,8 @@
     </x-slot>
     <div class="h-screen relative flex justify-center items-center ">
         <x-back-link></x-back-link>
-        <div class="mx-auto max-w-2xl container bg-slate-200 dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden">
-            <div class="p-6">
+        <div class="container max-w-2xl p-4">
+            <div class="mx-auto p-6 bg-slate-300 dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
                 <h2 class="text-lg font-semibold text-gray-800 dark:text-slate-200 mb-4">Why are you better than others ?</h2>
                 <form method="POST">
                     @csrf

@@ -111,11 +111,6 @@
                                 </div>
                                 <p class="text-slate-500 mt-1">Created {{ $projectData->created_at->diffForHumans() }}</p>
 
-                                <!-- <form action="{{route('project.destroy', $projectData->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="p-2 mt-2 text-slate-200 dark:text-slate-200 bg-red-600 rounded-lg cursor-pointer">Delete</button>
-                                </form> -->
                                 <button x-data x-on:click="$dispatch('open-modal')" class="p-2 mt-2 text-slate-200 dark:text-slate-200 bg-red-600 rounded-lg cursor-pointer">Delete</button>
                             </div>
                             <!-- modal -->

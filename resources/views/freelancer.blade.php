@@ -136,18 +136,58 @@
                     </div>
 
                     <!-- skills -->
-                    <div class="border-t border-gray-400 px-6 py-4 relative">
+                    <div class="border-t border-gray-400 z-20 px-6 py-4 relative">
                         <h2 class="text-lg font-semibold mb-2">Skills</h2>
                         <div class="flex flex-wrap">
                             @if($freelancerSkills->skill->isEmpty())
                             <p class="text-red-500">No skills found.</p>
                             @else
 
-                            @foreach ($freelancerSkills->skill as $skill)
-                            <a href="{{ route('skill.destroy', $skill->id) }}" class="bg-slate-500 text-white dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">
-                                {{ $skill->skill_name }}
-                            </a>
-                            @endforeach
+                            <div x-data="{ showModal: false, skillId: null, skillName: '' }">
+                                @foreach ($freelancerSkills->skill as $skill)
+                                <button x-on:click="skillId = {{ $skill->id }}; skillName = '{{ $skill->skill_name }}'; showModal = true" class="bg-slate-500 text-white dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">
+                                    {{ $skill->skill_name }}
+                                </button>
+                                @endforeach
+
+                                <!-- Modal -->
+                                <div x-show="showModal" x-transition x-on:keydown.escape.window="showModal = false" style="display: none;" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                                    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+                                    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+                                        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                                            <div class="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                                                <div class="bg-white dark:bg-slate-700 dark:text-slate-200 px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                                                    <div class="sm:flex sm:items-start">
+                                                        <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                                                            <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                                                            </svg>
+                                                        </div>
+                                                        <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                                                            <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-slate-200" id="modal-title">Delete this skill?</h3>
+                                                            <div class="mt-2">
+                                                                <p class="text-sm text-gray-500 dark:text-slate-200">Would you like to delete the skill <span x-text="skillName" class="font-bold"></span>? This process cannot be undone.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-gray-50 dark:bg-slate-600 gap-2 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                                                    <form :action="'/skill/' + skillId + '/remove'" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="p-2 mt-2 text-slate-200 dark:text-slate-200 bg-red-600 rounded-lg cursor-pointer">Delete</button>
+                                                    </form>
+                                                    <button x-on:click="showModal = false" class="p-2 mt-2 text-light-800 dark:text-slate-200 bg-slate-300 dark:bg-slate-800 rounded-lg cursor-pointer">
+                                                        Cancel
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             @endif
                         </div>
                         <a href="/skill" class="absolute top-1 right-1 p-2 bg-blue-600 rounded-full">

@@ -88,6 +88,7 @@ class ProjectController extends Controller
         $project->client_id = $client;
         $project->price = $request->price;
         $project->status = $request->status;
+        $project->title = $request->title;
         $project->description = $request->description;
 
         $project->save();

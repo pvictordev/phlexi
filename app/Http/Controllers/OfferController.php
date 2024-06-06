@@ -24,12 +24,12 @@ class OfferController extends Controller
     public function accepted()
     {
         $freelancer = Auth::id();
-        $acceptedOffers = Offer::where('freelancer_id', $freelancer)->where('response', 1)->get();
+        $acceptedOffers = Offer::with('project')->where('freelancer_id', $freelancer)->where('response', 1)->get();
         return view('offer.accepted', ['acceptedOffers' => $acceptedOffers]);
     }
 
     // create an offer as a freelancer
-    public function create($id)
+    public function create()
     {
         return view('offer.create');
     }
