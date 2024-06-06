@@ -6,24 +6,25 @@
     <main>
         <div class="flex flex-col items-center justify-center">
             <section class="container h-screen flex items-center justify-center">
-                <div class="px-3">
-                    <div class="text-center">
-                        <p class="text-lg font-medium leading-8 text-indigo-600/95">Ultimate Freelancing Platform</p>
-                        <h1 class="mt-3 text-5xl font-bold leading-[4rem] tracking-tight text-gray-900 dark:text-white">You Opportunities Start With Phlexi
+                <div class="max-w-7xl p-4 flex items-center justify-center max-md:flex-col-reverse">
+                    <div class="flex flex-col max-md:items-center">
+                        <p class="text-lg font-medium leading-8 text-indigo-600/95 max-md:text-center">Ultimate Freelancing Platform</p>
+                        <h1 class="mt-3 text-5xl font-bold leading-[4rem] tracking-tight text-gray-900 dark:text-white max-md:text-center">You Opportunities Start With Phlexi
                         </h1>
                         <p class="mt-3 text-lg leading-relaxed text-slate-500">We unify clients and freelancers by providing a secure and easy-to-use environment. Get started to verify it for yourself.</p>
+                        <div class="mt-6 flex gap-2">
+                            <a href="/login" class="transform rounded-md bg-indigo-600/95 px-5 py-3 font-medium text-white transition-colors hover:bg-indigo-700">Get started for free</a>
+                            <a href="#" class="transform rounded-md border border-slate-900 px-5 py-3 font-medium text-slate-900 dark:border-slate-200 dark:text-slate-200 transition-colors"> Request a demo </a>
+                        </div>
                     </div>
-
-                    <div class="mt-6 flex items-center justify-center gap-4">
-                        <a href="/login" class="transform rounded-md bg-indigo-600/95 px-5 py-3 font-medium text-white transition-colors hover:bg-indigo-700">Get started for free</a>
-                        <a href="#" class="transform rounded-md border border-slate-900 px-5 py-3 font-medium text-slate-900 dark:border-slate-200 dark:text-slate-200 transition-colors"> Request a demo </a>
-
+                    <div class="max-md:w-96 max-md:h-96">
+                        <img src="https://i.pinimg.com/originals/7b/7e/07/7b7e0712e9c23914f938ec7f51cd0951.png" alt="">
                     </div>
                 </div>
             </section>
 
             <section class="container bg-white dark:bg-slate-800 py-24 sm:py-32">
-                <div class="px-3">
+                <div class="px-4">
                     <div class="mx-auto max-w-2xl lg:text-center">
                         <h2 class="font-semibold leading-7 text-indigo-600">Deploy faster</h2>
                         <p class="mt-2 text-3xl font-bold tracking-tight text-gray-800 dark:text-slate-200 sm:text-4xl">Everything you need to deploy your app</p>
