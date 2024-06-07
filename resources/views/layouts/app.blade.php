@@ -21,9 +21,6 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-
 </head>
 
 <body class="font-sans antialiased bg-white dark:bg-slate-800">
