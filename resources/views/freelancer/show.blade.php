@@ -62,7 +62,7 @@
                         <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-32 w-32 rounded-full mx-auto mb-3">
                         <div class="text-center">
                             <p class="text-xl font-semibold">{{ $freelancer->user->name }}</p>
-                            <p class="text-sm font-medium">{{ $freelancer->niche }}</p>
+                            <p class="text-sm text-slate-500 font-medium">{{ $freelancer->niche ?? "No niche added" }}</p>
                             <!-- <p class="text-sm font-medium">Romania - 04:20am</p> -->
                         </div>
                     </div>
@@ -70,8 +70,8 @@
                     <div class="border-t w-full border-b border-gray-400">
                         <div class="p-4 mx-auto flex flex-col gap-3 justify-between items-center">
                             <div class="text-center">
-                                <p class="text-lg font-semibold">Price</p>
-                                <p class="text-sm font-medium text-slate-500">${{ $freelancer->hourly_rate }} / hour</p>
+                                <p class="text-lg font-semibold">Hourly rate</p>
+                                <p class="text-sm font-medium text-slate-500">{{ $freelancer->hourly_rate ? '$' . $freelancer->hourly_rate . ' / hour' : 'Not specified' }}</p>
                             </div>
                             <!-- <div class="text-center">
                                 <p class="text-lg font-semibold">Rating</p>
@@ -92,7 +92,7 @@
                     <div class="p-3 flex flex-col items-center justify-center">
                         <h2 class="text-lg font-semibold mb-1">Bio</h2>
                         <p class="leading-relaxed text-slate-500">
-                            {{ $freelancer->bio }}
+                            {{ $freelancer->bio ?? "No bio added" }}
                         </p>
                     </div>
 
@@ -100,12 +100,15 @@
                     <div class="border-t border-gray-400 px-6 py-4 relative">
                         <h2 class="text-lg font-semibold mb-2">Skills</h2>
                         <div class="flex flex-wrap gap-1">
+                            @if($freelancerSkill->skill->isEmpty())
+                            <span class="text-slate-500">No skills added</span>
+                            @else
                             @foreach($freelancerSkill->skill as $skill)
                             <span class="bg-gray-300 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold">
                                 {{ $skill->skill_name }}
                             </span>
                             @endforeach
-
+                            @endif
                         </div>
                     </div>
 
@@ -114,6 +117,9 @@
                         <h2 class="text-lg font-semibold mb-2">Reviews</h2>
 
                         <div class="overflow-y-auto max-h-80">
+                            @if($reviews->isEmpty())
+                            <span class="text-slate-500">No reivews yet</span>
+                            @else
                             @foreach($reviews as $review)
                             <div class="border relative border-gray-300 dark:border-gray-600 rounded-lg p-4 my-2 mr-4">
                                 <span class="absolute top-1 left-1 bg-gray-300 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">
@@ -134,6 +140,7 @@
 
                             </div>
                             @endforeach
+                            @endif
                         </div>
 
                     </div>

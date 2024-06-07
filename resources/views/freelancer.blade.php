@@ -215,6 +215,9 @@
 
                         <div class="overflow-y-auto max-h-80">
 
+                            @if($reviewsReceived->isEmpty())
+                            <p class="text-red-500">No reviews received.</p>
+                            @else
                             @foreach($reviewsReceived as $reviewReceived)
                             <div class="border relative border-gray-300 dark:border-gray-600 rounded-lg p-4 my-2 mr-4">
                                 <span class="absolute top-1 left-1 bg-gray-300 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">
@@ -235,6 +238,7 @@
 
                             </div>
                             @endforeach
+                            @endif
                         </div>
 
                     </div>

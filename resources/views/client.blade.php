@@ -179,6 +179,9 @@
 
                         <div class="overflow-y-auto max-h-80">
 
+                            @if($reviewsLeft->isEmpty())
+                            <p class="text-red-500">No reviews left.</p>
+                            @else
                             @foreach($reviewsLeft as $reviewLeft)
                             <div class="border relative border-gray-300 dark:border-gray-600 rounded-lg p-4 my-2 mr-4">
                                 <span class="absolute top-1 left-1 bg-gray-300 text-gray-800 dark:bg-slate-200 dark:text-slate-800 px-2 py-1 rounded-full text-xs font-semibold m-1">
@@ -248,7 +251,7 @@
                                 </div>
                             </div>
                             @endforeach
-
+                            @endif
                         </div>
 
                     </div>
