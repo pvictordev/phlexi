@@ -187,7 +187,6 @@
                                 </div>
                             </div>
 
-
                             @endif
                         </div>
                         <a href="/skill" class="absolute top-1 right-1 p-2 bg-blue-600 rounded-full">

@@ -118,7 +118,7 @@
 
                                 <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
-                                <div x-data x-on:click="$dispatch('close-modal')" class="fixed inset-0 z-10 w-screen overflow-y-auto">
+                                <div x-data x-on:click="$dispatch('close-modal')" class="fixed inset-0 w-screen overflow-y-auto">
                                     <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
 
                                         <div class="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
@@ -163,11 +163,11 @@
                         <h2 class="text-lg font-semibold mb-2">Received Offers & Results</h2>
                         <div class="flex gap-2">
                             <div class="flex items-center justify-center relative">
-                                <span class="absolute bottom-6 right-0 text-sm rounded-full z-10 px-1 bg-blue-500 text-white">{{ $offersCount ?? "0" }}</span>
+                                <span class="absolute bottom-6 right-0 text-sm rounded-full z-0 px-1 bg-blue-500 text-white">{{ $offersCount ?? "0" }}</span>
                                 <a class="border p-1 border-slate-800 dark:border-slate-400 rounded-lg" href="/offers/received">Received offers</a>
                             </div>
                             <div class="flex items-center justify-center relative">
-                                <span class="absolute bottom-6 right-0 text-sm rounded-full z-10 px-1 bg-blue-500 text-white">{{ $resultsCount ?? "0" }}</span>
+                                <span class="absolute bottom-6 right-0 text-sm rounded-full z-0 px-1 bg-blue-500 text-white">{{ $resultsCount ?? "0" }}</span>
                                 <a class="border p-1 border-slate-800 dark:border-slate-400 rounded-lg" href="/results">Received results</a>
                             </div>
                         </div>
