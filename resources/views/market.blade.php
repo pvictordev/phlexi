@@ -99,16 +99,19 @@
                                 <div class="relative bg-slate-200 dark:bg-slate-700 border shadow-xl ease-in duration-150 hover:scale-105 rounded-lg p-5">
                                     <span class="absolute right-1 top-1 p-2 bg-green-500 rounded-full"></span>
                                     <h1 class="font-bold text-slate-800 dark:text-slate-200 text-xl">{{$project->title}}</h1>
+
                                     <div class="mb-3 mt-3">
-                                        <small class="text-slate-500 font-bold flex items-center gap-2">
+                                        <small class="text-slate-500 font-bold flex items-center gap-2 max-sm:flex-col max-sm:items-start">
                                             <span data-test="budget">
-                                                Est. Budget: {{ $project->price }}$ -
+                                                Est. Budget: {{ $project->price }}$
                                             </span>
+                                            <span class="max-sm:hidden">-</span>
                                             <span>{{ $project->created_at->diffForHumans() }}
                                             </span>
                                             <small class="bg-slate-500 text-white px-2 py-1 rounded-md">{{ $project->category->category_name }}</small>
                                         </small>
                                     </div>
+
                                     <div class="my-4">
                                         <div>
                                             <p class="text-gray-800 dark:text-gray-200" data-test="job-description-text">{{ $project->description }}</p>
