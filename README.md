@@ -25,15 +25,18 @@ At this stage, we created the database for the application. Subsequently, we dev
 
 At this point, we've transferred the business idea from our core PHP project into a new Laravel project. Here, we've redesigned the previous layout using Tailwind CSS to create a more modern design. In addition, we implemented new features such as localization and sending password reset via email and added a dynamic modal component with Livewire and some static components in order to meet the final project requirments. We have also developed a feature that allows freelancers to join projects posted by clients and submit results for those projects. Clients can then accept or decline these results. As part of this feature, we built custom middleware to ensure consistency and security. Another built-in feature allows clients to leave a review for the freelancer's work after accepting the project result. These reviews can be displayed on both the freelancer's and the client's pages. For the freelancer, this feature showcases their work, while for the client, it allows them to modify or remove the review. A new implementation of the old idea was to separate the client and freelancer page in order to make the actions performed for the specific role more organized. Finally we provisioned infrastructure and deployed this project to the cloud using railway service. 
 
-## Tech Stack:
+
+## Final Project Details
+
+### Tech Stack:
 - **Laravel**: A PHP framework for building web applications.
 - **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
 - **Livewire**: A full-stack framework for Laravel that makes building dynamic interfaces.
 - **MySQL**: An open-source relational database management system.
 
-## Functionality: 
+### Functionality: 
 
-### User Roles
+#### User Roles
 
 When you create an account, you are automatically assigned three roles:
 
@@ -41,7 +44,7 @@ When you create an account, you are automatically assigned three roles:
 2. **Freelancer**: Can bid on projects and manage a freelancer profile.
 3. **User**: Contains registration data and personal information, which are valid across all roles.
 
-### Client Functionality
+#### Client Functionality
 
 - **Create, Edit and Delete Projects**: As a client, you can create new projects and manage them however you want.
 - **Accept Freelancer Requests**: You can review and accept requests from freelancers who want to work on your projects.
@@ -49,32 +52,32 @@ When you create an account, you are automatically assigned three roles:
 - **Submit Reviews**: You can submit reviews for freelancers, which will be visible on their profiles.
 - **Edit Reviews**: You have the ability to change or delete your reviews.
 
-### Freelancer Functionality
+#### Freelancer Functionality
 
 - **Edit Profile**: Fill out your freelancer profile with your hourly rate, niche, bio, and skills.
 - **Bid on Projects**: Submit requests to get involved in client project.
 - **Submit Work**: Once accepted for a project, you can submit your results to the client.
 - **View Reviews**: Reviews from clients will be visible on your profile.
 
-### Simple User Functionality
+#### Simple User Functionality
 
 - **Create Edit and Account**: Create a profile and edit registration info such as name, email and password. Additionally you can edit or fill in optional user data such as phone number or location.
 - **Reset password as a Guest**: In case if you forgot your password you will be able easily reset that via Email.
 - **View Projects**: Browse through projects available on the platform.
 - **Search Freelancers**: Search for and view freelancer profiles.
 
-## You can find the app live here:
+### You can find the app live here:
 https://sa-project-production.up.railway.app/
 
-## Steps to run this project on your machine:
-### Before you begin make sure that you have the following installed on your machine:
+### Steps to run this project on your machine:
+#### Before you begin make sure that you have the following installed on your machine:
 - [PHP](https://www.php.net/downloads) (version 7.3 or later)
 - [Composer](https://getcomposer.org/)
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/)
 - [MySQL](https://www.mysql.com/downloads/)
 
 
-### Step-by-step guide: 
+#### Step-by-step guide: 
 
 1. **Clone the repository:**
 
