@@ -24,4 +24,9 @@ class Project extends Model
     {
         return $this->hasOne(Review::class);
     }
+
+    public function result()
+    {
+        return $this->hasOne(Result::class);
+    }
 }

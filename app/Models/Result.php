@@ -14,6 +14,11 @@ class Result extends Model
         return $this->hasOne(Offer::class);
     }
 
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
+
     public function review()
     {
         return $this->belongsTo(Review::class);

@@ -19,7 +19,7 @@
             <div class="flex items-start flex-col bg-slate-200 dark:bg-slate-900 rounded-lg shadow-lg">
                 <h2 class="text-slate-800 px-2 py-1 dark:slate-800">{{ $acceptedOffer->project->title }}</h2>
                 <p class=" text-slate-400 p-2 dark:slate-800">{{ $acceptedOffer->description }}</p>
-                <a href=" {{ route('result.create', $acceptedOffer->id) }}" class="p-2 m-2 bg-green-500 rounded-lg">
+                <a href=" {{ route('result.create', $acceptedOffer->id) }}" class="p-2 m-2 text-white bg-green-500 rounded-lg">
                     Submit a result
                 </a>
             </div>

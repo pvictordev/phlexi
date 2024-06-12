@@ -111,46 +111,22 @@
                                 </div>
                                 <p class="text-slate-500 mt-1">Created {{ $projectData->created_at->diffForHumans() }}</p>
 
-                                <button x-data x-on:click="$dispatch('open-modal')" class="p-2 mt-2 text-slate-200 dark:text-slate-200 bg-red-600 rounded-lg cursor-pointer">Delete</button>
+                                <x-custom-modal-button class="bg-red-600">
+                                    Delete
+                                </x-custom-modal-button>
                             </div>
                             <!-- modal -->
-                            <div x-data="{ show: false }" x-show="show" x-transition x-on:open-modal.window="show = true" x-on:close-modal.window="show = false" x-on:keydown.escape.window="show = false" style="display:none;" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                            <x-custom-modal title="Delete the project" message="Would you like to delete this project? The process cannot be undone." fill="fill-red-500">
+                                <form action="{{route('project.destroy', $projectData->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <x-confirmation-button color="bg-red-600">
+                                        Delete
+                                    </x-confirmation-button>
+                                </form>
 
-                                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-
-                                <div x-data x-on:click="$dispatch('close-modal')" class="fixed inset-0 w-screen overflow-y-auto">
-                                    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-
-                                        <div class="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                                            <div class="bg-white dark:bg-slate-700 dark:text-slate-200 px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                                                <div class="sm:flex sm:items-start">
-                                                    <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                                                        <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                                                        </svg>
-                                                    </div>
-                                                    <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                                                        <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-slate-200" id="modal-title">Delete the project</h3>
-                                                        <div class="mt-2">
-                                                            <p class="text-sm text-gray-500 dark:text-slate-200">Would you like to delete this project ? The process cannot be undone.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="bg-gray-50 dark:bg-slate-600 gap-2 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                                                <form action="{{route('project.destroy', $projectData->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="p-2 mt-2 text-slate-200 dark:text-slate-200 bg-red-600 rounded-lg cursor-pointer">Delete</button>
-                                                </form>
-
-                                                <button x-data x-on:click="$dispatch('close-modal')" class="p-2 mt-2 text-light-800 dark:text-slate-200 bg-slate-300 dark:bg-slate-800 rounded-lg cursor-pointer">Cancel</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                                <button x-data x-on:click="$dispatch('close-modal')" class="p-2 mt-2 text-light-800 dark:text-slate-200 bg-slate-300 dark:bg-slate-800 rounded-lg cursor-pointer">Cancel</button>
+                            </x-custom-modal>
                             @endforeach
                             @endif
 
@@ -205,51 +181,22 @@
                                     </div>
                                     <p class="text-slate-500">{{ $reviewLeft->created_at->diffForHumans() }}</p>
                                 </div>
-                                <!-- <form action="{{route('review.destroy', $reviewLeft->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="p-2 mt-2 text-slate-200 dark:text-slate-200 bg-red-600 rounded-lg cursor-pointer">Delete</button>
-                                </form> -->
-                                <button x-data x-on:click="$dispatch('open-modal')" class="p-2 mt-2 text-slate-200 dark:text-slate-200 bg-red-600 rounded-lg cursor-pointer">Delete</button>
+
+                                <x-custom-modal-button class="bg-red-600">
+                                    Delete
+                                </x-custom-modal-button>
                             </div>
 
                             <!-- modal -->
-                            <div x-data="{ show: false }" x-show="show" x-transition x-on:open-modal.window="show = true" x-on:close-modal.window="show = false" x-on:keydown.escape.window="show = false" style="display:none;" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                            <x-custom-modal title="Delete the review" message="Would you like to delete this review? The process cannot be undone." fill="fill-red-500">
+                                <form action="{{route('review.destroy', $reviewLeft->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="p-2 mt-2 text-slate-200 dark:text-slate-200 bg-red-600 rounded-lg cursor-pointer">Delete</button>
+                                </form>
 
-                                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-
-                                <div x-data x-on:click="$dispatch('close-modal')" class="fixed inset-0 z-10 w-screen overflow-y-auto">
-                                    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-
-                                        <div class="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                                            <div class="bg-white dark:bg-slate-700 dark:text-slate-200 px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                                                <div class="sm:flex sm:items-start">
-                                                    <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                                                        <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                                                        </svg>
-                                                    </div>
-                                                    <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                                                        <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-slate-200" id="modal-title">Delete the review</h3>
-                                                        <div class="mt-2">
-                                                            <p class="text-sm text-gray-500 dark:text-slate-200">Would you like to delete this reivew ? The process cannot be undone.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="bg-gray-50 dark:bg-slate-600 gap-2 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                                                <form action="{{route('review.destroy', $reviewLeft->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="p-2 mt-2 text-slate-200 dark:text-slate-200 bg-red-600 rounded-lg cursor-pointer">Delete</button>
-                                                </form>
-
-                                                <button x-data x-on:click="$dispatch('close-modal')" class="p-2 mt-2 text-light-800 dark:text-slate-200 bg-slate-300 dark:bg-slate-800 rounded-lg cursor-pointer">Cancel</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                <button x-data x-on:click="$dispatch('close-modal')" class="p-2 mt-2 text-light-800 dark:text-slate-200 bg-slate-300 dark:bg-slate-800 rounded-lg cursor-pointer">Cancel</button>
+                            </x-custom-modal>
                             @endforeach
                             @endif
                         </div>
