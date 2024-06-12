@@ -4,6 +4,7 @@
     </x-slot>
     <div class="h-screen relative flex justify-center items-center ">
         <x-back-link></x-back-link>
+
         <div class="container max-w-2xl p-4">
             <div class="mx-auto p-6 bg-slate-300 dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden"">
                 <h2 class=" text-lg font-semibold text-gray-800 dark:text-slate-200 mb-4">Add a skill</h2>

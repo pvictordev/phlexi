@@ -5,12 +5,12 @@
     <div class="h-screen relative flex justify-center items-center">
         <x-back-link></x-back-link>
 
-        <div class="container max-w-5xl p-4">
+        <div class="container max-w-2xl p-4">
             <div class="mx-auto p-6 bg-slate-300 dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
                 <h2 class="text-lg font-semibold text-gray-800 dark:text-slate-200 mb-4">Create Project</h2>
                 <form method="POST" action="{{ route('project.store') }}" accept-charset="UTF-8">
                     {{ csrf_field() }}
-
+                    @method('post')
                     <div class="mb-4">
                         <label for="title" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Title</label>
                         <input type="text" id="title" name="title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 dark:bg-slate-900 dark:border-gray-600 dark:text-slate-200 rounded-md" required>

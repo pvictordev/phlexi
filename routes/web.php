@@ -33,10 +33,6 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/blog', function () {
-    return view('blog');
-});
-
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/dashboard/freelancer', [DashboardController::class, 'freelancer'])->middleware(['auth', 'verified'])->name('freelancer');
