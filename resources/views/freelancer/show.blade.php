@@ -59,7 +59,11 @@
                     </div>
 
                     <div class="flex flex-col items-center px-6 py-4">
-                        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-32 w-32 rounded-full mx-auto mb-3">
+                        @if($freelancer->user->picture)
+                        <img src="{{ Storage::url($freelancer->user->picture) }}" alt="Profile Picture" class="h-32 w-32 object-cover rounded-full mx-auto mb-3">
+                        @else
+                        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-32 w-32 object-cover rounded-full mx-auto mb-3">
+                        @endif
                         <div class="text-center">
                             <p class="text-xl font-semibold">{{ $freelancer->user->name }}</p>
                             <p class="text-sm text-slate-500 font-medium">{{ $freelancer->niche ?? "No niche added" }}</p>

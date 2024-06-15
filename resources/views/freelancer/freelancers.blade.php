@@ -97,7 +97,11 @@
                                     <span class="absolute right-1 top-1 p-2 bg-red-500 rounded-full"></span>
                                     @endif
 
-                                    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-12 w-12 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0 sm:float-left">
+                                    @if($freelancer->user->picture)
+                                    <img src="{{ Storage::url($freelancer->user->picture) }}" alt="Profile Picture" class="h-14 w-14 object-cover rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0 sm:float-left">
+                                    @else
+                                    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-14 w-14 object-cover rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0 sm:float-left">
+                                    @endif
 
                                     <div class="flex items-baseline gap-1">
                                         <h2 class="text-xl text-slate-800 dark:text-slate-200">{{ $freelancer->user->name }}</h2>

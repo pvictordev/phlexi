@@ -13,7 +13,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
         @csrf
         @method('patch')
 
@@ -30,6 +30,23 @@
             <x-input-error class="mt-2" :messages="$errors->get('phone')" />
         </div>
 
+        <!-- picture -->
+        <div>
+            <x-input-label for="picture" :value="__('Picture')" />
+
+            <input id="picture" name="picture" type="file" class="mt-1 block w-full text-sm text-gray-900 rounded-sm cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" :value="old('picture', $user->picture)" autofocus autocomplete="picture" accept=".png, .jpg, .jpeg" onchange="previewImage(this)">
+
+            <x-input-error class="mt-2" :messages="$errors->get('picture')" />
+        </div>
+
+        <div>
+            @if($user->picture)
+            <img class="w-32 h-32 rounded-lg object-cover" src="{{ Storage::url($user->picture) }}" alt="Profile Picture" class="img-thumbnail">
+            @else
+            <img class="w-32 h-32 rounded-lg object-cover" src="https://via.placeholder.com/150" alt="Profile Picture">
+            @endif
+        </div>
+
         <div>
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
@@ -40,7 +57,7 @@
                 <p class="text-sm mt-2 text-gray-800 dark:text-gray-200">
                     {{ __('Your email address is unverified.') }}
 
-                    <button form="send-verification" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                    <button form=" send-verification" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
                         {{ __('Click here to re-send the verification email.') }}
                     </button>
                 </p>

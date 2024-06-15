@@ -66,7 +66,12 @@
                                 </div>
                             </div>
                         </div>
-                        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-24 w-24 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-1 sm:ml-0">
+                        @if(Auth::user()->picture)
+                        <img src="{{ Storage::url(Auth::user()->picture) }}" alt="Profile Picture" class="h-24 w-24 object-cover rounded-full mx-auto mb-1 sm:mb-0 sm:mr-1 sm:ml-0">
+
+                        @else
+                        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-24 w-24 object-cover rounded-full mx-auto mb-1 sm:mb-0 sm:mr-1 sm:ml-0">
+                        @endif
                         <div class="text-center ">
                             <p class="text-xl font-semibold">{{$userData['name']}}</p>
                             <p class="text-sm font-medium">{{$userData['email']}}</p>

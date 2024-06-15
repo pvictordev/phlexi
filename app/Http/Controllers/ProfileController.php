@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
+use Illuminate\Support\Facades\Storage;
+
 class ProfileController extends Controller
 {
     /**
@@ -18,6 +20,7 @@ class ProfileController extends Controller
     {
         return view('profile.edit', [
             'user' => $request->user(),
+
         ]);
     }
 
@@ -26,8 +29,26 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
+        $validatedData = $request->validated();
+        $input = $request->all();
 
-        $request->user()->fill($request->validated());
+        if ($request->hasFile('picture')) {
+            $request->validate([
+                'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
+
+            // Delete the old picture if it exists
+            if ($request->user()->picture) {
+                Storage::delete($request->user()->picture);
+            }
+
+            $path = $request->file('picture')->store('public/images');
+            $validatedData['picture'] = $path;
+        }
+
+        // Fill the user model with validated data
+        $request->user()->fill($validatedData);
+
 
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
