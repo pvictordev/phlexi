@@ -26,8 +26,6 @@ class FreelancerController extends Controller
         ]);
     }
 
-
-    // optimize and symplify this method in order to get the related table User, from Freelancer, without having the need to fetch both tables directly
     public function show($id)
     {
         $freelancer = Freelancer::with('user')->where('freelancer_id', $id)->firstOrFail();
@@ -61,6 +59,6 @@ class FreelancerController extends Controller
         $freelancer->save();
 
         // Redirect to the dashboard or any other page
-        return redirect('/dashboard/freelancer');
+        return redirect('/dashboard/freelancer')->with('success', 'Freelancer info successfully updated');
     }
 }

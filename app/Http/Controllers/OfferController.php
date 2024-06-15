@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Freelancer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Offer;
 use App\Models\Project;
+use App\Models\User;
 
 class OfferController extends Controller
 {
@@ -17,7 +19,9 @@ class OfferController extends Controller
         $client = Auth::id();
         $offers = Offer::where('client_id', $client)->where('response', 0)->get();
 
-        return view('offer.show', ['offers' => $offers]);
+        return view('offer.show', [
+            'offers' => $offers,
+        ]);
     }
 
     // show the offers from the freelancers that are accepted to the freelancer
@@ -49,7 +53,7 @@ class OfferController extends Controller
 
         $offer->save();
 
-        return redirect('/market/all');
+        return redirect('/market/all')->with('success', 'Offer successfully submitted');
     }
 
     // accept the offer as a client
@@ -64,7 +68,7 @@ class OfferController extends Controller
         $offer->response = intval($request->choice);
         $offer->save();
 
-        return redirect('/dashboard/client');
+        return redirect('/dashboard/client')->with('success', 'Offer successfully accepted.');
     }
     public function destroy()
     {

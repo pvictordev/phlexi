@@ -39,8 +39,8 @@
                     <div class="mb-4">
                         <label for="status" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Status</label>
                         <select id="status" name="status" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white dark:bg-slate-900 dark:border-gray-600 dark:text-slate-200 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                            <option value="active">Active</option>
-                            <option value="closed">Closed</option>
+                            <option value="1">Active</option>
+                            <option value="0">Closed</option>
                         </select>
                     </div>
 

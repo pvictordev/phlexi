@@ -3,6 +3,7 @@
         Offers Received
     </x-slot>
 
+    @include('components.flash-alert')
     <div class="h-screen relative flex flex-col justify-center items-center">
         <x-back-link></x-back-link>
 
@@ -17,8 +18,14 @@
             @else
             @foreach ($offers as $offer)
             <div class="flex items-start p-2 flex-col bg-slate-200 dark:bg-slate-900 rounded-lg shadow-lg">
-                <h2 class="text-slate-800 px-2 py-1 dark:slate-800">{{ $offer->project->title }}</h2>
-                <p class="text-slate-400 p-2 dark:slate-800">{{ $offer->description }}</p>
+                <h2 class="text-slate-800 text-xl px-2 py-1 dark:slate-800">{{ $offer->project->title }}</h2>
+                <p class="text-slate-500 p-2 dark:slate-800">Offered by
+                    <a class="font-bold hover:underline" href="/freelancers/{{ $offer->freelancer_id }}">
+                        this
+                    </a>
+                    user
+                </p>
+                <p class="text-slate-500 p-2 dark:slate-800">{{ $offer->description }}</p>
                 <x-custom-modal-button class="bg-green-600">
                     Accept
                 </x-custom-modal-button>

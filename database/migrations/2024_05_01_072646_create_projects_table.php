@@ -26,7 +26,7 @@ return new class extends Migration
 
             $table->bigInteger('price');
 
-            $table->string('status');
+            $table->boolean('status')->default(1);
 
             $table->string('title');
 

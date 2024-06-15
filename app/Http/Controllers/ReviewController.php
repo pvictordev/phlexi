@@ -36,7 +36,7 @@ class ReviewController extends Controller
 
         $review->save();
 
-        return redirect('/dashboard/client');
+        return redirect('/dashboard/client')->with('success', 'Review successfully created.');
     }
 
     public function edit($id)
@@ -60,12 +60,12 @@ class ReviewController extends Controller
 
         $review->save();
 
-        return redirect('/dashboard/client');
+        return redirect('/dashboard/client')->with('success', 'Reivew successfully updated.');
     }
 
     public function destroy($id)
     {
         Review::where('id', $id)->delete();
-        return redirect('/dashboard/client');
+        return redirect('/dashboard/client')->with('success', 'Review successfully removed.');
     }
 }

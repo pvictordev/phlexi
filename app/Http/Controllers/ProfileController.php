@@ -20,7 +20,6 @@ class ProfileController extends Controller
     {
         return view('profile.edit', [
             'user' => $request->user(),
-
         ]);
     }
 
@@ -57,7 +56,7 @@ class ProfileController extends Controller
         $request->user()->save();
 
         //return Redirect::route('profile.edit')->with('status', 'profile-updated');
-        return Redirect::route('dashboard')->with('status', 'profile-updated');
+        return Redirect::route('dashboard')->with('status', 'profile-updated')->with('success', 'Profile successfully updated.');
     }
 
     /**
@@ -78,6 +77,6 @@ class ProfileController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return Redirect::to('/');
+        return Redirect::to('/')->with('success', 'Profile successfully deleted.');
     }
 }

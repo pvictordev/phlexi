@@ -3,8 +3,8 @@
         Market
     </x-slot>
     <x-nav-custom></x-nav-custom>
-    <main class="" x-data="{ mobileFiltersOpen: false, menuOpen: false, sortMenuOpen:false }">
-
+    <main class="pt-5" x-data="{ mobileFiltersOpen: false, menuOpen: false, sortMenuOpen:false }">
+        @include('components.flash-alert')
         <div class="bg-white dark:bg-slate-800">
             <div>
 

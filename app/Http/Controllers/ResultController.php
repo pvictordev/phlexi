@@ -49,7 +49,7 @@ class ResultController extends Controller
         $result->description = $request->description;
         $result->save();
 
-        return redirect('/dashboard/freelancer');
+        return redirect('/dashboard/freelancer')->with('success', 'Result successfully submitted.');
     }
     public function edit()
     {
@@ -65,11 +65,11 @@ class ResultController extends Controller
         // close the project if the result is accepted
         $project = new Project();
         $project = Project::find($result->project_id);
-        $project->status = 'closed';
+        $project->status = 0;
         $project->save();
 
         $result->save();
 
-        return redirect("/review/{$id}/create");
+        return redirect("/review/{$id}/create")->with('success', 'Result successfully accepted.');
     }
 }

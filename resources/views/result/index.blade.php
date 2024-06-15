@@ -17,9 +17,16 @@
             @else
             @foreach ($results as $result)
             <div class="min-h-24 flex items-start p-2 flex-col bg-slate-200 dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden">
-                <h2 class="text-slate-800 px-2 py-1 dark:slate-800">{{ $result->project->title }}</h2>
+                <h2 class="text-slate-800 text-xl px-2 py-1 dark:slate-800">{{ $result->project->title }}</h2>
 
-                <p class="text-slate-400 p-2 dark:slate-800">{{ $result->description }}</p>
+                <p class="text-slate-500 p-2 dark:slate-800">Result submitted by
+                    <a class="font-bold hover:underline" href="/freelancers/{{ $result->freelancer_id }}">
+                        this
+                    </a>
+                    user
+                </p>
+
+                <p class="text-slate-500 p-2 dark:slate-800">{{ $result->description }}</p>
 
                 <x-custom-modal-button class="bg-green-600">
                     Accept

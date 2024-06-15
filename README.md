@@ -31,7 +31,7 @@ At this point, we've transferred the business idea from our core PHP project int
 ### Tech Stack:
 - **Laravel**: A PHP framework for building web applications.
 - **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
-- **Livewire**: A full-stack framework for Laravel that makes building dynamic interfaces.
+- **Livewire**: A full-stack framework for building UI and UX.
 - **MySQL**: An open-source relational database management system.
 
 ### Functionality: 

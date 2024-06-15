@@ -4,6 +4,7 @@
     </x-slot>
     <div class="h-screen relative flex justify-center items-center ">
         <x-back-link></x-back-link>
+        @include('components.flash-alert')
 
         <div class="container max-w-2xl p-4">
             <div class="mx-auto p-6 bg-slate-300 dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">

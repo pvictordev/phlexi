@@ -4,7 +4,7 @@
     </x-slot>
     <x-nav-custom></x-nav-custom>
 
-    <main x-data="{ mobileFiltersOpen: false, menuOpen: false, sortMenuOpen:false }">
+    <main class="pt-5" x-data="{ mobileFiltersOpen: false, menuOpen: false, sortMenuOpen:false }">
 
         <div class="bg-white dark:bg-slate-800">
             <div>

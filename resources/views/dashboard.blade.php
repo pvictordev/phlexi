@@ -6,7 +6,9 @@
 
     <x-nav-custom></x-nav-custom>
 
-    <main class="py-24">
+    <main class="py-28">
+        @include('components.flash-alert')
+
         <div class="max-w-7xl mx-auto sm:p-6 lg:p-8">
             <div class="mx-auto p-4">
                 <div class="border-2 border-gray-200 mx-auto rounded-lg shadow-lg overflow-hidden  dark:text-slate-200 bg-slate-200 dark:bg-slate-700">

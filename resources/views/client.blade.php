@@ -6,7 +6,9 @@
 
     <x-nav-custom></x-nav-custom>
 
-    <main class="py-24">
+    <main class="py-28">
+        @include('components.flash-alert')
+
         <div class="max-w-7xl mx-auto sm:p-6 lg:p-8">
             <div class="mx-auto p-4">
                 <div class="border-2 border-gray-200 mx-auto rounded-lg shadow-lg overflow-hidden  dark:text-slate-200 bg-slate-200 dark:bg-slate-700">
@@ -104,7 +106,7 @@
                                         <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path>
                                     </svg>
                                 </a>
-                                @if($projectData->status == 'active')
+                                @if($projectData->status == true)
                                 <span class="absolute right-1 top-1 p-2 bg-green-500 rounded-full"></span>
                                 @else
                                 <span class="absolute right-1 top-1 p-2 bg-red-500 rounded-full"></span>

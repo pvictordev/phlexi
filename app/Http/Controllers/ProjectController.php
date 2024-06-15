@@ -18,7 +18,7 @@ class ProjectController extends Controller
     {
         // show all the projects
         $categories = Category::all();
-        $projects = Project::where('status', 'active')->get();
+        $projects = Project::where('status', 1)->get();
         return view('market', [
             'projects' => $projects,
             'categories' => $categories
@@ -57,12 +57,11 @@ class ProjectController extends Controller
         $project->title = $request->title;
         $project->description = $request->description;
         $project->price = $request->price;
-        $project->status = $request->status;
 
         // Save the project
         $project->save();
 
-        return redirect('/dashboard/client');
+        return redirect('/dashboard/client')->with('success', 'Project successfully created.');
     }
 
     // view method
@@ -87,17 +86,17 @@ class ProjectController extends Controller
         $project->category_id = intval($request->category_id);
         $project->client_id = $client;
         $project->price = $request->price;
-        $project->status = $request->status;
+        $project->status = intval($request->status);
         $project->title = $request->title;
         $project->description = $request->description;
 
         $project->save();
 
-        return redirect('/dashboard/client');
+        return redirect('/dashboard/client')->with('success', 'Project successfully updated.');
     }
     public function destroy($id)
     {
         Project::where('id', $id)->delete();
-        return redirect('/dashboard/client');
+        return redirect('/dashboard/client')->with('success', 'Project successfully deleted.');
     }
 }
