@@ -43,14 +43,14 @@
 
             <!-- picture preview -->
             <div>
-                <img :src="imageSource" class="w-32 h-32 rounded-lg object-cover" alt="Profile Picture" class="img-thumbnail">
+                <img :src="imageSource" class="w-32 h-32 rounded-lg object-cover border-2 border-slate-400" alt="Profile Picture" class="img-thumbnail">
             </div>
         </div>
 
         <script>
             function imagePreview() {
                 return {
-                    imageSource: "{{$user->picture ? Storage::url($user->picture) : 'https: //via.placeholder.com/150'}}",
+                    imageSource: "{{$user->picture ? Storage::url($user->picture) : 'https://via.placeholder.com/150'}}",
                     updatePreview(event) {
                         const file = event.target.files[0];
                         if (file) {
