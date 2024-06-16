@@ -31,21 +31,39 @@
         </div>
 
         <!-- picture -->
-        <div>
-            <x-input-label for="picture" :value="__('Picture')" />
+        <div class="flex flex-col gap-3" x-data="imagePreview()">
+            <!-- picture insert -->
+            <div>
+                <x-input-label for="picture" :value="__('Picture')" />
 
-            <input id="picture" name="picture" type="file" class="mt-1 block w-full text-sm text-gray-900 rounded-sm cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" :value="old('picture', $user->picture)" autofocus autocomplete="picture" accept=".png, .jpg, .jpeg" onchange="previewImage(this)">
+                <input id="picture" name="picture" type="file" class="mt-1 block w-full text-sm text-gray-900 rounded-sm cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" accept=".png, .jpg, .jpeg" @change="updatePreview">
 
-            <x-input-error class="mt-2" :messages="$errors->get('picture')" />
+                <x-input-error class="mt-2" :messages="$errors->get('picture')" />
+            </div>
+
+            <!-- picture preview -->
+            <div>
+                <img :src="imageSource" class="w-32 h-32 rounded-lg object-cover" alt="Profile Picture" class="img-thumbnail">
+            </div>
         </div>
 
-        <div>
-            @if($user->picture)
-            <img class="w-32 h-32 rounded-lg object-cover" src="{{ Storage::url($user->picture) }}" alt="Profile Picture" class="img-thumbnail">
-            @else
-            <img class="w-32 h-32 rounded-lg object-cover" src="https://via.placeholder.com/150" alt="Profile Picture">
-            @endif
-        </div>
+        <script>
+            function imagePreview() {
+                return {
+                    imageSource: "{{$user->picture ? Storage::url($user->picture) : 'https: //via.placeholder.com/150'}}",
+                    updatePreview(event) {
+                        const file = event.target.files[0];
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onload = (e) => {
+                                this.imageSource = e.target.result;
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    }
+                }
+            }
+        </script>
 
         <div>
             <x-input-label for="email" :value="__('Email')" />

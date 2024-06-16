@@ -5,6 +5,8 @@
     </x-slot>
     <main>
         <div class="flex flex-col items-center justify-center">
+            @include('components.flash-alert')
+
             <section class="container h-screen flex items-center justify-center">
                 <div class="max-w-7xl p-4 flex items-center justify-center max-md:flex-col-reverse">
                     <div class="flex flex-col max-md:items-center">

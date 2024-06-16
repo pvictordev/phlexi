@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 
 // get the authenticated freelancer
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 
 class FreelancerController extends Controller
 {
