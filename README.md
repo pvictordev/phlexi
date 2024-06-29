@@ -1,6 +1,6 @@
 # Software Academy Project
 
-## Freelance Services Platform
+## Phlexi - Freelance Services Platform
 
 This project represents a Freelance Services Platform built during the training program at Software Academy. Each stage of the project has its own version, allowing you to track its progress with each step.
 
@@ -23,7 +23,7 @@ At this stage, we created the database for the application. Subsequently, we dev
 
 ### Stage #5 (Laravel)
 
-At this point, we've transferred the business idea from our core PHP project into a new Laravel project. Here, we've redesigned the previous layout using Tailwind CSS to create a more modern design. In addition, we implemented new features such as localization and sending password reset via email and added a dynamic modal component with Livewire and some static components in order to meet the final project requirments. We have also developed a feature that allows freelancers to join projects posted by clients and submit results for those projects. Clients can then accept or decline these results. As part of this feature, we built custom middleware to ensure consistency and security. Another built-in feature allows clients to leave a review for the freelancer's work after accepting the project result. These reviews can be displayed on both the freelancer's and the client's pages. For the freelancer, this feature showcases their work, while for the client, it allows them to modify or remove the review. A new implementation of the old idea was to separate the client and freelancer page in order to make the actions performed for the specific role more organized. Finally we provisioned infrastructure and deployed this project to the cloud using railway service. 
+At this point, we've transferred the business idea from our core PHP project into a new Laravel project. Here, we've redesigned the previous layout using Tailwind CSS to create a more modern design. In addition, we implemented new features such as localization and imporived log in system by adding password reset via email and remember me feature, added a dynamic modal component with Livewire and some static components in order to meet the final project requirments. We have also developed a feature that allows freelancers to join projects posted by clients and submit results for those projects. Clients can then accept or decline these results. As part of this feature, we built custom middleware to ensure consistency and security. Another built-in feature allows clients to leave a review for the freelancer's work after accepting the project result. These reviews can be displayed on both the freelancer's and the client's pages. For the freelancer, this feature showcases their work, while for the client, it allows them to modify or remove the review. A new implementation of the old idea was to separate the client and freelancer page in order to make the actions performed for the specific role more organized. Finally we provisioned infrastructure and deployed this project to the cloud using railway service. 
 
 
 ## Final Project Details

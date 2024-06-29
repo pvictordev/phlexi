@@ -77,9 +77,6 @@
                         <div class="text-center ">
                             <p class="text-xl font-semibold">{{$userData['name']}}</p>
                             <p class="text-sm font-medium">{{$userData['email']}}</p>
-                            <!-- <div class="mt-4 absolute top-0 left-2">
-                                <a href="/profile" class="text-xs font-semibold bg-gray-300 dark:bg-slate-200 dark:text-slate-800 rounded-full px-4 py-2 leading-none inline-block text-gray-700 mr-2">Edit Profile</a>
-                            </div> -->
                         </div>
                     </div>
 
