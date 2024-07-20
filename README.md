@@ -1,6 +1,6 @@
-# Software Academy Project
+# Phlexi - Freelance Services Platform
 
-## Phlexi - Freelance Services Platform
+## Software Academy Project 
 
 This project represents a Freelance Services Platform built during the training program at Software Academy. Each stage of the project has its own version, allowing you to track its progress with each step.
 
