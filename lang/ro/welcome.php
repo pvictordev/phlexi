@@ -29,7 +29,7 @@ return [
         'users_title' => 'Utilizatori noi anual',
         'users_value' => '46.000',
     ],
-    'Faceți cunoștință cu conducerea noastră',
+    'leadership' => 'Faceți cunoștință cu conducerea noastră',
     'partners' => 'De încredere pentru cele mai inovatoare echipe din lume',
     'faq' => [
         'title' => 'Întrebări frecvente',
