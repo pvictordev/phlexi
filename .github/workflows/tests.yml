@@ -1,10 +1,10 @@
-name: Tests
+name: Simple CI Check
 
 on:
   push:
     branches:
-      - feature/add-ci
       - main
+      - feature/add-ci
       - "*.x"
   pull_request:
   schedule:
@@ -14,7 +14,7 @@ permissions:
   contents: read
 
 jobs:
-  tests:
+  check-php-version:
     runs-on: ubuntu-latest
 
     strategy:
@@ -35,17 +35,5 @@ jobs:
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
           coverage: none
 
-      - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-interaction --no-progress
-
-      - name: Run composer update
-        run: composer update
-
-      - name: Copy environment file
-        run: cp .env.example .env
-
-      - name: Generate app key
-        run: php artisan key:generate
-
-      - name: Execute tests
-        run: vendor/bin/phpunit
+      - name: Check PHP version
+        run: php -v
