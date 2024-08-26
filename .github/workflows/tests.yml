@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - feature/add-ci
       - "*.x"
   pull_request:
   schedule:
