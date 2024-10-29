@@ -40,30 +40,37 @@ class OfferController extends Controller
     }
     public function store(Request $request, $id)
     {
-        $freelancer = Auth::id();
+        $request->validate([
+            'description' => 'required|string|max:255', 
+        ]);
 
-        $project = Project::find($id);
-        // $client = $project->client_id;
+        $freelancer = Auth::id();
+        $project = Project::findOrFail($id); 
         $client = User::findOrFail($project->client_id);
         $freelancerId = User::findOrFail($freelancer);
-        $offer = new Offer();
 
+        $offer = new Offer();
         $offer->project_id = $id;
-        $offer->client_id = $client;
-        $offer->freelancer_id = $freelancer;
+        $offer->client_id = $client->id; 
+        $offer->freelancer_id = $freelancer; 
         $offer->description = $request->description;
 
         try {
-        $client->notify(new ProjectOffered($freelancerId, $project));
-        // echo 'Notification sent successfully!<br>'; 
+            $client->notify(new ProjectOffered($freelancerId, $project));
         } catch (\Exception $e) {
-            echo 'Notification error: ' . $e->getMessage() . '<br>'; 
+            Log::error('Notification error: ' . $e->getMessage());
+            return redirect('/market/all')->with('error', 'Failed to send notification: ' . $e->getMessage());
         }
 
-        $offer->save();
-
-        return redirect('/market/all')->with('success', 'Offer successfully submitted');
+        try {
+            $offer->save(); // Save the offer
+            return redirect('/market/all')->with('success', 'Offer successfully submitted');
+        } catch (\Exception $e) {
+            Log::error('Offer save error: ' . $e->getMessage());
+            return redirect('/market/all')->with('error', 'Failed to submit offer: ' . $e->getMessage());
+        }
     }
+
 
     // accept the offer as a client
     public function edit($id)
