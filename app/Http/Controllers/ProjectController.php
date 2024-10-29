@@ -24,7 +24,7 @@ class ProjectController extends Controller
             'categories' => $categories
         ]);
     }
-    // show projects of a prticular category 
+    // show projects of a particular category 
     public function category($id)
     {
         $categories = Category::all();

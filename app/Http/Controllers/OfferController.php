@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Freelancer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Offer;
 use App\Models\Project;
 use App\Models\User;
+use App\Notifications\ProjectOffered;
+use Illuminate\Support\Facades\Log;
 
 class OfferController extends Controller
 {
@@ -42,14 +43,22 @@ class OfferController extends Controller
         $freelancer = Auth::id();
 
         $project = Project::find($id);
-        $client = $project->client_id;
-
+        // $client = $project->client_id;
+        $client = User::findOrFail($project->client_id);
+        $freelancerId = User::findOrFail($freelancer);
         $offer = new Offer();
 
         $offer->project_id = $id;
         $offer->client_id = $client;
         $offer->freelancer_id = $freelancer;
         $offer->description = $request->description;
+
+        try {
+        $client->notify(new ProjectOffered($freelancerId, $project));
+        // echo 'Notification sent successfully!<br>'; 
+        } catch (\Exception $e) {
+            echo 'Notification error: ' . $e->getMessage() . '<br>'; 
+        }
 
         $offer->save();
 

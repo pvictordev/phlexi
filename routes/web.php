@@ -58,6 +58,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/freelancer/{id}/edit', [FreelancerController::class, 'update'])->name('freelancer.update');
 
     Route::get('/market/all', [ProjectController::class, 'index']);
+
     // show a specific category of projects
     Route::get('/market/{id}', [ProjectController::class, 'category'])->name('market.category');
 
@@ -74,7 +75,7 @@ Route::middleware('auth')->group(function () {
 
     // see the accepted offers
     // user should only see this as a freelancer
-    Route::get('/offers/accepted', [OfferController::class, 'accepted'])->name('offer.accepted');
+    Route::get('/offers/acceptfeed', [OfferController::class, 'accepted'])->name('offer.accepted');
 
     //see all the results
     Route::get('/results', [ResultController::class, 'index'])->name('result.index');
