@@ -9,6 +9,7 @@ use App\Models\Project;
 use App\Models\Offer;
 use App\Models\Review;
 use App\Models\Result;
+use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -23,7 +24,7 @@ class DashboardController extends Controller
             'phone' => $user->phone,
             'bio' => $user->bio
         ];
-
+        
         $freelancer = Freelancer::where('freelancer_id', $userId)->first();
         $freelancerData = [
             'freelancer_id' => $userId,
