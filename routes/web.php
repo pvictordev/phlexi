@@ -75,7 +75,7 @@ Route::middleware('auth')->group(function () {
 
     // see the accepted offers
     // user should only see this as a freelancer
-    Route::get('/offers/acceptfeed', [OfferController::class, 'accepted'])->name('offer.accepted');
+    Route::get('/offers/accepted', [OfferController::class, 'accepted'])->name('offer.accepted');
 
     //see all the results
     Route::get('/results', [ResultController::class, 'index'])->name('result.index');
