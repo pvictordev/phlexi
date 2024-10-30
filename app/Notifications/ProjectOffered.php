@@ -45,7 +45,7 @@ class ProjectOffered extends Notification
             ->subject('New Bid on Your Project')
             ->greeting('Hello ' . $notifiable->name . '!')
             ->line("{$this->freelancer->name} has placed a bid on your project titled: '{$this->project->title}'.")
-            ->action('View Project', url("/dashboard/client"))
+            ->action('View Project', url("/offers/received"))
             ->line('Thank you for using our platform!');
     }
 

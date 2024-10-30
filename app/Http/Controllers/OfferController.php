@@ -56,6 +56,7 @@ class OfferController extends Controller
         $offer->freelancer_id = $freelancer; 
         $offer->description = $request->description;
 
+        // notify the client about that a freelancer has bid on his project
         try {
             $client->notify(new ProjectOffered($freelancerId, $project));
         } catch (\Exception $e) {
@@ -86,6 +87,7 @@ class OfferController extends Controller
         $project = Project::findOrFail($offer->project_id); 
         $freelancer = User::findOrFail($offer->freelancer_id); 
 
+        // notify the freelancer if the client accepted his bid on the project
         $freelancer->notify(new ProjectAccepted($offer, $offer->response));
 
         return redirect('/dashboard/client')->with('success', 'Offer response successfully updated and freelancer notified.');
