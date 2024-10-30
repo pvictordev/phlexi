@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use App\Models\Offer;
 use App\Models\Project;
 use App\Models\Result;
+use App\Models\User;
+
+use App\Notifications\ResultSubmitted;
 use Illuminate\Support\Facades\Auth;
 
 class ResultController extends Controller
@@ -28,29 +31,56 @@ class ResultController extends Controller
         return view('result.success', ['results' => $results]);
     }
 
-    // create the result
+    // create the result page
     public function create($id)
     {
         return view('result.create');
     }
+
+    //// create the result
+    // public function store(Request $request, $id)
+    // {
+    //     // offer id is the $id
+    //     $client = Offer::where('id', $id)->firstOrfail();
+    //     $freelancer = Auth::id();
+    //     $project = $client->project_id;
+
+    //     $result = new Result();
+
+    //     $result->offer_id = $id;
+    //     $result->project_id = $project;
+    //     $result->freelancer_id = $freelancer;
+    //     $result->client_id = $client->client_id;
+    //     $result->description = $request->description;
+    //     $result->save();
+
+    //     return redirect('/dashboard/freelancer')->with('success', 'Result successfully submitted.');
+    // }
     public function store(Request $request, $id)
     {
-        // offer id is the $id
-        $client = Offer::where('id', $id)->firstOrfail();
+        $offer = Offer::findOrFail($id); 
+        $client = User::findOrFail($offer->client_id);
         $freelancer = Auth::id();
-        $project = $client->project_id;
+        $project = $offer->project_id;
 
+        // Create the result
         $result = new Result();
-
         $result->offer_id = $id;
         $result->project_id = $project;
         $result->freelancer_id = $freelancer;
-        $result->client_id = $client->client_id;
+        $result->client_id = $client->id;
         $result->description = $request->description;
+
+        //
+
+        $client->notify(new ResultSubmitted($result));
+
+        echo 'result created and maybe notif received'; 
         $result->save();
 
-        return redirect('/dashboard/freelancer')->with('success', 'Result successfully submitted.');
+        return redirect('/dashboard/freelancer')->with('success', 'Result successfully submitted and client notified.');
     }
+
     public function edit()
     {
         return view('result.edit');
