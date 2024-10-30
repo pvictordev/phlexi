@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\Offer;
 use App\Models\Result;
 use App\Models\Review;
+use App\Models\User;
+use App\Notifications\ReviewSubmitted;
 use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
@@ -16,16 +18,38 @@ class ReviewController extends Controller
     {
         return view('review.create');
     }
+
+    // public function store($id, Request $request)
+    // {
+    //     $review = new Review();
+
+    //     // get the current project on which the review is left, and the freelancer who built the result and received the review
+    //     $result = new Result();
+    //     $result = Result::find($id);
+    //     $offer_id = $result->offer_id;
+    //     $offer = new Offer();
+    //     $offer = Offer::find($offer_id);
+
+    //     $review->description = $request->description;
+    //     $review->rating = $request->rating;
+    //     $review->result_id = $id;
+    //     $review->freelancer_id = $offer->freelancer_id;
+    //     $review->client_id = $offer->client_id;
+    //     $review->project_id = $offer->project_id;
+
+    //     $review->save();
+
+    //     return redirect('/dashboard/client')->with('success', 'Review successfully created.');
+    // }
+
     public function store($id, Request $request)
     {
         $review = new Review();
 
-        // get the current project on which the review is left, and the freelancer who built the result and received the review
-        $result = new Result();
-        $result = Result::find($id);
-        $offer_id = $result->offer_id;
-        $offer = new Offer();
-        $offer = Offer::find($offer_id);
+        $result = Result::findOrFail($id); 
+
+        $offer = Offer::findOrFail($result->offer_id); 
+        $freelancer = User::findOrFail($offer->freelancer_id);
 
         $review->description = $request->description;
         $review->rating = $request->rating;
@@ -34,9 +58,11 @@ class ReviewController extends Controller
         $review->client_id = $offer->client_id;
         $review->project_id = $offer->project_id;
 
+        $freelancer->notify(new ReviewSubmitted($review));
+
         $review->save();
 
-        return redirect('/dashboard/client')->with('success', 'Review successfully created.');
+        return redirect('/dashboard/client')->with('success', 'Review successfully created and freelancer notified.');
     }
 
     public function edit($id)
