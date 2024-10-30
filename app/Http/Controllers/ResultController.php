@@ -9,7 +9,7 @@ use App\Models\Offer;
 use App\Models\Project;
 use App\Models\Result;
 use App\Models\User;
-
+use App\Notifications\ResultAccepted;
 use App\Notifications\ResultSubmitted;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,25 +37,7 @@ class ResultController extends Controller
         return view('result.create');
     }
 
-    //// create the result
-    // public function store(Request $request, $id)
-    // {
-    //     // offer id is the $id
-    //     $client = Offer::where('id', $id)->firstOrfail();
-    //     $freelancer = Auth::id();
-    //     $project = $client->project_id;
-
-    //     $result = new Result();
-
-    //     $result->offer_id = $id;
-    //     $result->project_id = $project;
-    //     $result->freelancer_id = $freelancer;
-    //     $result->client_id = $client->client_id;
-    //     $result->description = $request->description;
-    //     $result->save();
-
-    //     return redirect('/dashboard/freelancer')->with('success', 'Result successfully submitted.');
-    // }
+    // create the result
     public function store(Request $request, $id)
     {
         $offer = Offer::findOrFail($id); 
@@ -85,21 +67,41 @@ class ResultController extends Controller
     {
         return view('result.edit');
     }
+
+    // public function update($id, Request $request)
+    // {
+    //     $result = new Result();
+    //     // accept a certain result, add the status of done 
+    //     $result = Result::find($id);
+    //     $result->status = intval($request->choice);
+
+    //     // close the project if the result is accepted
+    //     $project = new Project();
+    //     $project = Project::find($result->project_id);
+    //     $project->status = 0;
+    //     $project->save();
+
+    //     $result->save();
+
+    //     return redirect("/review/{$id}/create")->with('success', 'Result successfully accepted.');
+    // }
     public function update($id, Request $request)
     {
-        $result = new Result();
-        // accept a certain result, add the status of done 
-        $result = Result::find($id);
+        $result = Result::findOrFail($id);
+        $freelancer = User::findOrFail($result->freelancer_id);
         $result->status = intval($request->choice);
-
-        // close the project if the result is accepted
-        $project = new Project();
-        $project = Project::find($result->project_id);
-        $project->status = 0;
-        $project->save();
-
         $result->save();
 
-        return redirect("/review/{$id}/create")->with('success', 'Result successfully accepted.');
+        if ($result->status === 1) {
+            $project = Project::findOrFail($result->project_id);
+            $freelancer->notify(new ResultAccepted($result));
+
+            echo 'the notification was sent';
+            
+            $project->status = 0;
+            $project->save();
+        }
+
+        return redirect("/review/{$id}/create")->with('success', 'Result response successfully updated and freelancer notified.');
     }
 }

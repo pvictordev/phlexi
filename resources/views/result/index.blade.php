@@ -41,6 +41,13 @@
                     <button class="p-2 mt-2 text-slate-200 dark:text-slate-200 bg-green-600 rounded-lg cursor-pointer">Accept</button>
                 </form>
 
+                 <form action="{{ route('result.edit', $result->id )}}" method="POST">
+                    @csrf
+                    @method('patch')
+                    <input type="hidden" value="0" name="choice">
+                    <button class="p-2 mt-2 text-slate-200 dark:text-slate-200 bg-red-600 rounded-lg cursor-pointer">Decline</button>
+                </form>
+
                 <button x-data x-on:click="$dispatch('close-modal')" class="p-2 mt-2 text-light-800 dark:text-slate-200 bg-slate-300 dark:bg-slate-800 rounded-lg cursor-pointer">Cancel</button>
             </x-custom-modal>
             @endforeach
