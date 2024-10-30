@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Offer;
 use App\Models\Project;
 use App\Models\User;
+use App\Notifications\ProjectAccepted;
 use App\Notifications\ProjectOffered;
 use Illuminate\Support\Facades\Log;
 
@@ -71,7 +72,6 @@ class OfferController extends Controller
         }
     }
 
-
     // accept the offer as a client
     public function edit($id)
     {
@@ -79,12 +79,16 @@ class OfferController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $offer = new Offer();
-        $offer = Offer::find($id);
+        $offer = Offer::findOrFail($id);
         $offer->response = intval($request->choice);
         $offer->save();
 
-        return redirect('/dashboard/client')->with('success', 'Offer successfully accepted.');
+        $project = Project::findOrFail($offer->project_id); 
+        $freelancer = User::findOrFail($offer->freelancer_id); 
+
+        $freelancer->notify(new ProjectAccepted($offer, $offer->response));
+
+        return redirect('/dashboard/client')->with('success', 'Offer response successfully updated and freelancer notified.');
     }
     public function destroy()
     {

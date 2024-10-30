@@ -3,27 +3,26 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use App\Models\Project;
-use App\Models\User;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use App\Models\Offer;
 
-class ProjectOffered extends Notification
+class ProjectAccepted extends Notification
 {
     use Queueable;
+    protected $offer;
+    protected $response;
 
-    protected $project;
-    protected $freelancer;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct(User $freelancer, Project $project)
+    public function __construct(Offer $offer, $response)
     {
         //
-        $this->project = $project;
-        $this->freelancer = $freelancer;
-
+        $this->offer = $offer;
+        $this->response = $response;
     }
 
     /**
@@ -41,12 +40,14 @@ class ProjectOffered extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-        return (new MailMessage)
-            ->subject('New Bid on Your Project')
-            ->greeting('Hello ' . $notifiable->name . '!')
-            ->line("{$this->freelancer->name} has placed a bid on your project titled: '{$this->project->title}'.")
-            ->action('View Project', url("/dashboard/client"))
-            ->line('Thank you for using our platform!');
+          $status = $this->response ? 'accepted' : 'declined';
+          
+           return (new MailMessage)
+                ->subject('Response to Your Offer')
+                ->greeting('Hello!')
+                ->line("Your offer for the project '{$this->offer->project->title}' has been {$status}.")
+                ->action('View Project', url('/dashboard/freelancer'))
+                ->line('Thank you for using our platform!');
     }
 
     /**
