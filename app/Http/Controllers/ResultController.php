@@ -53,8 +53,6 @@ class ResultController extends Controller
         $result->client_id = $client->id;
         $result->description = $request->description;
 
-        //
-
         $client->notify(new ResultSubmitted($result));
 
         echo 'result created and maybe notif received'; 
@@ -68,23 +66,6 @@ class ResultController extends Controller
         return view('result.edit');
     }
 
-    // public function update($id, Request $request)
-    // {
-    //     $result = new Result();
-    //     // accept a certain result, add the status of done 
-    //     $result = Result::find($id);
-    //     $result->status = intval($request->choice);
-
-    //     // close the project if the result is accepted
-    //     $project = new Project();
-    //     $project = Project::find($result->project_id);
-    //     $project->status = 0;
-    //     $project->save();
-
-    //     $result->save();
-
-    //     return redirect("/review/{$id}/create")->with('success', 'Result successfully accepted.');
-    // }
     public function update($id, Request $request)
     {
         $result = Result::findOrFail($id);
