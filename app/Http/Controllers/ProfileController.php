@@ -49,7 +49,8 @@ class ProfileController extends Controller
 
             //! Generate the full S3 `URL`
             // * fix the error
-            $validatedData['picture'] = Storage::disk('s3')->url($filePath);
+            // $validatedData['picture'] = Storage::disk('s3')->url($filePath);
+            $validatedData['picture'] = $filePath;
         }
 
         //! Fill the user model with validated data
