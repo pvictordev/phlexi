@@ -114,7 +114,6 @@ class ProjectController extends Controller
         $projects = Cache::remember('projects', 3600, function () {
             return Project::where('status', 1)->get();
         });
-        Cache::has('projects');
 
         return view('market', [
             'projects' => $projects,
