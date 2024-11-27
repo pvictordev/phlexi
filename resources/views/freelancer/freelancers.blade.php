@@ -98,9 +98,14 @@
                                     @endif
 
                                     @if($freelancer->user->picture)
-                                    <img src="{{ Storage::url($freelancer->user->picture) }}" alt="Profile Picture" class="h-14 w-14 object-cover border-2 border-slate-400 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0 sm:float-left">
+                                    <!-- <img src="{{ Storage::url($freelancer->user->picture) }}" alt="Profile Picture" class="h-14 w-14 object-cover border-2 border-slate-400 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0 sm:float-left"> -->
+                                    <img src="{{ Storage::disk('s3')->url($freelancer->user->picture) }}"
+                                        alt="Profile Picture"
+                                        class="h-14 w-14 object-cover border-2 border-slate-400 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0 sm:float-left">
+
+
                                     @else
-                                    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-14 w-14 object-cover border-2 border-slate-400 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0 sm:float-left">
+                                    <img src="https://placehold.co/56x56" alt="Profile Picture" class="h-14 w-14 object-cover border-2 border-slate-400 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0 sm:float-left">
                                     @endif
 
                                     <div class="flex items-baseline gap-1">

@@ -69,10 +69,11 @@
                             </div>
                         </div>
                         @if(Auth::user()->picture)
-                        <img src="{{ Storage::url(Auth::user()->picture) }}" alt="Profile Picture" class="h-24 w-24 object-cover border-2 border-slate-400 rounded-full mx-auto mb-1 sm:mb-0 sm:mr-1 sm:ml-0">
+                        <!-- <img src="{{ Storage::url(Auth::user()->picture) }}" alt="Profile Picture" class="h-24 w-24 object-cover border-2 border-slate-400 rounded-full mx-auto mb-1 sm:mb-0 sm:mr-1 sm:ml-0"> -->
+                        <img src="{{ Storage::disk('s3')->url(Auth::user()->picture) }}" alt="Profile Picture" class="h-24 w-24 object-cover border-2 border-slate-400 rounded-full mx-auto mb-1 sm:mb-0 sm:mr-1 sm:ml-0">
 
                         @else
-                        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="h-24 w-24 object-cover border-2 border-slate-400 rounded-full mx-auto mb-1 sm:mb-0 sm:mr-1 sm:ml-0">
+                        <img src="https://placehold.co/128" alt="Profile Picture" class="h-24 w-24 object-cover border-2 border-slate-400 rounded-full mx-auto mb-1 sm:mb-0 sm:mr-1 sm:ml-0">
                         @endif
 
                         <div class="text-center">
