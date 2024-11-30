@@ -43,10 +43,17 @@
 
             <!-- picture preview -->
             <div>
-                <img src="{{ Storage::disk('s3')->url(Auth::user()->picture) }}" class="w-32 h-32 rounded-lg object-cover border-2 border-slate-400" alt="Profile Picture" class="img-thumbnail">
 
                 <!-- <img :src="imageSource" class="w-32 h-32 rounded-lg object-cover border-2 border-slate-400" alt="Profile Picture" class="img-thumbnail"> -->
-                 <!-- <img src="{{$user->picture}}" class="w-32 h-32 rounded-lg object-cover border-2 border-slate-400" alt="Profile Picture"> -->
+                <!-- <img src="{{$user->picture}}" class="w-32 h-32 rounded-lg object-cover border-2 border-slate-400" alt="Profile Picture"> -->
+
+                @if (Auth::user()->picture)
+                <img src="{{ Storage::disk('s3')->url(Auth::user()->picture) }}"
+                    class="w-32 h-32 rounded-lg object-cover border-2 border-slate-400"
+                    alt="Profile Picture" class="img-thumbnail">
+                @else
+                <img :src="imageSource" class="w-32 h-32 rounded-lg object-cover border-2 border-slate-400" alt="Profile Picture" class="img-thumbnail">
+                @endif
 
             </div>
         </div>
